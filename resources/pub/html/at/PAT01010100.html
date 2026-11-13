@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" type="text/css" href="./resources/tab/pt/css/cssLib.css" />
+  <script type="text/javascript" src="../../js/pub.include_tab.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+	
+		<script src="./resources/comm/js/common-util.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section manager">
+  <h1 class="tit01">활동입력/조회</h1>
+
+  <div class="tab tab_cm tab_default mt0">
+    <ul class="tab_bar">
+      <li><a href="#" class="active">활동조회</a></li>
+      <li><a href="#">활동입력</a></li>
+    </ul>
+    <div class="tab_cont">
+      <div class="tab_cont_list">
+        <ul class="formList div2"><!-- 230511 -->
+          <li>
+            <div class="th">조회일</div>
+            <div class="td">
+              <input type="tel" class="ipt date" value="2022.06.22" id="input_ID_Setting_Plzfds">
+            </div>
+          </li>
+          <!-- 230511 -->
+          <li>
+            <div class="th">GRM</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">선택</option>
+              </select>
+            </div>
+          </li>
+          <li class="full">
+            <!-- //230511 -->
+            <div class="th">활동 구분</div>
+            <div class="td">
+              <ul class="iptGroup">
+                <li>
+                  <input type="checkbox" class="ipt" name="chk2" id="chk2_1" checked="">
+                  <label for="chk2_1">전체</label>
+                </li>
+                <li>
+                  <input type="checkbox" class="ipt" name="chk2" id="chk2_2">
+                  <label for="chk2_2">미팅</label>
+                </li>
+                <li>
+                  <input type="checkbox" class="ipt" name="chk2" id="chk2_3">
+                  <label for="chk2_3">교육</label>
+                </li>
+                <li>
+                  <input type="checkbox" class="ipt" name="chk2" id="chk2_4">
+                  <label for="chk2_4">전화상담</label>
+                </li>
+                <li>
+                  <input type="checkbox" class="ipt" name="chk2" id="chk2_5">
+                  <label for="chk2_5">설계지원</label>
+                </li>
+                <!-- 230511 -->
+                <li>
+                  <input type="checkbox" class="ipt" name="chk2" id="chk2_6">
+                  <label for="chk2_6">출장</label>
+                </li>
+                <!-- //230511 -->
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <div class="btn_wrap">
+          <button type="button" class="btn_white">초기화</button>
+          <button type="button" class="btn_primary">조회</button>
+        </div>
+        <div class="sort_wrap">
+          <div class="sort">
+            <ul class="iptFilt tab">
+              <li>
+                <input type="radio" class="ipt" value="week" name="weekFilter" id="weekFilter_0" checked>
+                <label for="weekFilter_0">주간</label>
+              </li>
+              <li>
+                <input type="radio" class="ipt" value="day" name="weekFilter" id="weekFilter_1" >
+                <label for="weekFilter_1">일간</label>
+              </li>
+            </ul>
+          </div>
+          <div class="sortCenter navDate pb0">
+            <button type="button" class="btnPrev"><span>이전</span></button>
+            ${YYYY.MM.N주차}$
+            <button type="button" class="btnNext"><span>다음</span></button>
+          </div>
+          <div class="sortRight">
+            <button type="button" class="btn_white_round m"><img src="../../images/icons/icon_print2.svg" class="icon">인쇄</button>
+          </div>
+        </div>
+
+        <div class="tabl_area roundBox week">
+          <table>
+            <caption>고객관리등록</caption>
+            <colgroup>
+              <col style="width: auto;">
+              <col style="width: 22%;">
+              <col style="width: 22%;">
+              <col style="width: 22%;">
+              <col style="width: 22%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>미팅</th>
+                <th>교육</th>
+                <th>전화상담</th>
+                <th>설계지원</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="date">월(1일)</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+              </tr>
+              <tr>
+                <td class="date">화(2일)</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+              </tr>
+              <tr>
+                <td class="date">수(3일)</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+              </tr>
+              <tr>
+                <td class="date">목(4일)</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+              </tr>
+              <tr>
+                <td class="date">금(5일)</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+              </tr>
+              <tr>
+                <td class="date">토(6일)</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+              </tr>
+              <tr>
+                <td class="date">일(7일)</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+              </tr>
+              <tr class="all_count">
+                <td class="date">합계</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tabl_area roundBox day" data-tbody="700">
+          <table>
+            <caption>고객관리등록</caption>
+            <colgroup>
+              <col style="width: 164px;">
+              <col style="width: auto;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>시간</th>
+                <th>금(5일)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="date">09:00</td>
+              </tr>
+              <tr>
+                <td class="date">10:00</td>
+                <td>
+                  <!-- 20230511 -->
+                  <a href="#" class="ap flex-between">
+                    <span>
+                      [교육] 홍길동
+                      <span class="ml15">대리점명</span>
+                      <span class="bar">지점명</span>
+                    </span>
+                    <span class="flag green">완료</span>
+                  </a>
+                  <!-- //20230511 -->
+                </td>
+              </tr>
+              <tr>
+                <td class="date">11:00</td>
+                <td>
+                  <!-- 20230511 -->
+                  <a href="#" class="ta flex-between">
+                    <span>
+                      [전화상담] 홍길동
+                      <span class="ml15">대리점명</span>
+                      <span class="bar">지점명</span>
+                    </span>
+                    <span class="flag pink">취소</span>
+                  </a>
+                  <!-- //20230511 -->
+                </td>
+              </tr>
+              <tr>
+                <td class="date">12:00</td>
+                <td>
+                  <!-- 20230511 -->
+                  <a href="#" class="pt flex-between">                    
+                    <span>
+                      [미팅] 홍길동
+                      <span class="ml15">대리점명</span>
+                      <span class="bar">지점명</span>
+                    </span>
+                    <span class="flag blue">예정</span>
+                  </a>
+                  <!-- //20230511 -->
+                </td>
+              </tr>
+              <tr>
+                <td class="date">13:00</td>
+                <td>
+                  <!-- 20230511 -->
+                  <a href="#" class="cs flex-between">
+                    <span>
+                      [설계지원] 홍길동
+                      <span class="ml15">대리점명</span>
+                      <span class="bar">지점명</span>
+                      <span class="ml15">2023.09.01 - 2023.09.03</span>
+                    </span>
+                    <span class="flag blue">예정</span>
+                  </a>
+                  <!-- //20230511 -->
+                </td>
+              </tr>
+              <tr>
+                <td class="date">20:00</td>
+                <td>
+                  <!-- 20230511 -->
+                  <a href="#" class="etc flex-between">
+                    <span>
+                      [출장] 홍길동
+                      <span class="ml15">대리점명</span>
+                      <span class="bar">지점명</span>
+                      <span class="ml15">2023.09.01 - 2023.09.03</span>
+                    </span>
+                    <span class="flag blue">예정</span>
+                  </a>
+                  <!-- //20230511 -->
+                </td>
+              </tr>
+              <tr>
+                <td class="date">21:00</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="date">22:00</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="date">23:00</td>
+              </tr>
+              <tr>
+                <td class="date">24:00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+      <div class="tab_cont_list ">
+        <h2 class="tit02">GRM정보</h2>
+        <ul class="formList">
+          <li>
+            <div class="th">GRM</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">선택</option>
+              </select>
+            </div>
+          </li>
+        </ul>
+        <h2 class="tit02">활동 등록</h2>
+        <ul class="formList div3">
+          <li>
+            <div class="th">대리점</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">선택</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="th">본부</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">선택</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="th">지점</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">선택</option>
+              </select>
+            </div>
+          </li>
+          <li class="half"><!-- 26.06.30 -->
+            <div class="th">활동 구분</div>
+            <div class="td">
+            <ul class="iptFilt paT" name="gaDv">
+                  <li>
+                    <input type="radio" class="ipt" name="gaActDv" id="actDv6" value="11" data-updact>
+                    <label for="actDv6">미팅</label>
+                  </li>
+                  <li>
+                    <input type="radio" class="ipt" name="gaActDv" id="actDv7" value="12" data-updact>
+                    <label for="actDv7">교육</label>
+                  </li>
+                  <li>
+                    <input type="radio" class="ipt" name="gaActDv" id="actDv8" value="13" data-updact>
+                    <label for="actDv8">전화상담</label>
+                  </li>
+                  <li>
+                    <input type="radio" class="ipt" name="gaActDv" id="actDv9" value="14" data-updact>
+                    <label for="actDv9">설계지원</label>
+                  </li>
+                  <li>
+                    <input type="radio" class="ipt" name="gaActDv" id="actDv10" value="15" data-updact>
+                    <label for="actDv10">출장</label>
+                  </li>
+                </ul>
+            </div>
+          </li>
+          <!-- 26.06.30 -->
+          <li class="half">
+            <div class="th">지점 검색</div>
+            <div class="td">
+              <div class="iptWrap">
+                <input type="text" class="ipt search" placeholder="검색어 입력" onclick="layerPop.open('pop01')">
+                <button type="button" class="icoBtn_search" onclick="layerPop.open('pop01')"></button>
+              </div>
+            </div>
+          </li>
+          <!-- //26.06.30 -->  
+          <li class="half" name="actDvEtc"><!-- 26.06.30 -->
+            <div class="th">약속 일자</div>
+            <div class="td">
+            <input type="tel" class="ipt date" value="" id="gaActDt" maxlength="10" data-updact>
+            </div>
+          </li>
+          <li class="half">
+            <div class="th">약속 장소</div>
+            <div class="td">
+                  <input type="text" class="ipt" id="gaActPl" placeholder="예: 을지로입구 " maxlength="100" data-updact><!-- 26.06.30 -->
+            </div>
+          </li>
+          <li class="half" name="actDvEtc"><!-- 26.06.30 -->
+            <div class="th">약속 시간</div>
+            <div class="td">
+                  <select class="ipt" id="gaActHH" style="width: 175px;" data-updact>
+              <option selected="">00시</option>
+            </select>
+                  <select class="ipt" id="gaActMM" style="width: 175px;" data-updact>
+              <option selected="">00분</option>
+            </select>
+            </div>
+          </li>
+          <li class="half" id="actDvBtDt"><!-- 26.06.30 -->
+              <div class="th">출장 일정</div>
+              <div class="td" id="actBtPeriod">
+            <div class="setHalf">
+              <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="actBtDt" data-updact>
+              <span class="sign">~</span>
+              <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="actBtEdDt" data-updact>
+            </div>
+              </div>
+            </li>
+          <li class="full">
+            <div class="th">메모</div>
+            <div class="td">
+              <div class="iptWrap full">
+                <textarea class="ipt" placeholder="내용 입력(최대 200자 입력)"></textarea>
+                <p class="byteTxt"><span class="num">0</span> / <span>200</span></p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="btn_wrap">
+          <button type="button" class="btn_gray">취소</button>
+          <button type="button" class="btn_primary">수정</button>
+          <button type="button" class="btn_primary">등록</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+
+			<!-- 26.06.30 -->
+			<!-- popup (s) -->
+			<div class="popWrap" id="pop01">
+			<div class="popContain">
+				<div class="popup">
+				<div class="popHead">
+					<h1 class="tit01">지점검색</h1>
+				</div>
+				<div class="popBody col_9">
+			<!-- 팝업 내용 시작 (s) -->
+
+			<ul class="formList ">
+			<li class="">
+				<div class="th ">지점검색</div>
+				<div class="td">
+					<input type="text" class="ipt full" placeholder="2자 이상 입력">
+				</div>
+			</li>
+			</ul>
+			<div class="btn_wrap mb0">
+			<button type="button" class="btn_primary">검색</button>
+			</div>
+
+			<div class="sort_wrap">
+			<div class="sort">
+				<ul class="count">
+				<li>총 <span class="count_num count_num_accent">1,000</span>건</li>
+				</ul>
+			</div>
+			</div>
+
+			<div class="tabl_area">
+			<table >
+				<caption>지점 테이블</caption>
+				<colgroup>
+				<col style="width: 50%;">
+				<col style="width: auto;">
+				</colgroup>
+				<thead>
+				<tr>
+					<th scope="col">대리점</th>
+					<th scope="col">지점</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>지에스코리아</td>
+					<td><a href="#" title="지점명" class="links">부천</a></td>
+				</tr>
+				<tr>
+					<td>에즈금융서비스</td>
+					<td><a href="#" title="지점명" class="links">부천북부</a></td>
+				</tr>
+				<tr>
+					<td>인카서비스</td>
+					<td><a href="#" title="지점명" class="links">부천평화</a></td>
+				</tr>
+				<tr>
+					<td>글로벌금융</td>
+					<td><a href="#" title="지점명" class="links">부천굿라이프</a></td>
+				</tr>
+				<tr>
+					<td>에이티에셋</td>
+					<td><a href="#" title="지점명" class="links">부천사업단</a></td>
+				</tr>
+				<tr>
+					<td>지에스코리아</td>
+					<td><a href="#" title="지점명" class="links">부천</a></td>
+				</tr>
+				<tr>
+					<td>에즈금융서비스</td>
+					<td><a href="#" title="지점명" class="links">부천북부</a></td>
+				</tr>
+				<tr>
+					<td>인카서비스</td>
+					<td><a href="#" title="지점명" class="links">부천평화</a></td>
+				</tr>
+				<tr>
+					<td>글로벌금융</td>
+					<td><a href="#" title="지점명" class="links">부천굿라이프</a></td>
+				</tr>
+				<tr>
+					<td>에이티에셋</td>
+					<td><a href="#" title="지점명" class="links">부천사업단</a></td>
+				</tr>
+				</tbody>
+			</table>
+			</div>
+
+			<ul class="faqList" data-single="true">
+			<li class="no_data">
+				검색 결과가 없습니다.
+			</li>
+			</ul>
+
+			<div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+			<button type="button" class="icoBtn_first" aria-label="처음"></button>
+			<button type="button" class="icoBtn_prev" aria-label="이전"></button>
+			<ul>
+				<li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+				<li><a href="#"><span class="blind">페이지</span>2</a></li>
+				<li><a href="#"><span class="blind">페이지</span>3</a></li>
+				<li><a href="#"><span class="blind">페이지</span>4</a></li>
+				<li><a href="#"><span class="blind">페이지</span>5</a></li>
+				<li><a href="#"><span class="blind">페이지</span>6</a></li>
+				<li><a href="#"><span class="blind">페이지</span>7</a></li>
+				<li><a href="#"><span class="blind">페이지</span>8</a></li>
+				<li><a href="#"><span class="blind">페이지</span>9</a></li>
+				<li><a href="#"><span class="blind">페이지</span>10</a></li>
+			</ul>
+			<button type="button" class="icoBtn_next" aria-label="다음"></button>
+			<button type="button" class="icoBtn_last" aria-label="마지막"></button>
+			</div>
+			<!-- 팝업 내용 끝 (e) -->
+				</div>
+				<button type="button" class="icoBtn_close" onclick="lp.close();"><span>팝업 닫기</span></button>
+				</div>
+			</div>
+			</div>
+			<!-- popup (e) -->
+			<!-- //26.06.30 -->
+
+
+
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+    </div><!-- container (e) -->
+    <div class="footer"></div>
+  </div>
+</body>
+
+<script type="text/javascript">
+// 주간, 일간 전환 테스트용
+$(document).ready(function(){
+  $('input[name=weekFilter]').bind({
+    'change' : function(e){
+      $('.fakeTheadWrap.roundBox, .tabl_area.roundBox').hide();
+      $('.roundBox.'+e.target.value).show();
+    }
+  });
+  var weekFilter = $('input[name=weekFilter]:checked').val();
+  $('.fakeTheadWrap.roundBox, .tabl_area.roundBox.week').hide();
+  $('.roundBox.'+weekFilter).show();
+});
+</script>
+
+</html>

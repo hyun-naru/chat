@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="Shortcut Icon" href="./resources/pt/images/fav/favicon.png">
+    <link rel="stylesheet" type="text/css" href="../../tab/pt/css/cssLib.css" />
+    <link rel="stylesheet" type="text/css" href="./css/chat.css" />
+
+    <script src="../../comm/js/jquery-3.5.1.min.js"></script>
+    <script src="../../comm/js/jquery.form.min.js"></script>
+    <script src="../../comm/js/jquery.serializeObject.min.js"></script>
+    <script src="../../comm/js/jquery-ui.js"></script>
+    <script src="../../comm/js/jquery.ui.monthpicker.js"></script>
+    <script src="../../comm/js/jquery.cookie.js"></script>
+    <script src="../../comm/js/jquery.blockUI.js"></script>
+    <script src="../../comm/js/jquery.MultiFile.js"></script>
+    <script src="../../comm/js/swiper.min.js"></script>
+    <script src="../../comm/js/lightslider.js"></script>
+    <script src="../../comm/js/common-transaction.js"></script>
+    <script src="../../comm/js/common-numeral.min.js"></script>
+    <script src="../../comm/js/common-moment.min.js"></script>
+    <script src="../../comm/js/common-str.js"></script>
+    <script src="../../comm/js/common-util.js"></script>
+    <script src="../../comm/js/common-code.js"></script>
+    <script src="../../comm/js/common-storage.js"></script>
+    <script src="../../comm/js/common-timeout.js"></script>
+    <script src="../../comm/js/sfaApp.interface.js"></script>
+    <script src="../../pt/js/ui.front.js"></script>
+    <script src="../../pt/js/pt.common.js"></script>
+    <script src="./js/chat.js"></script>
+    <title>하나로 영업지원</title>
+    <script>
+        let isMoLanding = false;	//모바일 랜딩의 경우
+        $(document).ready(function () {
+            layout.init();
+            ui.init();
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrapper" id="wrapper">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h1>
+                    <img src="../images/white_logo.svg" alt="하나생명">
+                    <span>영업지원</span>
+                </h1>
+            </div>
+            <div class="chat-content">
+                <div class="btn-group">
+                    <button type="button" class="btn-toggle-flow" id="btnToggleFlow">AI 챗봇 열기 ▼</button>
+                </div>
+                <div class="chat-flow" id="chatFlow" role="region" aria-label="대화 진행 영역">
+                    <!-- <button type="button" class="btn_navy_dark m btn-floating" id="btnBack" aria-controls="chatFlow" aria-label="처음 단계로 돌아가기">처음으로</button> 2026.11.17 -->
+
+                    <!-- 메인 화면 (Flow 01) -->
+                    <div class="flow-box" id="flow01">
+                        <div class="flow-content">
+                            <div class="df-end">
+                                <button type="button" class="flag purple" id="REQ-CH-021">생일예정(10명)</button><!-- 2026.11.10 -->
+                                <button type="button" class="flag blue" id="REQ-CH-022">상령일 도래(10명)</button>
+                                <button type="button" class="flag reverse yellow" id="REQ-CH-026">실효임박(5명)</button>
+                                <button type="button" class="flag reverse pink" id="REQ-CH-023">당월실효(5명)</button>
+                            </div>
+                            <div class="q-box">
+                                영업지원 간편 기능 메뉴입니다.<br>
+                                원하시는 메뉴를 선택해 진행해주세요.
+                            </div>
+                            <div class="btn-area">
+                                <button type="button" id="REQ-CH-002" class="btn_white l">모니터링 결과</button>
+                                <!-- <button type="button" id="REQ-CH-003" class="btn_white l">반송</button> -->
+                                <button type="button" id="REQ-CH-004" class="btn_white l">청약철회 요청</button>
+                                <button type="button" id="REQ-CH-005" class="btn_white l">가입설계서 재발송</button>
+                                <button type="button" id="REQ-CH-012" class="btn_white l">사용인 확인</button>
+                                <button type="button" id="REQ-CH-024" class="btn_white l">보완건 조회</button>
+                                <button type="button" id="REQ-CH-025" class="btn_white l">개인정보 동의 현황 조회</button>
+                                <button type="button" id="REQ-CH-031" class="btn_white l">활동관리 조회/입력</button>
+                                <!-- <button type="button" id="btnSupport" class="btn_white l">통합시스템</button>
+                                <button type="button" id="btnBranch" class="btn_white l">지점조회</button> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [REQ-CH-002] 모니터링 결과 -->
+                    <div class="flow-box menu-box" id="menu-REQ-CH-002-step2" data-menu="REQ-CH-002" data-step="2">
+                        <div class="flow-content">
+                            <div class="q-box">
+                                모니터링 결과를 조회해 드립니다.<br>
+                                <!-- 2026.11.17 -->
+                                최근 1개월 모니터링 내역을 확인하실 수 있습니다.<br>
+                                <strong class="bold">계약자 / 증권번호</strong>를 누르시면 상세 내용을 확인하실 수 있습니다.
+                                <!-- //2026.11.17 -->
+                            </div>
+                            <div class="iptWrap search active_searchBtn">
+                                <input type="text" class="ipt search active_searchBtn uiAct" placeholder="증권번호" title="증권번호 검색">
+                                <button type="button" class="icoBtn_search" aria-label="검색"></button>
+                                <button class="icoBtn_del" tabindex="-1"><span class="blind">해당 필드 입력값 삭제</span></button>
+                            </div>
+                            <!-- 검색결과 없을 경우 2026.11.04 -->
+                            <div class="noData">검색 결과가 없습니다.</div><!-- 2026.11.17 -->
+                            <!-- //검색결과 없을 경우 2026.11.04 -->
+                            <div class="list-btn">
+                                <div class="btn-label">
+                                    <span class="tit"><span>김하나</span> / <span>1234567890</span></span><!-- 2026.11.17 -->
+                                    <span class="info"><span>청약일자 : </span><span>2026.11.11</span></span>
+                                    <!-- <span class="info"><span>계약자 :</span> <span>김하나</span></span> --><!-- 2026.11.17 -->
+                                    <span class="info"><span>청약경과일수 :</span> <span>3일</span></span>
+                                    <span class="info"><span>계약자 결과 :</span> <span>성공</span></span><!-- 2026.11.17 -->
+                                    <span class="info"><span>피보험자 결과 :</span> <span>성공</span></span><!-- 2026.11.17 -->
+                                    <span class="info"><span>성공결과 :</span> <span>성공</span></span>
+                                    <span class="info"><span>판매인(사번) :</span> <span>박하나(712348)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>김하나</span> / <span>1234567890</span></span>
+                                    <span class="info"><span>청약일자 : </span><span>2026.11.11</span></span>
+                                    <!-- <span class="info"><span>계약자 :</span> <span>김하나</span></span> -->
+                                    <span class="info"><span>청약경과일수 :</span> <span>3일</span></span>
+                                    <span class="info"><span>계약자 결과 :</span> <span>성공</span></span>
+                                    <span class="info"><span>피보험자 결과 :</span> <span>성공</span></span>
+                                    <span class="info"><span>성공결과 :</span> <span>성공</span></span>
+                                    <span class="info"><span>판매인(사번) :</span> <span>박하나(712348)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>김하나</span> / <span>1234567890</span></span>
+                                    <span class="info"><span>청약일자 : </span><span>2026.11.11</span></span>
+                                    <!-- <span class="info"><span>계약자 :</span> <span>김하나</span></span> -->
+                                    <span class="info"><span>청약경과일수 :</span> <span>3일</span></span>
+                                    <span class="info"><span>계약자 결과 :</span> <span>성공</span></span>
+                                    <span class="info"><span>피보험자 결과 :</span> <span>성공</span></span>
+                                    <span class="info"><span>성공결과 :</span> <span>성공</span></span>
+                                    <span class="info"><span>판매인(사번) :</span> <span>박하나(712348)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>김하나</span> / <span>1234567890</span></span>
+                                    <span class="info"><span>청약일자 : </span><span>2026.11.11</span></span>
+                                    <!-- <span class="info"><span>계약자 :</span> <span>김하나</span></span> -->
+                                    <span class="info"><span>청약경과일수 :</span> <span>3일</span></span>
+                                    <span class="info"><span>계약자 결과 :</span> <span>성공</span></span>
+                                    <span class="info"><span>피보험자 결과 :</span> <span>성공</span></span>
+                                    <span class="info"><span>성공결과 :</span> <span>성공</span></span>
+                                    <span class="info"><span>판매인(사번) :</span> <span>박하나(712348)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>김하나</span> / <span>1234567890</span></span>
+                                    <span class="info"><span>청약일자 : </span><span>2026.11.11</span></span>
+                                    <!-- <span class="info"><span>계약자 :</span> <span>김하나</span></span> -->
+                                    <span class="info"><span>청약경과일수 :</span> <span>3일</span></span>
+                                    <span class="info"><span>계약자 결과 :</span> <span>성공</span></span>
+                                    <span class="info"><span>피보험자 결과 :</span> <span>성공</span></span>
+                                    <span class="info"><span>성공결과 :</span> <span>성공</span></span>
+                                    <span class="info"><span>판매인(사번) :</span> <span>박하나(712348)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>김하나</span> / <span>1234567890</span></span>
+                                    <span class="info"><span>청약일자 : </span><span>2026.11.11</span></span>
+                                    <!-- <span class="info"><span>계약자 :</span> <span>김하나</span></span> -->
+                                    <span class="info"><span>청약경과일수 :</span> <span>3일</span></span>
+                                    <span class="info"><span>계약자 결과 :</span> <span>성공</span></span>
+                                    <span class="info"><span>피보험자 결과 :</span> <span>성공</span></span>
+                                    <span class="info"><span>성공결과 :</span> <span>성공</span></span>
+                                    <span class="info"><span>판매인(사번) :</span> <span>박하나(712348)</span></span>
+                                </div>
+                            </div>
+                            <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+                                <button type="button" class="icoBtn_first" aria-label="처음"></button>
+                                <button type="button" class="icoBtn_prev" aria-label="이전"></button>
+                                <ul>
+                                    <li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+                                    <li><a href="#"><span class="blind">페이지</span>2</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>3</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>4</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>5</a></li>
+                                </ul>
+                                <button type="button" class="icoBtn_next" aria-label="다음"></button>
+                                <button type="button" class="icoBtn_last" aria-label="마지막"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [REQ-CH-003] 반송 -->
+                    <div class="flow-box menu-box" id="menu-REQ-CH-003-step2" data-menu="REQ-CH-003" data-step="2">
+                        <div class="flow-content">
+                            <div class="q-box">
+                                반송을 신청할 계약을 선택해 주세요.
+                            </div>
+                            <div class="iptWrap search active_searchBtn">
+                                <input type="text" class="ipt search active_searchBtn uiAct" placeholder="증권번호" title="증권번호 검색">
+                                <button type="button" class="icoBtn_search" aria-label="검색"></button>
+                                <button class="icoBtn_del" tabindex="-1"><span class="blind">해당 필드 입력값 삭제</span></button>
+                            </div>
+                            <div class="list-btn">
+                                <div>
+                                    <input type="radio" name="selectItem3" id="item_003_1" class="blind">
+                                    <label for="item_003_1" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                        <span class="info"><span>지점 : </span><span>에이플러스에셋</span></span>
+                                        <span class="info"><span>판매인 : </span><span>김하나(G7001123)</span></span>
+                                        <span class="info"><span>청약일 : </span><span>YYMMDD</span></span>
+                                        <span class="info"><span>보완상태 : </span><span>대기</span></span>
+                                        <span class="tit"><span>심사자 : </span><span>심사자(G7001123)</span></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="selectItem3" id="item_003_2" class="blind">
+                                    <label for="item_003_2" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                        <span class="info"><span>지점 : </span><span>에이플러스에셋</span></span>
+                                        <span class="info"><span>판매인 : </span><span>김하나(G7001123)</span></span>
+                                        <span class="info"><span>청약일 : </span><span>YYMMDD</span></span>
+                                        <span class="info"><span>보완상태 : </span><span>심사중</span></span>
+                                        <span class="tit"><span>심사자 : </span><span>-</span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+                                <button type="button" class="icoBtn_first" aria-label="처음"></button>
+                                <button type="button" class="icoBtn_prev" aria-label="이전"></button>
+                                <ul>
+                                    <li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+                                    <li><a href="#"><span class="blind">페이지</span>2</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>3</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>4</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>5</a></li>
+                                </ul>
+                                <button type="button" class="icoBtn_next" aria-label="다음"></button>
+                                <button type="button" class="icoBtn_last" aria-label="마지막"></button>
+                            </div>
+                        </div>
+                        <div class="btn-area action-btn">
+                            <button type="button" class="btn_white l btn-prev">이전</button>
+                            <button type="button" class="btn_primary l btn-next">확인</button>
+                        </div>
+                    </div>
+                    <div class="flow-box menu-box" id="menu-REQ-CH-003-step3" data-menu="REQ-CH-003" data-step="3">
+                        <div class="flow-content">
+                            <div class="q-box">
+                                반송 신청 정보를 확인하고<br>
+                                전달 내용을 입력해 주세요.
+                            </div>
+                            <div>
+                                <ul class="formList">
+                                    <li>
+                                        <div class="th">증권번호</div>
+                                        <div class="td">
+                                            12345678
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="th">계약자</div>
+                                        <div class="td">
+                                            이하나(800303/여)
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="th">신청일</div>
+                                        <div class="td">
+                                            2026.11.11
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="th">판매인</div>
+                                        <div class="td">
+                                            김하나(G7001123)
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="th">신청자</div>
+                                        <div class="td">
+                                            김하나(G7001123)
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="th">심사자</div>
+                                        <div class="td">
+                                            심사자(G7001123)
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="th">전달 내용</div>
+                                        <div class="td">
+                                            <div class="iptWrap full">
+                                                <textarea class="ipt" placeholder="내용을 입력해 주세요."></textarea>
+                                                <p class="byteTxt"><span class="num">0</span> / <span>4,000</span></p>
+                                            </div>
+                                    </li>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn-area action-btn">
+                            <button type="button" class="btn_white l btn-prev">이전</button>
+                            <button type="button" class="btn_primary l btn-next">확인</button>
+                        </div>
+                    </div>
+                    <div class="flow-box menu-box" id="menu-REQ-CH-003-step4" data-menu="REQ-CH-003" data-step="4">
+                        <div class="flow-content">
+                            <div class="q-box">요청하신 반송 신청이 완료되었습니다.</div>
+                        </div>
+                    </div>
+                    <!-- [REQ-CH-004] 청약철회 -->
+                    <div class="flow-box menu-box" id="menu-REQ-CH-004-step2" data-menu="REQ-CH-004" data-step="2">
+                        <div class="flow-content">
+                            <div class="q-box">
+                                <!-- 2026.11.17 -->
+                                청약철회가 필요한<br>
+                                계약을 선택해 주세요.
+                                <!-- //2026.11.17 -->
+                            </div>
+                            <div class="iptWrap search active_searchBtn">
+                                <input type="text" class="ipt search active_searchBtn uiAct" placeholder="증권번호" title="증권번호 검색">
+                                <button type="button" class="icoBtn_search" aria-label="검색"></button>
+                                <button class="icoBtn_del" tabindex="-1"><span class="blind">해당 필드 입력값 삭제</span></button>
+                            </div>
+                            <div class="list-btn">
+                                <div>
+                                    <input type="radio" name="selectItem4" id="item_004_1" class="blind">
+                                    <label for="item_004_1" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                        <span class="info"><span>계약일 : </span><span>2026.11.11</span></span>
+                                        <span class="info"><span>신청일 : </span><span>2026.11.11</span></span>
+                                        <span class="info"><span>판매인(사번) : </span><span>박하나(G7123343)</span></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="selectItem4" id="item_004_2" class="blind">
+                                    <label for="item_004_2" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                        <span class="info"><span>계약일 : </span><span>2026.11.11</span></span>
+                                        <span class="info"><span>신청일 : </span><span>2026.11.11</span></span>
+                                        <span class="info"><span>판매인(사번) : </span><span>박하나(G7123343)</span></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="selectItem4" id="item_004_3" class="blind">
+                                    <label for="item_004_3" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                        <span class="info"><span>계약일 : </span><span>2026.11.11</span></span>
+                                        <span class="info"><span>신청일 : </span><span>2026.11.11</span></span>
+                                        <span class="info"><span>판매인(사번) : </span><span>박하나(G7123343)</span></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="selectItem4" id="item_004_4" class="blind">
+                                    <label for="item_004_4" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                        <span class="info"><span>계약일 : </span><span>2026.11.11</span></span>
+                                        <span class="info"><span>신청일 : </span><span>2026.11.11</span></span>
+                                        <span class="info"><span>판매인(사번) : </span><span>박하나(G7123343)</span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+                                <button type="button" class="icoBtn_first" aria-label="처음"></button>
+                                <button type="button" class="icoBtn_prev" aria-label="이전"></button>
+                                <ul>
+                                    <li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+                                    <li><a href="#"><span class="blind">페이지</span>2</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>3</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>4</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>5</a></li>
+                                </ul>
+                                <button type="button" class="icoBtn_next" aria-label="다음"></button>
+                                <button type="button" class="icoBtn_last" aria-label="마지막"></button>
+                            </div>
+                        </div>
+
+                        <div class="btn-area action-btn">
+                            <button type="button" class="btn_white l btn-prev">이전</button>
+                            <button type="button" class="btn_primary l btn-next">신청</button>
+                        </div>
+                    </div>
+                    <div class="flow-box menu-box" id="menu-REQ-CH-004-step3" data-menu="REQ-CH-004" data-step="3">
+                        <div class="flow-content">
+                            <div class="q-box">
+                                <!-- 2026.11.17 -->
+                                청약철회 신청 정보를 확인하고<br>
+                                전달 내용을 입력해 주세요.
+                                <!-- //2026.11.17 -->
+                            </div>
+                            <div>
+                                <ul class="formList">
+                                    <li>
+                                        <div class="th">증권번호</div>
+                                        <div class="td">
+                                            12345678
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="th">계약자</div>
+                                        <div class="td">
+                                            이하나(800303/여)
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="th">신청일</div>
+                                        <div class="td">
+                                            2026.11.11
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="th">신청자</div>
+                                        <div class="td">
+                                            김하나(G7001123)
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="th">판매인</div>
+                                        <div class="td">
+                                            김하나(G7001123)
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="th">전달 내용</div>
+                                        <div class="td">
+                                            <div class="iptWrap full">
+                                                <textarea class="ipt" placeholder="내용을 입력해 주세요."></textarea>
+                                                <p class="byteTxt"><span class="num">0</span> / <span>4,000</span></p>
+                                            </div>
+                                    </li>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn-area action-btn">
+                            <button type="button" class="btn_white l btn-prev">이전</button>
+                            <button type="button" class="btn_primary l btn-next">신청</button>
+                        </div>
+                    </div>
+                    <div class="flow-box menu-box" id="menu-REQ-CH-004-step4" data-menu="REQ-CH-004" data-step="4">
+                        <div class="flow-content">
+                            <div class="q-box">요청하신 청약철회 신청이 완료되었습니다.</div>
+                        </div>
+                    </div>
+
+                    <!-- [REQ-CH-005] 가입설계서 재발송 -->
+                    <div class="flow-box menu-box" id="menu-REQ-CH-005-step2" data-menu="REQ-CH-005" data-step="2">
+                        <div class="flow-content">
+                            <div class="q-box">가입설계서 재발송 대상을 검색해 주세요.</div>
+                            <div class="iptWrap search active_searchBtn">
+                                <input type="text" class="ipt search active_searchBtn uiAct" placeholder="증권번호" title="증권번호 검색">
+                                <button type="button" class="icoBtn_search" aria-label="검색"></button>
+                                <button class="icoBtn_del" tabindex="-1"><span class="blind">해당 필드 입력값 삭제</span></button>
+                            </div>
+                            <div class="list-btn">
+                                <div>
+                                    <input type="radio" name="selectItem005" id="item005_1" class="blind">
+                                    <label for="item005_1" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>지점 : </span><span>에이플러스에셋</span></span>
+                                        <span class="info"><span>판매인 : </span><span>미결</span></span>
+                                        <span class="info"><span>청약일 : </span><span>YYMMDD</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="selectItem005" id="item005_2" class="blind">
+                                    <label for="item005_2" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>지점 : </span><span>에이플러스에셋</span></span>
+                                        <span class="info"><span>판매인 : </span><span>미결</span></span>
+                                        <span class="info"><span>청약일 : </span><span>YYMMDD</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="selectItem005" id="item005_3" class="blind">
+                                    <label for="item005_3" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>지점 : </span><span>에이플러스에셋</span></span>
+                                        <span class="info"><span>판매인 : </span><span>미결</span></span>
+                                        <span class="info"><span>청약일 : </span><span>YYMMDD</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="selectItem005" id="item005_4" class="blind">
+                                    <label for="item005_4" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>지점 : </span><span>에이플러스에셋</span></span>
+                                        <span class="info"><span>판매인 : </span><span>미결</span></span>
+                                        <span class="info"><span>청약일 : </span><span>YYMMDD</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="selectItem005" id="item005_5" class="blind">
+                                    <label for="item005_5" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>지점 : </span><span>에이플러스에셋</span></span>
+                                        <span class="info"><span>판매인 : </span><span>미결</span></span>
+                                        <span class="info"><span>청약일 : </span><span>YYMMDD</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="selectItem005" id="item005_6" class="blind">
+                                    <label for="item005_6" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>지점 : </span><span>에이플러스에셋</span></span>
+                                        <span class="info"><span>판매인 : </span><span>미결</span></span>
+                                        <span class="info"><span>청약일 : </span><span>YYMMDD</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="selectItem005" id="item005_7" class="blind">
+                                    <label for="item005_7" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>지점 : </span><span>에이플러스에셋</span></span>
+                                        <span class="info"><span>판매인 : </span><span>미결</span></span>
+                                        <span class="info"><span>청약일 : </span><span>YYMMDD</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="selectItem005" id="item005_8" class="blind">
+                                    <label for="item005_8" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>지점 : </span><span>에이플러스에셋</span></span>
+                                        <span class="info"><span>판매인 : </span><span>미결</span></span>
+                                        <span class="info"><span>청약일 : </span><span>YYMMDD</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="selectItem005" id="item005_9" class="blind">
+                                    <label for="item005_9" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>지점 : </span><span>에이플러스에셋</span></span>
+                                        <span class="info"><span>판매인 : </span><span>미결</span></span>
+                                        <span class="info"><span>청약일 : </span><span>YYMMDD</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="selectItem005" id="item005_10" class="blind">
+                                    <label for="item005_10" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>지점 : </span><span>에이플러스에셋</span></span>
+                                        <span class="info"><span>판매인 : </span><span>미결</span></span>
+                                        <span class="info"><span>청약일 : </span><span>YYMMDD</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="selectItem005" id="item005_11" class="blind">
+                                    <label for="item005_11" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>지점 : </span><span>에이플러스에셋</span></span>
+                                        <span class="info"><span>판매인 : </span><span>미결</span></span>
+                                        <span class="info"><span>청약일 : </span><span>YYMMDD</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="selectItem005" id="item005_12" class="blind">
+                                    <label for="item005_12" class="btn-label">
+                                        <span class="tit"><span>증권번호 : </span><span>12345678</span></span>
+                                        <span class="info"><span>지점 : </span><span>에이플러스에셋</span></span>
+                                        <span class="info"><span>판매인 : </span><span>미결</span></span>
+                                        <span class="info"><span>청약일 : </span><span>YYMMDD</span></span>
+                                        <span class="info"><span>계약자 : </span><span>이하나(800303/여)</span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+                                <button type="button" class="icoBtn_first" aria-label="처음"></button>
+                                <button type="button" class="icoBtn_prev" aria-label="이전"></button>
+                                <ul>
+                                    <li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+                                    <li><a href="#"><span class="blind">페이지</span>2</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>3</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>4</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>5</a></li>
+                                </ul>
+                                <button type="button" class="icoBtn_next" aria-label="다음"></button>
+                                <button type="button" class="icoBtn_last" aria-label="마지막"></button>
+                            </div>
+                        </div>
+                        <div class="btn-area action-btn">
+                            <button type="button" class="btn_white l btn-prev">이전</button>
+                            <button type="button" class="btn_primary l btn-next">확인</button>
+                        </div>
+                    </div>
+                    <div class="flow-box menu-box" id="menu-REQ-CH-005-step3" data-menu="REQ-CH-005" data-step="3">
+                        <div class="flow-content">
+                            <div class="q-box">가입설계서 재발송 대상자를 선택해주세요.</div>
+                            <div>
+                                <ul class="iptFilt div_2">
+                                    <li>
+                                        <input type="radio" class="ipt" name="iptFilt4" id="iptFilt4_1">
+                                        <label for="iptFilt4_1">계약자 : 이하나 (010-1234-5678)</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" class="ipt" name="iptFilt4" id="iptFilt4_2">
+                                        <label for="iptFilt4_2">피보험자 : 이하나 (010-1234-5678)</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn-area action-btn">
+                            <button type="button" class="btn_white l btn-prev">이전</button>
+                            <button type="button" class="btn_primary l btn-next">확인</button>
+                        </div>
+                    </div>
+                    <div class="flow-box menu-box" id="menu-REQ-CH-005-step4" data-menu="REQ-CH-005" data-step="4">
+                        <div class="flow-content">
+                            <div class="q-box">요청하신 가입설계서 재발송이 완료되었습니다.</div>
+                        </div>
+                    </div>
+
+
+                    <!-- [REQ-CH-009] 변액자격등록 -->
+                    <div class="flow-box menu-box" id="menu-REQ-CH-009-step2" data-menu="REQ-CH-009" data-step="2">
+                        <div class="flow-content">
+                            <div class="q-box">변액자격등록 확인을 신청하세요.</div>
+                        </div>
+                        <div class="btn-area action-btn">
+                            <button type="button" class="btn_white l btn-prev">이전</button>
+                            <button type="button" class="btn_primary l btn-next">신청</button>
+                        </div>
+                    </div>
+                    <div class="flow-box menu-box" id="menu-REQ-CH-009-step3" data-menu="REQ-CH-009" data-step="3">
+                        <div class="flow-content">
+                            <div class="q-box">변액자격등록 신청이 완료되었습니다.</div>
+                            <div class="q-box">변액자격등록이 되어있습니다.</div>
+                        </div>
+                    </div>
+                    <!-- [REQ-CH-010] 모집자보수교육 수료 등록 -->
+                    <div class="flow-box menu-box" id="menu-REQ-CH-010-step2" data-menu="REQ-CH-010" data-step="2">
+                        <div class="flow-content">
+                            <div class="q-box">모집자보수교육 수료 등록 확인을 신청하세요.</div>
+                        </div>
+                        <div class="btn-area action-btn">
+                            <button type="button" class="btn_white l btn-prev">이전</button>
+                            <button type="button" class="btn_primary l btn-next">신청</button>
+                        </div>
+                    </div>
+                    <div class="flow-box menu-box" id="menu-REQ-CH-010-step3" data-menu="REQ-CH-010" data-step="3">
+                        <div class="flow-content">
+                            <div class="q-box">모집자보수교육 수료 등록 신청이 완료되었습니다.</div>
+                            <div class="q-box">모집자보수교육 수료 등록이 되어있습니다.</div>
+                        </div>
+                    </div>
+                    <!-- [REQ-CH-012] 사용인 확인 -->
+                    <div class="flow-box menu-box" id="menu-REQ-CH-012-step2" data-menu="REQ-CH-012" data-step="2">
+                        <div class="flow-content">
+                            <div class="q-box">사용인 확인 검색 조건 선택해주세요.</div>
+                            <div>
+                                <ul class="iptFilt div_2">
+                                    <li>
+                                        <input type="radio" class="ipt" name="iptFilt3" id="iptFilt3_1">
+                                        <label for="iptFilt3_1">이름 + 사번</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" class="ipt" name="iptFilt3" id="iptFilt3_2">
+                                        <label for="iptFilt3_2">이름 + 전화번호</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn-area action-btn">
+                            <button type="button" class="btn_white l btn-prev">이전</button>
+                            <button type="button" class="btn_primary l btn-next">확인</button>
+                        </div>
+                    </div>
+                    <div class="flow-box menu-box" id="menu-REQ-CH-012-step3" data-menu="REQ-CH-012" data-step="3">
+                        <div class="flow-content">
+                            <div class="q-box">
+                                사용인 확인 대상을 검색해 주세요.
+                            </div>
+                            <div class="search-item" id="search1">
+                                <input type="text" class="ipt" placeholder="이름" title="이름 입력"><!-- 2026.11.10 -->
+                                <input type="text" class="ipt" placeholder="사번" title="사번 입력"><!-- 2026.11.10 -->
+                                <button type="button" class="btn_primary l">검색</button>
+                            </div>
+                            <div class="search-item" id="search2">
+                                <input type="text" class="ipt" placeholder="이름" title="이름 입력"><!-- 2026.11.10 -->
+                                <input type="text" class="ipt" placeholder="휴대폰번호" title="휴대폰번호 입력"><!-- 2026.11.10 -->
+                                <button type="button" class="btn_primary l">검색</button>
+                            </div>
+                            <div class="list-btn not-acc">
+                                <div class="btn-label">
+                                    <span class="tit"><span>지점장 : </span><span>박하나(G7209116)</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>대리점 : </span><span>에이플러스에셋</span></span>
+                                    <span class="info"><span>본부 : </span><span>에이플러스에셋</span></span>
+                                    <span class="info"><span>지점 : </span><span>에이플러스에셋</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>부지점장 : </span><span>조하나(G7209117)</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>대리점 : </span><span>에이플러스에셋</span></span>
+                                    <span class="info"><span>본부 : </span><span>에이플러스에셋</span></span>
+                                    <span class="info"><span>지점 : </span><span>에이플러스에셋</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [REQ-CH-021] 생일예정 -->
+                    <div class="flow-box menu-box" id="menu-REQ-CH-021-step2" data-menu="REQ-CH-021" data-step="2">
+                        <div class="flow-content">
+                            <!-- 2026.11.02 -->
+                            <div class="q-box">
+                                <!-- 2026.11.17 -->
+                                생일예정 고객을 조회해 드립니다.<br>
+                                <strong class="bold">이름 / 생년월일</strong>을 누르시면 상세 내용을 확인하실 수 있습니다.
+                                <!-- //2026.11.17 -->
+                            </div><!-- 2026.11.10 -->
+                            <!-- //2026.11.02 -->
+                            <!-- 2026.11.04 -->
+                            <div class="iptWrap search active_searchBtn">
+                                <input type="text" class="ipt search active_searchBtn uiAct" placeholder="고객명" title="고객명 검색">
+                                <button type="button" class="icoBtn_search" aria-label="검색"></button>
+                                <button class="icoBtn_del" tabindex="-1"><span class="blind">해당 필드 입력값 삭제</span></button>
+                            </div>
+                            <!-- //2026.11.04 -->
+                            <div class="list-btn">
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>1990.11.11</span></span><!-- 2026.11.17 -->
+                                    <!-- <span class="info"><span>상령일 : </span><span>2026.11.11</span></span> -->
+                                    <span class="info"><span>연락금지권 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>나이(보험) : </span><span>36세(35세)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>1990.11.11</span></span>
+                                    <!-- <span class="info"><span>상령일 : </span><span>2026.11.11</span></span> -->
+                                    <span class="info"><span>연락금지권 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>나이(보험) : </span><span>36세(35세)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>1990.11.11</span></span>
+                                    <!-- <span class="info"><span>상령일 : </span><span>2026.11.11</span></span> -->
+                                    <span class="info"><span>연락금지권 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>나이(보험) : </span><span>36세(35세)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>1990.11.11</span></span>
+                                    <!-- <span class="info"><span>상령일 : </span><span>2026.11.11</span></span> -->
+                                    <span class="info"><span>연락금지권 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>나이(보험) : </span><span>36세(35세)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>1990.11.11</span></span>
+                                    <!-- <span class="info"><span>상령일 : </span><span>2026.11.11</span></span> -->
+                                    <span class="info"><span>연락금지권 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>나이(보험) : </span><span>36세(35세)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>1990.11.11</span></span>
+                                    <!-- <span class="info"><span>상령일 : </span><span>2026.11.11</span></span> -->
+                                    <span class="info"><span>연락금지권 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>나이(보험) : </span><span>36세(35세)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>1990.11.11</span></span>
+                                    <!-- <span class="info"><span>상령일 : </span><span>2026.11.11</span></span> -->
+                                    <span class="info"><span>연락금지권 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>나이(보험) : </span><span>36세(35세)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>1990.11.11</span></span>
+                                    <!-- <span class="info"><span>상령일 : </span><span>2026.11.11</span></span> -->
+                                    <span class="info"><span>연락금지권 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>나이(보험) : </span><span>36세(35세)</span></span>
+                                </div>
+                            </div>
+                            <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+                                <button type="button" class="icoBtn_first" aria-label="처음"></button>
+                                <button type="button" class="icoBtn_prev" aria-label="이전"></button>
+                                <ul>
+                                    <li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+                                    <li><a href="#"><span class="blind">페이지</span>2</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>3</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>4</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>5</a></li>
+                                </ul>
+                                <button type="button" class="icoBtn_next" aria-label="다음"></button>
+                                <button type="button" class="icoBtn_last" aria-label="마지막"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [REQ-CH-022] 상령일 도래 -->
+                    <div class="flow-box menu-box" id="menu-REQ-CH-022-step2" data-menu="REQ-CH-022" data-step="2">
+                        <div class="flow-content">
+                            <!-- 2026.11.02 -->
+                            <div class="q-box">
+                                <!-- 2026.11.17 -->
+                                상령일 도래 예정 고객을 조회해 드립니다.<br>
+                                <strong class="bold">이름 / 상령일</strong>을 누르시면 상세 내용을 확인하실 수 있습니다.
+                                <!-- //2026.11.17 -->
+                            </div><!-- 2026.11.10 -->
+                            <!-- //2026.11.02 -->
+                            <!-- 2026.11.04 -->
+                            <div class="iptWrap search active_searchBtn">
+                                <input type="text" class="ipt search active_searchBtn uiAct" placeholder="고객명" title="고객명 검색">
+                                <button type="button" class="icoBtn_search" aria-label="검색"></button>
+                                <button class="icoBtn_del" tabindex="-1"><span class="blind">해당 필드 입력값 삭제</span></button>
+                            </div>
+                            <!-- //2026.11.04 -->
+                            <div class="list-btn">
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>2026.11.11</span></span><!-- 2026.11.17 -->
+                                    <span class="tit"><span>생년월일 : </span><span>1990.05.11</span></span><!-- 2026.11.17 -->
+                                    <span class="info"><span>연락금지권 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>나이(보험) : </span><span>36세(35세)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>2026.11.11</span></span>
+                                    <span class="tit"><span>생년월일 : </span><span>1990.05.11</span></span>
+                                    <span class="info"><span>연락금지권 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>나이(보험) : </span><span>36세(35세)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>2026.11.11</span></span>
+                                    <span class="tit"><span>생년월일 : </span><span>1990.05.11</span></span>
+                                    <span class="info"><span>연락금지권 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>나이(보험) : </span><span>36세(35세)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>2026.11.11</span></span>
+                                    <span class="tit"><span>생년월일 : </span><span>1990.05.11</span></span>
+                                    <span class="info"><span>연락금지권 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>나이(보험) : </span><span>36세(35세)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>2026.11.11</span></span>
+                                    <span class="tit"><span>생년월일 : </span><span>1990.05.11</span></span>
+                                    <span class="info"><span>연락금지권 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>나이(보험) : </span><span>36세(35세)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>2026.11.11</span></span>
+                                    <span class="tit"><span>생년월일 : </span><span>1990.05.11</span></span>
+                                    <span class="info"><span>연락금지권 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>나이(보험) : </span><span>36세(35세)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>2026.11.11</span></span>
+                                    <span class="tit"><span>생년월일 : </span><span>1990.05.11</span></span>
+                                    <span class="info"><span>연락금지권 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>나이(보험) : </span><span>36세(35세)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>2026.11.11</span></span>
+                                    <span class="tit"><span>생년월일 : </span><span>1990.05.11</span></span>
+                                    <span class="info"><span>연락금지권 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="info"><span>나이(보험) : </span><span>36세(35세)</span></span>
+                                </div>
+                            </div>
+                            <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+                                <button type="button" class="icoBtn_first" aria-label="처음"></button>
+                                <button type="button" class="icoBtn_prev" aria-label="이전"></button>
+                                <ul>
+                                    <li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+                                    <li><a href="#"><span class="blind">페이지</span>2</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>3</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>4</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>5</a></li>
+                                </ul>
+                                <button type="button" class="icoBtn_next" aria-label="다음"></button>
+                                <button type="button" class="icoBtn_last" aria-label="마지막"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [REQ-CH-023] 당월실효 -->
+                    <div class="flow-box menu-box" id="menu-REQ-CH-023-step2" data-menu="REQ-CH-023" data-step="2">
+                        <div class="flow-content">
+                            <div class="q-box">
+                                <!-- 2026.11.17 -->
+                                당월실효 계약을 조회해 드립니다.<br>
+                                전월(2026.09) 기준 내역을 확인하실 수 있습니다.<br>
+                                <strong class="bold">계약자명 / 증권번호</strong>를 누르시면 상세 내용을 확인하실 수 있습니다.
+                                <!-- //2026.11.17 -->
+                            </div>
+                            <!-- 2026.11.04 -->
+                            <div class="iptWrap search active_searchBtn">
+                                <input type="text" class="ipt search active_searchBtn uiAct" placeholder="고객명" title="고객명 검색">
+                                <button type="button" class="icoBtn_search" aria-label="검색"></button>
+                                <button class="icoBtn_del" tabindex="-1"><span class="blind">해당 필드 입력값 삭제</span></button>
+                            </div>
+                            <!-- //2026.11.04 -->
+                            <div class="list-btn">
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>11111134</span></span><!-- 2026.11.17 -->
+                                    <span class="info"><span>모집인 : </span><span>임하나(G7273433)</span></span>
+                                    <span class="info"><span>상품명 : </span><span>(무)하나로 THE 연결된 변액연금보험2</span></span>
+                                    <span class="info"><span>계약일자 : </span><span>2026.08.11</span></span>
+                                    <span class="info"><span>보험료 : </span><span>1600000</span></span>
+                                    <span class="info"><span>수금 방법 : </span><span>자동이체</span></span><!-- 2026.11.17 -->
+                                    <span class="info"><span>최종회차 : </span><span>7회차</span></span>
+                                    <span class="tit"><span>최종월도 : </span><span>2026.07</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>11111134</span></span>
+                                    <span class="info"><span>모집인 : </span><span>임하나(G7273433)</span></span>
+                                    <span class="info"><span>상품명 : </span><span>(무)하나로 THE 연결된 변액연금보험2</span></span>
+                                    <span class="info"><span>계약일자 : </span><span>2026.08.11</span></span>
+                                    <span class="info"><span>보험료 : </span><span>1600000</span></span>
+                                    <span class="info"><span>수금 방법 : </span><span>자동이체</span></span>
+                                    <span class="info"><span>최종회차 : </span><span>1회차</span></span>
+                                    <span class="tit"><span>최종월도 : </span><span>2026.07</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>11111134</span></span>
+                                    <span class="info"><span>모집인 : </span><span>임하나(G7273433)</span></span>
+                                    <span class="info"><span>상품명 : </span><span>(무)하나로 THE 연결된 변액연금보험2</span></span>
+                                    <span class="info"><span>계약일자 : </span><span>2026.08.11</span></span>
+                                    <span class="info"><span>보험료 : </span><span>1600000</span></span>
+                                    <span class="info"><span>수금 방법 : </span><span>자동이체</span></span>
+                                    <span class="info"><span>최종회차 : </span><span>3회차</span></span>
+                                    <span class="tit"><span>최종월도 : </span><span>2026.07</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>11111134</span></span>
+                                    <span class="info"><span>모집인 : </span><span>임하나(G7273433)</span></span>
+                                    <span class="info"><span>상품명 : </span><span>(무)하나로 THE 연결된 변액연금보험2</span></span>
+                                    <span class="info"><span>계약일자 : </span><span>2026.08.11</span></span>
+                                    <span class="info"><span>보험료 : </span><span>1600000</span></span>
+                                    <span class="info"><span>수금 방법 : </span><span>자동이체</span></span>
+                                    <span class="info"><span>최종회차 : </span><span>2회차</span></span>
+                                    <span class="tit"><span>최종월도 : </span><span>2026.07</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>11111134</span></span>
+                                    <span class="info"><span>모집인 : </span><span>임하나(G7273433)</span></span>
+                                    <span class="info"><span>상품명 : </span><span>(무)하나로 THE 연결된 변액연금보험2</span></span>
+                                    <span class="info"><span>계약일자 : </span><span>2026.08.11</span></span>
+                                    <span class="info"><span>보험료 : </span><span>1600000</span></span>
+                                    <span class="info"><span>수금 방법 : </span><span>자동이체</span></span>
+                                    <span class="info"><span>최종회차 : </span><span>1회차</span></span>
+                                    <span class="tit"><span>최종월도 : </span><span>2026.07</span></span>
+                                </div>
+                            </div>
+                            <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+                                <button type="button" class="icoBtn_first" aria-label="처음"></button>
+                                <button type="button" class="icoBtn_prev" aria-label="이전"></button>
+                                <ul>
+                                    <li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+                                    <li><a href="#"><span class="blind">페이지</span>2</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>3</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>4</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>5</a></li>
+                                </ul>
+                                <button type="button" class="icoBtn_next" aria-label="다음"></button>
+                                <button type="button" class="icoBtn_last" aria-label="마지막"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [REQ-CH-024] 보완건 조회 -->
+                    <div class="flow-box menu-box" id="menu-REQ-CH-024-step2" data-menu="REQ-CH-024" data-step="2">
+                        <div class="flow-content">
+                            <div class="q-box">
+                                <!-- 2026.11.17 -->
+                                보완건을 조회해 드립니다.<br>
+                                청약일 기준 최근 1개월 내역을 확인하실 수 있습니다.<br>
+                                <strong class="bold">계약자명 / 증권번호</strong>를 누르시면 상세내용을 확인하실 수 있습니다.
+                                <!-- //2026.11.17 -->
+                            </div>
+                            <div class="iptWrap search active_searchBtn">
+                                <input type="text" class="ipt search active_searchBtn uiAct" placeholder="증권번호" title="증권번호 검색">
+                                <button type="button" class="icoBtn_search" aria-label="검색"></button>
+                                <button class="icoBtn_del" tabindex="-1"><span class="blind">해당 필드 입력값 삭제</span></button>
+                            </div>
+                            <div class="list-btn">
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>11111134</span></span><!-- 2026.11.17 -->
+                                    <span class="info"><span>대리점 : </span><span>아나생명본사</span></span>
+                                    <!-- <span class="info"><span>계약자 : </span><span>김하나</span></span> --><!-- 2026.11.17 -->
+                                    <span class="info"><span>청약일 : </span><span>2026.08.11</span></span>
+                                    <span class="info"><span>판매인(사번) : </span><span>박하나(G7123343)</span></span>
+                                    <span class="tit"><span>보완상태 : </span><span>대기</span></span>
+                                    <span class="info"><span>계약상태 : </span><span>미결</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>11111134</span></span><!-- 2026.11.17 -->
+                                    <span class="info"><span>대리점 : </span><span>아나생명본사</span></span>
+                                    <!-- <span class="info"><span>계약자 : </span><span>김하나</span></span> --><!-- 2026.11.17 -->
+                                    <span class="info"><span>청약일 : </span><span>2026.08.11</span></span>
+                                    <span class="info"><span>판매인(사번) : </span><span>박하나(G7123343)</span></span>
+                                    <span class="tit"><span>보완상태 : </span><span>심사중</span></span>
+                                    <span class="info"><span>계약상태 : </span><span>미결</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>11111134</span></span><!-- 2026.11.17 -->
+                                    <span class="info"><span>대리점 : </span><span>아나생명본사</span></span>
+                                    <!-- <span class="info"><span>계약자 : </span><span>김하나</span></span> --><!-- 2026.11.17 -->
+                                    <span class="info"><span>청약일 : </span><span>2026.08.11</span></span>
+                                    <span class="info"><span>판매인(사번) : </span><span>박하나(G7123343)</span></span>
+                                    <span class="tit"><span>보완상태 : </span><span>완료</span></span>
+                                    <span class="info"><span>계약상태 : </span><span>정상유지</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>11111134</span></span><!-- 2026.11.17 -->
+                                    <span class="info"><span>대리점 : </span><span>아나생명본사</span></span>
+                                    <!-- <span class="info"><span>계약자 : </span><span>김하나</span></span> --><!-- 2026.11.17 -->
+                                    <span class="info"><span>청약일 : </span><span>2026.08.11</span></span>
+                                    <span class="info"><span>판매인(사번) : </span><span>박하나(G7123343)</span></span>
+                                    <span class="tit"><span>보완상태 : </span><span>완료</span></span>
+                                    <span class="info"><span>계약상태 : </span><span>정상유지</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>이하나</span> / <span>11111134</span></span><!-- 2026.11.17 -->
+                                    <span class="info"><span>대리점 : </span><span>아나생명본사</span></span>
+                                    <!-- <span class="info"><span>계약자 : </span><span>김하나</span></span> --><!-- 2026.11.17 -->
+                                    <span class="info"><span>청약일 : </span><span>2026.08.11</span></span>
+                                    <span class="info"><span>판매인(사번) : </span><span>박하나(G7123343)</span></span>
+                                    <span class="tit"><span>보완상태 : </span><span>완료</span></span>
+                                    <span class="info"><span>계약상태 : </span><span>정상유지</span></span>
+                                </div>
+                            </div>
+                            <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+                                <button type="button" class="icoBtn_first" aria-label="처음"></button>
+                                <button type="button" class="icoBtn_prev" aria-label="이전"></button>
+                                <ul>
+                                    <li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+                                    <li><a href="#"><span class="blind">페이지</span>2</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>3</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>4</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>5</a></li>
+                                </ul>
+                                <button type="button" class="icoBtn_next" aria-label="다음"></button>
+                                <button type="button" class="icoBtn_last" aria-label="마지막"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [REQ-CH-025] 개인정보 동의 현황 조회 -->
+                    <div class="flow-box menu-box" id="menu-REQ-CH-025-step2" data-menu="REQ-CH-025" data-step="2">
+                        <div class="flow-content">
+                            <div class="q-box">
+                                <!-- 2026.11.17 -->
+                                개인정보 동의 현황을 조회해 드립니다.<br>
+                                최근 1개월 내역을 확인하실 수 있고, 고객명으로 검색하실 수도 있습니다.<br>
+                                <strong class="bold">계약자명 / 승인여부</strong>를 누르시면 상세 내용을 확인하실 수 있습니다.
+                                <!-- //2026.11.17 -->
+                            </div>
+                            <!-- 2026.11.04 -->
+                            <div class="iptWrap search active_searchBtn">
+                                <input type="text" class="ipt search active_searchBtn uiAct" placeholder="고객명" title="고객명 검색">
+                                <button type="button" class="icoBtn_search" aria-label="검색"></button>
+                                <button class="icoBtn_del" tabindex="-1"><span class="blind">해당 필드 입력값 삭제</span></button>
+                            </div>
+                            <!-- //2026.11.04 -->
+                            <div class="list-btn">
+                                <div class="btn-label">
+                                    <!-- 2026.11.17 -->
+                                    <span class="tit"><span>김하나</span> / <span>N</span></span>
+                                    <!-- <span class="info"><span>승인 : </span><span>N</span></span> -->
+                                    <span class="info"><span>주민번호 검증 결과 : </span><span>N</span></span>
+                                    <span class="info"><span>오류/처리 내역 : </span><span>검증전</span></span>
+                                    <span class="info"><span>동의서 발행번호 : </span><span>2026300434</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="tit"><span>동의 방법 : </span><span>알림톡</span></span>
+                                    <span class="info"><span>동의서 제출일 : </span><span>대기중</span></span>
+                                    <span class="info"><span>연락금지 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>등록일 : </span><span>대기중</span></span>
+                                    <!-- //2026.11.17 -->
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>조하나(880123,여)</span> / <span>N</span></span>
+                                    <!-- <span class="info"><span>승인 : </span><span>N</span></span> -->
+                                    <span class="info"><span>주민번호 검증 결과 : </span><span>N</span></span>
+                                    <span class="info"><span>오류/처리 내역 : </span><span>검증전</span></span>
+                                    <span class="info"><span>동의서 발행번호 : </span><span>2026300434</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>-</span></span>
+                                    <span class="tit"><span>동의 방법 : </span><span>출력물(서면)</span></span>
+                                    <span class="info"><span>동의서 제출일 : </span><span>대기중</span></span>
+                                    <span class="info"><span>연락금지 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>등록일 : </span><span>대기중(ARS 대기)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>김하나</span> / <span>N</span></span>
+                                    <!-- <span class="info"><span>승인 : </span><span>N</span></span> -->
+                                    <span class="info"><span>주민번호 검증 결과 : </span><span>N</span></span>
+                                    <span class="info"><span>오류/처리 내역 : </span><span>검증전</span></span>
+                                    <span class="info"><span>동의서 발행번호 : </span><span>2026300434</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>-</span></span>
+                                    <span class="tit"><span>동의 방법 : </span><span>출력물(서면)</span></span>
+                                    <span class="info"><span>동의서 제출일 : </span><span>대기중</span></span>
+                                    <span class="info"><span>연락금지 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>등록일 : </span><span>대기중(ARS 대기)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>김하나</span> / <span>Y</span></span>
+                                    <!-- <span class="info"><span>승인 : </span><span>Y</span></span> -->
+                                    <span class="info"><span>주민번호 검증 결과 : </span><span>N</span></span>
+                                    <span class="info"><span>오류/처리 내역 : </span><span>검증전</span></span>
+                                    <span class="info"><span>동의서 발행번호 : </span><span>2026300434</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="tit"><span>동의 방법 : </span><span>알림톡</span></span>
+                                    <span class="info"><span>등록일 : </span><span>-</span></span>
+                                    <span class="info"><span>연락금지 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>등록일 : </span><span>2026.11.11</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>조하나(880123,여)</span> / <span>Y</span></span>
+                                    <!-- <span class="info"><span>승인 : </span><span>Y</span></span> -->
+                                    <span class="info"><span>주민번호 검증 결과 : </span><span>N</span></span>
+                                    <span class="info"><span>오류/처리 내역 : </span><span>관리자문의(정보없음)</span></span>
+                                    <span class="info"><span>동의서 발행번호 : </span><span>2026300434</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>-</span></span>
+                                    <span class="tit"><span>동의 방법 : </span><span>출력물(서면)</span></span>
+                                    <span class="info"><span>등록일 : </span><span>2026.11.11</span></span>
+                                    <span class="info"><span>연락금지 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>등록일 : </span><span>2026.11.11</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>김하나</span> / <span>N</span></span>
+                                    <!-- <span class="info"><span>승인 : </span><span>N</span></span> -->
+                                    <span class="info"><span>주민번호 검증 결과 : </span><span>N</span></span>
+                                    <span class="info"><span>오류/처리 내역 : </span><span>검증전</span></span>
+                                    <span class="info"><span>동의서 발행번호 : </span><span>2026300434</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="tit"><span>동의 방법 : </span><span>알림톡</span></span>
+                                    <span class="info"><span>동의서 제출일 : </span><span>대기중</span></span>
+                                    <span class="info"><span>연락금지 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>등록일 : </span><span>대기중</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>조하나(880123,여)</span> / <span>N</span></span>
+                                    <!-- <span class="info"><span>승인 : </span><span>N</span></span> -->
+                                    <span class="info"><span>주민번호 검증 결과 : </span><span>N</span></span>
+                                    <span class="info"><span>오류/처리 내역 : </span><span>검증전</span></span>
+                                    <span class="info"><span>동의서 발행번호 : </span><span>2026300434</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>-</span></span>
+                                    <span class="tit"><span>동의 방법 : </span><span>출력물(서면)</span></span>
+                                    <span class="info"><span>동의서 제출일 : </span><span>대기중</span></span>
+                                    <span class="info"><span>연락금지 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>등록일 : </span><span>대기중(ARS 대기)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>김하나</span> / <span>N</span></span>
+                                    <!-- <span class="info"><span>승인 : </span><span>N</span></span> -->
+                                    <span class="info"><span>주민번호 검증 결과 : </span><span>N</span></span>
+                                    <span class="info"><span>오류/처리 내역 : </span><span>검증전</span></span>
+                                    <span class="info"><span>동의서 발행번호 : </span><span>2026300434</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>-</span></span>
+                                    <span class="tit"><span>동의 방법 : </span><span>출력물(서면)</span></span>
+                                    <span class="info"><span>동의서 제출일 : </span><span>대기중</span></span>
+                                    <span class="info"><span>연락금지 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>등록일 : </span><span>대기중(ARS 대기)</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>김하나</span> / <span>Y</span></span>
+                                    <!-- <span class="info"><span>승인 : </span><span>Y</span></span> -->
+                                    <span class="info"><span>주민번호 검증 결과 : </span><span>N</span></span>
+                                    <span class="info"><span>오류/처리 내역 : </span><span>검증전</span></span>
+                                    <span class="info"><span>동의서 발행번호 : </span><span>2026300434</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>010-1234-5678</span></span>
+                                    <span class="tit"><span>동의 방법 : </span><span>알림톡</span></span>
+                                    <span class="info"><span>등록일 : </span><span>-</span></span>
+                                    <span class="info"><span>연락금지 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>등록일 : </span><span>2026.11.11</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>조하나(880123,여)</span> / <span>Y</span></span>
+                                    <!-- <span class="info"><span>승인 : </span><span>Y</span></span> -->
+                                    <span class="info"><span>주민번호 검증 결과 : </span><span>N</span></span>
+                                    <span class="info"><span>오류/처리 내역 : </span><span>관리자문의(정보없음)</span></span>
+                                    <span class="info"><span>동의서 발행번호 : </span><span>2026300434</span></span>
+                                    <span class="info"><span>휴대폰번호 : </span><span>-</span></span>
+                                    <span class="tit"><span>동의 방법 : </span><span>출력물(서면)</span></span>
+                                    <span class="info"><span>등록일 : </span><span>2026.11.11</span></span>
+                                    <span class="info"><span>연락금지 설정 여부 : </span><span>N</span></span>
+                                    <span class="info"><span>등록일 : </span><span>2026.11.11</span></span>
+                                </div>
+                            </div>
+                            <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+                                <button type="button" class="icoBtn_first" aria-label="처음"></button>
+                                <button type="button" class="icoBtn_prev" aria-label="이전"></button>
+                                <ul>
+                                    <li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+                                    <li><a href="#"><span class="blind">페이지</span>2</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>3</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>4</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>5</a></li>
+                                </ul>
+                                <button type="button" class="icoBtn_next" aria-label="다음"></button>
+                                <button type="button" class="icoBtn_last" aria-label="마지막"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [REQ-CH-026] 실효임박 -->
+                    <div class="flow-box menu-box" id="menu-REQ-CH-026-step2" data-menu="REQ-CH-026" data-step="2">
+                        <div class="flow-content">
+                            <!-- 2026.11.02 -->
+                            <div class="q-box">이번 달 실효 예정 계약을 조회해 드립니다.</div><!-- 2026.11.17 -->
+                            <!-- //2026.11.02 -->
+                            <!-- 2026.11.04 -->
+                            <div class="iptWrap search active_searchBtn">
+                                <input type="text" class="ipt search active_searchBtn uiAct" placeholder="고객명" title="고객명 검색">
+                                <button type="button" class="icoBtn_search" aria-label="검색"></button>
+                                <button class="icoBtn_del" tabindex="-1"><span class="blind">해당 필드 입력값 삭제</span></button>
+                            </div>
+                            <!-- //2026.11.04 -->
+                            <div class="list-btn">
+                                <div class="btn-label">
+                                    <span class="tit"><span>계약자명(증권번호) : </span><span>이하나(11111134)</span></span>
+                                    <span class="info"><span>모집인 : </span><span>임하나(G7273433)</span></span>
+                                    <span class="info"><span>수금 방법 : </span><span>자동이체</span></span><!-- 2026.11.17 -->
+                                    <span class="info"><span>계약일자 : </span><span>2026.08.11</span></span>
+                                    <span class="info"><span>상품명 : </span><span>(무)하나로 THE 연결된 변액연금보험2</span></span>
+                                    <span class="info"><span>보험료 : </span><span>1600000</span></span>
+                                    <span class="tit"><span>직전 납입일 : </span><span>2026.08.31</span></span><!-- 2026.11.17 -->
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>계약자명(증권번호) : </span><span>이하나(11111134)</span></span>
+                                    <span class="info"><span>모집인 : </span><span>임하나(G7273433)</span></span>
+                                    <span class="info"><span>상품명 : </span><span>(무)하나로 THE 연결된 변액연금보험2</span></span>
+                                    <span class="info"><span>계약일자 : </span><span>2026.08.11</span></span>
+                                    <span class="info"><span>보험료 : </span><span>1600000</span></span>
+                                    <span class="info"><span>수금 방법 : </span><span>자동이체</span></span>
+                                    <span class="tit"><span>직전 납입일 : </span><span>2026.08.31</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>계약자명(증권번호) : </span><span>이하나(11111134)</span></span>
+                                    <span class="info"><span>모집인 : </span><span>임하나(G7273433)</span></span>
+                                    <span class="info"><span>상품명 : </span><span>(무)하나로 THE 연결된 변액연금보험2</span></span>
+                                    <span class="info"><span>계약일자 : </span><span>2026.08.11</span></span>
+                                    <span class="info"><span>보험료 : </span><span>1600000</span></span>
+                                    <span class="info"><span>수금 방법 : </span><span>자동이체</span></span>
+                                    <span class="tit"><span>직전 납입일 : </span><span>2026.08.31</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>계약자명(증권번호) : </span><span>이하나(11111134)</span></span>
+                                    <span class="info"><span>모집인 : </span><span>임하나(G7273433)</span></span>
+                                    <span class="info"><span>상품명 : </span><span>(무)하나로 THE 연결된 변액연금보험2</span></span>
+                                    <span class="info"><span>계약일자 : </span><span>2026.08.11</span></span>
+                                    <span class="info"><span>보험료 : </span><span>1600000</span></span>
+                                    <span class="info"><span>수금 방법 : </span><span>자동이체</span></span>
+                                    <span class="tit"><span>직전 납입일 : </span><span>2026.08.31</span></span>
+                                </div>
+                                <div class="btn-label">
+                                    <span class="tit"><span>계약자명(증권번호) : </span><span>이하나(11111134)</span></span>
+                                    <span class="info"><span>모집인 : </span><span>임하나(G7273433)</span></span>
+                                    <span class="info"><span>상품명 : </span><span>(무)하나로 THE 연결된 변액연금보험2</span></span>
+                                    <span class="info"><span>계약일자 : </span><span>2026.08.11</span></span>
+                                    <span class="info"><span>보험료 : </span><span>1600000</span></span>
+                                    <span class="info"><span>수금 방법 : </span><span>자동이체</span></span>
+                                    <span class="tit"><span>직전 납입일 : </span><span>2026.08.31</span></span>
+                                </div>
+                            </div>
+                            <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+                                <button type="button" class="icoBtn_first" aria-label="처음"></button>
+                                <button type="button" class="icoBtn_prev" aria-label="이전"></button>
+                                <ul>
+                                    <li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+                                    <li><a href="#"><span class="blind">페이지</span>2</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>3</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>4</a></li>
+                                    <li><a href="#"><span class="blind">페이지</span>5</a></li>
+                                </ul>
+                                <button type="button" class="icoBtn_next" aria-label="다음"></button>
+                                <button type="button" class="icoBtn_last" aria-label="마지막"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [REQ-CH-031] 활동관리 조회/입력 -->
+                    <div class="flow-box menu-box" id="menu-REQ-CH-031-step2" data-menu="REQ-CH-031" data-step="2">
+                        <div class="flow-content">
+                            <div class="q-box">
+                                활동관리 내역을 조회해 드립니다.<br>
+                                최근 1개월 활동을 확인하실 수 있습니다.<br>
+                                <strong class="bold">이름 / 사번</strong>을 누르시면 자세한 내용을 확인하실 수 있습니다.
+                            </div>
+                            <div>
+                                <div class="list-btn">
+                                    <div class="btn-label">
+                                        <span class="tit"><span>이하나(G1111134)</span></span>
+                                        <span class="info"><span>활동지점 : </span><span>KMI에셋,송파</span></span>
+                                        <span class="info"><span>활동목표 : </span><span>미팅</span></span>
+                                        <span class="info"><span>활동일정 : </span><span>2026.08.11 08:01 ~ 08:13</span></span>
+                                    </div>
+                                    <div class="btn-label">
+                                        <span class="tit"><span>이하나(G1111134)</span></span>
+                                        <span class="info"><span>활동지점 : </span><span>KMI에셋,송파</span></span>
+                                        <span class="info"><span>활동목표 : </span><span>미팅</span></span>
+                                        <span class="info"><span>활동일정 : </span><span>2026.08.11 08:01 ~ 08:13</span></span>
+                                    </div>
+                                    <div class="btn-label">
+                                        <span class="tit"><span>이하나(G1111134)</span></span>
+                                        <span class="info"><span>활동지점 : </span><span>KMI에셋,송파</span></span>
+                                        <span class="info"><span>활동목표 : </span><span>미팅</span></span>
+                                        <span class="info"><span>활동일정 : </span><span>2026.08.11 08:01 ~ 08:13</span></span>
+                                    </div>
+                                    <div class="btn-label">
+                                        <span class="tit"><span>이하나(G1111134)</span></span>
+                                        <span class="info"><span>활동지점 : </span><span>KMI에셋,송파</span></span>
+                                        <span class="info"><span>활동목표 : </span><span>미팅</span></span>
+                                        <span class="info"><span>활동일정 : </span><span>2026.08.11 08:01 ~ 08:13</span></span>
+                                    </div>
+                                    <div class="btn-label">
+                                        <span class="tit"><span>이하나(G1111134)</span></span>
+                                        <span class="info"><span>활동지점 : </span><span>KMI에셋,송파</span></span>
+                                        <span class="info"><span>활동목표 : </span><span>미팅</span></span>
+                                        <span class="info"><span>활동일정 : </span><span>2026.08.11 08:01 ~ 08:13</span></span>
+                                    </div>
+                                    <div class="btn-label">
+                                        <span class="tit"><span>이하나(G1111134)</span></span>
+                                        <span class="info"><span>활동지점 : </span><span>KMI에셋,송파</span></span>
+                                        <span class="info"><span>활동목표 : </span><span>미팅</span></span>
+                                        <span class="info"><span>활동일정 : </span><span>2026.08.11 08:01 ~ 08:13</span></span>
+                                    </div>
+                                    <div class="btn-label">
+                                        <span class="tit"><span>이하나(G1111134)</span></span>
+                                        <span class="info"><span>활동지점 : </span><span>KMI에셋,송파</span></span>
+                                        <span class="info"><span>활동목표 : </span><span>미팅</span></span>
+                                        <span class="info"><span>활동일정 : </span><span>2026.08.11 08:01 ~ 08:13</span></span>
+                                    </div>
+                                    <div class="btn-label">
+                                        <span class="tit"><span>이하나(G1111134)</span></span>
+                                        <span class="info"><span>활동지점 : </span><span>KMI에셋,송파</span></span>
+                                        <span class="info"><span>활동목표 : </span><span>미팅</span></span>
+                                        <span class="info"><span>활동일정 : </span><span>2026.08.11 08:01 ~ 08:13</span></span>
+                                    </div>
+                                    <div class="btn-label">
+                                        <span class="tit"><span>이하나(G1111134)</span></span>
+                                        <span class="info"><span>활동지점 : </span><span>KMI에셋,송파</span></span>
+                                        <span class="info"><span>활동목표 : </span><span>미팅</span></span>
+                                        <span class="info"><span>활동일정 : </span><span>2026.08.11 08:01 ~ 08:13</span></span>
+                                    </div>
+                                    <div class="btn-label">
+                                        <span class="tit"><span>이하나(G1111134)</span></span>
+                                        <span class="info"><span>활동지점 : </span><span>KMI에셋,송파</span></span>
+                                        <span class="info"><span>활동목표 : </span><span>미팅</span></span>
+                                        <span class="info"><span>활동일정 : </span><span>2026.08.11 08:01 ~ 08:13</span></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+                                    <button type="button" class="icoBtn_first" aria-label="처음"></button>
+                                    <button type="button" class="icoBtn_prev" aria-label="이전"></button>
+                                    <ul>
+                                        <li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+                                        <li><a href="#"><span class="blind">페이지</span>2</a></li>
+                                        <li><a href="#"><span class="blind">페이지</span>3</a></li>
+                                        <li><a href="#"><span class="blind">페이지</span>4</a></li>
+                                        <li><a href="#"><span class="blind">페이지</span>5</a></li>
+                                    </ul>
+                                    <button type="button" class="icoBtn_next" aria-label="다음"></button>
+                                    <button type="button" class="icoBtn_last" aria-label="마지막"></button>
+                                </div>
+                                
+                                <!-- 검색결과 없을 경우 2026.11.04 -->
+                                <div class="noData">검색 결과가 없습니다.</div><!-- 2026.11.17 -->
+                                <!-- //검색결과 없을 경우 2026.11.04 -->
+                            </div>
+                        </div>
+                        <!-- 지점장일때만 노출 -->
+                        <div class="btn-area action-btn">
+                            <button type="button" class="btn_white l btn-prev">이전</button>
+                            <button type="button" class="btn_primary l btn-next">등록</button>
+                        </div>
+                        <!-- 지점장일때만 노출 -->
+                    </div>
+                    <div class="flow-box menu-box" id="menu-REQ-CH-031-step3" data-menu="REQ-CH-031" data-step="3">
+                        <div class="flow-content">
+                            <div class="q-box">
+                                지점을 검색해 주세요.
+                            </div>
+                            <div>
+                                <div class="search-item">
+                                    <select class="ipt">
+                                        <option>이름</option>
+                                        <option>코드</option>
+                                    </select>
+                                    <div class="iptWrap search active_searchBtn">
+                                        <input type="text" class="ipt search active_searchBtn uiAct" placeholder="2자 이상 입력"
+                                        title="지점 검색">
+                                        <button type="button" class="icoBtn_search" aria-label="검색"></button>
+                                        <button class="icoBtn_del" tabindex="-1"><span class="blind">해당 필드 입력값 삭제</span></button>
+                                    </div>
+                                </div>
+                                <div class="sort_wrap">
+                                    <div class="sort">
+                                        <ul class="count">
+                                            <li>총 <span class="count_num count_num_accent">1,000</span>건</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="tabl_area">
+                                    <table>
+                                        <caption>지점 테이블</caption>
+                                        <colgroup>
+                                            <col style="width: 50%;">
+                                            <col style="width: auto;">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">대리점</th>
+                                                <th scope="col">지점</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>지에스코리아</td>
+                                                <td><a href="#" title="지점명" class="links btn-next">부천</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>에즈금융서비스</td>
+                                                <td><a href="#" title="지점명" class="links btn-next">부천북부</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>인카서비스</td>
+                                                <td><a href="#" title="지점명" class="links btn-next">부천평화</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>글로벌금융</td>
+                                                <td><a href="#" title="지점명" class="links btn-next">부천굿라이프</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>에이티에셋</td>
+                                                <td><a href="#" title="지점명" class="links btn-next">부천사업단</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>지에스코리아</td>
+                                                <td><a href="#" title="지점명" class="links btn-next">부천</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>에즈금융서비스</td>
+                                                <td><a href="#" title="지점명" class="links btn-next">부천북부</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>인카서비스</td>
+                                                <td><a href="#" title="지점명" class="links btn-next">부천평화</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>글로벌금융</td>
+                                                <td><a href="#" title="지점명" class="links btn-next">부천굿라이프</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>에이티에셋</td>
+                                                <td><a href="#" title="지점명" class="links btn-next">부천사업단</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+                                    <button type="button" class="icoBtn_first" aria-label="처음"></button>
+                                    <button type="button" class="icoBtn_prev" aria-label="이전"></button>
+                                    <ul>
+                                        <li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+                                        <li><a href="#"><span class="blind">페이지</span>2</a></li>
+                                        <li><a href="#"><span class="blind">페이지</span>3</a></li>
+                                        <li><a href="#"><span class="blind">페이지</span>4</a></li>
+                                        <li><a href="#"><span class="blind">페이지</span>5</a></li>
+                                    </ul>
+                                    <button type="button" class="icoBtn_next" aria-label="다음"></button>
+                                    <button type="button" class="icoBtn_last" aria-label="마지막"></button>
+                                </div>
+                                
+                                <!-- 검색결과 없을 경우 2026.11.04 -->
+                                <div class="noData">검색 결과가 없습니다.</div>
+                                <!-- //검색결과 없을 경우 2026.11.04 -->
+                            </div>
+                        </div>
+                        <div class="btn-area action-btn">
+                            <button type="button" class="btn_white l btn-prev">이전</button>
+                        </div>
+                    </div>
+                    <div class="flow-box menu-box" id="menu-REQ-CH-031-step4" data-menu="REQ-CH-031" data-step="4">
+                        <div class="flow-content">
+                            <div class="q-box">
+                                활동 내용을 등록해 주세요.
+                            </div>
+                            <div>
+                                <ul class="formList">
+                                    <li>
+                                        <div class="th">활동 구분</div>
+                                        <div class="td">
+                                            <ul class="iptFilt paT" name="gaDv">
+                                                <li>
+                                                    <input type="radio" class="ipt" name="gaActDv" id="actDv6"
+                                                        value="11" data-updact>
+                                                    <label for="actDv6">미팅</label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" class="ipt" name="gaActDv" id="actDv7"
+                                                        value="12" data-updact>
+                                                    <label for="actDv7">교육</label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" class="ipt" name="gaActDv" id="actDv8"
+                                                        value="13" data-updact>
+                                                    <label for="actDv8">기타</label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="th">지점 검색</div>
+                                        <div class="td">
+                                            <div class="iptWrap full">
+                                                <input type="text" class="ipt search" placeholder="검색어를 입력해 주세요" value="하나">
+                                                <button type="button" class="icoBtn_search btn-prev"></button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li name="actDvEtc">
+                                        <div class="th">약속 일자</div>
+                                        <div class="td">
+                                            <input type="tel" class="ipt date full" value="" id="gaActDt" maxlength="10" data-updact>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="th">약속 장소</div>
+                                        <div class="td">
+                                            <input type="text" class="ipt full" id="gaActPl" placeholder="예: 을지로입구 " maxlength="100" data-updact>
+                                        </div>
+                                    </li>
+                                    <li name="actDvEtc">
+                                        <div class="th">약속 시간</div>
+                                        <div class="td">
+                                            <select class="ipt" id="gaActHH" style="width: 175px;" data-updact>
+                                                <option>08시</option>
+                                                <option>09시</option>
+                                                <option>10시</option>
+                                            </select>
+                                            <select class="ipt" id="gaActMM" style="width: 175px;" data-updact>
+                                                <option>00분</option>
+                                                <option>10분</option>
+                                                <option>20분</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li id="actDvBtDt">
+                                        <div class="th">출장 일정</div>
+                                        <div class="td" id="actBtPeriod">
+                                            <div class="setHalf">
+                                                <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="actBtDt" data-updact>
+                                                <span class="sign">~</span>
+                                                <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="actBtEdDt" data-updact>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="th">메모</div>
+                                        <div class="td">
+                                            <div class="iptWrap full">
+                                                <textarea class="ipt" placeholder="내용을 입력해 주세요. (최대 200자)"></textarea>
+                                                <p class="byteTxt"><span class="num">0</span> / <span>200</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn-area action-btn">
+                            <button type="button" class="btn_white l btn-prev">이전</button>
+                            <button type="button" class="btn_primary l btn-next">등록</button>
+                        </div>
+                    </div>
+                    <div class="flow-box menu-box" id="menu-REQ-CH-031-step5" data-menu="REQ-CH-031" data-step="5">
+                        <div class="flow-content">
+                            <div class="q-box">활동 등록이 완료되었습니다.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 우측 AI 챗봇 영역 -->
+                <div class="chat-live collapsed" id="chatLive">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message received">안녕하세요! 무엇을 도와드릴까요?</div>
+                    </div>
+
+                    <div class="chat-input-area">
+                        <input type="text" id="messageInput" placeholder="메시지를 입력하세요..."
+                            onkeypress="handleKeyPress(event)" title="메시지 입력 필드">
+                        <button type="button" onclick="sendMessage()" aria-label="메시지 전송" class="btn-send">전송</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const branch = document.getElementById('btnBranch');
+            const support = document.getElementById('btnSupport');
+
+
+            // 팝업 오픈 공통 함수
+            function openChatPopup(popupUrl) {
+                const popupName = '_blank';
+
+                // 1. 기본 너비를 80%로 계산하되, 최대 1000px 제한
+                const calculatedWidth = Math.floor(window.screen.availWidth * 0.8);
+                const width = Math.min(calculatedWidth, 1200);
+
+                // 2. 높이 계산 (80%)
+                const height = Math.floor(window.screen.availHeight * 0.8);
+
+                // 3. 중앙 정렬 위치 계산
+                const left = Math.floor((window.screen.availWidth - width) / 2);
+                const top = Math.floor((window.screen.availHeight - height) / 2);
+
+                const popupFeatures = `width=${width},height=${height},left=${left},top=${top}`;
+
+                window.open(popupUrl, popupName, popupFeatures);
+            }
+
+            // btn_chat01 클릭 시
+            if (branch) {
+                branch.addEventListener('click', function () {
+                    openChatPopup('../comm/branch.html');
+                });
+            }
+            if (support) {
+                support.addEventListener('click', function () {
+                    openChatPopup('../comm/support.html');
+                });
+            }
+
+        });
+    </script>
+</body>
+
+</html>

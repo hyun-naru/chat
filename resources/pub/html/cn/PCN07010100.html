@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section manager">
+    <h1 class="tit01">계약 서류 재발송</h1>
+    <ul class="formList div3">
+        <li>
+            <div class="th">채널</div>
+            <div class="td">
+                <select class="ipt">
+                    <option selected="">전체</option>
+                </select>
+            </div>
+        </li>
+        <li>
+            <div class="th">본부</div>
+            <div class="td">
+                <select class="ipt">
+                    <option selected="">전체</option>
+                </select>
+            </div>
+        </li>
+        <li>
+        <div class="th">지점</div>
+            <div class="td">
+                <select class="ipt">
+                    <option selected="">전체</option>
+                </select>
+            </div>
+        </li>
+        <li class="oneThirdDiv">
+            <div class="th">팀</div>
+            <div class="td">
+                <select class="ipt">
+                    <option selected="">전체</option>
+                </select>
+            </div>
+        </li>
+        <li class="twoThirdsDiv">
+            <div class="th">판매인</div>
+            <div class="td">
+                <select class="ipt mid">
+                    <option selected="">전체</option>
+                </select>
+            </div>
+        </li>
+        <li class="oneThirdDiv">
+            <div class="th">고객명</div>
+            <div class="td">
+                <input type="text" class="ipt"  placeholder="예: 김하나">
+            </div>
+        </li>
+        <li class="twoThirdsDiv">
+            <div class="th">증권번호</div>
+            <div class="td">
+                <input type="text" class="ipt"  placeholder="">
+            </div>
+        </li>
+    </ul>
+    <div class="btn_wrap">
+        <button type="button" class="btn_white">초기화</button>
+        <button type="button" class="btn_primary">조회</button>
+    </div>
+
+
+    <div class="sort_wrap">
+        <div class="sort">
+            <ul class="count">
+                <li>총 <span class="count_num count_num_accent">106</span>건</li>
+                <li><span class="count_num count_num_accent">1</span>/100페이지</li>
+            </ul>
+        </div>
+    </div>
+    <!-- <div class="tabl_area" data-tbody="695"> -->  <!-- PC size // 5개 노출  -->
+    <div class="tabl_area" data-tbody="590">  <!-- tablet size // 5개 노출  -->
+        <table>
+            <colgroup>
+                <col style="width:10%;">
+                <col style="width:11%;">
+                <col style="width:11%;">
+                <col style="width:15%;">
+                <col style="width:auto">
+                <col style="width: 8%;">
+            </colgroup>
+            <thead>
+                <tr>
+                <th><span>증권번호</span></th>
+                <th><span>고객명<br>(생년월일)</span></th>
+                <th><span>피보험자<br>(생년월일)</span></th>
+                <th><span>휴대전화</span></th>
+                <th colspan="2"><span>계약정보</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span>01234567</span></td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span>010-****-5243</span>
+                    </td>
+                    <td class="tlL">
+                        <p><span class="flag purple mr5">정상유지</span><a href=""  class="links">(무)걱정말아요 암보험Ⅱ(갱신형)</a></p>
+                        <ul class="sdlist_info">
+                            <li>
+                                <strong>계약일</strong><span>YYYY.MM.DD</span>
+                            </li>
+                            <li>
+                                <strong>판매인</strong>홍길동(<span>01234567</span>)
+                            </li>
+                            <li>
+                                <strong>보험료</strong><span>000,000,000</span>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="campaignInfo tlL">
+                        <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+                        <div class="campaignLink_wrap">
+                            <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+                            <a href="#" class="campaignLink">청약서류 재발송</a>
+                            <a href="#" class="campaignLink">가입설계 재발송</a>
+                            <a href="#" class="campaignLink">가입설계서 출력</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>01234567</span></td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span>010-****-5243</span>
+                    </td>
+                    <td class="tlL">
+                        <p><span class="flag purple mr5">정상유지</span><a href=""  class="links">(무)걱정말아요 암보험Ⅱ(갱신형)</a></p>
+                        <ul class="sdlist_info">
+                            <li>
+                                <strong>계약일</strong><span>YYYY.MM.DD</span>
+                            </li>
+                            <li>
+                                <strong>판매인</strong>홍길동(<span>01234567</span>)
+                            </li>
+                            <li>
+                                <strong>보험료</strong><span>000,000,000</span>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="campaignInfo tlL">
+                        <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+                        <div class="campaignLink_wrap">
+                            <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+                            <a href="#" class="campaignLink">청약서류 재발송</a>
+                            <a href="#" class="campaignLink">가입설계 재발송</a>
+                            <a href="#" class="campaignLink">가입설계서 출력</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>01234567</span></td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span>010-****-5243</span>
+                    </td>
+                    <td class="tlL">
+                        <p><span class="flag purple mr5">정상유지</span><a href=""  class="links">(무)걱정말아요 암보험Ⅱ(갱신형)</a></p>
+                        <ul class="sdlist_info">
+                            <li>
+                                <strong>계약일</strong><span>YYYY.MM.DD</span>
+                            </li>
+                            <li>
+                                <strong>판매인</strong>홍길동(<span>01234567</span>)
+                            </li>
+                            <li>
+                                <strong>보험료</strong><span>000,000,000</span>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="campaignInfo tlL">
+                        <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+                        <div class="campaignLink_wrap">
+                            <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+                            <a href="#" class="campaignLink">청약서류 재발송</a>
+                            <a href="#" class="campaignLink">가입설계 재발송</a>
+                            <a href="#" class="campaignLink">가입설계서 출력</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>01234567</span></td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span>010-****-5243</span>
+                    </td>
+                    <td class="tlL">
+                        <p><span class="flag purple mr5">정상유지</span><a href=""  class="links">(무)걱정말아요 암보험Ⅱ(갱신형)</a></p>
+                        <ul class="sdlist_info">
+                            <li>
+                                <strong>계약일</strong><span>YYYY.MM.DD</span>
+                            </li>
+                            <li>
+                                <strong>판매인</strong>홍길동(<span>01234567</span>)
+                            </li>
+                            <li>
+                                <strong>보험료</strong><span>000,000,000</span>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="campaignInfo tlL">
+                        <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+                        <div class="campaignLink_wrap">
+                            <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+                            <a href="#" class="campaignLink">청약서류 재발송</a>
+                            <a href="#" class="campaignLink">가입설계 재발송</a>
+                            <a href="#" class="campaignLink">가입설계서 출력</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>01234567</span></td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span>010-****-5243</span>
+                    </td>
+                    <td class="tlL">
+                        <p><span class="flag purple mr5">정상유지</span><a href=""  class="links">(무)걱정말아요 암보험Ⅱ(갱신형)</a></p>
+                        <ul class="sdlist_info">
+                            <li>
+                                <strong>계약일</strong><span>YYYY.MM.DD</span>
+                            </li>
+                            <li>
+                                <strong>판매인</strong>홍길동(<span>01234567</span>)
+                            </li>
+                            <li>
+                                <strong>보험료</strong><span>000,000,000</span>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="campaignInfo tlL">
+                        <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+                        <div class="campaignLink_wrap">
+                            <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+                            <a href="#" class="campaignLink">청약서류 재발송</a>
+                            <a href="#" class="campaignLink">가입설계 재발송</a>
+                            <a href="#" class="campaignLink">가입설계서 출력</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>01234567</span></td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span>010-****-5243</span>
+                    </td>
+                    <td class="tlL">
+                        <p><span class="flag purple mr5">정상유지</span><a href=""  class="links">(무)걱정말아요 암보험Ⅱ(갱신형)</a></p>
+                        <ul class="sdlist_info">
+                            <li>
+                                <strong>계약일</strong><span>YYYY.MM.DD</span>
+                            </li>
+                            <li>
+                                <strong>판매인</strong>홍길동(<span>01234567</span>)
+                            </li>
+                            <li>
+                                <strong>보험료</strong><span>000,000,000</span>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="campaignInfo tlL">
+                        <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+                        <div class="campaignLink_wrap">
+                            <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+                            <a href="#" class="campaignLink">청약서류 재발송</a>
+                            <a href="#" class="campaignLink">가입설계 재발송</a>
+                            <a href="#" class="campaignLink">가입설계서 출력</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>01234567</span></td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span>010-****-5243</span>
+                    </td>
+                    <td class="tlL">
+                        <p><span class="flag purple mr5">정상유지</span><a href=""  class="links">(무)걱정말아요 암보험Ⅱ(갱신형)</a></p>
+                        <ul class="sdlist_info">
+                            <li>
+                                <strong>계약일</strong><span>YYYY.MM.DD</span>
+                            </li>
+                            <li>
+                                <strong>판매인</strong>홍길동(<span>01234567</span>)
+                            </li>
+                            <li>
+                                <strong>보험료</strong><span>000,000,000</span>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="campaignInfo tlL">
+                        <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+                        <div class="campaignLink_wrap">
+                            <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+                            <a href="#" class="campaignLink">청약서류 재발송</a>
+                            <a href="#" class="campaignLink">가입설계 재발송</a>
+                            <a href="#" class="campaignLink">가입설계서 출력</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>01234567</span></td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span>010-****-5243</span>
+                    </td>
+                    <td class="tlL">
+                        <p><span class="flag purple mr5">정상유지</span><a href=""  class="links">(무)걱정말아요 암보험Ⅱ(갱신형)</a></p>
+                        <ul class="sdlist_info">
+                            <li>
+                                <strong>계약일</strong><span>YYYY.MM.DD</span>
+                            </li>
+                            <li>
+                                <strong>판매인</strong>홍길동(<span>01234567</span>)
+                            </li>
+                            <li>
+                                <strong>보험료</strong><span>000,000,000</span>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="campaignInfo tlL">
+                        <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+                        <div class="campaignLink_wrap">
+                            <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+                            <a href="#" class="campaignLink">청약서류 재발송</a>
+                            <a href="#" class="campaignLink">가입설계 재발송</a>
+                            <a href="#" class="campaignLink">가입설계서 출력</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>01234567</span></td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span>010-****-5243</span>
+                    </td>
+                    <td class="tlL">
+                        <p><span class="flag purple mr5">정상유지</span><a href=""  class="links">(무)걱정말아요 암보험Ⅱ(갱신형)</a></p>
+                        <ul class="sdlist_info">
+                            <li>
+                                <strong>계약일</strong><span>YYYY.MM.DD</span>
+                            </li>
+                            <li>
+                                <strong>판매인</strong>홍길동(<span>01234567</span>)
+                            </li>
+                            <li>
+                                <strong>보험료</strong><span>000,000,000</span>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="campaignInfo tlL">
+                        <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+                        <div class="campaignLink_wrap">
+                            <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+                            <a href="#" class="campaignLink">청약서류 재발송</a>
+                            <a href="#" class="campaignLink">가입설계 재발송</a>
+                            <a href="#" class="campaignLink">가입설계서 출력</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>01234567</span></td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span><a href="" class="links">김하나</a></span><br>(<span>800101</span>)
+                    </td>
+                    <td>
+                        <span>010-****-5243</span>
+                    </td>
+                    <td class="tlL">
+                        <p><span class="flag purple mr5">정상유지</span><a href=""  class="links">(무)걱정말아요 암보험Ⅱ(갱신형)</a></p>
+                        <ul class="sdlist_info">
+                            <li>
+                                <strong>계약일</strong><span>YYYY.MM.DD</span>
+                            </li>
+                            <li>
+                                <strong>판매인</strong>홍길동(<span>01234567</span>)
+                            </li>
+                            <li>
+                                <strong>보험료</strong><span>000,000,000</span>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="campaignInfo tlL">
+                        <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+                        <div class="campaignLink_wrap">
+                            <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+                            <a href="#" class="campaignLink">청약서류 재발송</a>
+                            <a href="#" class="campaignLink">가입설계 재발송</a>
+                            <a href="#" class="campaignLink">가입설계서 출력</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!--// 조회 테이블 (e)-->
+        <!-- No Result (s) -->
+        <div class="noresultWrap">
+            <img src="./resources/pt/images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+        <div class="noresultText">조회 결과가 없습니다.</div>
+        </div>
+        <!--// No Result (e) -->
+  </div>
+
+  <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+		<button type="button" class="icoBtn_first" aria-label="처음"></button>
+		<button type="button" class="icoBtn_prev" aria-label="이전"></button>
+		<ul>
+			<li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+			<li><a href="#"><span class="blind">페이지</span>2</a></li>
+			<li><a href="#"><span class="blind">페이지</span>3</a></li>
+			<li><a href="#"><span class="blind">페이지</span>4</a></li>
+			<li><a href="#"><span class="blind">페이지</span>5</a></li>
+			<li><a href="#"><span class="blind">페이지</span>6</a></li>
+			<li><a href="#"><span class="blind">페이지</span>7</a></li>
+			<li><a href="#"><span class="blind">페이지</span>8</a></li>
+			<li><a href="#"><span class="blind">페이지</span>9</a></li>
+			<li><a href="#"><span class="blind">페이지</span>10</a></li>
+		</ul>
+		<button type="button" class="icoBtn_next" aria-label="다음"></button>
+		<button type="button" class="icoBtn_last" aria-label="마지막"></button>
+	</div>
+
+
+
+</div>
+
+
+
+
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+    </div><!-- container (e) -->
+    <div class="footer"></div>
+  </div>
+</body>
+
+</html>

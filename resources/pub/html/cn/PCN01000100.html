@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+    <div class="section">
+      <h1>계약조회</h1>
+      <ul class="formList div3">
+        <li>
+          <div class="th">채널</div>
+          <div class="td">
+            <select class="ipt">
+              <option selected="">H/B</option>
+            </select>
+          </div>
+        </li>
+        <li>
+          <div class="th">본부</div>
+          <div class="td">
+            <select class="ipt">
+              <option selected="">전체</option>
+            </select>
+          </div>
+        </li>
+        <li>
+          <div class="th">지점</div>
+          <div class="td">
+            <select class="ipt">
+              <option selected="">전체</option>
+            </select>
+          </div>
+        </li>
+        <li class="oneThirdDiv">
+          <div class="th">팀</div>
+          <div class="td">
+            <select class="ipt">
+              <option selected="">전체</option>
+            </select>
+          </div>
+        </li>
+        <li class="twoThirdsDiv">
+          <div class="th">수금인</div>
+          <div class="td">
+            <select class="ipt mid">
+              <option selected="">전체</option>
+            </select>
+          </div>
+        </li>
+        <li>
+          <div class="th">증권번호</div>
+          <div class="td">
+            <input type="text" class="ipt"  placeholder="">
+          </div>
+        </li>
+        <li>
+          <div class="th">고객구분</div>
+          <div class="td">
+            <ul class="iptGroup">
+              <li>
+                <input type="radio" class="ipt" name="rdo2" id="rdo2_1" checked="">
+                <label for="rdo2_1">개인</label>
+              </li>
+              <li>
+                <input type="radio" class="ipt" name="rdo2" id="rdo2_2">
+                <label for="rdo2_2">법인</label>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="th">고객명</div>
+          <div class="td">
+            <input type="text" class="ipt"  placeholder="예: 김하나">
+          </div>
+        </li>
+      </ul>
+      <div class="btn_wrap">
+        <button type="button" class="btn_white">초기화</button>
+        <button type="button" class="btn_primary">조회</button>
+      </div>
+
+
+      <div class="sort_wrap">
+        <div class="sort">
+          <ul class="count">
+            <li>총 <span class="count_num count_num_accent">106</span>건</li>
+            <li><span class="count_num count_num_accent">1</span>/100페이지</li>
+          </ul>
+        </div>
+      </div>
+      <!-- <div class="tabl_area" data-tbody="695"> -->  <!-- PC size // 5개 노출  -->
+      <div class="tabl_area" data-tbody="590">  <!-- tablet size // 5개 노출  -->
+        <table>
+          <colgroup>
+            <col style="width:12%;">
+            <col style="width:20%;">
+            <col style="width:auto">
+            <col style="width: 8%;"><!-- 230511 -->
+          </colgroup>
+          <thead>
+            <tr>
+              <th><span>증권번호</span></th>
+              <th><span>고객명(법인명)<br>생년월일(사업자번호)</span></th>
+              <th colspan="2"><span>계약정보</span></th><!-- 230511 -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span>01234567</span></td>
+              <td>
+                <p><a href="" class="links">하나주식회사</a></p>
+                <p><span>800-00-00000</span></p>
+              </td>
+              <td class="tlL">
+                <p><span class="flag purple mr5">정상유지</span><a href=""  class="links">(무)걱정말아요 암보험Ⅱ(갱신형)</a></p>
+                <!-- 230524 -->
+                <ul class="sdlist_info">
+                  <li>
+                    증권번호 : <span class="number">12345678</span>
+                  </li>
+                  <li>
+                    가입금액 : <span class="number">165,700</span>원
+                  </li>
+                  <li>
+                    합계보험료 : <span class="number">165,700</span>원
+                  </li>
+                  <li>
+                    환산P : <span class="number">110,700</span>원
+                  </li>
+                </ul>
+                <ul class="sdlist_info">
+                  <li>
+                    판매인 : 하나하나하나대리점 > 하나하나본부 > 하나하나지점</span> <span>홍길동(123456A)</span>
+                  </li>
+                </ul>
+                <!-- //230524 -->
+              </td>
+              <!-- 230511 -->
+              <td class="campaignInfo tlL">
+                <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+                <!-- campaignLink_open 클릭시, .campaignLink_wrap에 .active 추가하면 popup 뜸 -->
+                <div class="campaignLink_wrap">
+                  <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+                  <a href="#" class="campaignLink">요약보기</a>
+                  <a href="#" class="campaignLink">증권 재발행</a><!-- 230518 -->
+                </div>
+              </td>
+              <!-- //230511 -->
+            </tr>
+            <tr>
+              <td><span>01234567</span></td>
+              <td>
+                <p><a href="" class="links">김하나</a></p>
+                <p><span>800101</span>(여자)</p>
+              </td>
+              <td class="tlL">
+                <p><span class="flag purple mr5">정상유지</span><a href=""  class="links">(무)걱정말아요 암보험Ⅱ(갱신형)</a></p>
+                <!-- 230524 -->
+                <ul class="sdlist_info">
+                  <li>
+                    증권번호 : <span class="number">12345678</span>
+                  </li>
+                  <li>
+                    가입금액 : <span class="number">165,700</span>원
+                  </li>
+                  <li>
+                    합계보험료 : <span class="number">165,700</span>원
+                  </li>
+                  <li>
+                    환산P : <span class="number">110,700</span>원
+                  </li>
+                </ul>
+                <ul class="sdlist_info">
+                  <li>
+                    판매인 : 하나하나하나대리점 > 하나하나본부 > 하나하나지점</span> <span>홍길동(123456A)</span>
+                  </li>
+                </ul>
+                <!-- //230524 -->
+              </td>
+              <!-- 230511 -->
+              <td class="campaignInfo tlL">
+                <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+                <!-- campaignLink_open 클릭시, .campaignLink_wrap에 .active 추가하면 popup 뜸 -->
+                <div class="campaignLink_wrap">
+                  <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+                  <a href="#" class="campaignLink">요약보기</a>
+                  <a href="#" class="campaignLink">증권 재발행</a><!-- 230518 -->
+                </div>
+              </td>
+              <!-- //230511 -->
+            </tr>
+            <tr>
+              <td><span>01234567</span></td>
+              <td>
+                <p><a href="" class="links">김하나</a></p>
+                <p><span>800101</span>(여자)</p>
+              </td>
+              <td class="tlL">
+                <p><span class="flag purple mr5">정상유지</span><a href=""  class="links">(무)걱정말아요 암보험Ⅱ(갱신형)</a></p>
+                <!-- 230524 -->
+                <ul class="sdlist_info">
+                  <li>
+                    증권번호 : <span class="number">12345678</span>
+                  </li>
+                  <li>
+                    가입금액 : <span class="number">165,700</span>원
+                  </li>
+                  <li>
+                    합계보험료 : <span class="number">165,700</span>원
+                  </li>
+                  <li>
+                    환산P : <span class="number">110,700</span>원
+                  </li>
+                </ul>
+                <ul class="sdlist_info">
+                  <li>
+                    판매인 : 하나하나하나대리점 > 하나하나본부 > 하나하나지점</span> <span>홍길동(123456A)</span>
+                  </li>
+                </ul>
+                <!-- //230524 -->
+              </td>
+              <!-- 230511 -->
+              <td class="campaignInfo tlL">
+                <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+                <!-- campaignLink_open 클릭시, .campaignLink_wrap에 .active 추가하면 popup 뜸 -->
+                <div class="campaignLink_wrap">
+                  <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+                  <a href="#" class="campaignLink">요약보기</a>
+                  <a href="#" class="campaignLink">증권 재발행</a><!-- 230518 -->
+                </div>
+              </td>
+              <!-- //230511 -->
+            </tr>
+            <tr>
+              <td><span>01234567</span></td>
+              <td>
+                <p><a href="" class="links">김하나</a></p>
+                <p><span>800101</span>(여자)</p>
+              </td>
+              <td class="tlL">
+                <p><span class="flag purple mr5">정상유지</span><a href=""  class="links">(무)걱정말아요 암보험Ⅱ(갱신형)</a></p>
+                <!-- 230524 -->
+                <ul class="sdlist_info">
+                  <li>
+                    증권번호 : <span class="number">12345678</span>
+                  </li>
+                  <li>
+                    가입금액 : <span class="number">165,700</span>원
+                  </li>
+                  <li>
+                    합계보험료 : <span class="number">165,700</span>원
+                  </li>
+                  <li>
+                    환산P : <span class="number">110,700</span>원
+                  </li>
+                </ul>
+                <ul class="sdlist_info">
+                  <li>
+                    판매인 : 하나하나하나대리점 > 하나하나본부 > 하나하나지점</span> <span>홍길동(123456A)</span>
+                  </li>
+                </ul>
+                <!-- //230524 -->
+              </td>
+              <!-- 230511 -->
+              <td class="campaignInfo tlL">
+                <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+                <!-- campaignLink_open 클릭시, .campaignLink_wrap에 .active 추가하면 popup 뜸 -->
+                <div class="campaignLink_wrap">
+                  <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+                  <a href="#" class="campaignLink">요약보기</a>
+                  <a href="#" class="campaignLink">증권 재발행</a><!-- 230518 -->
+                </div>
+              </td>
+              <!-- //230511 -->
+            </tr>
+            <tr>
+              <td><span>01234567</span></td>
+              <td>
+                <p><a href="" class="links">김하나</a></p>
+                <p><span>800101</span>(여자)</p>
+              </td>
+              <td class="tlL">
+                <p><span class="flag purple mr5">정상유지</span><a href=""  class="links">(무)걱정말아요 암보험Ⅱ(갱신형)</a></p>
+                <!-- 230524 -->
+                <ul class="sdlist_info">
+                  <li>
+                    증권번호 : <span class="number">12345678</span>
+                  </li>
+                  <li>
+                    가입금액 : <span class="number">165,700</span>원
+                  </li>
+                  <li>
+                    합계보험료 : <span class="number">165,700</span>원
+                  </li>
+                  <li>
+                    환산P : <span class="number">110,700</span>원
+                  </li>
+                </ul>
+                <ul class="sdlist_info">
+                  <li>
+                    판매인 : 하나하나하나대리점 > 하나하나본부 > 하나하나지점</span> <span>홍길동(123456A)</span>
+                  </li>
+                </ul>
+                <!-- //230524 -->
+              </td>
+              <!-- 230511 -->
+              <td class="campaignInfo tlL">
+                <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+                <!-- campaignLink_open 클릭시, .campaignLink_wrap에 .active 추가하면 popup 뜸 -->
+                <div class="campaignLink_wrap">
+                  <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+                  <a href="#" class="campaignLink">요약보기</a>
+                  <a href="#" class="campaignLink">증권 재발행</a><!-- 230518 -->
+                </div>
+              </td>
+              <!-- //230511 -->
+            </tr>
+            <tr>
+              <td><span>01234567</span></td>
+              <td>
+                <p><a href="" class="links">김하나</a></p>
+                <p><span>800101</span>(여자)</p>
+              </td>
+              <td class="tlL">
+                <p><span class="flag purple mr5">정상유지</span><a href=""  class="links">(무)걱정말아요 암보험Ⅱ(갱신형)</a></p>
+                <!-- 230524 -->
+                <ul class="sdlist_info">
+                  <li>
+                    증권번호 : <span class="number">12345678</span>
+                  </li>
+                  <li>
+                    가입금액 : <span class="number">165,700</span>원
+                  </li>
+                  <li>
+                    합계보험료 : <span class="number">165,700</span>원
+                  </li>
+                  <li>
+                    환산P : <span class="number">110,700</span>원
+                  </li>
+                </ul>
+                <ul class="sdlist_info">
+                  <li>
+                    판매인 : 하나하나하나대리점 > 하나하나본부 > 하나하나지점</span> <span>홍길동(123456A)</span>
+                  </li>
+                </ul>
+                <!-- //230524 -->
+              </td>
+              <!-- 230511 -->
+              <td class="campaignInfo tlL">
+                <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+                <!-- campaignLink_open 클릭시, .campaignLink_wrap에 .active 추가하면 popup 뜸 -->
+                <div class="campaignLink_wrap">
+                  <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+                  <a href="#" class="campaignLink">요약보기</a>
+                  <a href="#" class="campaignLink">증권 재발행</a><!-- 230518 -->
+                </div>
+              </td>
+              <!-- //230511 -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tabBoxWrap mt65">
+        <ul class="tabBoxList">
+          <li><a href="#" class="tabBoxItem active">계약사항</a></li>
+          <li><a href="#" class="tabBoxItem">입금사항</a></li>
+          <li><a href="#" class="tabBoxItem">부활사항</a></li>
+          <li><a href="#" class="tabBoxItem">지급사항</a></li>
+          <li><a href="#" class="tabBoxItem">변경사항</a></li>
+          <li><a href="#" class="tabBoxItem">자동이체</a></li>
+          <li><a href="#" class="tabBoxItem">보장내용</a></li>
+          <li><a href="#" class="tabBoxItem">보험계약대출</a></li>
+          <li><a href="#" class="tabBoxItem">가입펀드조회</a></li>
+          <li><a href="#" class="tabBoxItem">펀드변경이력</a></li>
+        </ul>
+
+        <div class="tabBoxDisplay">
+          <!-- 계약사항 (s) -->
+          <div class="tabBoxDisplayItem active">
+
+            <h2>고객정보</h2>
+            <ul class="formList div3">
+              <li>
+                <div class="th">고객명</div>
+                <div class="td">
+                  <span>홍길동</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">성별</div>
+                <div class="td">
+                  <span>남자</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">휴대폰</div>
+                <div class="td">
+                  <span>010-1234-5678</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">(만)나이</div>
+                <div class="td">
+                  <span>42</span>세
+                </div>
+              </li>
+              <li>
+                <div class="th">보험나이</div>
+                <div class="td">
+                  <span>41</span>세
+                </div>
+              </li>
+              <li>
+                <div class="th">자택<br>전화번호</div>
+                <div class="td">
+                  <span>010-1234-5678</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">생년월일</div>
+                <div class="td">
+                  양력, YYMMDD
+                </div>
+
+              </li>
+              <li>
+                <div class="th">이메일</div>
+                <div class="td">
+                  <span>honggildong@naver.com</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">직장<br>전화번호</div>
+                <div class="td">
+                  <span>010-1234-5678</span>
+                </div>
+              </li>
+              <li class="oneThirdDiv">
+                <div class="th">우편물수령처</div>
+                <div class="td">
+                  <span>자택</span>
+                </div>
+              </li>
+              <li class="twoThirdsDiv">
+                <div class="th">자택주소</div>
+                <div class="td">
+                  <span>(04538)서울 중구 을지로 66, 13층</span>
+                </div>
+              </li>
+              <!-- <li>
+                <div class="th">전문금융<br>소비자여부</div>
+                <div class="td">
+                  <span>아니오</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">운전차종</div>
+                <div class="td">
+                  <span>오토바이 운전자(50cc미만포함)</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">모집경로</div>
+                <div class="td">
+                  <span>소개</span>
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">직업</div>
+                <div class="td">
+                  <span>(013902)부동산 및 임대회사 사무직 관리자(공인중개사, 개인임대사업자 제외)</span>
+                </div>
+              </li>
+              <li class="oneThirdDiv">
+                <div class="th">위험등급</div>
+                <div class="td">
+                  <span>0</span>
+                </div>
+              </li>
+              <li class="twoThirdsDiv">
+                <div class="th">메모</div>
+                <div class="td">
+                  <span>설계사가 고객등록시 메모한 내용이 노출됩니다. 설계사가 고객등록시 메모한 내용이 노출됩니다. 설계사가 고객등록시 메모한 내용이 노출됩니다. </span>
+                </div>
+              </li> -->
+
+              <li>
+                <div class="th">사업자명</div>
+                <div class="td">
+                  <span>하나주식회사</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">사업자등록번호</div>
+                <div class="td">
+                  <span>8000-00-00000</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">구분</div>
+                <div class="td">
+                  <span>법인사업자</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">대표연락처</div>
+                <div class="td">
+                  <span>010-1234-5678</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">직장<br>전화번호</div>
+                <div class="td">
+                  <span>010-1234-5678</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">FAX</div>
+                <div class="td">
+                  <span>010-1234-5678</span>
+                </div>
+              </li>
+              <li class="oneThirdDiv">
+                <div class="th">이메일</div>
+                <div class="td">
+                  <span>honggildong@naver.com</span>
+                </div>
+              </li>
+              <li class="twoThirdsDiv">
+                <div class="th">직장주소</div>
+                <div class="td">
+                  <span>(04538)서울 중구 을지로 66, 13층</span>
+                </div>
+              </li>
+            </ul>
+
+            <h2>계약관계자정보</h2>
+            <div class="tabl_area">
+              <table>
+                <colgroup>
+                  <col style="width: 20%;">
+                  <col style="width: auto;">
+                  <col style="width: auto;">
+                  <col style="width: auto;">
+                  <col style="width: auto;">
+                  <col style="width: auto;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th><span>고객역할</span></th>
+                    <th><span>성명</span></th>
+                    <th><span>생년월일</span></th>
+                    <th><span>성별</span></th>
+                    <th><span>나이</span></th>
+                    <th><span>관계</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span>계약자</span></td>
+                    <td><span>홍길동</span></td>
+                    <td><span>800101</span></td>
+                    <td><span>여자</span></td>
+                    <td><span>20</span></td>
+                    <td><span>본인</span></td>
+                  </tr>
+                  <tr>
+                    <td><span>계약자</span></td>
+                    <td><span>홍길동</span></td>
+                    <td><span>800101</span></td>
+                    <td><span>여자</span></td>
+                    <td><span>20</span></td>
+                    <td><span>본인</span></td>
+                  </tr>
+                  <tr>
+                    <td><span>계약자</span></td>
+                    <td><span>홍길동</span></td>
+                    <td><span>800101</span></td>
+                    <td><span>여자</span></td>
+                    <td><span>20</span></td>
+                    <td><span>본인</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2>상품내역</h2>
+            <div class="tabl_area">
+              <table>
+                <colgroup>
+                  <col style="width: auto;">
+                  <col style="width: 40%;">
+                  <col style="width: auto;">
+                  <col style="width: auto;">
+                  <col style="width: auto;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th><span>코드</span></th>
+                    <th><span>상품명</span></th>
+                    <th><span>상태</span></th>
+                    <th><span>가입금액</span></th>
+                    <th><span>보험료</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span>012345</span></td>
+                    <td class="txt_l"><span>(무)하나변액연금보험Ⅱ(적립형) 확정연금형_20년</span></td>
+                    <td><span>소멸(지급)</span></td>
+                    <td><span>12,000,000</span></td>
+                    <td><span>200,000</span></td>
+                  </tr>
+                  <tr>
+                    <td><span>012345</span></td>
+                    <td class="txt_l"><span>(무)하나변액연금보험Ⅱ(적립형) 확정연금형_20년</span></td>
+                    <td><span>소멸(지급)</span></td>
+                    <td><span>12,000,000</span></td>
+                    <td><span>200,000</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="tableTotal_Wrap">
+              <div class="tableTotal right">
+                <div class="countWrap">
+                  <div class="countWrap_tit">합계 보험료</div>
+                  <div class="countWrap_desc"><span>400,000</span></div>
+                </div>
+              </div>
+            </div>
+
+            <h2>가입내역</h2>
+            <ul class="formList div3">
+              <li>
+                <div class="th">계약일</div>
+                <div class="td">
+                  <span>YYYY.MM.DD</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">만기일</div>
+                <div class="td">
+                  <span>YYYY.MM.DD</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">보험기간</div>
+                <div class="td">
+                  <span>41</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">납입방법</div>
+                <div class="td">
+                  <span>월납</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">수금방법</div>
+                <div class="td">
+                  <span>자동이체</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">납입기간</div>
+                <div class="td">
+                  <span>10</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">비과세</div>
+                <div class="td">
+                  <span>81_선택적과세</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">연금전환일</div>
+                <div class="td">
+                  <span>YYYY.MM.DD</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">계약소멸일</div>
+                <div class="td">
+                  <span>YYYY.MM.DD</span>
+                </div>
+              </li>
+              <li class="oneThirdDiv">
+                <div class="th">모집사항</div>
+                <div class="td">
+                  <span>DATA</span>
+                </div>
+              </li>
+              <li class="twoThirdsDiv">
+                <div class="th">수금사항</div>
+                <div class="td">
+                  <span>DATA</span>
+                </div>
+              </li>
+            </ul>
+
+            <h2>유지내역</h2>
+            <ul class="formList div3">
+              <li>
+                <div class="th">최종년월</div>
+                <div class="td">
+                  <span>YYYY.MM</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">납입면제</div>
+                <div class="td">
+                  <span>비대상</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">유지상태</div>
+                <div class="td">
+                  <span>미결</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">최종횟수</div>
+                <div class="td">
+                  <span>1</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">부활일</div>
+                <div class="td">
+                  <span>YYYY.MM.DD</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">최종납입</div>
+                <div class="td">
+                  <span>YYYY.MM.DD</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="sort_wrap">
+              <div class="sort">
+                <h2 class="mt0 mb0">예상해지환급금 정보</h2>
+              </div>
+              <div class="sortRight">
+                <div class="just_con_c">
+                  <span class="">지급일자</span>
+                  <input type="tel" class="ipt date" value="2022.06.25" id="input_ID_Setting_Plz000">
+                  <span class="just_con_c ml10">최종횟수</span>
+                  <input type="tel" class="ipt" placeholder="숫자만 입력">
+                  <button type="button" class="btn_primary l">조회</button>
+                </div>
+              </div>
+            </div>
+            <ul class="formList div3">
+              <li>
+                <div class="th">지급합계</div>
+                <div class="td txt_r">
+                  <span>000,000,000</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">공제합계</div>
+                <div class="td txt_r">
+                  <span>000,000,000</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">실지급액</div>
+                <div class="td txt_r">
+                  <span>000,000,000</span>
+                </div>
+              </li>
+            </ul>
+            <ul class="txtList remark">
+              <li>현재 적용이율(최저보증이율 or 공시이율) 기준, 추후 변동 가능성 있음</li>
+              <li>미래환급금 조회 불가 상품
+                <p class="pointC2 mt5">
+                  1. 변액 상품<br>
+                  2. 연금저축 보험의 연금개시일 경과 건<br>
+                  3. 보장성 상품의 연납 상품<br>
+                  4. 월대체보험료 발생 건
+                </p>
+                <p class="pointC2 ml10">
+                  - 유니버셜 상품의 의무납입기간 이후 건<br>
+                  - 납입일시중지 신청 이력 있는 건
+                </p>
+              </li>  
+            </ul>
+
+            <div class="sort_wrap">
+              <div class="sort">
+                <h2 class="mt0 mb0">중도인출가능금액</h2>
+              </div>
+              <div class="sortRight">
+                <p>기준일: <span>YYYY.MM.DD</span></p>
+              </div>
+            </div>
+            <ul class="formList div3">
+              <li>
+                <div class="th">기납입보험료</div>
+                <div class="td txt_r">
+                  <span>000,000,000</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">경과환급금</div>
+                <div class="td txt_r">
+                  <span>000,000,000</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">최소적립금</div>
+                <div class="td txt_r">
+                  <span>000,000,000</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">기인출금액</div>
+                <div class="td txt_r">
+                  <span>000,000,000</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">총인출 가능금액</div>
+                <div class="td txt_r">
+                  <span>000,000,000</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">회차별 가능금액</div>
+                <div class="td">
+                  <button type="button" class="btn_primary l">조회</button>
+                </div>
+              </li>
+            </ul>
+            <ul class="txtList remark">
+              <li class="pointC2">실지급금은 세금 또는 수수료 발생 시 조회 금액과 상이할 수 있습니다.</li>
+            </ul>
+
+            <h2>연금내역</h2>
+            <ul class="formList div2">
+              <li>
+                <div class="th">지급유형</div>
+                <div class="td">
+                  <span>DATA</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">지급주기</div>
+                <div class="td">
+                  <span>DATA</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">지급기간</div>
+                <div class="td">
+                  <span>DATA</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">개시연령</div>
+                <div class="td">
+                  <span>DATA</span>
+                </div>
+              </li>
+            </ul>
+
+            <h2>특정부위부담보</h2>
+            <div class="tabl_area">
+              <table>
+                <colgroup>
+                  <col style="width: auto;">
+                  <col style="width: 40%;">
+                  <col style="width: auto;">
+                  <col style="width: auto;">
+                  <col style="width: auto;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th><span>피보구분</span></th>
+                    <th><span>부담보항목</span></th>
+                    <th><span>부담보기간</span></th>
+                    <th><span>시작일</span></th>
+                    <th><span>사인코드</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span>DATA</span></td>
+                    <td><span>DATA</span></td>
+                    <td><span>DATA</span></td>
+                    <td><span>YYYY.MM.DD</span></td>
+                    <td><span>DATA</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2>특별조건부(삭감)</h2>
+            <div class="tabl_area">
+              <table>
+                <colgroup>
+                  <col style="width: auto;">
+                  <col style="width: auto;">
+                  <col style="width: auto;">
+                  <col style="width: 60%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th><span>피보구분</span></th>
+                    <th><span>삭감기간</span></th>
+                    <th><span>사인코드</span></th>
+                    <th><span>사인사항</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span>DATA</span></td>
+                    <td><span>DATA</span></td>
+                    <td><span>DATA</span></td>
+                    <td><span>DATA</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2>마케팅정보</h2>
+            <ul class="formList div2">
+              <li>
+                <div class="th">개인정보수집/이용</div>
+                <div class="td">
+                  <span>동의(1년, YYYY.MM.DD 종료)</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">마케팅정보 수신동의</div>
+                <div class="td">
+                  <span>동의</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">가입권유방식</div>
+                <div class="td">
+                  <span>전화(Y) 문자(Y) 이메일(N) 우편(N)</span>
+                </div>
+              </li>
+              <li>
+                <div class="th">Do not call</div>
+                <div class="td">
+                  <span>Y</span>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+          <!-- 계약사항 (e) -->
+          <!-- 입금사항 (s) -->
+          <div class="tabBoxDisplayItem">
+
+
+          </div>
+          <!-- 입금사항 (e) -->
+          <!-- 부활사항 (s) -->
+          <div class="tabBoxDisplayItem">
+
+
+          </div>
+          <!-- 부활사항 (e) -->
+          <!-- 지급사항 (s) -->
+          <div class="tabBoxDisplayItem">
+
+          </div>
+          <!-- 지급사항 (e) -->
+          <!-- 변경사항 (s) -->
+          <div class="tabBoxDisplayItem">
+
+          </div>
+          <!-- 변경사항 (e) -->
+          <!-- 자동이체 (s) -->
+          <div class="tabBoxDisplayItem">
+
+          </div>
+          <!-- 자동이체 (e) -->
+          <!-- 보장내용 (s) -->
+          <div class="tabBoxDisplayItem">
+
+          </div>
+          <!-- 보장내용 (e) -->
+          <!-- 약관대출 (s) -->
+          <div class="tabBoxDisplayItem">
+
+          </div>
+          <!-- 약관대출 (e) -->
+          <!-- 가입펀드조회 (s) -->
+          <div class="tabBoxDisplayItem">
+
+          </div>
+          <!-- 가입펀드조회 (e) -->
+          <!-- 펀드변경이력 (s) -->
+          <div class="tabBoxDisplayItem">
+
+          </div>
+          <!-- 펀드변경이력 (e) -->
+      </div>
+    </div>
+
+
+    </div>
+
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+
+</html>

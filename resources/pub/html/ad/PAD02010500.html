@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section">
+  <h1 class="tit01">교육이력관리</h1>
+
+  <div class="tab tab_cm tab_default">
+    <ul class="tab_bar">
+      <li><a href="#">내부 교육관리</a></li>
+      <li><a href="#" class="active">필수 교육관리</a></li><!-- 230426 -->
+    </ul>
+    <div class="tab_cont">
+      <div class="tab_cont_list">
+
+      </div>
+
+      <div class="tab_cont_list active">
+        <ul class="formList div3">
+          <li class="full">
+            <div class="th">교육명</div>
+            <div class="td">
+              <select class="ipt notDel uiAct">
+                <option selected="">모집보수교육</option>
+                <option>변액보수교육</option>
+              </select>
+            </div>
+          </li>
+          <li class="twoThirdsDiv">
+            <div class="th">조회기간</div>
+            <div class="td">
+              <div class="setHalf">
+                <input type="text" class="ipt date" placeholder="YYYY.MM" id="ID_Setting_Plz1">
+                <span class="sign">~</span>
+                <input type="text" class="ipt date" placeholder="YYYY.MM" id="ID_Setting_Plz2">
+              </div>
+            </div>
+          </li>
+          <li class="oneThirdDiv">
+            <div class="th">등록일자</div>
+            <div class="td">
+              <input type="text" class="ipt date" placeholder="YYYY.MM" id="ID_Setting_Plz1">
+            </div>
+          </li>
+          <li class="full">
+            <div class="th">교육결과</div>
+            <div class="td">
+              <ul class="iptGroup">
+                <li>
+                  <input type="radio" class="ipt innResetArea" name="srchInnEduCmpeYn" id="eduCmpeYn_01" checked value="">
+                  <label for="eduCmpeYn_01">전체</label>
+                </li>
+                <li>
+                  <input type="radio" class="ipt innResetArea" name="srchInnEduCmpeYn" id="eduCmpeYn_02" value="C">
+                  <label for="eduCmpeYn_02">이수</label>
+                </li>
+                <li>
+                  <input type="radio" class="ipt innResetArea" name="srchInnEduCmpeYn" id="eduCmpeYn_03" value="F">
+                  <label for="eduCmpeYn_03">미이수</label>
+                </li>
+              </ul>
+              (이수여부와 동일하게)
+            </div>
+          </li>
+          <li>
+            <div class="th">채널</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">전체</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="th">본부</div>
+            <div class="td">
+              <select class="ipt" disabled>
+                <option selected="">전체</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="th">지점</div>
+            <div class="td">
+              <select class="ipt" disabled>
+                <option selected="">전체</option>
+              </select>
+            </div>
+          </li>
+          <li class="oneThirdDiv">
+            <div class="th">팀</div>
+            <div class="td">
+              <select class="ipt" disabled>
+                <option selected="">전체</option>
+              </select>
+            </div>
+          </li>
+          <li class="twoThirdsDiv">
+            <div class="th">판매인</div>
+            <div class="td">
+              <select class="ipt mid" disabled>
+                <option selected="">전체</option>
+              </select>
+            </div>
+          </li>
+          <li class="oneThirdDiv">
+            <div class="th">상태</div>
+            <div class="td">
+              <select class="ipt" disabled>
+                <option selected="">이수</option>
+              </select>
+            </div>
+          </li>
+          <li class="twoThirdsDiv">
+            <div class="th">검색어</div>
+            <div class="td">
+              <select class="ipt min">
+                <option selected="">이름</option>
+                <option>사번</option>
+              </select>
+              <input type="text" class="ipt mid" placeholder="예: 김하나">
+            </div>
+          </li>
+        </ul>
+        <div class="btn_wrap">
+          <button type="button" class="btn_white xl">초기화</button><!-- 230511 -->
+          <button type="button" class="btn_primary xl">조회</button><!-- 230511 -->
+        </div>
+        <h2 class="tit02">조회 및 등록</h2>
+        <div class="sort_wrap">
+          <div class="sort">
+            <ul class="count">
+              <li>총 <span class="count_num count_num_accent">106</span>건</li>
+              <li><span class="count_num count_num_accent">1</span>/100페이지</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tabl_area">
+          <table>
+            <caption>교육이력 목록</caption>
+            <colgroup>
+              <col style="width: 8%">
+              <col style="width: 9%;">
+              <col style="width: 10%;">
+              <col style="width: 10%;">
+              <col style="width: 10%;">
+              <col style="width: 10%;">
+              <col style="width: auto;">
+              <col style="width: 11%;">
+              <col style="width: 9%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">
+                  <span class="single">
+                    <input type="checkbox" class="ipt" name="" id="chk_1"><label for="chk_1"></label>
+                  </span>
+                </th>
+                <th scope="col">본부</th>
+                <th scope="col">지점명</th>
+                <th scope="col">팀</th>
+                <th scope="col">이름사번</th>
+                <th scope="col">상태</th>
+                <th scope="col">교육명</th>
+                <th scope="col">교육일자</th>
+                <th scope="col">결과</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span class="single">
+                    <input type="checkbox" class="ipt" name="" id="chk_2"><label for="chk_2"></label>
+                  </span>
+                </td>
+                <td>H/B</td>
+                <td>원큐라이프</td>
+                <td>1</td>
+                <td><a href="#" class="links">홍길동(123456)</a></td>
+                <td>위촉</td>
+                <td><a href="#" class="links">교육명입니다.</a></td>
+                <td>2022.09.10</td>
+                <td>이수</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="single">
+                    <input type="checkbox" class="ipt" name="" id="chk_2"><label for="chk_2"></label>
+                  </span>
+                </td>
+                <td>H/B</td>
+                <td>원큐라이프</td>
+                <td>1</td>
+                <td><a href="#" class="links">홍길동(123456)</a></td>
+                <td>해촉</td>
+                <td><a href="#" class="links">교육명입니다.</a></td>
+                <td>2022.09.10</td>
+                <td>이수</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- No Result (s) -->
+          <div class="noresultWrap">
+            <img src="./resources/pt/images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+            <div class="noresultText">조회 결과가 없습니다.</div>
+          </div>
+          <!--// No Result (e) -->
+        </div>
+        <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+          <button type="button" class="icoBtn_first" aria-label="처음"></button>
+          <button type="button" class="icoBtn_prev" aria-label="이전"></button>
+          <ul>
+            <li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+            <li><a href="#"><span class="blind">페이지</span>2</a></li>
+            <li><a href="#"><span class="blind">페이지</span>3</a></li>
+            <li><a href="#"><span class="blind">페이지</span>4</a></li>
+            <li><a href="#"><span class="blind">페이지</span>5</a></li>
+            <li><a href="#"><span class="blind">페이지</span>6</a></li>
+            <li><a href="#"><span class="blind">페이지</span>7</a></li>
+            <li><a href="#"><span class="blind">페이지</span>8</a></li>
+            <li><a href="#"><span class="blind">페이지</span>9</a></li>
+            <li><a href="#"><span class="blind">페이지</span>10</a></li>
+          </ul>
+          <button type="button" class="icoBtn_next" aria-label="다음"></button>
+          <button type="button" class="icoBtn_last" aria-label="마지막"></button>
+        </div>
+        <div class="btn_wrap">
+          <button type="button" class="btn_gray"><span>삭제</span></button>
+          <button type="button" class="btn_white"><span>수정</span></button>
+          <button type="button" class="btn_primary"><span>등록</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+
+</div>
+
+
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+    </div><!-- container (e) -->
+    <div class="footer"></div>
+  </div>
+</body>
+
+</html>

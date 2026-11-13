@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+    <path data-name="패스 19626" d="m551.438 1170.942 2.616 1.8a2.8 2.8 0 0 0 3.124.048l4.576-2.954a2.8 2.8 0 0 1 3.053 0l4.627 2.987a2.8 2.8 0 0 0 3.053 0l4.627-2.987a2.8 2.8 0 0 1 3.053 0l4.577 2.954a2.8 2.8 0 0 0 3.124-.048l2.615-1.8a2.877 2.877 0 0 1 4.477 2.474v41.036a7.808 7.808 0 0 1-7.68 7.931h-32.64a7.809 7.809 0 0 1-7.68-7.931v-41.036a2.877 2.877 0 0 1 4.478-2.474z" transform="translate(-530.96 -1157.384)" style="stroke:#111;stroke-width:2px;fill:#fff;stroke-miterlimit:10"/>
+    <g data-name="타원 552" transform="translate(45 44)" style="fill:#c8f7f4;stroke:#111;stroke-width:2px">
+        <circle cx="13" cy="13" r="13" style="stroke:none"/>
+        <circle cx="13" cy="13" r="12" style="fill:none"/>
+    </g>
+    <path data-name="패스 19622" d="m323.591 642.28 3.567 3.482 5.433-6" transform="translate(-269.591 -585.762)" style="stroke-linecap:round;stroke-linejoin:round;fill:none;stroke:#111;stroke-width:2px"/>
+    <g data-name="사각형 16485" transform="rotate(-90 27.5 1.5)" style="fill:#111;stroke:#111;stroke-width:2px">
+        <rect width="2" height="28" rx="1" style="stroke:none"/>
+        <rect x="1" y="1" height="26" style="fill:none"/>
+    </g>
+    <g data-name="사각형 16486" transform="rotate(-90 32.5 6.5)" style="fill:#111;stroke:#111;stroke-width:2px">
+        <rect width="2" height="28" rx="1" style="stroke:none"/>
+        <rect x="1" y="1" height="26" style="fill:none"/>
+    </g>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <clipPath id="e46mt1z69a">
+            <path transform="translate(0 -2)" style="opacity:.4;fill:red" d="M0 0h24v24H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="그룹 103311" transform="translate(0 2)" style="clip-path:url(#e46mt1z69a)">
+        <g data-name="패스 19505" style="fill:none">
+            <path d="M2.18.2a.625.625 0 0 1 .62.626v16.25a.625.625 0 1 1-1.25 0V.826A.625.625 0 0 1 2.18.2z" style="stroke:none" transform="rotate(135 6.872 11.51)"/>
+            <path d="M2.18.2c.345 0 .625.28.625.626v16.25a.625.625 0 1 1-1.25 0V.826c0-.345.28-.625.625-.625z" style="fill:#111;stroke:none" transform="rotate(135 6.872 11.51)"/>
+        </g>
+        <g data-name="패스 19506" style="fill:none">
+            <path d="M.575-.05A.625.625 0 0 1 1.2.575v16.25a.625.625 0 1 1-1.25 0V.575A.625.625 0 0 1 .575-.05z" style="stroke:none" transform="rotate(-135 6.556 6.984)"/>
+            <path d="M.575-.05c.345 0 .625.28.625.625v16.25a.625.625 0 1 1-1.25 0V.575C-.05.23.23-.05.575-.05z" style="fill:#111;stroke:none" transform="rotate(-135 6.556 6.984)"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,696 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------
+   01. 플로팅 채팅 버튼
+   --------------------------------------------------------- */
+/* ai */
+.floating_box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1003;
+}
+.btn_chat,
+.btn_chat:focus {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  background-color: #00695c;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M7 4h18a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H15.5L9 29.2V24H7a5 5 0 0 1-5-5V9a5 5 0 0 1 5-5z' fill='%23fff'/%3E%3Cpath d='M16 8.2l1.7 4.6 4.6 1.7-4.6 1.7L16 20.8l-1.7-4.6-4.6-1.7 4.6-1.7z' fill='%2300a389'/%3E%3C/svg%3E"),
+    linear-gradient(135deg, #00a389 0%, #00695c 55%, #004d40 100%);
+  background-repeat: no-repeat;
+  background-size: 34px auto, 100% 100%;
+  background-position: center 45%, center;
+  box-shadow: 0 10px 24px rgba(0, 77, 64, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1003;
+  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.25s;
+}
+/* 은은한 펄스 링 */
+.btn_chat::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 163, 137, 0.55);
+  animation: chatPulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+/* AI 배지 */
+.btn_chat::after {
+  content: "AI";
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  min-width: 26px;
+  height: 20px;
+  padding: 0 6px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: #FFD54F;
+  color: #3a2e00;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+.btn_chat:hover {
+  background-color: #00695c;
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 14px 28px rgba(0, 77, 64, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+.btn_chat:active {
+  transform: scale(0.97);
+}
+.btn_chat:focus-visible {
+  outline: 3px solid #b6fbe9;
+  outline-offset: 3px;
+}
+@keyframes chatPulse {
+  0%   { transform: scale(1);   opacity: 0.9; }
+  70%  { transform: scale(1.45); opacity: 0; }
+  100% { transform: scale(1.45); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn_chat::before { animation: none; opacity: 0; }
+  .btn_chat { transition: none; }
+}
+
+/* ---------------------------------------------------------
+   02. 채팅 팝업 전용 오버라이드
+   --------------------------------------------------------- */
+.popWrap.chat .popup {
+    padding-bottom: 0;
+}
+.popWrap.chat .popHead  {
+    background-color: #00857E; 
+    color: #ffffff;
+    box-shadow: none;
+}
+.popWrap.chat .popup .popHead h1 {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+.popWrap.chat .popup .popHead h1 img {
+    height: 30px;
+}
+
+.popWrap.chat .icoBtn_close {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath transform='rotate(-45 30.484 4.897)' style='fill:%23fff;stroke:%23fff;stroke-linecap:round' d='M0 0h24.009'/%3E%3Cpath transform='rotate(45 -4.525 9.605)' style='fill:%23fff;stroke:%23fff;stroke-linecap:round' d='M0 0h24.009'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.popWrap.chat .popBody {
+    z-index: auto;
+    overflow: visible !important;
+    padding: 0;
+}
+.popWrap.chat .btn-group {
+    top: -48px;
+    right: 56px;
+}
+.popWrap.chat .chat-content {
+    height: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   03. 채팅 컨테이너 및 헤더
+   --------------------------------------------------------- */
+/* body, html, .wrapper {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+} */
+
+.chat-container {
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    border-radius: 12px;
+}
+
+.chat-header {
+    background-color: #00857E; 
+}
+.chat-header h1 {
+    margin: 0;
+    color: #ffffff;
+    padding: 12px 20px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+.chat-header h1 img {
+    height: 30px;
+}
+.btn-group {
+    position: absolute;
+    top: -41px;
+    right: 20px;
+    z-index: 2000;
+}
+
+/* .chat-live-btn {
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+} */
+/* 플로우 토글 버튼 스타일 */
+.btn-toggle-flow,
+.btn-toggle-flow:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    margin-right: 12px;
+    transition: background-color 0.2s;
+}
+.btn-toggle-flow:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.chat-content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: calc(100% - 54px);
+}
+
+
+/* ---------------------------------------------------------
+   04. 로딩 오버레이 및 애니메이션
+   --------------------------------------------------------- */
+/* =========================================================
+   1. flow-box 영역 전체 로딩 오버레이 (Spinner)
+   ========================================================= */
+.chat-flow {
+    position: relative;
+}
+
+.flow-loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px);
+}
+
+.flow-spinner {
+    width: 36px;
+    height: 36px;
+    border: 4px solid #e0e0e0;
+    border-top: 4px solid #00857E;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* =========================================================
+   2. chat-messages 응답 대기 로딩 (Typing Dots)
+   ========================================================= */
+.message.loading-dots {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 18px;
+    min-width: 50px;
+    width: fit-content;
+}
+
+.message.loading-dots span {
+    width: 8px;
+    height: 8px;
+    background-color: #00857E;
+    border-radius: 50%;
+    display: inline-block;
+    animation: typingBounce 1.2s infinite ease-in-out both;
+}
+
+.message.loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+.message.loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typingBounce {
+    0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+    40% { transform: scale(1); opacity: 1; }
+} 
+
+
+/* ---------------------------------------------------------
+   05. 대화 레이아웃 및 플로우 콘텐츠
+   --------------------------------------------------------- */
+/* chat-flow 스타일 및 트랜지션 */
+.chat-content .chat-flow { 
+    position: relative;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    gap: 12px;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: flex 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    box-sizing: border-box;
+}
+
+/* 오른쪽 라이브 대화 영역 */
+.chat-live {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-left: 1px solid #f1f3f5;
+    white-space: nowrap;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+}
+
+/* collapsed(숨김) 상태 스타일 */
+.chat-content .chat-live.collapsed {
+    flex: 0 !important;
+    width: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-left: none;
+    overflow: hidden;
+    opacity: 0;
+}
+.df-end {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+/* flow-box 패딩 영역 잔여 방지 */
+.chat-content .flow-box {
+    position: relative;
+    width: 100%;
+}
+
+.chat-content .flow-box:has(div.action-btn) {
+    height: 100%;
+    overflow-y: hidden;
+}
+.chat-content .flow-box .flow-content {
+    padding: 8px 20px 20px;   
+    overflow-y: auto;
+}
+.chat-content .flow-box:has(div.action-btn) .flow-content {
+    height: calc(100% - 60px);
+}
+
+.chat-content .flow-box .formList {
+    border-top: none;
+}
+.chat-content .flow-box .formList:not(:has(.th)) .td {
+    padding: 8px 0;
+    border-bottom: none;
+}
+
+.chat-content .flow-content > div + div {   
+    margin-top: 12px;
+    width: 100%;
+}
+
+/* ---------------------------------------------------------
+   06. 채팅 메시지 및 입력 영역
+   --------------------------------------------------------- */
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;      
+    padding: 20px;
+    height: calc(100% - 63px);
+    overflow-y: auto;
+}
+
+.message {
+    max-width: 75%;
+    padding: 12px 16px;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    word-break: break-word;
+    white-space: normal;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* 입체감 부여 */
+}
+
+/* 상대방 메시지 */
+.message.received {
+    background-color: #ffffff;
+    color: #333333;
+    align-self: flex-start;
+    border: 1px solid #e9ecef;
+    border-radius: 18px 18px 18px 4px;
+}
+
+/* 내가 보낸 메시지 */
+.message.sent {
+    background-color: #00857E;
+    color: #ffffff;
+    align-self: flex-end;
+    border-radius: 18px 18px 4px 18px;
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 12px 16px;
+    background-color: #ffffff;
+    border-top: 1px solid #f1f3f5;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #dbe1e6;
+    border-radius: 20px;
+    outline: none;
+    font-size: 1.6rem;
+    transition: border-color 0.2s;
+}
+
+.chat-input-area input:focus {
+    border-color: #00857E;
+}
+
+.chat-input-area button,
+.chat-input-area button:focus {
+    background-color: #00857E;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 0 18px;
+    margin-left: 8px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.chat-input-area button:hover {
+    background-color: #006b65;
+}
+
+
+/* ---------------------------------------------------------
+   07. 플로우 입력폼 및 선택 버튼
+   --------------------------------------------------------- */
+button.flag {
+    height: 30px;
+    font-size: 1.4rem;
+}
+.search-item {
+    display: flex;
+    gap: 8px;
+}
+.search-item input {
+    flex: 1;
+}
+.search-item select {
+    margin: 0;;
+}
+.btn-area {
+    display: flex;
+    gap: 8px;
+}
+.btn-area:not(.action-btn) {
+    flex-wrap: wrap;
+}
+.btn-area:not(.action-btn) button {
+    width: calc(50% - 4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 0;
+    text-align: center;
+    white-space: normal;
+}
+.flow-content + .btn-area.action-btn {
+    padding: 0 20px 20px;
+    background-color: #fff !important;
+}
+.flow-content + .btn-area.action-btn button {
+    flex: 1;
+}
+.iptWrap {
+    display: block;
+    width: 100%;
+}
+.setBtnAdd,
+.setBtnAdd select.ipt {
+    margin: 0;
+}
+.flow-content .iptFilt.div_2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: stretch;
+}
+.flow-content .iptFilt.div_2 li {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+}
+.flow-content .iptFilt:not(.paT) .ipt + label,
+.flow-content .iptFilt:not(.paT) .ipt:checked + label {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 0;
+    height: auto;
+    text-align: center;
+    white-space: normal;
+    height: auto;
+    border-radius: 8px;
+    width: 100%;
+    line-height: 1.6;
+    min-height: 48px;
+    padding: 10px 19px 9px;
+}
+.list-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.list-btn > div {
+    position: relative;
+}
+.btn-label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 1.6rem;
+    background-color: #f9f9f9;
+    border: 1px solid #dbe1e6;
+    border-radius: 8px;
+}
+
+input:checked + .btn-label, 
+input + .btn-label:hover, 
+input + .btn-label:focus {
+    background-color: #EFF8F5;
+}
+input:checked + .btn-label, 
+input + .btn-label:focus {
+    border-color: #006b65;
+}
+
+.btn-label .tit {
+    display: flex;
+    gap: 4px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+
+.btn-label .info span:first-child {
+    color: #666;
+}
+
+.list-btn + .pagination {
+    margin-top: 32px !important;
+}
+/* ---------------------------------------------------------
+   08. 공통 보조 요소
+   --------------------------------------------------------- */
+.btn-floating {
+    position: sticky;
+    left: 0;
+    top: 0;
+    border-radius: 0;
+    min-height: 36px;
+    z-index: 10;
+}
+.q-box {
+    display: block;
+    width: 100%;
+    background-color: #f1f3f5;
+    padding: 12px 16px;
+    border-radius: 8px;
+}
+.noData {
+    padding-top: 88px;
+    text-align: center;
+    background: url(../../../tab/pt/images/mobile/common/msg_nodata.svg) no-repeat center 40px;
+    font-weight: 300;
+    color: #333;
+}
+
+button.flag:disabled:hover,
+button.flag:disabled,
+button.flag.pink:disabled,
+button.flag.yellow:disabled {
+    color: #999 !important;
+    background-color: #eee !important;
+    border-color: #eee !important;
+}
+
+/* ---------------------------------------------------------
+   09. 리스트 아코디언 (.list-btn > div.btn-label, 조회용 카드)
+   --------------------------------------------------------- */
+.list-btn > .btn-label.acc-item {
+    padding: 0;
+    gap: 0;
+    overflow: hidden;
+    transition: border-color .2s, background-color .2s;
+}
+.acc-item .acc-head,
+.acc-item .acc-head:focus {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 16px;
+    background: transparent;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+}
+.acc-item .acc-head:hover { background-color: #EFF8F5; }
+.acc-item .acc-head:focus-visible { outline: 2px solid #006b65; outline-offset: -2px; }
+.acc-item .acc-head .tit { flex: 1; min-width: 0; flex-wrap: wrap; }
+.acc-item .acc-arrow {
+    flex: none;
+    width: 10px;
+    height: 10px;
+    margin-right: 4px;
+    border-right: 2px solid #666;
+    border-bottom: 2px solid #666;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform .25s ease;
+}
+.acc-item.open { border-color: #006b65; background-color: #EFF8F5; }
+.acc-item.open .acc-arrow { transform: rotate(-135deg) translateY(-2px); }
+.acc-item .acc-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .3s ease;
+}
+.acc-item.open .acc-panel { grid-template-rows: 1fr; }
+.acc-item .acc-inner {
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 16px;
+    visibility: hidden;
+    transition: padding .3s ease, visibility .3s;
+}
+.acc-item.open .acc-inner {
+    padding: 4px 16px 14px;
+    visibility: visible;
+    border-top: 1px dashed #dbe1e6;
+    margin: 0 16px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.acc-item .acc-inner .tit { font-size: 1.6rem; }
+@media (prefers-reduced-motion: reduce) {
+    .acc-item .acc-panel, .acc-item .acc-arrow, .acc-item .acc-inner { transition: none; }
+}
+.flow-content .formList > li .th {
+    width: 120px;
+}
+.sort_wrap {
+    margin-top:20px;
+}
+
+/* ---------------------------------------------------------
+   10. 처음으로 버튼 (하단 액션바)
+   --------------------------------------------------------- */
+.chat-content .flow-box .btn-area.action-btn .btn-home {
+    /* flex: 0 0 30%; */
+    min-width: 0;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+.btn-home .ico-home {
+    flex: none;
+    width: 16px;
+    height: 16px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 11.5 12 4l9 7.5'/%3E%3Cpath d='M5.5 10v10h13V10'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+/* 액션바가 없던 화면: 처음으로 단독 강조 */
+.chat-content .flow-box .btn-area.action-btn.home-only .btn-home,
+.chat-content .flow-box .btn-area.action-btn.home-only .btn-home:focus {
+    flex: 1 1 100%;
+    background-color: #FFD54F;
+    border-color: #F2B705;
+    color: #3a2e00;
+    font-weight: 800;
+}
+.chat-content .flow-box .btn-area.action-btn.home-only .btn-home:hover {
+    background-color: #FFCA28;
+}

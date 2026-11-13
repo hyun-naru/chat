@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.597" y1="0.901" x2="0.367" y2="-0.102" gradientUnits="objectBoundingBox">
+      <stop offset="0.15" stop-color="#54c2f0"/>
+      <stop offset="0.304" stop-color="#4fbcec"/>
+      <stop offset="0.506" stop-color="#3face2"/>
+      <stop offset="0.734" stop-color="#2691d0"/>
+      <stop offset="0.98" stop-color="#036bb8"/>
+      <stop offset="1" stop-color="#0068b6"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-0.039" y1="0.545" x2="0.899" y2="0.082" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="0.624" y1="-0.058" x2="0.392" y2="0.916" xlink:href="#linear-gradient"/>
+    <clipPath id="clip-웹_1920_1">
+      <rect width="40" height="40"/>
+    </clipPath>
+  </defs>
+  <g id="웹_1920_1" data-name="웹 1920 – 1" clip-path="url(#clip-웹_1920_1)">
+    <g id="ci_mg_40" transform="translate(0 -0.4)">
+      <path id="패스_1" data-name="패스 1" d="M14.2,29.1a4.7,4.7,0,0,1-4.7-4.7,5.037,5.037,0,0,1,1.2-3.2,10.27,10.27,0,0,1-1.2-5v-.8A10.28,10.28,0,0,0,3,25,10.136,10.136,0,0,0,13.1,35.1a10.551,10.551,0,0,0,5-1.2V27.4A5.806,5.806,0,0,1,14.2,29.1Z" fill="url(#linear-gradient)"/>
+      <path id="패스_2" data-name="패스 2" d="M14.2,19.7a9.971,9.971,0,0,1,1.6.2,5.376,5.376,0,0,1-.8-2.8A5.121,5.121,0,0,1,20.1,12a5.021,5.021,0,0,1,4.6,2.9,9.857,9.857,0,0,1,5.8.3A10.54,10.54,0,0,0,20,5.7,10.392,10.392,0,0,0,9.6,16.1a10.551,10.551,0,0,0,1.2,5A5.218,5.218,0,0,1,14.2,19.7Z" fill="url(#linear-gradient-2)"/>
+      <path id="패스_3" data-name="패스 3" d="M26.9,14.9a9.863,9.863,0,0,0-2.4.3,4.638,4.638,0,0,1,.4,2.1,5.376,5.376,0,0,1-.8,2.8,3.9,3.9,0,0,1,1.6-.2,4.7,4.7,0,1,1,0,9.4A4.29,4.29,0,0,1,22,27.4v6.5a10,10,0,0,0,5,1.2A10.27,10.27,0,0,0,37,24.9,10.051,10.051,0,0,0,26.9,14.9Z" fill="url(#linear-gradient-3)"/>
+    </g>
+  </g>
+</svg>

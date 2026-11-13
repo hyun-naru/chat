@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <path data-name="사각형 16243" style="fill:none" d="M0 0h32v32H0z"/>
+    <g data-name="그룹 103572">
+        <path data-name="모양 1" transform="rotate(90 8.5 16.5)" style="fill:#3f3f3f;stroke:#fff;stroke-linecap:round;stroke-width:1.5px" d="M0 0v18"/>
+        <path data-name="모양 1 복사" transform="rotate(90 4.5 20.5)" style="fill:#3f3f3f;stroke:#fff;stroke-linecap:round;stroke-width:1.5px" d="M0 0v18"/>
+        <path data-name="모양 1 복사 2" transform="rotate(90 .5 24.5)" style="fill:#3f3f3f;stroke:#fff;stroke-linecap:round;stroke-width:1.5px" d="M0 0v18"/>
+    </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <g data-name="btn download">
+        <path data-name="패스 11" d="m694.557 149.354 6 5.258 6-5.258" style="stroke-width:1.5px;fill:none;stroke:#111;stroke-linecap:round" transform="translate(-688.557 -138.729)"/>
+        <path data-name="선 24" transform="translate(12 4)" style="stroke-width:1.5px;fill:none;stroke:#111;stroke-linecap:round" d="M0 0v11"/>
+        <path data-name="선 25" transform="translate(6 20)" style="fill:none;stroke:#111;stroke-linecap:round" d="M0 0h12"/>
+    </g>
+</svg>

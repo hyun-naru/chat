@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <g data-name="사각형 15538" style="stroke-width:1.5px;stroke:#111;fill:none">
+        <path d="M4 0h16a4 4 0 0 1 4 4v15H0V4a4 4 0 0 1 4-4z" style="stroke:none" transform="translate(4 4)"/>
+        <path d="M4 .75h16A3.25 3.25 0 0 1 23.25 4v14.25H.75V4A3.25 3.25 0 0 1 4 .75z" style="fill:none" transform="translate(4 4)"/>
+    </g>
+    <g data-name="사각형 16246" style="fill:#f8f8f8;stroke-width:1.5px;stroke:#111">
+        <path d="M2 0h24a2 2 0 0 1 2 2v1a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V2a2 2 0 0 1 2-2z" style="stroke:none" transform="translate(2 21)"/>
+        <path d="M2 .75h24A1.25 1.25 0 0 1 27.25 2v1A3.25 3.25 0 0 1 24 6.25H4A3.25 3.25 0 0 1 .75 3V2A1.25 1.25 0 0 1 2 .75z" style="fill:none" transform="translate(2 21)"/>
+    </g>
+    <g data-name="그룹 103499">
+        <path data-name="패스 19541" d="m4.5 7 2 5 2-5" transform="translate(7.5 4.5)" style="stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;stroke:#111;fill:none"/>
+        <path data-name="패스 19542" d="m4.5 7 2 5 2-5" transform="translate(11.5 4.5)" style="stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;stroke:#111;fill:none"/>
+        <g data-name="사각형 16247" transform="translate(10 13.5)" style="fill:#fff;stroke:#111">
+            <rect width="3.5" height="1.5" rx=".75" style="stroke:none"/>
+            <rect x=".5" y=".5" width="2.5" height=".5" rx=".25" style="fill:none"/>
+        </g>
+        <g data-name="사각형 16248" transform="translate(18.5 13.5)" style="fill:#fff;stroke:#111">
+            <rect width="3.5" height="1.5" rx=".75" style="stroke:none"/>
+            <rect x=".5" y=".5" width="2.5" height=".5" rx=".25" style="fill:none"/>
+        </g>
+    </g>
+</svg>

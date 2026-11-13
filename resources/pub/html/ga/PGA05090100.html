@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>조직 변경 심사</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+    <div class="section">
+      <h1>조직 변경 심사</h1>
+      <ul class="formList div3">
+        <li>
+          <div class="th">대리점</div>
+          <div class="td">
+            <select class="ipt">
+              <option selected="">전체</option>
+            </select>
+          </div>
+        </li>
+        <li>
+          <div class="th">지점</div>
+          <div class="td">
+            <select class="ipt">
+              <option selected="">전체</option>
+            </select>
+          </div>
+        </li>
+        <li class="full">
+          <div class="th">상태</div>
+          <div class="td">
+            <ul class="iptGroup">
+              <li>
+                <input type="checkbox" class="ipt" name="chk1" id="chk1" checked="">
+                <label for="chk1">접수</label>
+              </li>
+              <li>
+                <input type="checkbox" class="ipt" name="chk2" id="chk2">
+                <label for="chk2">변경 완료</label>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="full">
+          <div class="th">접수기간</div>
+            <div class="td">
+              <div class="setHalf">
+              <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz01221">
+              <span class="sign">~</span>
+              <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz1231">
+            </div>
+            <ul class="iptFilt">
+              <li>
+                <input type="radio" class="ipt" name="filter0" id="filter0_1">
+                <label for="filter0_1">당일</label>
+              </li>
+              <li>
+                <input type="radio" class="ipt" name="filter0" id="filter0_2" checked="">
+                <label for="filter0_2">1주일</label>
+              </li>
+              <li>
+                <input type="radio" class="ipt" name="filter0" id="filter0_3">
+                <label for="filter0_3">1개월</label>
+              </li>
+              <li>
+                <input type="radio" class="ipt" name="filter0" id="filter0_4">
+                <label for="filter0_4">3개월</label>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="full">
+          <div class="th">이름</div>
+          <div class="td">
+            <input type="text" class="ipt"  placeholder="예: 김하나">
+          </div>
+        </li>
+      </ul>
+      <div class="btn_wrap">
+        <button type="button" class="btn_white">초기화</button>
+        <button type="button" class="btn_primary">조회</button>
+      </div>
+
+
+      <div class="sort_wrap">
+        <div class="sort">
+          <ul class="count">
+            <li>총 <span class="count_num count_num_accent">1,000</span>건</li>
+            <li><span class="count_num count_num_accent">1</span>/100페이지</li>
+          </ul>
+        </div>
+        <div class="sortRight">
+					<button type="button" class="btn_white_round m" id="btnDeletel">삭제</button>
+          <button type="button" class="btn_white_round m" id="btnTotApproval">일괄 승인</button>
+          <!-- 26.06.12 -->
+          <button type="button" class="btn_primary_reverse m" id="btnExcelDwn">엑셀 다운로드</button>
+          <!-- //26.06.12 -->
+        </div>
+      </div>
+
+      <div class="tabl_area">
+        <table>
+          <colgroup>
+            <col style="width: 50px;">
+            <col style="width: 15%;">
+            <col style="width: auto;">
+            <col style="width: auto;">
+            <col style="width: 10%;">
+            <col style="width: 14%;">
+            <col style="width: 14%;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>
+                <span class="single">
+                  <input type="checkbox" class="ipt" name="" id="chk_1"><label for="chk_1"></label>
+                </span>
+              </th>
+              <th>이름(사번)</th>
+              <th>현재 소속</th>
+              <th>변경 후 소속</th>
+              <th>상태</th>
+              <th>접수일</th>
+              <th>변경일</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="single">
+                  <input type="checkbox" class="ipt" name="" id="chk_1"><label for="chk_1"></label>
+                </span>
+              </td>
+              <td>
+                <p>김하나</p>
+                <p>(0123456)</p>
+              </td>
+              <td><span>A본부, A지점</span></td>
+              <td><span class="pointC1">B본부, B지점</span></td>
+              <td><span>접수</span></td>
+              <td><span>2022.09.05</span></td>
+              <td><span></span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="single">
+                  <input type="checkbox" class="ipt" name="" id="chk_1"><label for="chk_1"></label>
+                </span>
+              </td>
+              <td>
+                <p>김하나</p>
+                <p>(0123456)</p>
+              </td>
+              <td><span>A본부, A지점</span></td>
+              <td><span class="pointC1">B본부, B지점</span></td>
+              <td><span>접수</span></td>
+              <td><span>2022.09.05</span></td>
+              <td><span></span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="single">
+                  <input type="checkbox" class="ipt" name="" id="chk_1"><label for="chk_1"></label>
+                </span>
+              </td>
+              <td>
+                <p>김하나</p>
+                <p>(0123456)</p>
+              </td>
+              <td><span>A본부, A지점</span></td>
+              <td><span>A본부,</span> <span class="pointC1">B지점</span></td>
+              <td><span>접수</span></td>
+              <td><span>2022.09.05</span></td>
+              <td><span></span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="single">
+                  <input type="checkbox" class="ipt" name="" id="chk_1"><label for="chk_1"></label>
+                </span>
+              </td>
+              <td>
+                <p>김하나</p>
+                <p>(0123456)</p>
+              </td>
+              <td><span>A본부, A지점</span></td>
+              <td><span>A본부,</span> <span class="pointC1">B지점</span></td>
+              <td><span>접수</span></td>
+              <td><span>2022.09.05</span></td>
+              <td><span></span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="single">
+                  <input type="checkbox" class="ipt" name="" id="chk_1"><label for="chk_1"></label>
+                </span>
+              </td>
+              <td>
+                <p>김하나</p>
+                <p>(0123456)</p>
+              </td>
+              <td><span>A본부, A지점</span></td>
+              <td><span>A본부,</span> <span class="pointC1">B지점</span></td>
+              <td><span>접수</span></td>
+              <td><span>2022.09.05</span></td>
+              <td><span></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <a href="#" class="btn_first">처음 페이지로 이동</a>
+        <a href="#" class="btn_prev">이전 페이지로 이동</a>
+        <a href="#" class="num">1</a>
+        <span class="current">2</span>
+        <a href="#" class="num">3</a>
+        <a href="#" class="num">4</a>
+        <a href="#" class="num">5</a>
+        <a href="#" class="num">6</a>
+        <a href="#" class="num">7</a>
+        <a href="#" class="num">8</a>
+        <a href="#" class="num">9</a>
+        <a href="#" class="num">10</a>
+        <a href="#" class="btn_next">다음 페이지로 이동</a>
+        <a href="#" class="btn_last">마지막 페이지로 이동</a>
+      </div>
+
+    </div>
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+
+</html>

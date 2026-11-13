@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+    <g transform="translate(-29.5 -1260)">
+        <circle data-name="타원 49" cx="40" cy="40" r="40" transform="translate(29.5 1260)" style="fill:#f5f5f5"/>
+        <g data-name="그룹 103638">
+            <path data-name="선 271" transform="translate(50.5 1303.75)" style="stroke-miterlimit:10;stroke:#111;stroke-width:2px;fill:none" d="M0 0h21.723"/>
+            <path data-name="선 272" transform="translate(69.5 1310.75)" style="stroke-miterlimit:10;stroke:#111;stroke-width:2px;fill:none" d="M0 0v8"/>
+            <path data-name="선 273" transform="translate(61.5 1318.75)" style="stroke-linecap:round;stroke-miterlimit:10;stroke:#111;stroke-width:2px;fill:none" d="M0 0h16"/>
+            <path data-name="선 274" transform="translate(58.073 1289.354)" style="stroke-linejoin:round;stroke-linecap:round;stroke:#111;stroke-width:2px;fill:none" d="M0 0h8.168"/>
+            <path data-name="선 275" transform="translate(58.073 1295.354)" style="stroke-linejoin:round;stroke-linecap:round;stroke:#111;stroke-width:2px;fill:none" d="M0 0h16"/>
+            <g data-name="그룹 103637">
+                <g data-name="타원 554" transform="translate(66.223 1289.272)" style="fill:#c8f7f4;stroke-miterlimit:10;stroke:#111;stroke-width:2px">
+                    <circle cx="9" cy="9" r="9" style="stroke:none"/>
+                    <circle cx="9" cy="9" r="8" style="fill:none"/>
+                </g>
+                <path data-name="선 276" transform="translate(81.223 1304.272)" style="fill:#c8f7f4;stroke-linecap:round;stroke-miterlimit:10;stroke:#111;stroke-width:2px" d="m0 0 5 5"/>
+                <path data-name="패스 19627" d="M225 1445a4 4 0 0 1 4 4" style="fill:#c8f7f4;stroke-linecap:round;stroke-miterlimit:10;stroke:#111;stroke-width:2px" transform="translate(-149.777 -150.728)"/>
+            </g>
+            <path data-name="패스 19628" d="M228 1459.978h-23.723a2 2 0 0 1-2-2v-22a2 2 0 0 1 2-2h30a2 2 0 0 1 2 2V1450a1 1 0 0 0 1 1 1 1 0 0 0 1-1v-14.022a4 4 0 0 0-4-4h-30a4 4 0 0 0-4 4v22a4 4 0 0 0 4 4H228a1 1 0 0 0 1-1 1 1 0 0 0-1-1z" style="fill:#111" transform="translate(-149.777 -150.728)"/>
+        </g>
+    </g>
+</svg>

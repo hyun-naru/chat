@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>부담보동의서 관리</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header"></div>
+        <!-- container (s) -->
+        <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+            <div class="section pcs_wrap"><!-- 230518 -->
+                <h1 class="tit01">부담보동의서 관리</h1>
+                <ul class="formList div3">
+                    <li>
+                        <div class="th">채널</div>
+                        <div class="td">
+                            <select class="ipt">
+                                <option selected="">전체</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="th">본부</div>
+                        <div class="td">
+                            <select class="ipt">
+                                <option selected="">전체</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="th">지점</div>
+                        <div class="td">
+                            <select class="ipt">
+                                <option selected="">전체</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="oneThirdDiv">
+                        <div class="th">팀</div>
+                        <div class="td">
+                            <select class="ipt">
+                                <option selected="">전체</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="twoThirdsDiv">
+                        <div class="th">판매인</div>
+                        <div class="td">
+                            <select class="ipt mid">
+                                <option selected="">전체</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="oneThirdDiv">
+                        <div class="th">고객명</div>
+                        <div class="td">
+                            <input type="text" class="ipt"  placeholder="예: 김하나">
+                        </div>
+                    </li>
+                    <li class="twoThirdsDiv">
+                        <div class="th">휴대전화</div>
+                        <div class="td">
+                            <div class="setPhone">
+                                <select class="ipt" title="휴대폰번호 앞 3자리">
+                                    <option>010</option>
+                                    <option>011</option>
+                                </select>
+                                <input type="tel" class="ipt" maxlength="8" title="휴대폰번호 뒷자리" placeholder="숫자만 입력">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="oneThirdDiv">
+                        <div class="th">증권번호</div>
+                        <div class="td">
+                            <input type="text" class="ipt"  placeholder="">
+                        </div>
+                    </li>
+                    <li class="twoThirdsDiv">
+                        <div class="th">신청일</div>
+                        <div class="td">
+                            <div class="setHalf">
+                                <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz">
+                                <span class="sign">~</span>
+                                <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz">
+                            </div>
+                            <ul class="iptFilt">
+                                <li>
+                                    <input type="radio" class="ipt" name="filter0" id="filter0_1" checked="">
+                                    <label for="filter0_1">당일</label>
+                                </li>
+                                <li>
+                                    <input type="radio" class="ipt" name="filter0" id="filter0_2" >
+                                    <label for="filter0_2">최근3일</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="btn_wrap">
+                    <button type="button" class="btn_white">초기화</button>
+                    <button type="button" class="btn_primary">조회</button>
+                </div>
+                <!-- 230518 -->
+                <div class="count_list">
+                    <div class="sort_wrap">
+                        <div class="sort">
+                            <ul class="count">
+                                <li>총 <span class="count_num count_num_accent">106</span>건</li>
+                                <li><span class="count_num count_num_accent">1</span>/100페이지</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tabl_area">
+                        <!-- 조회 테이블 (s)-->
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col style="width: 8%;">
+                                <col style="width: 15%;">
+                                <col style="width: 15%;">
+                                <col style="width: auto;">
+                                <col style="width: 15%;">
+                                <col style="width: 15%;">
+                                <col style="width: 15%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>선택</th>
+                                    <th>증권번호</th>
+                                    <th>판매인</th>
+                                    <th>청약일</th>
+                                    <th>계약자</th>
+                                    <th>보관요청일</th>
+                                    <th>처리상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="single">
+                                            <input type="radio" class="ipt" name="rdo_1" id="rdo_1"><label for="rdo_1"></label>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span>12345678</span>
+                                    </td>
+                                    <td>
+                                        <span>홍길동(01234567)</span>
+                                    </td>
+                                    <td>
+                                        <span>2023.09.01</span>
+                                    </td>
+                                    <td>
+                                        <span>김하나(881222/여)</span>
+                                    </td>
+                                    <td>
+                                        <span>2023.09.01</span>
+                                    </td>
+                                    <td>
+                                        <span>미처리</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="single">
+                                            <input type="radio" class="ipt" name="rdo_1" id="rdo_12"><label for="rdo_12"></label>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span>12345678</span>
+                                    </td>
+                                    <td>
+                                        <span>홍길동(01234567)</span>
+                                    </td>
+                                    <td>
+                                        <span>2023.09.01</span>
+                                    </td>
+                                    <td>
+                                        <span>김하나(881222/여)</span>
+                                    </td>
+                                    <td>
+                                        <span>2023.09.01</span>
+                                    </td>
+                                    <td>
+                                        <span>미처리</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="single">
+                                            <input type="radio" class="ipt" name="rdo_1" id="rdo_13"><label for="rdo_13"></label>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span>12345678</span>
+                                    </td>
+                                    <td>
+                                        <span>홍길동(01234567)</span>
+                                    </td>
+                                    <td>
+                                        <span>2023.09.01</span>
+                                    </td>
+                                    <td>
+                                        <span>김하나(881222/여)</span>
+                                    </td>
+                                    <td>
+                                        <span>2023.09.01</span>
+                                    </td>
+                                    <td>
+                                        <span>미처리</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="single">
+                                            <input type="radio" class="ipt" name="rdo_1" id="rdo_14"><label for="rdo_14"></label>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span>12345678</span>
+                                    </td>
+                                    <td>
+                                        <span>홍길동(01234567)</span>
+                                    </td>
+                                    <td>
+                                        <span>2023.09.01</span>
+                                    </td>
+                                    <td>
+                                        <span>김하나(881222/여)</span>
+                                    </td>
+                                    <td>
+                                        <span>2023.09.01</span>
+                                    </td>
+                                    <td>
+                                        <span>미처리</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="single">
+                                            <input type="radio" class="ipt" name="rdo_1" id="rdo_15"><label for="rdo_15"></label>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span>12345678</span>
+                                    </td>
+                                    <td>
+                                        <span>홍길동(01234567)</span>
+                                    </td>
+                                    <td>
+                                        <span>2023.09.01</span>
+                                    </td>
+                                    <td>
+                                        <span>김하나(881222/여)</span>
+                                    </td>
+                                    <td>
+                                        <span>2023.09.01</span>
+                                    </td>
+                                    <td>
+                                        <span>미처리</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="single">
+                                            <input type="radio" class="ipt" name="rdo_1" id="rdo_16"><label for="rdo_16"></label>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span>12345678</span>
+                                    </td>
+                                    <td>
+                                        <span>홍길동(01234567)</span>
+                                    </td>
+                                    <td>
+                                        <span>2023.09.01</span>
+                                    </td>
+                                    <td>
+                                        <span>김하나(881222/여)</span>
+                                    </td>
+                                    <td>
+                                        <span>2023.09.01</span>
+                                    </td>
+                                    <td>
+                                        <span>미처리</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="single">
+                                            <input type="radio" class="ipt" name="rdo_1" id="rdo_17"><label for="rdo_17"></label>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span>12345678</span>
+                                    </td>
+                                    <td>
+                                        <span>홍길동(01234567)</span>
+                                    </td>
+                                    <td>
+                                        <span>2023.09.01</span>
+                                    </td>
+                                    <td>
+                                        <span>김하나(881222/여)</span>
+                                    </td>
+                                    <td>
+                                        <span>2023.09.01</span>
+                                    </td>
+                                    <td>
+                                        <span>미처리</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="btn_area">
+                            <button type="button" class="btn_primary_reverse l">서류 출력</button>
+                        </div>
+                        <!--// 조회 테이블 (e)-->
+                        <!-- No Result (s) -->
+                        <div class="noresultWrap">
+                            <img src="./resources/pt/images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+                            <div class="noresultText">조회 결과가 없습니다.</div>
+                        </div>
+                        <!--// No Result (e) -->
+                    </div>
+
+                    <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+                        <button type="button" class="icoBtn_first" aria-label="처음"></button>
+                        <button type="button" class="icoBtn_prev" aria-label="이전"></button>
+                        <ul>
+                            <li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+                            <li><a href="#"><span class="blind">페이지</span>2</a></li>
+                            <li><a href="#"><span class="blind">페이지</span>3</a></li>
+                            <li><a href="#"><span class="blind">페이지</span>4</a></li>
+                            <li><a href="#"><span class="blind">페이지</span>5</a></li>
+                            <li><a href="#"><span class="blind">페이지</span>6</a></li>
+                            <li><a href="#"><span class="blind">페이지</span>7</a></li>
+                            <li><a href="#"><span class="blind">페이지</span>8</a></li>
+                            <li><a href="#"><span class="blind">페이지</span>9</a></li>
+                            <li><a href="#"><span class="blind">페이지</span>10</a></li>
+                        </ul>
+                        <button type="button" class="icoBtn_next" aria-label="다음"></button>
+                        <button type="button" class="icoBtn_last" aria-label="마지막"></button>
+                    </div>
+                </div>
+                <!-- //230518 -->
+            </div>
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+        </div><!-- container (e) -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="Shortcut Icon" href="./resources/pt/images/fav/favicon.png">
+    <title>타이틀</title>
+    <link rel="stylesheet" type="text/css" href="./resources/tab/pt/css/cssLib.css" />
+    <script src="./resources/comm/js/jquery-3.5.1.min.js"></script>
+    <script src="./resources/comm/js/jquery.form.min.js"></script>
+    <script src="./resources/comm/js/jquery.serializeObject.min.js"></script>
+    <script src="./resources/comm/js/jquery-ui.js"></script>
+    <script src="./resources/comm/js/jquery.ui.monthpicker.js"></script>
+    <script src="./resources/comm/js/jquery.cookie.js"></script>
+    <script src="./resources/comm/js/jquery.blockUI.js"></script>
+    <script src="./resources/comm/js/jquery.MultiFile.js"></script>
+    <script src="./resources/comm/js/swiper.min.js"></script>
+    <script src="./resources/comm/js/lightslider.js"></script>
+    <script src="./resources/comm/js/common-transaction.js"></script>
+    <script src="./resources/comm/js/common-numeral.min.js"></script>
+    <script src="./resources/comm/js/common-moment.min.js"></script>
+    <script src="./resources/comm/js/common-str.js"></script>
+    <script src="./resources/comm/js/common-util.js"></script>
+    <script src="./resources/comm/js/common-code.js"></script>
+    <script src="./resources/comm/js/common-storage.js"></script>
+    <script src="./resources/comm/js/common-timeout.js"></script>
+    <script src="./resources/comm/js/sfaApp.interface.js"></script>
+    <script src="./resources/pt/js/ui.front.js"></script>
+    <script src="./resources/pt/js/ui.common.js"></script>
+    <script src="./resources/pt/js/pt.common.js"></script>
+    <script type="text/javascript" src="./resources/pub/js/pub.include_tab.js"></script>
+    <!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+
+    <link rel="stylesheet" type="text/css" href="./resources/pt/css/tabIndex.css" />
+    <link rel="stylesheet" type="text/css" href="./resources/ssc/tab/css/chat.css" />
+    <script>
+        let isMoLanding = false;	//모바일 랜딩의 경우
+        $(document).ready(function () {
+            // ui.front.js 초기 실행
+            layout.init(); // 페이지가 준비가 됐을 때 딱 한번만 실행 (공통 개발팀에서 호출하는게 좋습니다.)
+            ui.init(); // 페이지가 동적으로 바뀔때마다 실행 (개발을 붙였더니 뭔가 동작을 안할때 개발페이지 개발자들이 호출하는게 좋습니다.)
+            myfuncInit(); // 차장님이 짜신 함수. 아래에 자세히 설명 써드리겠습니다.
+
+            menuDepDraw();//location 정의
+
+            sfaApp.getVersion();	//앱 버전 체크 및 플랫폼 체크
+
+        });
+    </script>
+</head>
+
+<body>
+    <!-- wrapper (s) -->
+    <div class="wrapper" id="wrapper">
+        <!-- header (s) -->
+        <div class="header"></div>
+        <!-- header (e) -->
+        <!-- content (s) -->
+        <section class="tab_page">
+
+            <div class="tab_page_list">
+                <div class="tab_sticky">
+                    <div class="one_close">
+                        <button type="button" class="btn_navy_dark s" id="btn_compare" disabled>가입설계 비교하기 <span
+                                id="compare">0/2</span></span></button>
+                        <button type="button" class="btn_white s btn_set" id="tab_close_item">탭 관리</button>
+                        <div id="context-menu" class="btn_tab_item_box">
+                        <div class="btn_tab_item_list">
+                            <div class="tab_btn_list">
+                                <div class="tab_chk_tit">
+                                    <strong>열려있는 탭(<span class="tab_total_num"></span>)</strong>
+                                    <button type="button" class="btn_white s" id="tab_chk">선택 닫기</button>
+                                </div>
+                                <ul id="tab_check_list" class="tab_check_list"></ul>
+                            </div>
+                                <div class="top_btn">
+                                    <button type="button" class="btn_white s" id="tab_close">이 탭 닫기</button>
+                                    <button type="button" class="btn_white s" id="tab_close_others">이 탭만 남기기</button>
+                                    <button type="button" class="btn_white s" id="tab_close_all">모두 닫기</button>
+                                </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="tab_bar_list">
+                        <div class="arrow left">
+                            <button class="left icon">
+                                <span class="blind">왼족으로 이동</span>
+                            </button>
+                        </div>
+                        <div class="tab_bar_items">
+                            <ul class="tab_bar_item">
+                                <li class="home active" data-id="tab_PMA00000100M">
+                                    <a href="javascrip:void(0)" class="">
+                                        <span>홈</span>
+                                    </a>
+                                    <button class="btn_del" type="button"><span class="blind">해당 탭 삭제</span></button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="arrow right">
+                            <button class="right icon">
+                                <span class="blind">오른쪽으로 이동</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab_cont_items">
+                    <div class="content_tab" data-src="./resources/pub/html/cm/PMA00000100.html" data-id="tab_PMA00000100M">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- container (e) -->
+        <div class="floating_box">
+            <!-- <button type="button" class="btn_chat" id="btn_chat" onclick="window.open('chatPopup02.html', 'chatPopup', 'width=1200,height=800,resizable=yes,scrollbars=yes');"><span class="blind">챗봇 오픈</span></button> -->
+            <button type="button" class="btn_chat" id="btn_chat01"><span class="blind">챗봇 오픈</span></button>
+            <!-- <button type="button" class="btn_chat ty2" id="btn_chat01"><span class="blind">챗봇 오픈</span>모니터링</button>
+            <button type="button" class="btn_chat ty2" id="btn_chat02"><span class="blind">챗봇 오픈</span>반송</button>
+            <button type="button" class="btn_chat ty2" id="btn_chat03"><span class="blind">챗봇 오픈</span>가입설계서</button>
+            <button type="button" class="btn_chat ty2" id="btn_chat04"><span class="blind">챗봇 오픈</span>사용인</button>
+            <button type="button" class="btn_chat ty2" id="btn_chat05"><span class="blind">챗봇 오픈</span>보완건조회</button>
+            <button type="button" class="btn_chat ty2" id="btn_chat06"><span class="blind">챗봇 오픈</span>개인정보동의현황</button>
+            <button type="button" class="btn_chat ty2" id="btn_chat07"><span class="blind">챗봇 오픈</span>상령일</button>
+            <button type="button" class="btn_chat ty2" id="btn_chat08"><span class="blind">챗봇 오픈</span>당월실효</button>
+            <button type="button" class="btn_chat ty2" id="btn_chat09"><span class="blind">챗봇 오픈</span>실효예정</button> -->
+            <!-- <button type="button" class="btn_chat" id="btn_chat" onclick="window.open('chatPopup01.html', 'chatPopup', 'width=1200,height=800,resizable=yes,scrollbars=yes');"><span class="blind">챗봇 오픈</span></button> -->
+            <!-- <button type="button" class="btn_chat" id="btn_chat" onclick="window.open('chatPopup04.html', 'chatPopup', 'width=1200,height=800,resizable=yes,scrollbars=yes');"><span class="blind">챗봇 오픈</span></button> -->
+            <!-- <button type="button" class="btn_chat" id="btn_chat" onclick="layerPop.open('chatPopup', 'chatPopup.html');">
+                <span class="blind">챗봇 오픈</span>
+            </button> -->
+            <!-- onclick 방식 사용 시 -->
+            <!-- <button type="button" class="btn_chat" id="btn_chat" onclick="layerPop.open('chatPopup', function() { pop_init('chatPopup', './resources/ssc/tab/REQ-CH-001.html'); });">
+                <span class="blind">챗봇 오픈</span>
+            </button> -->
+        <!-- popup (s) -->
+        <div class="popWrap newPsd" id="popup">
+            <div class="popContain">
+                <div class="popup fullHeight type02">
+                    <div class="popHead">
+                        <h1 class="tit01">보험료계산 결과</h1>
+                    </div>
+                    <div class="popBody col_auto">
+                        <!-- 팝업 내용 시작 (s) -->
+                        <section>
+
+                        </section>
+                        <!-- 팝업 내용 끝 (e) -->
+                    </div>
+                    <button type="button" class="icoBtn_close"><span>팝업 닫기</span></button>
+                </div>
+            </div>
+        </div>
+        <!-- popup (e) -->
+        <!-- popup (s) -->
+        <div class="popWrap newPsd chat" id="chatPopup">
+            <div class="popContain">
+                <div class="popup fullHeight">
+                    <div class="popHead">
+                        <h1 class="tit01"><img src="./resources/ssc/images/white_logo.svg">영업지원</h1>
+                    </div>
+                    <div class="popBody col_auto">
+                        <!-- 팝업 내용 시작 (s) -->
+                        <section>
+
+                        </section>
+                        <!-- 팝업 내용 끝 (e) -->
+                    </div>
+                    <button type="button" class="icoBtn_close"><span>팝업 닫기</span></button>
+                </div>
+            </div>
+        </div>
+        <!-- popup (e) -->
+    </div>
+    <!-- wrapper(e) -->
+</body>
+<script>
+    $(document).ready(function () {
+
+
+
+        let isScrolling = false;
+        const $tabWrap = $('.tab_page_list');
+        const $tabs = $tabWrap.find('.tab_bar_item > li');
+        const $tabConts = $tabWrap.find('.content_tab');
+        const $initialTabs = $tabWrap.find('.tab_bar_item > li');
+
+        const tabCount = $tabs.length;
+        if (tabCount <= 1) {
+            $tabs.find('.btn_del').addClass('hidden');
+        } else {
+            $tabs.find('.btn_del').removeClass('hidden').eq(0).addClass('hidden');
+        }
+
+        updateTabArrow($tabWrap);
+
+        // ========================
+        // ✅ 초기 전체 탭 컨텐츠 로드
+        // ========================
+        $tabWrap.find('.content_tab').each(function (idx) {
+            const $cont = $(this);
+            const src = $cont.data('src');
+            if (!src) return;
+
+            $.ajax({
+                url: src,
+                success: (html) => {
+                    var fixedHtml = html.replace(/(src|href)=(['"])(\.\.\/\.\.\/)/g, '$1=$2/resources/pt/');
+                    var parser = new DOMParser();
+                    var doc = parser.parseFromString(fixedHtml, 'text/html');
+                    var target = doc.querySelector('.container') || doc.body;
+
+                    $cont.html(target.outerHTML || target.innerHTML);
+                    $cont.data('loaded', true);
+                    $cont.find('.header').hide();
+
+                    // UI 초기화 실행 (필요시)
+                    if (typeof ui !== 'undefined' && ui.init) ui.init();
+                }
+            });
+
+        });
+        $initialTabs.each(function(i) {
+            const $this = $(this);
+            const tabId = $this.attr('data-id') || 'tab_default';
+            const title = $this.find('a span').text();
+            const text = $this.find('.people').length ? $this.find('.people')[0].outerHTML : '';
+            
+            // 리스트 아이템 생성
+            const $checkListItem = $(`
+                <li data-id="${tabId}">
+                    <div class="chk_item">
+                        <input type="checkbox" id="chk_${tabId}" class="list_tab_check"> <label for="chk_${tabId}">
+                            <span>${title}</span>${text}
+                        </label>
+                    </div>
+                    <button class="btn_del" type="button">
+                        <span class="blind">해당 탭 삭제</span>
+                    </button>
+                </li>
+            `);
+            
+            $('#tab_check_list').append($checkListItem);
+        });
+        // 초기 로드 시 체크
+        if ($('#tab_check_list > li').length <= 1) {
+            $('.btn_tab_item_box').removeClass('active');
+        }
+        // ========================
+        // ✅ 탭 클릭 이벤트
+        // ========================
+        $tabWrap.on('click', '.tab_bar_item > li> a', function (e) {
+            e.preventDefault();
+
+            const $li = $(this).parent();
+            const tabId = $li.attr('data-id'); // 예: "tab_PMA00000100M"
+
+            // 1. 탭 상단바 활성화 변경
+            $tabWrap.find('.tab_bar_item > li').removeClass('active');
+            $li.addClass('active');
+
+            // 2. 컨텐츠 영역 활성화 변경
+            const $conts = $tabWrap.find('.content_tab');
+            $conts.removeClass('active');
+
+            // data-id가 일치하는 컨텐츠만 노출
+            const $targetCont = $tabWrap.find(`.content_tab[data-id="${tabId}"]`);
+            $targetCont.addClass('active');
+
+            // 3. UI 업데이트 (화살표 등)
+            updateTabArrow($tabWrap);
+        });
+        $tabWrap.on('click', '.btn_del', function () {
+            const $li = $(this).closest('li');
+            const tabIdx = $tabWrap.find('.tab_bar_item > li').index($li);
+            
+            // 첫 번째 탭은 삭제 방지 (HTML 구조상 첫번째면 무시)
+            if (tabIdx === 0) {
+                uiInfo.pt.alert('', '기본 탭은 삭제할 수 없습니다.');
+                return;
+            }
+
+            removeTab(tabIdx);
+        });
+        // ===========================================
+        // ✅ 탭 제거 함수
+        // ===========================================
+        function removeTab(tabIdx) {
+            const $tabBar = $tabWrap.find('.tab_bar_item');
+            const $tabs = $tabBar.children('li');
+            const $contents = $tabWrap.find('.content_tab');
+            const $checkList = $('#tab_check_list').children('li');
+
+            if ($tabs.length <= 1) return;
+
+            const isActive = $tabs.eq(tabIdx).hasClass('active');
+
+            // 1. 실제 요소 제거
+            $tabs.eq(tabIdx).remove();
+            $contents.eq(tabIdx).remove();
+            $checkList.eq(tabIdx).remove();
+
+            // 2. 남은 요소 갱신
+            const $newTabs = $tabBar.children('li');
+            const $newContents = $tabWrap.find('.content_tab');
+            const $newCheckList = $('#tab_check_list').children('li');
+
+            // 3. 활성 상태 복구
+            if (isActive) {
+                let nextIdx = (tabIdx >= $newTabs.length) ? $newTabs.length - 1 : tabIdx;
+                $newTabs.removeClass('active').eq(nextIdx).addClass('active');
+                $newContents.removeClass('active').eq(nextIdx).addClass('active');
+            }
+
+            // 4. 🔥 삭제 버튼 상태 업데이트 (항상 첫 번째 탭은 숨김)
+            $newTabs.each(function(i) {
+                const $btn = $(this).find('.btn_del');
+                if (i === 0) {
+                    $btn.addClass('hidden');
+                } else {
+                    $btn.removeClass('hidden');
+                }
+            });
+            $newCheckList.each(function(i) {
+                if (i === 0) {
+                    $(this).find('.btn_del').addClass('hidden');
+                } else {
+                    $(this).find('.btn_del').removeClass('hidden');
+                }
+            });
+
+            // 5. 화살표 및 레이아웃 업데이트
+            setTimeout(() => {
+                updateTabArrow($tabWrap);
+            }, 50);
+            updateCompareButtonState();
+        }
+
+
+        // ========================
+        // ✅ 탭 추가 함수
+        // ========================
+        $(document).on('click', '.gnb_tab_sub a:not(".url_not")', function (e) {
+            e.preventDefault();
+
+            // 전역 오염 방지 및 초기화
+            window.isMoLanding = false;
+
+            const $tabWrap = $('.tab_page_list');
+            const $tabBar = $tabWrap.find('.tab_bar_item');
+            const $tabCont = $tabWrap.find('.tab_cont_items');
+
+            // [추가] 탭 최대 갯수 제한 (10개)
+            if ($tabBar.find('li').length >= 10) {
+                uiInfo.pt.alert('', '탭은 최대 10개까지 열 수 있습니다.');
+                return;
+            }
+
+            const url = $(this).attr('href');
+            const title = $(this).text().trim();
+            const fileName = url.split('/').pop();
+            const menuId = fileName.split('.')[0];
+
+            const isMulti = menuId === 'PSD02010200M';
+            let tabId = isMulti ? "tab_" + menuId + "-" + Date.now() : "tab_" + menuId;
+
+            // 이미 존재하는 탭 처리
+            if (!isMulti) {
+                const $exist = $tabCont.find(`.content_tab[data-id="${tabId}"]`);
+                if ($exist.length) {
+                    const idx = $exist.index();
+                    $tabBar.find('li').removeClass('active').eq(idx).addClass('active');
+                    $tabCont.find('.content_tab').removeClass('active').eq(idx).addClass('active');
+                    return;
+                }
+            }
+
+            // 새 탭 구조 생성
+            const checkbox = isMulti ? '<input type="checkbox" class="tab_check" >' : '';
+            const text = isMulti ? '<span class="people">피보험자 : 김하나' : '';
+            $tabBar.find('li').removeClass('active');
+            $tabCont.find('.content_tab').removeClass('active');
+
+            const $newTab = $(`
+        <li data-id="${tabId}" data-url="${url}" class="active">
+            ${checkbox}
+            <a href="javascript:void(0)"><span>${title}</span>${text}</a>
+            <button class="btn_del" type="button">
+                        <span class="blind">해당 탭 삭제</span>
+                    </button>
+        </li>
+    `);
+
+            // 🔥 여기서 $newCont를 확실히 정의하고 메모리에 유지합니다.
+            const $newCont = $(`<div class="content_tab active" data-id="${tabId}" data-src="${url}"></div>`);
+
+            $tabBar.append($newTab);
+            $tabCont.append($newCont);
+
+            // ✅ 사이드바/체크 리스트에 항목 추가
+            const $checkListItem = $(`
+                <li data-id="${tabId}">
+                    <div class="chk_item">
+                        <input type="checkbox" id="chk_${tabId}" class="tab_check">
+                        <label for="chk_${tabId}">
+                            <span>${title}</span>${text}
+                        </label>
+                    </div>
+                    <button class="btn_del" type="button">
+                        <span class="blind">해당 탭 삭제</span>
+                    </button>
+                </li>
+            `);
+
+            $('#tab_check_list').append($checkListItem);
+            // 첫 번째 탭(인덱스 0)은 삭제 버튼 숨김 처리 로직 (필요 시)
+            if ($tabBar.find('li').length === 1) {
+                $checkListItem.find('.btn_del').addClass('hidden');
+                $checkListItem.find('.list_tab_check').prop('disabled', true); // 기본탭 체크 방지
+            }
+
+            // Ajax 로드
+            $.ajax({
+                url: url,
+                dataType: 'html',
+                success: function (html) {
+                    if (typeof isScrolling !== 'undefined') isScrolling = false;
+
+                    // 1. 상대 경로 (../../)를 /resources/pt/로 치환
+                    // src="../../..." 또는 href="../../..." 형태를 모두 찾아 바꿉니다.
+                    var fixedHtml = html.replace(/(src|href)=(['"])(\.\.\/\.\.\/)/g, '$1=$2/resources/pt/');
+
+                    // 2. 치환된 HTML로 파싱 진행
+                    var parser = new DOMParser();
+                    var doc = parser.parseFromString(fixedHtml, 'text/html');
+
+                    // 3. .container 추출
+                    var target = doc.querySelector('.container');
+
+                    // 만약 .container가 없으면 로직이 멈추지 않게 body라도 설정
+                    if (!target) {
+                        console.warn(".container를 찾을 수 없어 전체 내용을 로드합니다.");
+                        target = doc.body;
+                    }
+
+                    // 4. 대상 그릇 확인 및 삽입
+                    var $actualCont = $(`.content_tab[data-id="${tabId}"]`);
+                    if ($actualCont.length === 0) $actualCont = $newCont;
+
+                    // .container 자체(outerHTML)를 삽입
+                    $actualCont.html(target.outerHTML || target.innerHTML);
+                    $actualCont.data('loaded', true);
+                    $actualCont.find('.header').remove();
+                    // 새로 삽입된 컨텐츠($actualCont)만 타겟으로 지정하여 초기화
+                    if (typeof ui !== 'undefined' && typeof ui.init === 'function') {
+                        ui.init($actualCont); // 👈 여기서 $actualCont를 인자로 꼭 넘겨주세요!
+                    }
+                    // 5. 스크립트 실행 (격리)
+                    var scripts = doc.querySelectorAll('script');
+                    scripts.forEach(function (oldScript) {
+                        if (oldScript.src) {
+                            // 🔥 [추가] 경로가 꼬이거나 404를 유발하는 퍼블리싱 인클루드 스크립트는 동적 로드에서 제외
+                            if (oldScript.src.includes('pub.include')) {
+                                console.log("퍼블리싱 인클루드 스크립트는 메인에서 처리하므로 건너뜀:", oldScript.src);
+                                return;
+                            }
+
+                            // [중요] 이미 같은 src를 가진 스크립트가 head에 있는지 확인
+                            var isAlreadyLoaded = Array.from(document.scripts).some(function (s) {
+                                return s.src === oldScript.src;
+                            });
+
+                            if (!isAlreadyLoaded) {
+                                var s = document.createElement('script');
+                                s.src = oldScript.src;
+                                s.async = false;
+                                document.head.appendChild(s);
+                                console.log("새 스크립트 로드:", oldScript.src);
+                            } else {
+                                console.log("이미 로드된 스크립트 건너뜀:", oldScript.src);
+                            }
+                        } else {
+                            var scriptText = oldScript.textContent.trim();
+                            if (scriptText) {
+                                try {
+                                    // 내부 스크립트는 Function으로 격리 실행
+                                    (new Function(scriptText))();
+                                } catch (e) {
+                                    console.error("내부 스크립트 실행 에러:", e);
+                                }
+                            }
+                        }
+                    });
+
+                    setTimeout(function () {
+                        if (typeof updateTabArrow === 'function') updateTabArrow($('.tab_page_list'));
+                        $('.gnb_tab').removeClass('active');
+                    }, 100);
+                },
+                error: function () {
+                    if (typeof isScrolling !== 'undefined') isScrolling = false;
+                    uiInfo.pt.alert('', '페이지 로드 중 오류가 발생했습니다.');
+                }
+            });
+
+            // 탭바 스크롤 이동
+            setTimeout(() => {
+                updateTabArrow($tabWrap);
+                const $scroll = $tabWrap.find('.tab_bar_items');
+                if ($scroll.length) {
+                    $scroll.animate({
+                        scrollLeft: $scroll[0].scrollWidth
+                    }, 200);
+                }
+                $('.gnb_tab_sub').removeClass('active');
+            }, 50);
+        });
+        $tabWrap.on("change", ".tab_check", function () { updateCompareButtonState(); });
+        function updateCompareButtonState() {
+            const cnt = $(".tab_bar_item .tab_check:checked").length;
+            $("#compare").text(cnt + "/2");
+            if (cnt !== 2) {
+                $('#btn_compare').prop("disabled", true);
+            } else {
+                $('#btn_compare').prop("disabled", false);
+            }
+        }
+        function scrollByTab($wrap, dir) {
+            if (isScrolling) return;
+
+            const $scroll = $wrap.find('.tab_bar_items');
+            const $tabs = $wrap.find('.tab_bar_item > li');
+            const el = $scroll[0];
+            if (!el) return;
+
+            const scrollLeft = el.scrollLeft;
+            const viewWidth = el.clientWidth;
+
+            let target = scrollLeft;
+
+            if (dir === 'right') {
+                $tabs.each(function () {
+                    const left = this.offsetLeft;
+                    const right = left + this.offsetWidth;
+
+                    if (right > scrollLeft + viewWidth) {
+                        target = left;
+                        return false;
+                    }
+                });
+            } else {
+                $($tabs.get().reverse()).each(function () {
+                    const left = this.offsetLeft;
+
+                    if (left < scrollLeft) {
+                        target = left;
+                        return false;
+                    }
+                });
+            }
+
+            if (target === scrollLeft) return;
+
+            isScrolling = true;
+
+            $scroll.stop(true).animate(
+                { scrollLeft: target },
+                250,
+                () => {
+                    isScrolling = false;
+                    updateTabArrow($wrap);
+                }
+            );
+        }
+
+
+
+        function updateTabArrow($wrap) {
+            const $scroll = $wrap.find('.tab_bar_items');
+            const el = $scroll[0];
+            if (!el) return;
+
+            const max = el.scrollWidth - el.clientWidth;
+
+            $wrap.find('.arrow.left button')
+                .toggle(el.scrollLeft > 0);
+
+            $wrap.find('.arrow.right button')
+                .toggle(el.scrollLeft < max - 1);
+        }
+        $tabWrap.find('.arrow.right button').on('click', () => {
+            scrollByTab($tabWrap, 'right');
+        });
+        $tabWrap.find('.arrow.left button').on('click', () => {
+            scrollByTab($tabWrap, 'left');
+        });
+        $tabWrap.find('.tab_bar_items').on('scroll', () => {
+            updateTabArrow($tabWrap);
+        });
+
+        $(window).on('load', function () {
+            updateTabArrow($tabWrap);
+        });
+        const tabBar = document.querySelector('.tab_page_list .tab_bar_items');
+        if (tabBar) {
+            const ro = new ResizeObserver(() => {
+                updateTabArrow($tabWrap);
+            });
+            ro.observe(tabBar);
+        }
+        // ========================
+        // ✅ 초기 탭 클릭
+        // ========================
+        $tabWrap.find('.tab_bar_item li').eq(0).find('a').trigger('click');
+        // 1. 기능 확장은 "한 번만" 수행 (공통 영역)
+        $.extend(layerPop, {
+            compareOpen: function (layerId, url1, url2, initParam1, initParam2, callback) {
+
+                var idPop = $('#' + layerId);
+                if (layerId == null || layerId.length == 0) {
+                    alert('팝업의 id값은 필수 입니다.');
+                    return false;
+                }
+
+                Promise.all([
+                    $.ajax({ url: url1, dataType: 'html' }),
+                    $.ajax({ url: url2, dataType: 'html' })
+                ]).then(function (responses) {
+                    var $popBody = idPop.find('.popBody section');
+                    $popBody.empty();
+
+                    var $compareWrap = $('<div class="compare_container"></div>');
+
+                    // 1. 비교를 위해 각 HTML을 DOM 객체로 먼저 변환
+                    var docs = responses.map(function (html) {
+                        var fixedHtml = html.replace(/(src|href)=(['"])(\.\.\/\.\.\/)/g, '$1=$2/resources/pt/');
+                        var parser = new DOMParser();
+                        return parser.parseFromString(fixedHtml, 'text/html');
+                    });
+
+                    var doc1 = docs[0].querySelector('.popWrap section');
+                    var doc2 = docs[1].querySelector('.popWrap section');
+
+                    // 🔥 [추가 로직] 데이터 비교 및 빨간색 표시
+                    if (doc1 && doc2) {
+                        // 비교할 대상 태그들 (제목, 테이블 셀, 리스트 등)
+                        var compareSelector = 'th, td, .tit, .txt, li, span, em, div';
+                        var nodes1 = doc1.querySelectorAll(compareSelector);
+                        var nodes2 = doc2.querySelectorAll(compareSelector);
+
+                        // 두 리스트 중 더 긴 것을 기준으로 돌아야 누락된 부분도 체크 가능할 수 있습니다.
+                        const maxLen = Math.max(nodes1.length, nodes2.length);
+
+                        for (var i = 0; i < maxLen; i++) {
+                            const n1 = nodes1[i];
+                            const n2 = nodes2[i];
+
+                            // 한쪽 노드가 아예 없는 경우(삭제/추가) 대응
+                            const text1 = n1 ? n1.textContent.replace(/\s+/g, ' ').trim() : null;
+                            const text2 = n2 ? n2.textContent.replace(/\s+/g, ' ').trim() : null;
+
+                            if (text1 !== text2) {
+                                // classList를 사용하여 안정성 확보
+                                if (n1) n1.classList.add('compare_color');
+                                if (n2) n2.classList.add('compare_color');
+                            }
+                        }
+                    }
+
+                    // 2. 가공 로직 (테이블 열 삭제 등) 실행
+                    [doc1, doc2].forEach(function (popContent, idx) {
+                        if (popContent) {
+                            var tables = popContent.querySelectorAll('.tabl_area table');
+                            tables.forEach(function (table) {
+                                // colgroup 마지막 열 삭제
+                                var colgroups = table.querySelectorAll('colgroup');
+                                colgroups.forEach(function (cg) {
+                                    var firstCol = cg.querySelector('col:first-child');
+                                    var lastCol = cg.querySelector('col:last-child');
+                                    if (firstCol) firstCol.remove();
+                                    if (lastCol) lastCol.remove();
+                                });
+
+                                // tr 마지막 셀 삭제
+                                var rows = table.querySelectorAll('tr');
+                                rows.forEach(function (row) {
+                                    var firstTh = row.querySelector('th:first-child');
+                                    var firstTd = row.querySelector('td:first-child');
+                                    var lastTh = row.querySelector('th:last-child');
+                                    var lastTd = row.querySelector('td:last-child');
+                                    if (firstTh) firstTh.remove();
+                                    if (firstTd) firstTd.remove();
+                                    if (lastTh) lastTh.remove();
+                                    if (lastTd) lastTd.remove();
+                                });
+                            });
+
+                            // 사이드에 추가
+                            var $side = $('<div class="compare_side"></div>');
+                            var $btn = $('<div class="btn_wrap sticky mb0"><button type="button" class="btn_primary">이보험으로 청약가입</button></div>');
+                            $side.append(popContent.outerHTML);
+                            $side.append($btn);
+                            $compareWrap.append($side);
+                        }
+                    });
+
+                    $popBody.append($compareWrap);
+
+                    // --- 이하 기존 로직 (팝업 노출 및 초기화) ---
+                    var zIdx = 1510;
+                    idPop.css('opacity', 1).css('z-index', zIdx).attr({ 'data-idx': zIdx, 'tabindex': -1 })
+                        .fadeIn().addClass('nowOpen').addClass('fullPop').focus();
+                    idPop.find('.popup').addClass('open');
+                    $('html, body').addClass('popOn');
+
+                    var getCol = idPop.find('.popBody').attr('class');
+                    if (getCol != undefined) {
+                        if (getCol.indexOf('col_') > -1) {
+                            var replaceCol = getCol.replace('popBody', '').replace('on', '').replace(/ /gi, '');
+                            idPop.find('.popContain').addClass(replaceCol);
+                            idPop.find('.popBody').removeClass(replaceCol);
+                        }
+                    }
+
+                    try {
+                        if (initParam1 && typeof window[url1.split('/').pop().split('.')[0]] !== 'undefined') {
+                            window[url1.split('/').pop().split('.')[0]].init(initParam1);
+                        }
+                        if (initParam2 && typeof window[url2.split('/').pop().split('.')[0]] !== 'undefined') {
+                            window[url2.split('/').pop().split('.')[0]].init(initParam2);
+                        }
+                    } catch (e) { console.warn("개별 init 실행 중 오류:", e); }
+
+                    idPop.find('.icoBtn_close').off('click').on('click', function (e) {
+                        e.preventDefault();
+                        layerPop.close(layerId);
+                    });
+
+                    if (typeof callback === "function") callback();
+
+                }).catch(function (err) {
+                    console.error("비교 팝업 로드 실패:", err);
+                    alert("정보를 불러오는 데 실패했습니다.");
+                });
+            }
+        });
+        $("#btn_compare").on("click", function () {
+            layerPop.compareOpen('popup', './resources2024/pub/newPSD/pt/sd/dsgn/PSD02020213P.html', './resources2024/pub/newPSD/pt/sd/dsgn/PSD02020214P.html');
+        });
+
+
+
+        // 탭 관리 버튼 클릭 시 메뉴 토글
+        $("#tab_close_item").on("click", function(e) {
+            e.stopPropagation();
+            $("#context-menu").toggle();
+        });
+
+        // 외부 클릭 시 메뉴 닫기
+        // $(document).on("click", function() {
+        //     $("#context-menu").hide();
+        // });
+
+        // 1. 이 탭 닫기 (현재 활성화된 active 탭 닫기)
+        $("#tab_close").on("click", function () {
+            const $activeTab = $tabWrap.find('.tab_bar_item > li.active');
+            const idx = $activeTab.index();
+
+            if (idx === 0) {
+                uiInfo.pt.alert('', '기본 탭은 닫을 수 없습니다.');
+                return;
+            }
+            // 기존 개별 remove() 대신 통합 함수 호출
+            removeTab(idx);
+            
+            // 메뉴 닫기 (선택사항)
+            $("#context-menu").hide();
+            updateTabArrow($tabWrap);
+        });
+        $(document).on("click", function (e) {
+            const $menu = $("#context-menu");
+
+            // 메뉴가 보이고 있는 상태이고, 클릭한 곳이 메뉴 외부라면 닫기
+            if ($menu.is(":visible") && !$(e.target).closest("#tab_close_item, #context-menu").length) {
+                $menu.hide();
+            }
+        });
+        // 2. 이 탭만 남기기 (현재 활성화된 탭과 0번째 탭 제외 모두 삭제)
+        $("#tab_close_others").on("click", function () {
+            const $tabs = $tabWrap.find('.tab_bar_item > li');
+            const activeIdx = $tabs.filter('.active').index();
+
+            // 뒤에서부터 순회하며 0번과 현재 활성탭만 빼고 삭제
+            for (let i = $tabs.length - 1; i > 0; i--) {
+                if (i !== activeIdx) {
+                    removeTab(i);
+                }
+            }
+            $("#context-menu").hide();
+        });
+        // 3. 모두 닫기 (0번째 제외 전체 삭제)
+        $("#tab_close_all").on("click", function () {
+            const $tabs = $tabWrap.find('.tab_bar_item > li');
+            // 뒤에서부터 1번 탭까지 삭제 (0번은 남김)
+            for (let i = $tabs.length - 1; i > 0; i--) {
+                removeTab(i);
+            }
+            
+            // 메인 활성화
+            $('.tab_bar_item > li').eq(0).addClass("active");
+            $('.content_tab').eq(0).addClass("active");
+            
+            $("#context-menu").hide();
+        });
+        // 탭 체크 리스트 내부의 삭제 버튼 클릭 시
+        $('#tab_check_list').on('click', '.btn_del', function () {
+            const $li = $(this).closest('li');
+            const tabIdx = $('#tab_check_list > li').index($li);
+            
+            if (tabIdx === 0) {
+                uiInfo.pt.alert('', '기본 탭은 삭제할 수 없습니다.');
+                return;
+            }
+            removeTab(tabIdx);
+        });
+        // 선택 닫기 버튼 클릭 이벤트
+        $('#tab_chk').on('click', function() {
+            const $checkedItems = $('#tab_check_list .tab_check:checked');
+            
+            if ($checkedItems.length === 0) {
+                uiInfo.pt.alert('', '삭제할 탭을 선택해주세요.');
+                return;
+            }
+
+            // 인덱스 꼬임 방지를 위해 역순으로 삭제
+            $($checkedItems.get().reverse()).each(function() {
+                const $li = $(this).closest('li');
+                const idx = $('#tab_check_list > li').index($li);
+                
+                // 첫 번째 탭이 아니면 삭제 실행
+                if (idx !== 0) {
+                    removeTab(idx);
+                }
+            });
+        });
+        //탭 삭제/추가를 자동으로 추적
+        const targetNode = document.getElementById('tab_check_list');
+        const config = { childList: true }; // 자식 요소(li)의 추가/삭제 감지
+
+        const observer = new MutationObserver(function(mutationsList) {
+            const count = $('#tab_check_list > li').length;
+            $('.tab_total_num').text(count - 1); // 화면에 표시
+            // 탭이 1개 이하(메인만 있음)면 리스트 영역 숨김, 아니면 보임
+            if (count <= 1) {
+                $('.btn_tab_item_box').removeClass('active');
+            } else {
+                $('.btn_tab_item_box').addClass('active');
+            }
+            console.log("DOM 감지 - 현재 탭 개수:", count);
+        });
+
+        if (targetNode) {
+            observer.observe(targetNode, config);
+        }
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const btnChat = document.getElementById('btn_chat01');
+
+
+        // 팝업 오픈 공통 함수
+        function openChatPopup(popupUrl) {
+            const popupName = 'chatPopup';
+
+            // 1. 기본 너비를 80%로 계산하되, 최대 1000px 제한
+            const calculatedWidth = Math.floor(window.screen.availWidth * 0.8);
+            const width = Math.min(calculatedWidth, 1200);
+
+            // 2. 높이 계산 (80%)
+            const height = Math.floor(window.screen.availHeight * 0.8);
+
+            // 3. 중앙 정렬 위치 계산
+            const left = Math.floor((window.screen.availWidth - width) / 2);
+            const top = Math.floor((window.screen.availHeight - height) / 2);
+
+            const popupFeatures = `width=${width},height=${height},left=${left},top=${top}`;
+
+            window.open(popupUrl, popupName, popupFeatures);
+        }
+
+        // btn_chat01 클릭 시
+        if (btnChat) {
+            btnChat.addEventListener('click', function() {
+                openChatPopup('./resources/ssc/tab/REQ-CH-001.html');
+            });
+        }
+
+    });
+
+
+
+
+
+    var pop_init = function(layerId, initUrl, callback, callbackParam) {
+        // 팝업 jQuery 객체 정의
+        var idPop = $('#' + layerId);
+
+        if (typeof initUrl === 'string' && initUrl.indexOf('.html') !== -1) {
+            var cssUrl = "./resources/ssc/tab/css/chat.css";
+            var cssUrl2 = "./resources/ssc/comm/css/content.css";
+            var jsUrl = "./resources/ssc/tab/js/chat.js";
+            var jsUrl2 = "./resources/ssc/comm/js/insu_search.js";
+
+            // CSS 동적 주입 헬퍼
+            var loadStyle = function(url) {
+                if ($('link[href="' + url + '"]').length === 0) {
+                    $('head').append('<link rel="stylesheet" type="text/css" href="' + url + '" />');
+                }
+            };
+
+            // chat.css와 content.css 모두 각각 체크하여 로드
+            loadStyle(cssUrl);
+            loadStyle(cssUrl2);
+
+            var $cont = idPop.find('.popBody');
+            if ($cont.length === 0) $cont = idPop.find('.popup');
+            if ($cont.length === 0) $cont = idPop;
+
+            $cont.load(initUrl + ' .chat-content', function(response, status, xhr) {
+                if (status === "error") {
+                    console.error("팝업 로드 실패:", xhr.status, xhr.statusText);
+                    return;
+                }
+
+                idPop.show();
+
+                // 공통 실행 함수: 스크립트 로드 완료 및 DOM 삽입 후 호출
+                var runInit = function() {
+                    if (typeof window.initChat === 'function') {
+                        window.initChat();
+                    }
+                    // insu_search.js 초기화 함수 실행
+                    if (typeof window.initInsuSearch === 'function') {
+                        window.initInsuSearch();
+                    }
+                    if (typeof callback === 'function') {
+                        callback(callbackParam);
+                    }
+                };
+
+                // 스크립트 파일 동적 로드 헬퍼 (Promise 기반)
+                var loadScript = function(url) {
+                    return new Promise(function(resolve, reject) {
+                        var filename = url.substring(url.lastIndexOf('/') + 1);
+                        if ($('script[src*="' + filename + '"]').length > 0) {
+                            resolve();
+                            return;
+                        }
+                        var script = document.createElement('script');
+                        script.src = url;
+                        script.onload = resolve;
+                        script.onerror = reject;
+                        document.head.appendChild(script);
+                    });
+                };
+
+                // chat.js 및 insu_search.js 병렬/순차 로드 완료 후 runInit 실행
+                Promise.all([
+                    loadScript(jsUrl),
+                    loadScript(jsUrl2)
+                ]).then(function() {
+                    runInit();
+                }).catch(function(err) {
+                    console.error("스크립트 로딩 중 오류 발생:", err);
+                    runInit(); // 일부 실패 시에도 기존 초기화 시도
+                });
+            });
+        } else {
+            idPop.show();
+            if (typeof initUrl === 'function') {
+                initUrl();
+            }
+            if (typeof callback === 'function') {
+                callback(callbackParam);
+            }
+        }
+    };
+</script>
+
+</html>

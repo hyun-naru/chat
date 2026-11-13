@@ -1,0 +1,46 @@
+<!-- * 프로젝트 : 하나생명 NEW SFA 시스템 구축
+     * 설   명 : 자필 서명 팝업
+     * 작 성 자 : 이진규
+     *
+     * << 개정이력(Modification Information) >>
+     * ========================================================
+     *   수정일                   수정자             수정 내용
+     * --------------------------------------------------------
+     *   2022.07.20             70112		        최초 생성
+     * ======================================================== -->
+     
+     <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+<div class="popWrap">
+  <div class="popContain">
+    <div class="popup" id= "root_SignaturePopup">
+      <div class="popHead">
+        <h1 class="tit01">자필서명</h1>
+      </div>
+      <div class="popBody col_7" id= "popup_body">
+<!-- 팝업 내용 시작 (s) -->
+        <section>
+          <div class="sdsign_tit">
+            <span id="txt_Input">고객성명입력</span>
+          </div>
+          <div class="sdsign_wrap" id= "area_Write">
+          </div>
+          <!-- 서명입력 -->
+          <!-- <div class="sdsign_tit">
+            <span>고객서명입력</span>
+          </div>
+          <div class="sdsign_wrap pen">
+          </div> -->
+
+        </section>
+<!-- 팝업 내용 끝 (e) -->
+      </div>
+
+      <div class="btn_wrap">
+        <button type="button" class="btn_white" id= "btn_Reset">다시작성</button>
+        <button type="button" class="btn_primary" id= "btn_Confirm">확인</button>
+      </div>
+      <button type="button" class="icoBtn_close" onclick="lp.close();"><span>팝업 닫기</span></button>
+    </div>
+  </div>
+</div>

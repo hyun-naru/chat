@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+    <g transform="translate(-1020 -834)">
+        <circle data-name="타원 51" cx="40" cy="40" r="40" transform="translate(1020 834)" style="fill:#f5f5f5"/>
+        <g data-name="그룹 103813">
+            <path data-name="패스 19759" d="M377 1278v3h-16v-3h16m0-2h-16a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2z" style="fill:#111" transform="translate(687 -426)"/>
+            <path data-name="패스 19760" d="M365.827 1290.758h-5a1 1 0 0 1 0-2h5a1 1 0 0 1 0 2z" style="fill:#111" transform="translate(687 -426)"/>
+            <path data-name="패스 19761" d="M377 1290.758h-5a1 1 0 0 1 0-2h5a1 1 0 0 1 0 2z" style="fill:#111" transform="translate(687 -426)"/>
+            <path data-name="패스 19762" d="M365.827 1296.758h-5a1 1 0 0 1 0-2h5a1 1 0 0 1 0 2z" style="fill:#111" transform="translate(687 -426)"/>
+            <path data-name="패스 19763" d="M365.827 1303h-5a1 1 0 0 1 0-2h5a1 1 0 0 1 0 2z" style="fill:#111" transform="translate(687 -426)"/>
+            <g data-name="그룹 103812" transform="translate(687 -426)">
+                <circle data-name="타원 584" cx="12" cy="12" r="12" transform="translate(369 1300)" style="fill:#c8f7f4"/>
+                <path data-name="패스 19765" d="M381 1302a10 10 0 1 1-10 10 10.011 10.011 0 0 1 10-10m0-2a12 12 0 1 0 12 12 12 12 0 0 0-12-12z" style="fill:#111"/>
+            </g>
+            <path data-name="패스 19766" d="M385 1313h-8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2z" style="fill:#111" transform="translate(687 -426)"/>
+            <path data-name="패스 19767" d="M381 1317a1 1 0 0 1-1-1v-8a1 1 0 0 1 2 0v8a1 1 0 0 1-1 1z" style="fill:#111" transform="translate(687 -426)"/>
+            <path data-name="패스 19768" d="M365 1320h-7a4 4 0 0 1-4-4v-31a4 4 0 0 1 4-4h22a4 4 0 0 1 4 4v10.792a1 1 0 0 1-1.015 1 1 1 0 0 1-.985-1V1285a2 2 0 0 0-2-2h-22a2 2 0 0 0-2 2v31a2 2 0 0 0 2 2h7a1 1 0 0 1 1 1 1 1 0 0 1-1 1z" style="fill:#111" transform="translate(687 -426)"/>
+        </g>
+    </g>
+</svg>

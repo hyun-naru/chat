@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+    <g transform="translate(-1440 -834)">
+        <circle data-name="타원 54" cx="40" cy="40" r="40" transform="translate(1440 834)" style="fill:#f5f5f5"/>
+        <g data-name="그룹 103844">
+            <path data-name="패스 19817" d="M676.243 1428v3h-16v-3h16m0-2h-16a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2z" style="fill:#111" transform="translate(808.757 -574)"/>
+            <path data-name="패스 19818" d="M665.069 1440.758h-5a1 1 0 0 1 0-2h5a1 1 0 0 1 0 2z" style="fill:#111" transform="translate(808.757 -574)"/>
+            <path data-name="패스 19819" d="M676.242 1440.758h-5a1 1 0 0 1 0-2h5a1 1 0 0 1 0 2z" style="fill:#111" transform="translate(808.757 -574)"/>
+            <path data-name="패스 19820" d="M665.069 1446.758h-5a1 1 0 0 1 0-2h5a1 1 0 0 1 0 2z" style="fill:#111" transform="translate(808.757 -574)"/>
+            <path data-name="패스 19821" d="M665.069 1453h-5a1 1 0 0 1 0-2h5a1 1 0 0 1 0 2z" style="fill:#111" transform="translate(808.757 -574)"/>
+            <path data-name="패스 19823" d="M665.243 1470h-8a4 4 0 0 1-4-4v-31a4 4 0 0 1 4-4h22a4 4 0 0 1 4 4v8.792a1 1 0 0 1-1.015 1 1 1 0 0 1-.985-1V1435a2 2 0 0 0-2-2h-22a2 2 0 0 0-2 2v31a2 2 0 0 0 2 2h8a1 1 0 0 1 1 1 1 1 0 0 1-1 1z" style="fill:#111" transform="translate(808.757 -574)"/>
+            <g data-name="그룹 103843">
+                <g data-name="그룹 103840" transform="translate(808.757 -574)">
+                    <circle data-name="타원 590" cx="9" cy="9" r="9" transform="translate(668 1449)" style="fill:#c8f7f4"/>
+                    <path data-name="패스 19824" d="M677 1451a7 7 0 1 1-7 7 7.008 7.008 0 0 1 7-7m0-2a9 9 0 1 0 9 9 9 9 0 0 0-9-9z" style="fill:#111"/>
+                </g>
+                <g data-name="그룹 103841">
+                    <path data-name="선 304" transform="translate(1491.757 890)" style="fill:#c8f7f4" d="m0 0 5 5"/>
+                    <path data-name="패스 19825" d="M688 1470a1 1 0 0 1-.707-.293l-5-5a1 1 0 1 1 1.414-1.414l5 5A1 1 0 0 1 688 1470z" style="fill:#111" transform="translate(808.757 -574)"/>
+                </g>
+                <g data-name="그룹 103842">
+                    <path data-name="패스 19826" d="M677 1454a4 4 0 0 1 4 4" style="fill:#c8f7f4" transform="translate(808.757 -574)"/>
+                    <path data-name="패스 19827" d="M681 1459a1 1 0 0 1-1-1 3 3 0 0 0-3-3 1 1 0 0 1 0-2 5.006 5.006 0 0 1 5 5 1 1 0 0 1-1 1z" style="fill:#111" transform="translate(808.757 -574)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

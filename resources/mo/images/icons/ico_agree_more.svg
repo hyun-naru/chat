@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <g data-name="@ GUIDE AREA">
+        <path data-name="투명 BG" d="M0 0h16v16H0z" style="fill:transparent"/>
+    </g>
+    <path data-name="arrow" d="M10 0 5 5 0 0" transform="rotate(-90 9.5 3.5)" style="fill:none;stroke:#bbb;stroke-width:1.5px"/>
+</svg>

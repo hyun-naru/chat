@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+.main header  {padding-left: 16px;}
+.main header h1 {justify-content: flex-start;}
+.main .header.scrolled:not(.sticky) .icoBtn_appMenu {background-image:url(../images/mobile/common/app_ico_menu.svg);}
+
+.main .content {width: 100%; padding: 0;}
+.main .mainTop {position: relative; padding: 105px 24px 40px; border-radius:0 0 0 45px; background-color: #1cb4b4; color: #fff;}
+.main .mainTop .infoArea {display: flex; justify-content: space-between; align-items: flex-start; margin-bottom:15px;}
+.main .mainTop .infoArea .tit {position: relative; font-size: 2.4rem; font-weight:500;}
+.main .mainTop .infoArea .tit::before {content: ""; position: absolute; top: -20px; left: 0; width: 24px; height: 1px; background-color: #fff;}
+.main .mainTop .infoArea .img {width: 72px; height: 72px; border-radius: 50%; overflow: hidden;}
+.main .mainTop .infoArea .img > img {width: 100%;}
+
+.main .mainTop .inner {position:relative; margin: 0 -24px 0; padding:0 24px 23px; border-bottom:0; color: #fff;}
+.main .mainTop .userInfo {display:flex; align-items: center; gap:24px; margin: 0 0 32px;}
+.main .mainTop .userInfo li {position: relative; padding:0;}
+.main .mainTop .userInfo li + li {padding:0;}
+.main .mainTop .userInfo li + li::before {content: ''; display: block; position: absolute; top:50%; left:-12px; transform: translateY(-50%); width:1px; height:14px; background-color: rgba(255, 255, 255, 0.4);}
+
+.main .mainTop .infoList  {padding: 20px; margin:0; margin-bottom: 30px; background-color: #21abad; border-radius: 12px;}
+.main .mainTop .infoList li {padding: 8px 0 0; font-weight: 300; font-size: 1.4rem;}
+.main .mainTop .infoList li:first-child {padding-top: 0;}
+.main .mainTop .infoList .item {color: #fff;}
+.main .mainTop .infoList .val { font-size: 1.4rem; font-weight: 300; color: #fff;}
+.main .mainTop .infoList .val li > a {text-decoration: underline;}
+.main .mainTop .infoList .val {display: flex; justify-content: flex-end; flex-direction: column; align-items: flex-end;}
+.main .mainTop .infoList .val .userInfo {gap: 16px; margin:0;}
+.main .mainTop .infoList .val .userInfo li {padding:0;}
+.main .mainTop .infoList .val .userInfo li + li::before {left:-8px;}
+
+.main .mainTop .icoBtn_open {position:absolute; bottom:0; left:24px; width:auto; color:#fff;}
+.main .mainTop .icoBtn_open:after {content:none;}
+.main .mainTop .icoBtn_open > span {position:relative; padding-right:20px; font-size:1.4rem;}
+.main .mainTop .icoBtn_open > span:after {content:''; position:absolute; right:2px; top:50%; width:7px; height:7px; margin-top:-1px; border:1px solid #1aa4a4; border-width:0 0 1px 1px; transform:translate(-50%, -50%) rotate(-45deg); transition:transform 0.25s;}
+.main .mainTop .inner .icoBtn_open > span .on,
+.main .mainTop .inner.on .icoBtn_open > span .off {display:none;}
+.main .mainTop .inner .icoBtn_open > span .off,
+.main .mainTop .inner.on .icoBtn_open > span .on {display:inline;}
+.main .mainTop .inner.on .icoBtn_open > span:after {margin-top:2px; transform:translateY(-50%) rotate(-225deg); right: 6px;}
+.main .mainTop .icoBtn_open > span .bgbtn {position: relative; margin-left: 12px;}
+.main .mainTop .icoBtn_open > span .bgbtn::after  {position: absolute; content: ""; background-color: #fff; padding: 10px; left: 0px; border-radius: 50%;}
+
+.main .topBottom  {padding: 27px 24px 80px; margin-top: -27px; background-color: #f8f8f8}
+.main .topBottom .tit {font-size: 1.8rem; font-weight: 500; padding-top: 40px; display: block;}
+.main .topBottom .linkWrap {display: flex; justify-content: space-between; gap: 12px; margin-top: 16px;}
+.main .topBottom .linkWrap li {position: relative; flex-basis: 100%; padding: 68px 16px 14px; border-radius: 12px; background: #fff;}
+.main .topBottom .linkWrap li::before {content: ""; display: block; position: absolute; top: 16px; height: 40px; width: 32px; height: 32px;}
+.main .topBottom .linkWrap li.customer::before {background: url(../images/mobile/common/ico_01.svg) no-repeat center center;}
+.main .topBottom .linkWrap li.consent::before { background: url(../images/mobile/common/ico_02.svg) no-repeat center center;}
+.main .topBottom .linkWrap li.variability::before {background: url(../images/mobile/common/ico_03.svg) no-repeat center center;}
+.main .topBottom .linkWrap li.individual::before {background: url(../images/mobile/common/ico_04.svg) no-repeat center center;}
+.main .topBottom .linkWrap li.corporate::before {background: url(../images/mobile/common/ico_05.svg) no-repeat center center;}
+.main .topBottom .linkWrap li.historyCheck::before {background: url(../images/mobile/common/ico_06.svg) no-repeat center center;}
+.main .topBottom .linkWrap li a {display: block; font-weight: 500; font-size: 14px; color: #333; letter-spacing: -0.5px;}
+
+.main .manualLink {display: flex; justify-content: flex-start; align-items: center; gap:16px; border-radius: 12px; padding: 16px 20px; margin: -38px 24px 0; background-color: #4f5c72;}
+.main .manualLink::before {content: ''; display: inline-block; width:56px; height:56px; background: url(../images/mobile/common/icon_m_menual.svg) no-repeat center center; background-size: cover;}
+.main .manualLink .inner {display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; gap:8px;}
+.main .manualLink .inner .tit {font-size: 1.6rem; font-weight: 500; color: #fff;}
+.main .manualLink .inner .desc {font-size: 1.4rem; color: #fff;}
+
+.main .mainNotice .noticeArea {margin-top: 40px;}
+.main .mainNotice .noticeArea .tit, .main .noticeList .tit {display:inline-block; margin-left: 24px; margin-bottom: 16px; font-size: 1.8rem; font-weight: 500; color:#111;}
+.main .mainNotice .noticeArea .txtList {border-bottom: 1px solid #ddd; padding-bottom: 32px; margin-bottom: 32px}
+.main .mainNotice .noticeArea .txtList:last-child {margin-bottom: 0; border-bottom:none}
+.main .mainNotice .noticeArea .txtList li, .main .noticeList li {display: flex; justify-content: space-between; margin: 16px 24px 0 ; color: #111;}
+.main .mainNotice .noticeArea .txtList > li:before {width: 2px; height: 2px;}
+.main .mainNotice .noticeArea .txtList:not(.notice) li a {color: #009591; text-decoration: underline;}
+
+.main .noticeList .tit {position: relative;}
+.main .noticeList .tit::after {content: ""; display: inline-block; position: relative; top: -2px; width: 9px; height: 9px; margin-left: 12px; border-top: 1px solid #111; border-right: 1px solid #111; -webkit-transform: rotate(45deg); transform: rotate(45deg);}
+.main .noticeList .txtList li a  {color: #333;  text-decoration:none !important;}
+.main .noticeList .txtList li.new a  {color: #009591;}
+.main .noticeList .txtList .date {color:#777; font-weight:300; font-size: 1.4rem;}
+
+.main .footer {border-top: 1px solid #ddd; background-color:#fff;}
+.main .footer .inner {color: #777;}
+.main .footer .txtItem.ci {margin-top: 32px;}
+.main .footer .txtItem.ci a {display:inline-block; height:40px;}
+.main .footer .txtItem.ci a img {height:100%; width:auto;}
+.main .footer .txtItem.ci  > *:not(:first-child):before {height: 8px; top: 38%;}
+
+
+/* H/B main */
+.main.hb .mainTop {padding: 66px 24px 40px;}
+.main.hb .mainTop .inner {padding: 0 24px 55px;}
+
+.main .messageWrap {height: 40px; margin-bottom:40px;}
+.main .messageWrap .msg {height: 40px; padding: 11px 27px 11px 16px; border-radius: 8px; background-color: rgba(0, 0, 0, 0.1);}
+.main .messageWrap .msg > a {display: block; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; font-weight: 300; font-size: 1.4rem; line-height: 1.2; color: #fff;}
+.main .mainTop .messageWrap .swiper-controls {display: none;}
+.main.hb .mainTop .infoArea {align-items: baseline;}
+.main.hb .mainTop .infoArea .img {width: 96px; height: 96px; border-radius: 0;}
+
+.main .myStatus {position:relative; height:102px; padding: 20px 23px 20px 20px; border-radius: 12px; background-color: #4f5c72; color:#fff;}
+.main .myStatus .badge {position:absolute; top:0; right: 16px; width:44px; height:44px; padding-top:10px; background: url(../images/mobile/common/ico_m_label.svg) no-repeat center center; background-size: cover; font-size:1.4rem; font-weight:500; color:#fff; text-align: center;}
+.main .myStatus .tit {font-size:1.6rem;}
+.main .myStatus .myValue {display: flex; gap:40px; margin-top:10px;}
+.main .myStatus .myValue li {position: relative; font-weight: 400; font-size: 2rem; line-height: 1;}
+.main .myStatus .myValue li em {font-family: 'Roboto'; font-weight:500; font-size:2.4rem;}
+.main .myStatus .myValue li + li:before {content:''; display: block; position: absolute; top:4px; left:-20px; width:1px; height:20px; background-color:rgba(255, 255, 255, 0.4);}
+
+/* .main .myStatus .txtList.changes {display:flex; gap:13px 18px; flex-wrap: wrap; margin-top:20px; color:#fff;}
+.main .myStatus .txtList.changes li {font-weight:300; line-height: 1.2;}
+.main .myStatus .txtList.changes li::before{top:6px; background-color: #fff;}
+.main .myStatus .txtList.changes li + li {margin:0;}
+
+.main .myStatus .txtList.changes li .val {display: inline-block; position: relative; margin-left: 6px; padding-left: 13px;}
+.main .myStatus .txtList.changes li .val::before {content: ""; display: inline-block; position: absolute; top: 50%; left: 0; -webkit-transform: translateY(-50%); transform:  ranslateY(-50%); width: 10px; height: 2px; background-color: #fff;}
+.main .myStatus .txtList.changes li .val.down::before {width: 0; height: 0; border-bottom: 0px solid transparent; border-top: 6px solid #bbfaff; border-left: 5px solid transparent; border-right: 5px solid transparent; background-color: transparent;}
+.main .myStatus .txtList.changes li .val.up::before {width: 0; height: 0; border-top: 0px solid transparent; border-bottom: 6px solid #f2e88b; border-left: 5px solid transparent; border-right: 5px solid transparent; background-color: transparent;} */
+
+.main .perfomance {display:flex; flex-wrap: wrap; justify-content: space-between; gap:12px 3.8%; margin-top:12px;}
+.main .perfomance li {display:flex; flex-direction: column; align-items: center; justify-content: space-between; flex: 1 1 30%; width:32%; padding: 21px 22px 20px; border-radius: 12px; background-color:#fff;}
+.main .perfomance li .item {font-weight:400; color: #333;}
+.main .perfomance li .val {font-family: 'Roboto'; font-size: 2.4rem; font-weight: 700; color:#009591;}
+.main .perfomance li.secondary .val {color:#4f5c72;}
+
+.main .csLink {padding:40px 24px;}
+.main .csLink .tit {display:block; font-size:2rem; font-weight:500; text-align: center;}
+.main .csLink .tabList {position: relative; top:0; width: 120px; height: 32px; margin:24px auto 0; padding: 0; border-radius: 6px; border: solid 1px #e5e5e5; background-color: #f8f8f8; z-index:5;}
+.main .csLink .tabList > li {display: flex; height: 100%; padding: 0 15px; justify-content: center; align-items: center; color: #777; font-weight: 400;; font-size: 1.4rem; line-height: 1.7; text-align: center; cursor: pointer;}
+.main .csLink .tabList > li.on {background-color: #fff; font-weight:500; color: #009591;}
+.main .csLink .tabList > li.on::after {content:none;}
+.main .csLink .tabList > li a {color:inherit;}
+.main .csLink .csLinkList {display:flex; flex-wrap:wrap; justify-content: flex-start; gap:32px 9%;}
+.main .csLink .csLinkList li {flex-basis: 27%;}
+.main .csLink .csLinkList li a {display:flex; flex-direction: column; justify-content: space-between; align-items: center; gap:16px; color:inherit;}
+.main .csLink .csLinkList li a::before {content: ""; display: block; width: 64px; height: 64px; background-position: center center; background-repeat: no-repeat; background-size: cover;}
+
+.main .csLink .csLinkList li.information a::before {background-image: url(../images/mobile/common/icon_cslink_info.svg);}
+.main .csLink .csLinkList li.customer a::before {background-image: url(../images/mobile/common/icon_cslink_customer.svg);}
+.main .csLink .csLinkList li.corporation a::before {background-image: url(../images/mobile/common/icon_cslink_corporation.svg);}
+.main .csLink .csLinkList li.signup a::before {background-image: url(../images/mobile/common/icon_cslink_signup.svg);}
+.main .csLink .csLinkList li.guarntee a::before {background-image: url(../images/mobile/common/icon_cslink_guarntee.svg);}
+.main .csLink .csLinkList li.activity a::before {background-image: url(../images/mobile/common/icon_cslink_activity.svg);}
+.main .csLink .csLinkList li.historyInq a::before {background-image: url(../images/mobile/common/icon_cslink_historyInq.svg);}
+.main .csLink .csLinkList li.subInq a::before {background-image: url(../images/mobile/common/icon_cslink_subInq.svg);}
+.main .csLink .csLinkList li.contractInq a::before {background-image: url(../images/mobile/common/icon_cslink_contractInq.svg);}
+.main .csLink .csLinkList li.customerInq a::before {background-image: url(../images/mobile/common/icon_cslink_customerInq.svg);}
+.main .csLink .csLinkList li.corporationInq a::before {background-image: url(../images/mobile/common/icon_cslink_corporationInq.svg);}
+
+.main.hb .topBottom {margin-top: 0; padding:0 24px 32px;}
+
+.main.hb .topBottom .titArea {margin:0 0 16px; padding-top: 40px;}
+.main.hb .topBottom .titArea .tit {padding-top:0; color:#111;}
+.main.hb .topBottom .titArea .ico_refresh {display: block; color: #333;}
+.main.hb .topBottom .titArea .ico_refresh::before {content: ""; display: inline-block; width: 16px; height: 16px; margin-right: 8px; background: url(../images/mobile/common/icon_refresh.svg) no-repeat center center; background-size: cover; vertical-align: text-bottom;}
+
+.main.hb .businessInfo {display:flex; justify-content: space-between; gap:12px; flex-wrap: wrap;}
+.main.hb .businessInfo li {flex-basis: 48%; padding: 16px 15px 16px 16px; border-radius: 12px; background-color: #fff;}
+.main.hb .businessInfo li .item {display: block; font-weight: 500;}
+.main.hb .businessInfo li .val {display: block; margin-top:33px; font-size:2.4rem; line-height:1.2; text-align: right; color:#333;}
+.main.hb .businessInfo li .val em {font-family: 'Roboto'; font-size:3rem; color:#009591;}
+.main.hb .businessInfo li a {color: inherit; text-decoration: underline; text-decoration-thickness: 1px;}
+.main.hb .businessInfo li a em {text-decoration: underline; text-decoration-thickness: 1px;}
+.main.hb .businessInfo.request li a em {color:#575ab7;}
+
+.main.hb .referanceList {display:flex; flex-wrap: wrap; justify-content: space-between; gap:12px;}
+.main.hb .referanceList li {margin:0; flex-basis: 48%;}
+.main.hb .referanceList li a {display:flex; position: relative; width:100%; height:48px; padding: 12px 8px 12px 12px; border-radius: 6px; background-color: #fff; color:#333; font-weight:400;}
+.main.hb .referanceList li a::before{content: "";display:inline-block;width: 24px; height: 24px; margin-right:12px; background-repeat: no-repeat;background-position: center center;background-size: cover;}
+.main.hb .referanceList li.format a::before {background-image: url(../images/mobile/common/icon_ref_format.svg);}
+.main.hb .referanceList li.task a::before {background-image: url(../images/mobile/common/icon_ref_task.svg);}
+.main.hb .referanceList li.variable a::before {background-image: url(../images/mobile/common/icon_ref_variable.svg);}
+.main.hb .referanceList li.goods a::before {background-image: url(../images/mobile/common/icon_ref_goods.svg);}
+.main.hb .referanceList li.underwriting a::before {background-image: url(../images/mobile/common/icon_ref_underwriting.svg);}
+.main.hb .referanceList li a::after {content: ''; display:inline-block; position:absolute; top:20px; right:14px; width:6px; height:6px; border-bottom:1px solid #333; border-right:1px solid #333; transform: rotate(-45deg);}
+
+.main.hb .noticeList .tit {margin-left:0;}
+.main.hb .noticeList .notice li {margin:16px 0 0;}

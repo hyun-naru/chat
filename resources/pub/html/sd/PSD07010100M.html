@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="Shortcut Icon" href="./resources/pt/images/fav/favicon.png">
+		<title>타이틀</title>
+		<link rel="stylesheet" type="text/css" href="./resources2024/pt/css/cssLib.css" />
+		<script src="./resources/comm/js/jquery-3.5.1.min.js"></script>
+		<script src="./resources/comm/js/jquery.form.min.js"></script>
+		<script src="./resources/comm/js/jquery-ui.js"></script>
+		<script src="./resources/comm/js/jquery.ui.monthpicker.js"></script>
+		<script src="./resources/comm/js/jquery.blockUI.js"></script>
+		<script src="./resources/pt/js/ui.front.js"></script>
+		<script>
+			let isMoLanding = false;	//모바일 랜딩의 경우
+			$(document).ready(function(){
+			    // ui.front.js 초기 실행
+			    layout.init(); // 페이지가 준비가 됐을 때 딱 한번만 실행 (공통 개발팀에서 호출하는게 좋습니다.)
+			    ui.init(); // 페이지가 동적으로 바뀔때마다 실행 (개발을 붙였더니 뭔가 동작을 안할때 개발페이지 개발자들이 호출하는게 좋습니다.)
+		    	//serverMode = $('#templateComm input[name="serverMode"]').val();
+			});
+		</script>
+				
+	</head>
+	<body>
+	  	<!-- wrapper (s) -->
+	  	<div class="wrapper" id="wrapper">
+	    	<!-- header (s) -->
+			<div class="header">
+				<div class="header_top">
+					<div class="inner">
+						<div class="user_info_wrap">
+							<div class="user_name"><a href="javascript://"><span><c:out value="${userInfo.usrNm}" /> </span></a>님, 반갑습니다</div>
+							<div class="user_classification"><span><c:out value="${userInfo.bonbuNm}" /> </span> <span><c:out value="${userInfo.jijumNm}" /></span></div>
+						</div>
+						<ul class="user_util">
+						    <li class="time_extension">
+						      	<span class="time" id="remainTime">00분 00초</span><a href="javascript://" onclick="vTimeout.renewalSession();">연장</a>
+						    </li>
+						    <li><a href="javascript://" onclick="ptComm.logout();"><span>로그아웃</span></a></li>
+						    <li><a href="/cm/pt/comm/settingsView.do">설정</a></li>
+	
+						    <li class="certify_menu">
+						      	<a href="#" class="certify_menu_btn">인증센터</a>
+						      	<ul class="certify_menu_sub">
+						      		<li><a href="#" onclick="authCenter.finCertRegPageMv();">금융인증서 등록/해지</a></li>
+						      		<li><a href="#" onclick="authCenter.finCertManage();">금융인증서 관리</a></li>
+						        	<li><a href="#" onclick="authCenter.pinRegPageMv();">간편비밀번호 등록/해지</a></li>
+						        	<li><a href="#" onclick="authCenter.bioRegPageMv();">바이오 인증 등록/해지</a></li>
+						      	</ul>
+						    </li>
+	
+						</ul>
+					</div>
+				</div>
+				<nav>
+					<div class="nav_wrap">
+						<a href="javascript://" class="logo_hana" onclick="ptComm.home();">
+							<!-- <img src="./resources/pt/images/logos/logo_hana.svg" alt="하나생명 홈 바로가기"> -->
+							<img src="./resources/pt/images/logos/logo_hana_hanaro.png"
+								srcset="./resources/pt/images/logos/logo_hana_hanaro@2x.png 2x,./resources/pt/images/logos/logo_hana_hanaro@3x.png 3x">
+						</a>
+						<ul class="gnb">
+							<c:if test="${serverMode == 'LOCAL'}">
+							<li class="gnb_cell">
+								<a href="javascript://" class="gnb_tab">샘플가이드</a>
+								<div class="gnb_tab_sub">
+									<div class="gnb_tab_sub_wrap">
+										<ul class="gnb_tab_sub_cell">
+											<li style="padding-bottom:15px">공통가이드</li>
+											<li><a href="/sample/pt/calenderGuide.do">달력예제</a></li>
+											<li><a href="/sample/pt/writeController.do">컨트롤러작성법</a></li>
+											<li><a href="/sample/pt/useScript.do">사용스크립트함수 예제</a></li>
+											<li><a href="/sample/pt/layerPopup.do">팝업가이드</a></li>
+											<li><a href="/sample/pt/timeoutPopup.do">타임아웃팝업 예제</a></li>
+											<li><a href="/cs/pt/comm/custPopView.do" >고객팝업 예제</a></li>
+											<li><a href="/sample/pt/upjongComPopSample.do">업종검색 예제</a></li>
+											<li><a href="/sample/pt/sampleGetPdtImCd.do">상품특성조회 예제</a></li>
+										</ul>
+										<ul class="gnb_tab_sub_cell">
+											<li style="padding-bottom:15px">MO가이드</li>
+											<li><a href="/sample/mo/calenderGuide.do">달력예제</a></li>
+											<li><a href="/sample/mo/useScriptMo.do" target="_blank">사용스크립트함수</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							</c:if>
+				   			<c:choose>
+				    			<c:when test="${fn:length(userInfo.menuList) > 0 }">
+					     			<c:forEach var="oneDepthMenu" items="${userInfo.menuList}" varStatus="status">
+					     				<c:set var="oneDepthSubject" value="${fn:substring(oneDepthMenu.mnuId, 0, 2) }" />
+					     				<c:if test="${oneDepthMenu.mnuLve == 1 }">
+											<li class="gnb_cell">
+												<a href="${oneDepthMenu.mnuLinkAddr}" class="gnb_tab" onclick="menuDepSave('${oneDepthMenu.mnuNm}', '${oneDepthMenu.mnuLinkAddr}', '', '', '', '')">${oneDepthMenu.mnuNm}</a>
+												<div class="gnb_tab_sub">
+													<div class="gnb_tab_sub_wrap">
+														<c:forEach var="twoDepthMenu" items="${userInfo.menuList}" varStatus="status">
+										     				<c:set var="twoDepthSubject" value="${fn:substring(twoDepthMenu.mnuId, 0, 2) }" />
+										     				<c:set var="twoDepthOdr" value="${fn:substring(twoDepthMenu.otptOdr, 0, 4) }" />
+															<c:if test="${twoDepthMenu.mnuLve == 2 && (oneDepthSubject == twoDepthSubject) }">
+																<ul class="gnb_tab_sub_cell">
+																	<li><a href="${twoDepthMenu.mnuLinkAddr}" onclick="menuDepSave('${oneDepthMenu.mnuNm}', '${oneDepthMenu.mnuLinkAddr}', '${twoDepthMenu.mnuNm}', '${twoDepthMenu.mnuLinkAddr}', '', '')">${twoDepthMenu.mnuNm}</a></li>
+																	<c:forEach var="threeDepthMenu" items="${userInfo.menuList}" varStatus="status">
+													     				<c:set var="threeDepthSubject" value="${fn:substring(threeDepthMenu.mnuId, 0, 2) }" />
+													     				<c:set var="threeDepthOdr" value="${fn:substring(threeDepthMenu.otptOdr, 0, 4) }" />
+																		<c:if test="${threeDepthMenu.mnuLve == 3 && twoDepthSubject == threeDepthSubject && twoDepthOdr eq threeDepthOdr }">
+																			<li><a href="${threeDepthMenu.mnuLinkAddr}" onclick="menuDepSave('${oneDepthMenu.mnuNm}', '${oneDepthMenu.mnuLinkAddr}', '${twoDepthMenu.mnuNm}', '${twoDepthMenu.mnuLinkAddr}', '${threeDepthMenu.mnuNm}', '${threeDepthMenu.mnuLinkAddr}')">${threeDepthMenu.mnuNm}</a></li>
+																		</c:if>
+																	</c:forEach>
+																</ul>
+															</c:if>
+														</c:forEach>
+													</div>
+												</div>
+											</li>
+					     				</c:if>
+					     			</c:forEach>
+				    			</c:when>
+								<c:otherwise>
+									<li class="gnb_cell"></li>
+								</c:otherwise>
+				   			</c:choose>
+						</ul>
+						<!-- <a href="javascript://" class="btn_all">해당 태그를 삭제하면 메뉴가 밀림.
+							<img src="./resources/pt/images/icons/icon_menu_all.svg" alt="전체메뉴">
+						</a> -->
+					</div>
+				</nav>
+				<!-- breadcrumbs (s) -->
+				<div class="breadcrumbs">
+					<div class="breadcrumbs_wrap">
+						<div class="breadcrumbs_list_wrap" id="breadcrumbs">
+	
+						</div>
+					</div>
+					<div class="breadcrumbs_fixed">
+						<div class="breadcrumbs_fixed_wrap">
+	
+							<div class="breadcrumbs_location">
+								<a href="javascript://" class="breadcrumbs_home"><img src="./resources/pt/images/icons/icon_home_tablet_white.svg"
+										alt="홈 바로가기"></a>
+								<div class="breadcrumbs_list" role="button" aria-pressed="false">
+									<span>가입설계1</span><i class="icon icon_arrow_up"></i>
+									<ul class="breadcrumbs_list_sub">
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계1</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계2</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계3</a></li>
+									</ul>
+								</div>
+								<div class="breadcrumbs_list" role="button" aria-pressed="false">
+									<span>가입설계2</span><i class="icon icon_arrow_up"></i>
+									<ul class="breadcrumbs_list_sub">
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계1</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계2</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계3</a></li>
+									</ul>
+								</div>
+								<div class="breadcrumbs_list" role="button" aria-pressed="false">
+									<span>가입설계3</span><i class="icon icon_arrow_up"></i>
+									<ul class="breadcrumbs_list_sub">
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계1</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계2</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계3</a></li>
+									</ul>
+								</div>
+								<div class="breadcrumbs_list" role="button" aria-pressed="false">
+									<span>가입설계4</span><i class="icon icon_arrow_up"></i>
+									<ul class="breadcrumbs_list_sub">
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계1</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계2</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계3</a></li>
+									</ul>
+								</div>
+								<div class="breadcrumbs_list" role="button" aria-pressed="false">
+									<span>가입설계5</span><i class="icon icon_arrow_up"></i>
+									<ul class="breadcrumbs_list_sub">
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계1</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계2</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계3</a></li>
+									</ul>
+								</div>
+							</div>
+							<a href="javascript://" class="btn_all"><img src="./resources/pt/images/icons/icon_menu_all_white.svg" alt="전체메뉴"></a>
+						</div>
+						<div class="breadcrumbs_fixed_wrap2">
+							<div class="breadcrumbs_location">
+								<a href="javascript://" class="breadcrumbs_home"><img src="./resources/pt/images/icons/icon_man.svg" alt="User info"><span
+										class="userInfo">김하나(<span class="num">800101-2******</span>)</span></a>
+								<div class="breadcrumbs_list2">
+									<span class="breadcrumbs_list_item num">1234567890</span>
+								</div>
+								<div class="breadcrumbs_list2">
+									<span class="breadcrumbs_list_item"><span class="flag purple">유지</span>(무)걱정말아요 암보험(갱신형)</span>
+								</div>
+							</div>
+							<div class="searchBox">
+								<select class="ipt">
+									<option selected>계약사항</option>
+									<option>계약사항 내용1</option>
+									<option>계약사항 내용2</option>
+									<option>계약사항 내용3</option>
+									<option>계약사항 내용4</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- breadcrumbs (e) -->
+			</div>
+			<!-- header (e) -->
+			
+		<div class="container" id="content">
+			<div class="section">
+				<h1 class="tit01">청약 조회</h1>
+		
+				<form name="searchForm" method="post" onsubmit="return false;">
+					<input type="hidden" name="orgList" id="orgList" value="${orgList }">
+					<input type="hidden" name="searchDv" id="searchDv" value="${userSession.searchDv }">
+					<input type="hidden" name="searchLevel" id="searchLevel" value="${userSession.searchLevel }">
+					<input type="hidden" name="usrAuthGrpId" id="usrAuthGrpId" value="${userSession.usrAuthGrpId }">
+					<input type="hidden" name="userChannelId" id="userChannelId" value="${userSession.channelId }">
+					<input type="hidden" name="userChannelNm" id="userChannelNm" value="${userSession.channelNm }">
+					<input type="hidden" name="userBonbuId" id="userBonbuId" value="${userSession.bonbuId }">
+					<input type="hidden" name="userBonbuNm" id="userBonbuNm" value="${userSession.bonbuNm }">
+					<input type="hidden" name="userJijumId" id="userJijumId" value="${userSession.jijumId }">
+					<input type="hidden" name="userJijumNm" id="userJijumNm" value="${userSession.jijumNm }">
+					<input type="hidden" name="userTeamId" id="userTeamId" value="${userSession.teamId }">
+					<input type="hidden" name="userTeamNm" id="userTeamNm" value="${userSession.teamNm }">
+					<input type="hidden" name="userAgentId" id="userAgentId" value="${userSession.usrId }">
+					<input type="hidden" name="userAgentNm" id="userAgentNm" value="${userSession.usrNm }">
+		
+				<ul class="formList div3" id="serchChungYak">
+			 		<!-- 설계사 조회 조건은 스크립트를 통해 생성된다. -->
+					<li class="full abs">
+						<div class="th">청약저장일</div>
+						<div class="td">
+							<div class="setHalf">
+								<input type="tel" class="ipt date" placeholder="시작일" id="frmDate">
+								<span class="sign">~</span>
+								<input type="tel" class="ipt date" placeholder="종료일" id="toDate">
+							</div>
+							<ul class="iptFilt">
+								<li>
+									<input type="radio" class="ipt" name="filter0" id="filter0_1" checked="true">
+									<label for="filter0_1">당일</label>
+								</li>
+								<li>
+									<input type="radio" class="ipt" name="filter0" id="filter0_2">
+									<label for="filter0_2">1주일</label>
+								</li>
+								<li>
+									<input type="radio" class="ipt" name="filter0" id="filter0_3">
+									<label for="filter0_3">15일</label>
+								</li>
+								<li>
+									<input type="radio" class="ipt" name="filter0" id="filter0_4">
+									<label for="filter0_4">1개월</label>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="full abs">
+						<div class="th">청약방법</div>
+						<div class="td">
+							<ul class="iptGroup" id="chnDv"></ul>
+						</div>
+					</li>
+					<li>
+						<div class="th">청약상태</div>
+						<div class="td">
+							<select class="ipt" id="prsSte" name="prsSte"></select>
+						</div>
+					</li>
+					<li>
+						<div class="th">증권번호</div>
+						<div class="td">
+							<input type="text" id="srtsNo" class="ipt"  placeholder="숫자만 입력" maxlength="22" >
+						</div>
+					</li>
+		
+					<li>
+						<div class="th">고객명</div>
+						<div class="td">
+							<input type="text" id="csNm" class="ipt"  placeholder="예: 김하나" maxlength="10">
+						</div>
+					</li>
+			 	</ul>
+		
+				<div class="btn_wrap">
+					<button type="button" class="btn_white" id="searchReset">초기화</button>
+					<button type="button" class="btn_primary" onclick="selChungyakList()">조회</button>
+				</div>
+			</form>
+		
+				<div class="sort_wrap">
+					<div class="sort">
+						<ul class="count">
+							<li>총 <span class="count_num count_num_accent">0</span>건</li>
+						</ul>
+					</div>
+					<!-- 25.01.22 추가 -->
+					<div class="sortRight">
+						<p class="txtList remark mt0 mb0">선심사결과는 "선심사 결과반영"으로 진행한 경우만 표시됩니다.</p>
+					</div>
+					<!-- //25.01.22 추가 -->
+				</div>
+				<div class="tabl_area">
+				  <!-- 조회 테이블 (s)-->
+					<table>
+						<caption></caption>
+						<!-- 24 HL3 SFA 수정 -->
+						<colgroup>
+							<col style="width: 12%;">
+							<col style="width: 20%;"><!-- 25.01.22 수정 -->
+							<col style="width: auto;">
+							<col style="width: 120px;">
+							<col style="width: 15%;"><!-- 25.01.22 수정 -->
+						</colgroup>
+						<!-- // 24 HL3 SFA 수정 -->
+						<thead>
+							<tr>
+								<th>청약저장일시</th>
+								<th>고객명(청약관리번호)</th>
+								<th>청약내용</th>
+								<th>선심사결과</th>
+								<th>청약상태</th>
+							</tr>
+						</thead>
+						<tbody id="dataList">
+							<tr>
+					          <td class="txt_l">
+					            <p>2022.02.02 16:00:00</p>
+					            <span class="flag blue">전자청약</span>
+					          </td>
+					          <td class="txt_l">
+					            <p>계약자: 홍길동</p>
+					            <p>피보험자: 홍길자</p>
+					            <p class="fontColor6 fontSize15">1234567A123456123456</p>
+					          </td>
+					          <td class="sdlist">
+					            <p>(무)하나변액연금보험Ⅱ(적립형) 개인 기간보증부종신연금형_정액형_10년보증</p>
+					            <!-- 25.01.22 수정 GA 에서는 합계보험료와 가입금액이 1개의 ul, 나머지가 1개의 ul로 구성될 수 있개 해주세요.-->
+					            <ul class="sdlist_info fw_wrap">
+					              <li>
+					                합계보험료 : <span class="number">165,700</span>원
+					              </li>
+					              <li>
+					                가입금액 : <span class="number">10,000,000</span>원
+					              </li>
+					            </ul>
+					            <ul class="sdlist_info fw_wrap">
+					              <li>
+					                증권번호 : <span class="number">12345678</span>
+					              </li>
+					              <li>
+					                1차년환산P : <span class="number">165,700</span>원
+					              </li>
+					              <li>
+					                2차년환산P : <span class="number">165,700</span>원
+					              </li>
+					            </ul>
+					           <!--// 25.01.22 class 추가 -->
+					          </td>
+					          <!-- 24 HL3 SFA 추가 -->
+					          <td>
+					          	<a href="#" class="textLink auditC1">가입가능</a> <!-- 25.01.08 수정 -->
+					          </td>
+					          <!-- //24 HL3 SFA 추가 -->
+					          <td>
+					            <p>
+					              <a href="#" class="links fontColor3 fontSize15">계약전 알릴 의무사항<br><span>(3/7)</span></a><!-- 25.01.22 class 수정 -->
+					            </p>
+					          </td>
+					        </tr>
+					        <tr>
+					          <td class="txt_l">
+					            <p>2022.02.02 16:00:00</p>
+					            <span class="flag blue">전자청약</span>
+					          </td>
+					          <td class="txt_l">
+					            <p>계약자: 홍길동</p>
+					            <p>피보험자: 홍길자</p>
+					            <p class="fontColor6 fontSize15">1234567A123456123456</p>
+					          </td>
+					          <td class="sdlist">
+					            <p>(무)하나로 연결된 간편한 암보험(일반심사형, 순수보장형 30년 만기)</p>
+					            <ul class="sdlist_info fw_wrap"> <!-- 25.01.22 class 추가 -->
+					              <li>
+					                증권번호 : <span class="number">12345678</span>
+					              </li>
+					              <li>
+					                합계보험료 : <span class="number">165,700</span>원
+					              </li>
+					            </ul>
+					          </td>
+					          <!-- 24 HL3 SFA 추가 -->
+					          <td>
+					          	<a href="#" class="textLink auditC2">가입불가</a> <!-- 25.01.08 수정 -->
+					          </td>
+					          <!-- //24 HL3 SFA 추가 -->
+					          <td>
+					            <p>
+					              <a href="#" class="links fontColor3 fontSize15">계약전 알릴 의무사항<br><span>(3/7)</span></a><!-- 25.01.22 class 수정 -->
+					            </p>
+					          </td>
+					        </tr>
+					        <tr>
+					          <td class="txt_l">
+					            <p>2022.02.02 16:00:00</p>
+					            <span class="flag blue">전자청약</span>
+					          </td>
+					          <td class="txt_l">
+					            <p>계약자: 홍길동</p>
+					            <p>피보험자: 홍길자</p>
+					            <p class="fontColor6 fontSize15">1234567A123456123456</p>
+					          </td>
+					          <td class="sdlist">
+					            <p>(무)하나뿐인 변액연금보험_적립형</p>
+					            <ul class="sdlist_info fw_wrap"> <!-- 25.01.22 class 추가 -->
+					              <li>
+					                증권번호 : <span class="number">12345678</span>
+					              </li>
+					              <li>
+					                합계보험료 : <span class="number">165,700</span>원
+					              </li>
+					            </ul>
+					          </td>
+					          <!-- 24 HL3 SFA 추가 -->
+					          <td>
+					          	<a href="#" class="textLink auditC3">심사자보고</a> <!-- 25.01.08 수정 -->
+					          </td>
+					          <!-- //24 HL3 SFA 추가 -->
+					          <td>
+					            <p>
+					              <a href="#" class="links fontColor3 fontSize15">계약전 알릴 의무사항<br><span>(3/7)</span></a><!-- 25.01.22 class 수정 -->
+					            </p>
+					          </td>
+					        </tr>
+					        <tr>
+					          <td class="txt_l">
+					            <p>2022.02.02 16:00:00</p>
+					            <span class="flag blue">전자청약</span>
+					          </td>
+					          <td class="txt_l">
+					            <p>계약자: 홍길동</p>
+					            <p>피보험자: 홍길자</p>
+					            <p class="fontColor6 fontSize15">1234567A123456123456</p>
+					          </td>
+					          <td class="sdlist">
+					            <p>(무)하나로 연결된 미리 받는 암종신보험(해약환급금 일부지급형, 일반심사형)</p>
+					            <ul class="sdlist_info fw_wrap"> <!-- 25.01.22 class 추가 -->
+					              <li>
+					                증권번호 : <span class="number">12345678</span>
+					              </li>
+					              <li>
+					                합계보험료 : <span class="number">165,700</span>원
+					              </li>
+					            </ul>
+					          </td>
+					          <!-- 24 HL3 SFA 추가 -->
+					          <td>
+					          	<a href="#" class="textLink auditC5">작성중</a> <!-- 25.01.08 수정 -->
+					          </td>
+					          <!-- //24 HL3 SFA 추가 -->
+					          <td>
+					            <p>
+					              <a href="#" class="links fontColor3 fontSize15">계약전 알릴 의무사항<br><span>(3/7)</span></a><!-- 25.01.22 class 수정 -->
+					            </p>
+					          </td>
+					        </tr>
+					        <tr>
+					          <td class="txt_l">
+					            <p>2022.02.02 16:00:00</p>
+					            <span class="flag blue">전자청약</span>
+					          </td>
+					          <td class="txt_l">
+					            <p>계약자: 홍길동</p>
+					            <p>피보험자: 홍길자</p>
+					            <p class="fontColor6 fontSize15">1234567A123456123456</p>
+					          </td>
+					          <td class="sdlist">
+					            <p>(무)하나로 연결된 미리 받는 암종신보험(해약환급금 일부지급형, 일반심사형)</p>
+					            <ul class="sdlist_info fw_wrap"> <!-- 25.01.22 class 추가 -->
+					              <li>
+					                증권번호 : <span class="number">12345678</span>
+					              </li>
+					              <li>
+					                1차년환산P : <span class="number">165,700</span>원
+					              </li>
+					              <li>
+					                2차년환산P : <span class="number">165,700</span>원
+					              </li>
+					            </ul>
+					          </td>
+					          <!-- 24 HL3 SFA 추가 -->
+					          <td>
+					          	<a href="#" class="textLink auditC4">조건부인수</a> <!-- 25.01.08 수정 -->
+					          </td>
+					          <!-- //24 HL3 SFA 추가 -->
+					          <td>
+					            <p>
+					              <a href="#" class="links fontColor3 fontSize15">계약전 알릴 의무사항<br><span>(3/7)</span></a><!-- 25.01.22 class 수정 -->
+					            </p>
+					          </td>
+					        </tr>
+						</tbody>
+					</table>
+					
+					<div class="noresultWrap">
+						<img src="./resources/pt/images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+						<div class="noresultText">조회 결과가 없습니다.</div>
+					</div>
+					<div class="pagination" id="paging"></div>
+				</div>
+			</div>
+		</div>
+	  	</div>
+	  	<!-- wrapper(e) -->
+	</body>
+</html>

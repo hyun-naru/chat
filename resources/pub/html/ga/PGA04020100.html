@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section">
+  <h1 class="tit01">인쇄물 관리</h1>
+
+  <ul class="formList div2">
+    <li class="full">
+      <div class="th">조회기간</div>
+      <div class="td">
+        <div class="setHalf">
+          <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz01221">
+          <span class="sign">~</span>
+          <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz1231">
+        </div>
+        <ul class="iptFilt">
+          <li>
+            <input type="radio" class="ipt" name="filter0" id="filter0_1" checked="">
+            <label for="filter0_1">1주일</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="filter0" id="filter0_2" >
+            <label for="filter0_2">1개월</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="filter0" id="filter0_3">
+            <label for="filter0_3">3개월</label>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div class="th">신청대리점</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">신청지점</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">수령지점</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">수령인</div>
+      <div class="td">
+        <input type="text" class="ipt" placeholder="예: 김하나">
+      </div>
+    </li>
+  </ul>
+
+  <div class="btn_wrap">
+    <button type="button" class="btn_white xl">초기화</button>
+    <button type="button" class="btn_primary xl">조회</button>
+  </div>
+
+  <div class="sort_wrap">
+    <div class="sort">
+      <ul class="count">
+        <li>총 <span class="count_num count_num_accent">106</span>건</li>
+        <li><span class="count_num count_num_accent">1</span>/100페이지</li>
+      </ul>
+    </div>
+    <div class="sortRight">
+      <ul class="iptGroup">
+        <li>
+          <input type="radio" class="ipt" name="rdo2" id="rdo2_1" checked="">
+          <label for="rdo2_1">전체</label>
+        </li>
+        <li>
+          <input type="radio" class="ipt" name="rdo2" id="rdo2_2">
+          <label for="rdo2_2">완료</label>
+        </li>
+        <li>
+          <input type="radio" class="ipt" name="rdo2" id="rdo2_3">
+          <label for="rdo2_3">대기</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tabl_area">
+    <!--조회 테이블 (s)-->
+    <table>
+      <caption>정보</caption>
+      <colgroup>
+        <col style="width: 7%;">
+        <col style="width: 11%;">
+        <col style="width: 8%;">
+        <col style="width: 8%;">
+        <col style="width: 9%;">
+        <col style="width: auto;">
+        <col style="width: 14%;">
+        <col style="width: 8%;">
+        <col style="width: 14%;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col"><span>번호</span></th>
+          <th scope="col"><span>신청인(사번)</span></th>
+          <th scope="col"><span>수령<br>대리점</span></th>
+          <th scope="col"><span>수령<br>지점</span></th>
+          <th scope="col"><span>수령인</span></th>
+          <th scope="col"><span>제목</span></th>
+          <th scope="col"><span>신청일</span></th>
+          <th scope="col"><span>처리<br>여부</span></th>
+          <th scope="col"><span>처리일</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span>970</span></td>
+          <td><span>김하나(12345)</span></td>
+          <td><span>하나</span></td>
+          <td><span>생명</span></td>
+          <td><span>홍길동</span></td>
+          <td class="txt_l"><a href="#" class="links ellipsis">인쇄물 신청 시 입력한 제목이 노출됩니다.</a></td>
+          <td><span>YYY.MM.DD</span></td>
+          <td><span>대기</span></td>
+          <td><span>YYY.MM.DD</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <!--// 조회 테이블 (e)-->
+    <!-- No Result (s) -->
+    <div class="noresultWrap">
+      <img src="./resources/pt/images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+      <div class="noresultText">조회 결과가 없습니다.</div>
+    </div>
+    <!--// No Result (e) -->
+  </div>
+
+  <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+		<button type="button" class="icoBtn_first" aria-label="처음"></button>
+		<button type="button" class="icoBtn_prev" aria-label="이전"></button>
+		<ul>
+			<li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+			<li><a href="#"><span class="blind">페이지</span>2</a></li>
+			<li><a href="#"><span class="blind">페이지</span>3</a></li>
+			<li><a href="#"><span class="blind">페이지</span>4</a></li>
+			<li><a href="#"><span class="blind">페이지</span>5</a></li>
+			<li><a href="#"><span class="blind">페이지</span>6</a></li>
+			<li><a href="#"><span class="blind">페이지</span>7</a></li>
+			<li><a href="#"><span class="blind">페이지</span>8</a></li>
+			<li><a href="#"><span class="blind">페이지</span>9</a></li>
+			<li><a href="#"><span class="blind">페이지</span>10</a></li>
+		</ul>
+		<button type="button" class="icoBtn_next" aria-label="다음"></button>
+		<button type="button" class="icoBtn_last" aria-label="마지막"></button>
+	</div>
+
+</div>
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+
+</html>

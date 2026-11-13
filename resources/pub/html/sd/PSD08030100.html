@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+    <link rel="stylesheet" type="text/css" href="../../../../resources/tab/pt/css/cssLib.css" />
+    <script src="../../../../resources/comm/js/jquery-3.5.1.min.js"></script>
+    <script src="../../../../resources/comm/js/jquery.form.min.js"></script>
+    <script src="../../../../resources/comm/js/jquery.serializeObject.min.js"></script>
+    <script src="../../../../resources/comm/js/jquery-ui.js"></script>
+    <script src="../../../../resources/comm/js/jquery.ui.monthpicker.js"></script>
+    <script src="../../../../resources/comm/js/jquery.cookie.js"></script>
+    <script src="../../../../resources/comm/js/jquery.blockUI.js"></script>
+    <script src="../../../../resources/comm/js/jquery.MultiFile.js"></script>
+    <script src="../../../../resources/comm/js/swiper.min.js"></script>
+    <script src="../../../../resources/comm/js/lightslider.js"></script>
+    <script src="../../../../resources/comm/js/common-transaction.js"></script>
+    <script src="../../../../resources/comm/js/common-numeral.min.js"></script>
+    <script src="../../../../resources/comm/js/common-moment.min.js"></script>
+    <script src="../../../../resources/comm/js/common-str.js"></script>
+    <script src="../../../../resources/comm/js/common-util.js"></script>
+    <script src="../../../../resources/comm/js/common-code.js"></script>
+    <script src="../../../../resources/comm/js/common-storage.js"></script>
+    <script src="../../../../resources/comm/js/common-timeout.js"></script>
+    <script src="../../../../resources/comm/js/sfaApp.interface.js"></script>
+    <script src="../../../../resources/pt/js/ui.front.js"></script>
+    <script src="../../../../resources/pt/js/ui.common.js"></script>
+    <script src="../../../../resources/pt/js/pt.common.js"></script>
+    
+    <script>
+        let isMoLanding = false;	//모바일 랜딩의 경우
+        $(document).ready(function () {
+            // ui.front.js 초기 실행
+            layout.init(); // 페이지가 준비가 됐을 때 딱 한번만 실행 (공통 개발팀에서 호출하는게 좋습니다.)
+            ui.init(); // 페이지가 동적으로 바뀔때마다 실행 (개발을 붙였더니 뭔가 동작을 안할때 개발페이지 개발자들이 호출하는게 좋습니다.)
+           
+        });
+    </script>
+</head>
+
+<body>
+  <div class="wrapper" id="wrapper">
+    <div class="header"></div>
+    <!-- container (s) -->
+    <div class="container" id="content">
+      <!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+      <div class="section">
+        <h1 class="tit01">청약 철회 관리자 등록</h1>
+        <div class="tabl_area" >
+          <table>
+            <colgroup>
+              <col style="width: 30%;">
+              <col style="width: auto;">
+              <col style="width: auto;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th><span>담당자(사번)</span></th>
+                <th><span>등록일</span></th>
+                <th><span>최종수정일</span></th>
+              </tr>
+            </thead>
+            <tbody id="managerTableBody">
+              <tr>
+                <td><a href="#none" class="links" data-emp-id="123456" data-emp-name="홍길동">홍길동(123456)</a></td>
+                <td>2022.01.01</td>
+                <td>2022.09.10</td>
+              </tr>
+              <tr>
+                <td><a href="#none" class="links" data-emp-id="654321" data-emp-name="김철수">김철수(654321)</a></td>
+                <td>2022.01.02</td>
+                <td>2022.09.11</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <ul class="formList div_2 mt60">
+          <li>
+            <div class="th">담당자</div>
+            <div class="td">
+              <input type="text" id="empInputName" class="ipt notDel uiAct" placeholder="이름 입력">
+            </div>
+          </li>
+          <li>
+            <div class="th">사번</div>
+            <div class="td">
+              <input type="text" id="empInputId" class="ipt notDel uiAct" placeholder="사번 입력">
+            </div>
+          </li>
+        </ul>
+
+        <div class="btn_wrap">
+          <!-- 등록/수정 동적 제어를 위한 ID 부여 -->
+          <button type="button" id="btnSubmit" class="btn_primary">등록</button>
+          <!-- 삭제 버튼 (초기에는 숨김 처리) -->
+          <button type="button" id="btnDelete" class="btn_white" style="display: none;">삭제</button>
+        </div>
+      </div>
+      <!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+       
+  <!-- 동작 스크립트 -->
+  <script>
+    (function() {
+        let editingRow = null; // 현재 수정 중인 테이블 행(tr)을 기억하는 변수
+
+        // 오늘 날짜를 YYYY.MM.DD 형식으로 반환하는 함수
+        function getTodayDate() {
+            const date = new Date();
+            const yyyy = date.getFullYear();
+            const mm = String(date.getMonth() + 1).padStart(2, '0');
+            const dd = String(date.getDate()).padStart(2, '0');
+            return `${yyyy}.${mm}.${dd}`;
+        }
+
+        // 입력폼 및 버튼 상태를 초기(등록) 상태로 되돌리는 함수
+        function resetForm() {
+            $('#empInputName').val('');
+            $('#empInputId').val('');
+            $('#btnSubmit').text('등록');
+            $('#btnDelete').hide(); // 삭제 버튼 숨기기
+            if (editingRow) {
+                editingRow.css('background-color', '');
+                editingRow = null;
+            }
+        }
+
+        // 1. 리스트의 담당자 클릭 시 해당 데이터를 인풋에 채우고 '수정' 모드로 전환
+        $(document).off('click', '#managerTableBody .links').on('click', '#managerTableBody .links', function(e) {
+            e.preventDefault();
+
+            const $link = $(this);
+            
+            // 이전에 선택했던 행의 배경색 초기화
+            if (editingRow) {
+                editingRow.css('background-color', '');
+            }
+
+            editingRow = $link.closest('tr'); // 수정할 행 저장
+
+            let empId = $link.attr('data-emp-id');
+            let empName = $link.attr('data-emp-name');
+            
+            if (!empId || !empName) {
+                const fullText = $link.text(); // 예: "홍길동(123456)"
+                const match = fullText.match(/^(.+)\(([^)]+)\)$/);
+                if (match) {
+                    empName = match[1].trim();
+                    empId = match[2].trim();
+                } else {
+                    empName = fullText;
+                    empId = '';
+                }
+            }
+
+            // 인풋창에 값 세팅
+            $('#empInputName').val(empName);
+            $('#empInputId').val(empId);
+
+            // 버튼 글자를 '수정'으로 변경하고 삭제 버튼 노출
+            $('#btnSubmit').text('수정');
+            $('#btnDelete').show();
+
+            // 선택된 행 시각적 강조
+            editingRow.css('background-color', '#f7f9fa');
+        });
+
+        // 2. 등록 / 수정 버튼 클릭 이벤트
+        $(document).off('click', '#btnSubmit').on('click', '#btnSubmit', function(e) {
+            e.preventDefault();
+            const currentMode = $(this).text().trim();
+            const inputName = $('#empInputName').val().trim();
+            const inputId = $('#empInputId').val().trim();
+            const today = getTodayDate();
+
+            if (!inputName || !inputId) {
+                uiInfo.pt.alert('', '담당자 이름과 사번을 모두 입력해주세요.');
+                return;
+            }
+
+            if (currentMode === '등록') {
+                // 새로운 행 추가 (등록일과 최종수정일 모두 오늘 날짜)
+                const newRowHtml = `
+                    <tr>
+                      <td><a href="#none" class="links" data-emp-id="${inputId}" data-emp-name="${inputName}">${inputName}(${inputId})</a></td>
+                      <td>${today}</td>
+                      <td>${today}</td>
+                    </tr>
+                `;
+                $('#managerTableBody').append(newRowHtml);
+                uiInfo.pt.alert('', `사번 [${inputId}](${inputName})이(가) 신규 등록되었습니다.`);
+
+            } else if (currentMode === '수정') {
+                if (editingRow) {
+                    // 기존 행의 정보 업데이트 (등록일은 유지, 이름/사번과 최종수정일만 변경)
+                    editingRow.find('td:eq(0)').html(`<a href="#none" class="links" data-emp-id="${inputId}" data-emp-name="${inputName}">${inputName}(${inputId})</a>`);
+                    editingRow.find('td:eq(2)').text(today); // 최종수정일만 오늘 날짜로 갱신
+                    
+                    uiInfo.pt.alert('', `사번 [${inputId}](${inputName}) 정보가 수정되었습니다.`);
+                }
+            }
+
+            // 입력창 및 버튼 상태 초기화
+            resetForm();
+        });
+
+        // 3. 삭제 버튼 클릭 이벤트
+        $(document).off('click', '#btnDelete').on('click', '#btnDelete', function(e) {
+            e.preventDefault();
+
+            if (!editingRow) {
+                uiInfo.pt.alert('', '삭제할 항목을 선택해주세요.');
+                return;
+            }
+
+            const inputName = $('#empInputName').val().trim();
+            const inputId = $('#empInputId').val().trim();
+
+            uiInfo.pt.confirm('', `사번 [${inputId}](${inputName}) 정보를 정말 삭제하시겠습니까?`, function() {
+                // '확인' 버튼을 눌렀을 때 실행될 로직
+                editingRow.remove(); 
+                uiInfo.pt.alert('', '삭제되었습니다.');
+                resetForm(); 
+            });
+        });
+    })();
+  </script>
+    </div><!-- container (e) -->
+  </div>
+
+</body>
+</html>

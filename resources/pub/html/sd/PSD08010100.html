@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>청약 정보 조회(관리자)</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section">
+  <h1 class="tit01">청약 정보 조회(관리자)</h1>
+
+  <ul class="formList div3">
+    <li>
+      <div class="th">채널</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">전체</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">본부</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">전체</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">지점</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">전체</option>
+        </select>
+      </div>
+    </li>
+    <li class="oneThirdDiv">
+      <div class="th">팀</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">전체</option>
+        </select>
+      </div>
+    </li>
+    <li class="twoThirdsDiv">
+      <div class="th">판매인</div>
+      <div class="td">
+        <select class="ipt mid">
+          <option selected="">전체</option>
+        </select>
+      </div>
+    </li>
+    <li class="full abs">
+      <div class="th">청약방법</div>
+      <div class="td">
+        <ul class="iptGroup">
+          <li>
+            <input type="checkbox" class="ipt" name="chk2" id="chk2_1" checked="">
+            <label for="chk2_1">서면청약</label>
+          </li>
+          <li>
+            <input type="checkbox" class="ipt" name="chk2" id="chk2_2">
+            <label for="chk2_2">스마트청약</label>
+          </li>
+          <li>
+            <input type="checkbox" class="ipt" name="chk2" id="chk2_3">
+            <label for="chk2_3">전자청약</label>
+          </li>
+          <li>
+            <input type="checkbox" class="ipt" name="chk2" id="chk2_4">
+            <label for="chk2_4">하이브리드청약</label>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div class="th">청약상태</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">전체</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">증권번호</div>
+      <div class="td">
+        <input type="text" class="ipt"  placeholder="">
+      </div>
+    </li>
+
+    <li>
+      <div class="th">고객명</div>
+      <div class="td">
+        <input type="text" class="ipt"  placeholder="예: 김하나">
+      </div>
+    </li>
+  </ul>
+  <div class="btn_wrap">
+    <button type="button" class="btn_white">초기화</button>
+    <button type="button" class="btn_primary">조회</button>
+  </div>
+  <div class="sort_wrap">
+    <div class="sort">
+      <ul class="count">
+        <li>총 <span class="count_num count_num_accent">106</span>건</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tabl_area">
+    <!-- 조회 테이블 (s)-->
+    <table>
+      <caption></caption>
+      <colgroup>
+        <col style="width: 12%;">
+        <col style="width: 18%;">
+        <col style="width: auto;">
+        <col style="width: 12%;">
+        <col style="width: 10%;">
+        <col style="width: 10%;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>청약저장일시</th>
+          <th>고객명(청약관리번호)</th>
+          <th>청약내용</th>
+          <th>청약진행단계</th>
+          <th>예금주</th>
+          <th>결제처리상태</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="txt_l">
+            <p>2022.02.02 16:00:00</p>
+            <span class="flag blue">전자</span>
+          </td>
+          <td class="txt_l">
+            <p>계약자: 홍길동</p>
+            <p>피보험자: 홍길자</p>
+            <p class="fontColor6 fontSize15">1234567A123456123456</p>
+          </td>
+          <td class="sdlist">
+            <p>(무)하나변액연금보험Ⅱ(적립형) 개인 기간보증부종신연금형_정액형_10년보증</p>
+            <ul class="sdlist_info">
+              <li>
+                증권번호: <span class="number">12345678</span>
+              </li>
+              <li>
+                합계보험료: <span class="number">165,700</span>원
+              </li>
+            </ul>
+          </td>
+          <td>
+            <p>
+              <a href="#" class="links fontColor3 fontSize14">계약전 알릴 의무사항<br><span>(3/7)</span></a>
+            </p>
+          </td>
+          <td>홍길동</td>
+          <td>
+            <button type="button" class="btn_primary_reverse s">상세보기</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!--// 조회 테이블 (e)-->
+    <!-- No Result (s) -->
+    <div class="noresultWrap">
+      <img src="./resources/pt/images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+      <div class="noresultText">조회 결과가 없습니다.</div>
+    </div>
+    <!--// No Result (e) -->
+  </div>
+  <!-- <div class="pagination">
+    <a href="#" class="btn_first">처음 페이지로 이동</a>
+    <a href="#" class="btn_prev">이전 페이지로 이동</a>
+    <a href="#" class="num">1</a>
+    <span class="current">2</span>
+    <a href="#" class="num">3</a>
+    <a href="#" class="num">4</a>
+    <a href="#" class="num">5</a>
+    <a href="#" class="num">6</a>
+    <a href="#" class="num">7</a>
+    <a href="#" class="num">8</a>
+    <a href="#" class="num">9</a>
+    <a href="#" class="num">10</a>
+    <a href="#" class="btn_next">다음 페이지로 이동</a>
+    <a href="#" class="btn_last">마지막 페이지로 이동</a>
+  </div> -->
+
+  <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+		<button type="button" class="icoBtn_first" aria-label="처음"></button>
+		<button type="button" class="icoBtn_prev" aria-label="이전"></button>
+		<ul>
+			<li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+			<li><a href="#"><span class="blind">페이지</span>2</a></li>
+			<li><a href="#"><span class="blind">페이지</span>3</a></li>
+			<li><a href="#"><span class="blind">페이지</span>4</a></li>
+			<li><a href="#"><span class="blind">페이지</span>5</a></li>
+			<li><a href="#"><span class="blind">페이지</span>6</a></li>
+			<li><a href="#"><span class="blind">페이지</span>7</a></li>
+			<li><a href="#"><span class="blind">페이지</span>8</a></li>
+			<li><a href="#"><span class="blind">페이지</span>9</a></li>
+			<li><a href="#"><span class="blind">페이지</span>10</a></li>
+		</ul>
+		<button type="button" class="icoBtn_next" aria-label="다음"></button>
+		<button type="button" class="icoBtn_last" aria-label="마지막"></button>
+	</div>
+
+
+
+</div>
+
+
+
+
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+
+</html>

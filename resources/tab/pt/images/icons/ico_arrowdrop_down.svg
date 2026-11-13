@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <g data-name="ico">
+        <g transform="rotate(135 4.52 13.213)" style="stroke:#111;fill:none">
+            <rect width="1.5" height="11" rx=".75" style="stroke:none"/>
+            <rect x=".5" y=".5" width=".5" height="10" rx=".25" style="fill:none"/>
+        </g>
+        <g data-name="사각형" transform="rotate(-135 12.23 6.896)" style="stroke:#111;fill:none">
+            <rect width="1.5" height="11" rx=".75" style="stroke:none"/>
+            <rect x=".5" y=".5" width=".5" height="10" rx=".25" style="fill:none"/>
+        </g>
+    </g>
+</svg>

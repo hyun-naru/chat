@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section">
+
+  <h1 class="tit01">월별 수수료 조회</h1>
+  <ul class="formList ">
+    <li>
+      <div class="th">구분</div>
+      <div class="td">
+        <ul class="iptGroup">
+          <li>
+            <input type="radio" class="ipt" name="rdo1" id="rdo1_1" checked="">
+            <label for="rdo1_1">대리점</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="rdo1" id="rdo1_2">
+            <label for="rdo1_2">GRM/사업단장</label>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div class="th">조회 연월</div>
+      <div class="td">
+        <input type="tel" class="ipt date" value="2022.06.25" id="input_ID_Setting_Plz000">
+      </div>
+    </li>
+    <li class="full">
+      <div class="th">GRM/사업단장</div>
+      <div class="td">
+        <select class="ipt mid">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+  </ul>
+  <div class="btn_wrap">
+    <button type="button" class="btn_white">초기화</button>
+    <button type="button" class="btn_primary">조회</button>
+  </div>
+
+  <div class="sort_wrap">
+    <div class="sort">
+      <h2 class="tit02">인적사항 
+        <div class="toolTip col_3">유지율 정보는 조회 연월 기준 실적 이며, 현재 유지율 실적과 다를 수 있습니다.</div>
+      </h2>
+    </div>
+    <div class="sortRight">
+      <button type="button" class="btn_primary_reverse m">수수료 명세서</button>
+    </div>
+  </div>
+  <ul class="formList div3">
+    <li>
+      <div class="th">채널구분</div>
+      <div class="td">GA</div>
+    </li>
+    <li>
+      <div class="th">대리점</div>
+      <div class="td">하나생명본사</div>
+    </li>
+    <li>
+      <div class="th">위촉일자</div>
+      <div class="td">2022.10.08</div>
+    </li>
+    <li>
+      <div class="th">판매인성명</div>
+      <div class="td">0123456A</div>
+    </li>
+    <li>
+      <div class="th">판매인사번</div>
+      <div class="td">김하나</div>
+    </li>
+    <li class="oneThirdDiv">
+      <div class="th">직책</div>
+      <div class="td">사업단장</div>
+    </li>
+    <li>
+      <div class="th">유지율</div>
+      <div class="td">00.0%</div>
+    </li>
+    <li class="twoThirdsDiv">
+      <div class="th">수수료지급방식</div>
+      <div class="td">선지급 or 분급
+      </div>
+    </li>
+  </ul>
+
+
+
+  <h2 class="tit02">성과 정보</h2>
+  <h3 class="tit04">수수료 계</h3>
+  <ul class="formList div3 data">
+    <li>
+      <div class="th">수수료총액</div>
+      <div class="td txt_r">000,000,000</div>
+    </li>
+    <li>
+      <div class="th">총공제계</div>
+      <div class="td txt_r">000,000,000</div>
+    </li>
+    <li>
+      <div class="th">실지급액</div>
+      <div class="td txt_r">000,000,000</div>
+    </li>
+  </ul>
+  <h3 class="tit04">수수료 정보</h3>
+  <ul class="formList div3 data">
+    <li>
+      <div class="th">비일시납수</div>
+      <div class="td txt_r">Data</div>
+    </li>
+    <li>
+      <div class="th">초회보험료</div>
+      <div class="td txt_r">000,000,000</div>
+    </li>
+    <li>
+      <div class="th">MCP</div>
+      <div class="td txt_r">000,000,000</div>
+    </li>
+    <li>
+      <div class="th">비일시납<br>환산성적</div>
+      <div class="td txt_r">Data</div>
+    </li>
+    <li>
+      <div class="th">불판환수성적</div>
+      <div class="td txt_r">Data</div>
+    </li>
+    <li>
+      <div class="th">최종환산성적</div>
+      <div class="td txt_r">Data</div>
+    </li>
+    <li>
+      <div class="th">일시납건수</div>
+      <div class="td txt_r">Data</div>
+    </li>
+    <li>
+      <div class="th">일시납보험료</div>
+      <div class="td txt_r">000,000,000</div>
+    </li>
+    <li>
+      <div class="th">MCP</div>
+      <div class="td txt_r">000,000,000</div>
+    </li>
+  </ul>
+  
+
+
+  <h2 class="tit02">수수료 상세 내역</h2>
+  
+
+  <ul class="accoList box ">
+    <li class="">
+      <div class="accoHead">
+        <a class="accoBtn"> 수수료내역</a>
+      </div>
+      <div class="accoBody">
+        <!-- 아코디언 본문내용 시작(s) -->
+        <ul class="formList div2  data  ">
+          <li>
+            <div class="th">초기정착수당</div>
+            <div class="td txt_r">0,000,000</div>
+          </li>
+          <li>
+            <div class="th">활동수당</div>
+            <div class="td txt_r">0,000,000</div>
+          </li>
+          <li>
+            <div class="th">성과수당</div>
+            <div class="td txt_r">0,000,000</div>
+          </li>
+          <li>
+            <div class="th">전략상품 가산수당</div>
+            <div class="td txt_r">0,000,000</div>
+          </li>
+          <li>
+            <div class="th">분기보너스</div>
+            <div class="td txt_r">0,000,000</div>
+          </li>
+          <li>
+            <div class="th">활동 및 통신기</div>
+            <div class="td txt_r">0,000,000</div>
+          </li>
+          <li>
+            <div class="th">출장비</div>
+            <div class="td txt_r">0,000,000</div>
+          </li>
+          <li>
+            <div class="th">의료지원수당</div>
+            <div class="td txt_r">0,000,000</div>
+          </li>
+          <li>
+            <div class="th">경조금</div>
+            <div class="td txt_r">0,000,000</div>
+          </li>
+          <li>
+            <div class="th">(기지급금)</div>
+            <div class="td txt_r">0,000,000</div>
+          </li>
+          <li>
+            <div class="th">사책비_본사</div>
+            <div class="td txt_r">0,000,000</div>
+          </li>
+          <li>
+            <div class="th">지급보류_지급</div>
+            <div class="td txt_r">0,000,000</div>
+          </li>
+          <li class="">
+            <div class="th">기타수당</div>
+            <div class="td txt_r">0,000,000</div>
+          </li>
+          <li class="">
+            <div class="th">-</div>
+            <div class="td txt_r">-</div>
+          </li>
+        </ul>
+        <!-- 아코디언 본문내용 시작(e) -->
+      </div>
+    </li>
+  </ul>
+
+  <ul class="accoList box mt30 ">
+    <li class="">
+      <div class="accoHead">
+        <a class="accoBtn"> 공제내역</a>
+      </div>
+      <div class="accoBody">
+        <!-- 아코디언 본문내용 시작(s) -->
+        <ul class="formList div2  data  ">
+          <li>
+            <div class="th">전월미공제</div>
+            <div class="td txt_r">0,000,000</div>
+          </li>
+          <li>
+            <div class="th">지급보류</div>
+            <div class="td txt_r">0,000,000</div>
+          </li>
+          <li>
+            <div class="th">기타공제1</div>
+            <div class="td txt_r">0,000,000</div>
+          </li>
+          <li>
+            <div class="th">기타공제2</div>
+            <div class="td txt_r">0,000,000</div>
+          </li>
+        </ul>
+        <!-- 아코디언 본문내용 시작(e) -->
+      </div>
+    </li>
+  </ul>
+</div>
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+</html>

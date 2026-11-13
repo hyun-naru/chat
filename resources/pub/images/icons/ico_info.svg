@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <g transform="translate(-1.605 -1.605)">
+        <g data-name="패스 19506" style="fill:none">
+            <path d="M11 0A11 11 0 1 1 0 11 11 11 0 0 1 11 0z" style="stroke:none" transform="translate(2.605 2.605)"/>
+            <path d="M11 1.2c-5.404 0-9.8 4.396-9.8 9.8 0 5.404 4.396 9.8 9.8 9.8 5.404 0 9.8-4.396 9.8-9.8 0-5.404-4.396-9.8-9.8-9.8M11 0c6.075 0 11 4.925 11 11s-4.925 11-11 11S0 17.075 0 11 4.925 0 11 0z" style="fill:#111;stroke:none" transform="translate(2.605 2.605)"/>
+        </g>
+        <circle data-name="타원 536" cx="1" cy="1" r="1" transform="translate(12.606 8.105)" style="fill:#111"/>
+        <rect data-name="사각형 15958" width="1.2" height="8" rx=".6" transform="translate(13.005 11.605)" style="fill:#111"/>
+    </g>
+</svg>

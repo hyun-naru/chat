@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+    <g transform="translate(-29.5 -1260)">
+        <circle data-name="타원 49" cx="40" cy="40" r="40" transform="translate(29.5 1260)" style="fill:#f5f5f5"/>
+        <g data-name="그룹 103636">
+            <g data-name="타원 553" transform="translate(67.842 1303)" style="stroke:#111;stroke-width:2px;fill:#c8f7f4;stroke-miterlimit:10">
+                <circle cx="9" cy="9" r="9" style="stroke:none"/>
+                <circle cx="9" cy="9" r="8" style="fill:none"/>
+            </g>
+            <path data-name="선 268" transform="translate(59.5 1292.02)" style="stroke-linejoin:round;stroke-linecap:round;fill:none;stroke:#111;stroke-width:2px" d="M0 0h14.168"/>
+            <path data-name="선 269" transform="translate(59.5 1298.02)" style="stroke-linejoin:round;stroke-linecap:round;fill:none;stroke:#111;stroke-width:2px" d="M0 0h8"/>
+            <path data-name="선 270" transform="translate(82.842 1318)" style="stroke-linecap:round;stroke:#111;stroke-width:2px;fill:#c8f7f4;stroke-miterlimit:10" d="m0 0 5 5"/>
+            <path data-name="패스 19624" d="M77 1458a4 4 0 0 1 4 4" style="stroke-linecap:round;stroke:#111;stroke-width:2px;fill:#c8f7f4;stroke-miterlimit:10" transform="translate(-.158 -150)"/>
+            <g data-name="사각형 16509" transform="translate(59.842 1276)" style="stroke-linejoin:round;stroke-linecap:round;fill:none;stroke:#111;stroke-width:2px">
+                <rect width="18" height="8" rx="3" style="stroke:none"/>
+                <rect x="1" y="1" width="16" height="6" rx="2" style="fill:none"/>
+            </g>
+            <g data-name="그룹 103635">
+                <path data-name="패스 19625" d="M79.658 1429.02H77v2h2.658a4 4 0 0 1 4 4v13.887a1 1 0 0 0 2 0v-13.887a6 6 0 0 0-6-6z" style="fill:#111" transform="translate(-.158 -150)"/>
+                <path data-name="패스 19626" d="M65.415 1470.02h-7.757a4 4 0 0 1-4-4v-31a4 4 0 0 1 4-4H61v-2h-3.342a6 6 0 0 0-6 6v31a6 6 0 0 0 6 6h7.759a.99.99 0 0 0 .974-1.121v-.021a.974.974 0 0 0-.976-.858z" style="fill:#111" transform="translate(-.158 -150)"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,91 @@
+<!--
+Copyright ⓒ 2022 Hana Life Insurance, All Rights Reserved.
+------------------------------------------------------------------
+프로젝트 : 하나생명 NEW SFA 시스템
+파 일 명 : PSD03010703.html
+타 이 틀 :
+설   명 : 청약 > 출국정보 입력 팝업
+------------------------------------------------------------------
+수정일           수정자              수정내용
+------------------------------------------------------------------
+2022.07.18    70100              최초생성
+------------------------------------------------------------------
+-->
+
+<!-- popup (s) -->
+<div class="popWrap">
+  <div class="popContain">
+    <div class="popup">
+      <div class="popHead">
+        <h1 class="tit01">출국정보입력</h1>
+      </div>
+      <div class="popBody col_8">
+<!-- 팝업 내용 시작 (s) -->
+        <section>
+          <div class="subtxt">향후 3개월 이내 다음과 같은 해외위험지역으로 출국할 예정이 있을 경우 상세하게 기록해 주세요. </div>
+          <div class="box_graybg">
+            전장지역, 미개척지(열대, 한대), 등반산악 지대
+          </div>
+
+          <ul class="formList">
+            <li>
+              <div class="td">
+                <span class="single">
+                  <input type="checkbox" class="ipt" name="" id="single_chk_1">
+                  <label for="single_chk_1"><span class="blind">직접입력</span></label>
+                </span>
+                <input type="text" class="ipt full" placeholder="출국예정국 입력" >
+              </div>
+            </li>
+            <li>
+              <div class="th">기간</div>
+              <div class="td">
+                <div class="setHalf">
+                  <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz">
+                  <span class="sign">~</span>
+                  <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz">
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="th">목적</div>
+              <div class="td">
+                <input type="text" class="ipt full">
+              </div>
+            </li>
+          </ul>
+
+          <div class="bottom_btn rt">
+            <button type="button" class="btn_primary_reverse l">추가</button>
+            <button type="button" class="btn_white l">삭제</button>
+          </div>
+
+
+        </section>
+<!-- 팝업 내용 끝 (e) -->
+      </div>
+      <div class="btn_wrap">
+        <button type="button" class="btn_gray">취소</button>
+        <button type="button" class="btn_primary">확인</button>
+      </div>
+      <button type="button" class="icoBtn_close" onclick="lp.close();"><span>팝업 닫기</span></button>
+    </div>
+  </div>
+</div>
+<!-- popup (e) -->
+
+
+<!-- wrapper (s) -->
+<div class="wrapper">
+  <div class="header"></div>
+
+  <!-- container (s) -->
+  <div class="container" id="content">
+<div class="section">
+<h1 class="tit01">페이지 타이틀</h1>
+</div>
+  </div><!-- container (e) -->
+  <div class="footer"></div>
+</div>
+
+

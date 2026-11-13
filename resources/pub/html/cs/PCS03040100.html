@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section ">
+  <h1 class="tit01">캠페인고객 관리</h1>
+  <ul class="formList div2" id="campaignInquire2">
+    <li class="active full">
+      <div class="th">조회 구분</div>
+      <div class="td">
+        <ul class="iptGroup" id="campaignInquireLists2">
+          <li>
+            <input type="radio" class="ipt" name="rdo1" id="rdo1_1" value="1" checked>
+            <label for="rdo1_1">캠페인별</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="rdo1" id="rdo1_2" value="2">
+            <label for="rdo1_2">기간설정</label>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="active full">
+      <div class="th">캠페인 선택</div>
+      <div class="td">
+        <select class="ipt full">
+          <option selected="">캠페인 선택</option>
+        </select>
+      </div>
+    </li>
+    <!-- 1.05 -->
+    <li class="active">
+      <div class="th">고객명</div>
+      <div class="td">
+        <input type="text" class="ipt" placeholder="예 김하나">
+      </div>
+    </li>
+    <li class="active">
+      <div class="th">휴대폰번호</div>
+      <div class="td">
+        <div class="setPhone">
+          <select class="ipt" title="휴대폰번호 앞 3자리">
+            <option>010</option>
+            <option>011</option>
+          </select>
+          <input type="tel" class="ipt" maxlength="8" title="휴대폰번호 뒷자리" placeholder="'-'를 제외한 숫자만 입력">
+        </div>
+      </div>
+    </li>
+    <!-- 1.05 -->
+    <li>
+      <div class="th">기간 설정</div>
+      <div class="td">
+        <div class="setHalf">
+          <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz01221">
+          <span class="sign">~</span>
+          <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz1231">
+        </div>
+        <ul class="iptFilt">
+          <li>
+            <input type="radio" class="ipt" name="filter0" id="filter0_1">
+            <label for="filter0_1">당월</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="filter0" id="filter0_2" checked="">
+            <label for="filter0_2">2개월</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="filter0" id="filter0_3">
+            <label for="filter0_3">3개월</label>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div class="th">상태</div>
+      <div class="td">
+        <ul class="file_btn_wrap">
+          <li>
+            <ul class="iptGroup">
+              <li>
+                <input type="radio" class="ipt" name="rdo4" id="rdo4_1" checked="">
+                <label for="rdo4_1">전체</label>
+              </li>
+              <li>
+                <input type="radio" class="ipt" name="rdo4" id="rdo4_2">
+                <label for="rdo4_2">유예신청</label>
+              </li>
+              <li>
+                <input type="radio" class="ipt" name="rdo4" id="rdo4_3">
+                <label for="rdo4_3">이관신청</label>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+  <div class="btn_wrap">
+    <button type="button" class="btn_white" id="btnReset">초기화</button>
+    <button type="button" class="btn_primary">조회</button>
+  </div>
+
+  <h2 class="tit02">${캠페인명} (YYYY.MM.DD~YYYY.MM.DD)</h2>
+  <div class="sort_wrap">
+    <div class="sort">
+      <ul class="count">
+        <li>총 <span class="count_num count_num_accent">100</span>명</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tabl_area">
+    <table>
+      <caption>고객관리등록</caption>
+      <colgroup>
+        <col style="width: 10%;">
+        <col style="width: 15%;">
+        <col style="width: 15%;">
+        <col style="width: auto;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>고객명</th>
+          <th>전화번호</th>
+          <th>고객정보</th>
+          <th>기타정보</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="name">
+              <div class="tooltipTextWrap">
+                <div class="tooltipText">하나생명 어쩌고</div>
+                <div class="tooltipBox">하나생명 어쩌고하나생명 어쩌고하나생명 어쩌고하나생명 어쩌고하나생명 어쩌고</div>
+              </div>
+            </div>
+            <span class="flag orange">신규</span>
+          </td>
+          <td>010-7107-9597</td>
+          <td>
+            <div class="campaignInfo_text">
+              <p>남자(<span>20</span>대 이하)</p>
+              서울/경기권
+            </div>
+          </td>
+          <td class="campaignInfo tlL">
+            <div class="campaignInfo_text">
+              <span>온라인, 보장성</span>
+              <ul class="bar_list">
+                <li><span class="bold">최종수금이관일</span>0개월 이전</li>
+                <li><span class="bold">MCP</span> 5~10만원</li>
+              </ul>
+            </div>
+            <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+            <div class="campaignLink_wrap">
+              <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+              <a href="#" class="campaignLink">동의 요청</a>
+              <a href="#" class="campaignLink">고객 등록</a>
+              <a href="#" class="campaignLink">결재 현황</a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="name">
+              <a href="#">김성호</a>
+              <span class="flag blue">동의대기</span>
+            </div>
+          </td>
+          <td>010-7107-9597</td>
+          <td>
+            <div class="campaignInfo_text">
+              <p>남자(<span>20</span>대 이하)</p>
+              서울/경기권
+            </div>
+          </td>
+          <td class="campaignInfo tlL">
+            <div class="campaignInfo_text">
+              <span>온라인, 보장성</span>
+              <ul class="bar_list">
+                <li><span class="bold">최종수금이관일</span>0개월 이전</li>
+                <li><span class="bold">MCP</span> 5~10만원</li>
+              </ul>
+            </div>
+            <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+            <!-- campaignLink_open 클릭시, .campaignLink_wrap에 .active 추가하면 popup 뜸 -->
+            <div class="campaignLink_wrap">
+              <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+              <a href="#" class="campaignLink">동의 요청</a>
+              <a href="#" class="campaignLink">고객 등록</a>
+              <a href="#" class="campaignLink">결재 현황</a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="name">
+              <a href="#">김성호</a>
+              <span class="flag green">동의완료</span>
+            </div>
+          </td>
+          <td>010-7107-9597</td>
+          <td>
+            <div class="campaignInfo_text">
+              <p>남자(<span>20</span>대 이하)</p>
+              서울/경기권
+            </div>
+          </td>
+          <td class="campaignInfo tlL">
+            <div class="campaignInfo_text">
+              <span>온라인, 보장성</span>
+              <ul class="bar_list">
+                <li><span class="bold">최종수금이관일</span>0개월 이전</li>
+                <li><span class="bold">MCP</span> 5~10만원</li>
+              </ul>
+            </div>
+            <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+            <!-- campaignLink_open 클릭시, .campaignLink_wrap에 .active 추가하면 popup 뜸 -->
+            <div class="campaignLink_wrap">
+              <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+              <a href="#" class="campaignLink">동의 요청</a>
+              <a href="#" class="campaignLink">고객 등록</a>
+              <a href="#" class="campaignLink">결재 현황</a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="name">
+              <a href="#">김성호</a>
+              <span class="flag purple">등록완료</span>
+            </div>
+          </td>
+          <td>010-7107-9597</td>
+          <td>
+            <div class="campaignInfo_text">
+              <p>남자(<span>20</span>대 이하)</p>
+              서울/경기권
+            </div>
+          </td>
+          <td class="campaignInfo tlL">
+            <div class="campaignInfo_text">
+              <span>온라인, 보장성</span>
+              <ul class="bar_list">
+                <li><span class="bold">최종수금이관일</span>0개월 이전</li>
+                <li><span class="bold">MCP</span> 5~10만원</li>
+              </ul>
+            </div>
+            <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+            <!-- campaignLink_open 클릭시, .campaignLink_wrap에 .active 추가하면 popup 뜸 -->
+            <div class="campaignLink_wrap">
+              <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+              <a href="#" class="campaignLink">동의 요청</a>
+              <a href="#" class="campaignLink">고객 등록</a>
+              <a href="#" class="campaignLink">결재 현황</a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="name">
+              <a href="#">김성호</a>
+              <span class="flag pink">유예대기</span>
+            </div>
+          </td>
+          <td>010-7107-9597</td>
+          <td>
+            <div class="campaignInfo_text">
+              <p>남자(<span>20</span>대 이하)</p>
+              서울/경기권
+            </div>
+          </td>
+          <td class="campaignInfo tlL">
+            <div class="campaignInfo_text">
+              <span>온라인, 보장성</span>
+              <ul class="bar_list">
+                <li><span class="bold">최종수금이관일</span>0개월 이전</li>
+                <li><span class="bold">MCP</span> 5~10만원</li>
+              </ul>
+            </div>
+            <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+            <!-- campaignLink_open 클릭시, .campaignLink_wrap에 .active 추가하면 popup 뜸 -->
+            <div class="campaignLink_wrap">
+              <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+              <a href="#" class="campaignLink">동의 요청</a>
+              <a href="#" class="campaignLink">고객 등록</a>
+              <a href="#" class="campaignLink">결재 현황</a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="name">
+              <a href="#">김성호</a>
+              <span class="flag pink">유예완료</span>
+            </div>
+          </td>
+          <td>010-7107-9597</td>
+          <td>
+            <div class="campaignInfo_text">
+              <p>남자(<span>20</span>대 이하)</p>
+              서울/경기권
+            </div>
+          </td>
+          <td class="campaignInfo tlL">
+            <div class="campaignInfo_text">
+              <span>온라인, 보장성</span>
+              <ul class="bar_list">
+                <li><span class="bold">최종수금이관일</span>0개월 이전</li>
+                <li><span class="bold">MCP</span> 5~10만원</li>
+              </ul>
+            </div>
+            <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+            <!-- campaignLink_open 클릭시, .campaignLink_wrap에 .active 추가하면 popup 뜸 -->
+            <div class="campaignLink_wrap">
+              <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+              <a href="#" class="campaignLink">동의 요청</a>
+              <a href="#" class="campaignLink">고객 등록</a>
+              <a href="#" class="campaignLink">결재 현황</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 조회 결과 없음 (s)-->
+  <ul class="faqList" data-single="true">
+    <li class="no_data">
+      대상 고객이 없습니다.
+    </li>
+  </ul>
+  <!-- 조회 결과 없음 (e)-->
+
+  <h2 class="tit02">${캠페인명} (YYYY.MM.DD~YYYY.MM.DD)</h2>
+  <div class="tabl_area">
+    <table>
+      <caption>고객관리등록</caption>
+      <colgroup>
+        <col style="width: 10%;">
+        <col style="width: 15%;">
+        <col style="width: 15%;">
+        <col style="width: auto;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>고객명</th>
+          <th>전화번호</th>
+          <th>고객정보</th>
+          <th>기타정보</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="name ">
+              <div class="tooltipTextWrap">
+                <div class="tooltipText">하나생명 어쩌고</div>
+                <div class="tooltipBox">하나생명 어쩌고하나생명 어쩌고하나생명 어쩌고하나생명 어쩌고하나생명 어쩌고</div>
+              </div>
+            </div>
+            <span class="flag orange">신규</span>
+          </td>
+          <td>010-7107-9597</td>
+          <td>
+            <div class="campaignInfo_text">
+              <p>남자(<span>20</span>대 이하)</p>
+              서울/경기권
+            </div>
+          </td>
+          <td class="campaignInfo tlL">
+            <div class="campaignInfo_text">
+              <span>온라인, 보장성</span>
+              <ul class="bar_list">
+                <li><span class="bold">최종수금이관일</span>0개월 이전</li>
+                <li><span class="bold">MCP</span> 5~10만원</li>
+              </ul>
+            </div>
+            <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+            <div class="campaignLink_wrap">
+              <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+              <a href="#" class="campaignLink">동의 요청</a>
+              <a href="#" class="campaignLink">고객 등록</a>
+              <a href="#" class="campaignLink">결재 현황</a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="name ">
+              <div class="tooltipTextWrap">
+                <div class="tooltipText">하나생명 어쩌고</div>
+                <div class="tooltipBox">하나생명 어쩌고하나생명 어쩌고하나생명 어쩌고하나생명 어쩌고하나생명 어쩌고</div>
+              </div>
+            </div>
+            <span class="flag orange">신규</span>
+          </td>
+          <td>010-7107-9597</td>
+          <td>
+            <div class="campaignInfo_text">
+              <p>남자(<span>20</span>대 이하)</p>
+              서울/경기권
+            </div>
+          </td>
+          <td class="campaignInfo tlL">
+            <div class="campaignInfo_text">
+              <span>온라인, 보장성</span>
+              <ul class="bar_list">
+                <li><span class="bold">최종수금이관일</span>0개월 이전</li>
+                <li><span class="bold">MCP</span> 5~10만원</li>
+              </ul>
+            </div>
+            <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+            <div class="campaignLink_wrap">
+              <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+              <a href="#" class="campaignLink">동의 요청</a>
+              <a href="#" class="campaignLink">고객 등록</a>
+              <a href="#" class="campaignLink">결재 현황</a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="name">
+              <a href="#">김성호</a>
+              <span class="flag orange">신규</span>
+            </div>
+          </td>
+          <td>010-7107-9597</td>
+          <td>
+            <div class="campaignInfo_text">
+              <p>남자(<span>20</span>대 이하)</p>
+              서울/경기권
+            </div>
+          </td>
+          <td class="campaignInfo tlL">
+            <div class="campaignInfo_text">
+              <span>온라인, 보장성</span>
+              <ul class="bar_list">
+                <li><span class="bold">최종수금이관일</span>0개월 이전</li>
+                <li><span class="bold">MCP</span> 5~10만원</li>
+              </ul>
+            </div>
+            <a href="#" class="campaignLink_open"><img src="./resources/pt/images/icons/ico_acco_down.svg" alt="기능열기"></a>
+            <div class="campaignLink_wrap">
+              <a href="#" class="campaignLink_lose"><img src="./resources/pt/images/icons/icon_t_pop_close_24.svg" alt="닫기" class="icon ico_btn_close"></a>
+              <a href="#" class="campaignLink">동의 요청</a>
+              <a href="#" class="campaignLink">고객 등록</a>
+              <a href="#" class="campaignLink">결재 현황</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 조회 결과 없음 (s)-->
+  <ul class="faqList" data-single="true">
+    <li class="no_data">
+      대상 고객이 없습니다.
+    </li>
+  </ul>
+  <!-- 조회 결과 없음 (e)-->
+</div>
+
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+
+</html>

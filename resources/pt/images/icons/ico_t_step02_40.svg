@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <g data-name="그룹 103421">
+        <g data-name="사각형 16205" transform="translate(5 4)" style="stroke-width:1.5px;fill:#fff;stroke:#111">
+            <rect width="30" height="32" rx="4" style="stroke:none"/>
+            <rect x=".75" y=".75" width="28.5" height="30.5" rx="3.25" style="fill:none"/>
+        </g>
+        <g data-name="사각형 16206" transform="translate(12 11)" style="fill:#fff;stroke:#111">
+            <rect width="16" height="1.5" rx=".75" style="stroke:none"/>
+            <rect x=".5" y=".5" width="15" height=".5" rx=".25" style="fill:none"/>
+        </g>
+        <g data-name="사각형 16207" transform="translate(19 19)" style="fill:#fff;stroke:#111">
+            <rect width="9" height="1.5" rx=".75" style="stroke:none"/>
+            <rect x=".5" y=".5" width="8" height=".5" rx=".25" style="fill:none"/>
+        </g>
+        <g data-name="사각형 16208" transform="translate(19 27)" style="fill:#fff;stroke:#111">
+            <rect width="9" height="1.5" rx=".75" style="stroke:none"/>
+            <rect x=".5" y=".5" width="8" height=".5" rx=".25" style="fill:none"/>
+        </g>
+        <g data-name="그룹 103421">
+            <g data-name="사각형 16209" transform="rotate(45 -15.195 24.404)" style="fill:#fff;stroke:#111">
+                <rect width="3.5" height="1.5" rx=".75" style="stroke:none"/>
+                <rect x=".5" y=".5" width="2.5" height=".5" rx=".25" style="fill:none"/>
+            </g>
+            <g data-name="사각형 16210" transform="rotate(135 5.172 12.623)" style="fill:#fff;stroke:#111">
+                <rect width="5" height="1.5" rx=".75" style="stroke:none"/>
+                <rect x=".5" y=".5" width="4" height=".5" rx=".25" style="fill:none"/>
+            </g>
+        </g>
+        <g data-name="그룹 103424">
+            <g data-name="사각형 16209" transform="rotate(45 -24.764 28.368)" style="fill:#fff;stroke:#111">
+                <rect width="3.5" height="1.5" rx=".75" style="stroke:none"/>
+                <rect x=".5" y=".5" width="2.5" height=".5" rx=".25" style="fill:none"/>
+            </g>
+            <g data-name="사각형 16210" transform="rotate(135 3.53 16.587)" style="fill:#fff;stroke:#111">
+                <rect width="5" height="1.5" rx=".75" style="stroke:none"/>
+                <rect x=".5" y=".5" width="4" height=".5" rx=".25" style="fill:none"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <g transform="translate(3.73 3)">
+        <g data-name="사각형 15489" transform="translate(.27 2)" style="stroke:#333;fill:none">
+            <rect width="16" height="15" rx="3" style="stroke:none"/>
+            <rect x=".5" y=".5" width="15" height="14" rx="2.5" style="fill:none"/>
+        </g>
+        <g data-name="사각형 15492" transform="rotate(90 5.135 11.135)" style="fill:#333;stroke:#333">
+            <rect width="1" height="16" rx=".5" style="stroke:none"/>
+            <rect x=".5" y=".5" height="15" style="fill:none"/>
+        </g>
+        <g data-name="사각형 15490" transform="translate(4.64 1)" style="fill:#333;stroke:#333">
+            <rect width="1" height="4" rx=".5" style="stroke:none"/>
+            <rect x=".5" y=".5" height="3" style="fill:none"/>
+        </g>
+        <g data-name="사각형 15491" transform="translate(10.65 1)" style="fill:#333;stroke:#333">
+            <rect width="1" height="4" rx=".5" style="stroke:none"/>
+            <rect x=".5" y=".5" height="3" style="fill:none"/>
+        </g>
+        <rect data-name="사각형 16290" width="1" height="2" rx=".5" transform="rotate(90 -3.365 8.635)" style="fill:#333"/>
+        <rect data-name="사각형 16289" width="1" height="2" rx=".5" transform="rotate(90 -1.365 10.635)" style="fill:#333"/>
+        <rect data-name="사각형 16288" width="1" height="2" rx=".5" transform="rotate(90 .635 12.635)" style="fill:#333"/>
+        <rect data-name="사각형 16285" width="1" height="2" rx=".5" transform="rotate(90 -1.865 7.135)" style="fill:#333"/>
+        <rect data-name="사각형 16286" width="1" height="2" rx=".5" transform="rotate(90 .135 9.135)" style="fill:#333"/>
+        <rect data-name="사각형 16287" width="1" height="2" rx=".5" transform="rotate(90 2.135 11.135)" style="fill:#333"/>
+    </g>
+</svg>

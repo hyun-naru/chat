@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="Shortcut Icon" href="./resources/pt/images/fav/favicon.png">
+		<title>타이틀</title>
+		<link rel="stylesheet" type="text/css" href="/jsp/frame/pt/cssLib.css" />
+		<script src="./resources/comm/js/jquery-3.5.1.min.js"></script>
+		<script src="./resources/comm/js/jquery.form.min.js"></script>
+		<script src="./resources/comm/js/jquery.serializeObject.min.js"></script>
+		<script src="./resources/comm/js/jquery-ui.js"></script>
+		<script src="./resources/comm/js/jquery.ui.monthpicker.js"></script>
+		<script src="./resources/comm/js/jquery.cookie.js"></script>
+		<script src="./resources/comm/js/jquery.blockUI.js"></script>
+		<script src="./resources/comm/js/jquery.MultiFile.js"></script>
+		<script src="./resources/comm/js/swiper.min.js"></script>
+		<script src="./resources/comm/js/lightslider.js"></script>
+		<script src="./resources/comm/js/common-transaction.js"></script>
+		<script src="./resources/comm/js/common-numeral.min.js"></script>
+		<script src="./resources/comm/js/common-moment.min.js"></script>
+		<script src="./resources/comm/js/common-str.js"></script>
+		<script src="./resources/comm/js/common-util.js"></script>
+		<script src="./resources/comm/js/common-code.js"></script>
+		<script src="./resources/comm/js/common-storage.js"></script>
+		<script src="./resources/comm/js/common-timeout.js"></script>
+		<script src="./resources/comm/js/sfaApp.interface.js"></script>
+		<script src="./resources/pt/js/ui.front.js"></script>
+		<script src="./resources/pt/js/ui.common.js"></script>
+		<script src="./resources/pt/js/pt.common.js"></script>
+		<script>
+			let isMoLanding = false;	//모바일 랜딩의 경우
+			$(document).ready(function(){
+			    // ui.front.js 초기 실행
+			    layout.init(); // 페이지가 준비가 됐을 때 딱 한번만 실행 (공통 개발팀에서 호출하는게 좋습니다.)
+			    ui.init(); // 페이지가 동적으로 바뀔때마다 실행 (개발을 붙였더니 뭔가 동작을 안할때 개발페이지 개발자들이 호출하는게 좋습니다.)
+			    myfuncInit(); // 차장님이 짜신 함수. 아래에 자세히 설명 써드리겠습니다.
+	
+			    sfaCommonCode.init();
+			    sbCommonCode.init();
+			    userInfo.init();
+		    	menuDepDraw();//location 정의
+	
+		    	sfaApp.getVersion();	//앱 버전 체크 및 플랫폼 체크
+	
+		    	//serverMode = $('#templateComm input[name="serverMode"]').val();
+			});
+		</script>
+		<script type="text/javascript" src="./resources/comm/js/cs/comm-cs.js"></script>
+		<script type="text/javascript" src="./resources/comm/js/cs/commonCs.js"></script>
+	</head>
+	<body>
+	  	<!-- wrapper (s) -->
+	  	<div class="wrapper" id="wrapper">
+	    	<!-- header (s) -->
+			<div class="header">
+				<div class="header_top">
+					<div class="inner">
+						<div class="user_info_wrap">
+							<div class="user_name"><a href="javascript://"><span><c:out value="${userInfo.usrNm}" /> </span></a>님, 반갑습니다</div>
+							<div class="user_classification"><span><c:out value="${userInfo.bonbuNm}" /> </span> <span><c:out value="${userInfo.jijumNm}" /></span></div>
+						</div>
+						<ul class="user_util">
+						    <li class="time_extension">
+						      	<span class="time" id="remainTime">00분 00초</span><a href="javascript://" onclick="vTimeout.renewalSession();">연장</a>
+						    </li>
+						    <li><a href="javascript://" onclick="ptComm.logout();"><span>로그아웃</span></a></li>
+						    <li><a href="/cm/pt/comm/settingsView.do">설정</a></li>
+	
+						    <li class="certify_menu">
+						      	<a href="#" class="certify_menu_btn">인증센터</a>
+						      	<ul class="certify_menu_sub">
+						      		<li><a href="#" onclick="authCenter.finCertRegPageMv();">금융인증서 등록/해지</a></li>
+						      		<li><a href="#" onclick="authCenter.finCertManage();">금융인증서 관리</a></li>
+						        	<li><a href="#" onclick="authCenter.pinRegPageMv();">간편비밀번호 등록/해지</a></li>
+						        	<li><a href="#" onclick="authCenter.bioRegPageMv();">바이오 인증 등록/해지</a></li>
+						      	</ul>
+						    </li>
+	
+						</ul>
+					</div>
+				</div>
+				<nav>
+					<div class="nav_wrap">
+						<a href="javascript://" class="logo_hana" onclick="ptComm.home();">
+							<!-- <img src="./resources/pt/images/logos/logo_hana.svg" alt="하나생명 홈 바로가기"> -->
+							<img src="./resources/pt/images/logos/logo_hana_hanaro.png"
+								srcset="./resources/pt/images/logos/logo_hana_hanaro@2x.png 2x,./resources/pt/images/logos/logo_hana_hanaro@3x.png 3x">
+						</a>
+						<ul class="gnb">
+							<c:if test="${serverMode == 'LOCAL'}">
+							<li class="gnb_cell">
+								<a href="javascript://" class="gnb_tab">샘플가이드</a>
+								<div class="gnb_tab_sub">
+									<div class="gnb_tab_sub_wrap">
+										<ul class="gnb_tab_sub_cell">
+											<li style="padding-bottom:15px">공통가이드</li>
+											<li><a href="/sample/pt/calenderGuide.do">달력예제</a></li>
+											<li><a href="/sample/pt/writeController.do">컨트롤러작성법</a></li>
+											<li><a href="/sample/pt/useScript.do">사용스크립트함수 예제</a></li>
+											<li><a href="/sample/pt/layerPopup.do">팝업가이드</a></li>
+											<li><a href="/sample/pt/timeoutPopup.do">타임아웃팝업 예제</a></li>
+											<li><a href="/cs/pt/comm/custPopView.do" >고객팝업 예제</a></li>
+											<li><a href="/sample/pt/upjongComPopSample.do">업종검색 예제</a></li>
+											<li><a href="/sample/pt/sampleGetPdtImCd.do">상품특성조회 예제</a></li>
+										</ul>
+										<ul class="gnb_tab_sub_cell">
+											<li style="padding-bottom:15px">MO가이드</li>
+											<li><a href="/sample/mo/calenderGuide.do">달력예제</a></li>
+											<li><a href="/sample/mo/useScriptMo.do" target="_blank">사용스크립트함수</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							</c:if>
+				   			<c:choose>
+				    			<c:when test="${fn:length(userInfo.menuList) > 0 }">
+					     			<c:forEach var="oneDepthMenu" items="${userInfo.menuList}" varStatus="status">
+					     				<c:set var="oneDepthSubject" value="${fn:substring(oneDepthMenu.mnuId, 0, 2) }" />
+					     				<c:if test="${oneDepthMenu.mnuLve == 1 }">
+											<li class="gnb_cell">
+												<a href="${oneDepthMenu.mnuLinkAddr}" class="gnb_tab" onclick="menuDepSave('${oneDepthMenu.mnuNm}', '${oneDepthMenu.mnuLinkAddr}', '', '', '', '')">${oneDepthMenu.mnuNm}</a>
+												<div class="gnb_tab_sub">
+													<div class="gnb_tab_sub_wrap">
+														<c:forEach var="twoDepthMenu" items="${userInfo.menuList}" varStatus="status">
+										     				<c:set var="twoDepthSubject" value="${fn:substring(twoDepthMenu.mnuId, 0, 2) }" />
+										     				<c:set var="twoDepthOdr" value="${fn:substring(twoDepthMenu.otptOdr, 0, 4) }" />
+															<c:if test="${twoDepthMenu.mnuLve == 2 && (oneDepthSubject == twoDepthSubject) }">
+																<ul class="gnb_tab_sub_cell">
+																	<li><a href="${twoDepthMenu.mnuLinkAddr}" onclick="menuDepSave('${oneDepthMenu.mnuNm}', '${oneDepthMenu.mnuLinkAddr}', '${twoDepthMenu.mnuNm}', '${twoDepthMenu.mnuLinkAddr}', '', '')">${twoDepthMenu.mnuNm}</a></li>
+																	<c:forEach var="threeDepthMenu" items="${userInfo.menuList}" varStatus="status">
+													     				<c:set var="threeDepthSubject" value="${fn:substring(threeDepthMenu.mnuId, 0, 2) }" />
+													     				<c:set var="threeDepthOdr" value="${fn:substring(threeDepthMenu.otptOdr, 0, 4) }" />
+																		<c:if test="${threeDepthMenu.mnuLve == 3 && twoDepthSubject == threeDepthSubject && twoDepthOdr eq threeDepthOdr }">
+																			<li><a href="${threeDepthMenu.mnuLinkAddr}" onclick="menuDepSave('${oneDepthMenu.mnuNm}', '${oneDepthMenu.mnuLinkAddr}', '${twoDepthMenu.mnuNm}', '${twoDepthMenu.mnuLinkAddr}', '${threeDepthMenu.mnuNm}', '${threeDepthMenu.mnuLinkAddr}')">${threeDepthMenu.mnuNm}</a></li>
+																		</c:if>
+																	</c:forEach>
+																</ul>
+															</c:if>
+														</c:forEach>
+													</div>
+												</div>
+											</li>
+					     				</c:if>
+					     			</c:forEach>
+				    			</c:when>
+								<c:otherwise>
+									<li class="gnb_cell"></li>
+								</c:otherwise>
+				   			</c:choose>
+						</ul>
+						<!-- <a href="javascript://" class="btn_all">해당 태그를 삭제하면 메뉴가 밀림.
+							<img src="./resources/pt/images/icons/icon_menu_all.svg" alt="전체메뉴">
+						</a> -->
+					</div>
+				</nav>
+				<!-- breadcrumbs (s) -->
+				<div class="breadcrumbs">
+					<div class="breadcrumbs_wrap">
+						<div class="breadcrumbs_list_wrap">
+							<a href="javascript://" class="breadcrumbs_list_cell"><img src="./resources/pt/images/icons/icon_home.svg" alt="홈 바로가기"></a>
+							<span class="breadcrumbs_list_cell breadcrumbs_txt"><span>GA관리</span></span>
+							<span class="breadcrumbs_list_cell breadcrumbs_txt"><span>조회</span></span>
+						</div>
+					</div>
+					<div class="breadcrumbs_fixed">
+						<div class="breadcrumbs_fixed_wrap">
+	
+							<div class="breadcrumbs_location">
+								<a href="javascript://" class="breadcrumbs_home"><img src="./resources/pt/images/icons/icon_home_tablet_white.svg"
+										alt="홈 바로가기"></a>
+								<div class="breadcrumbs_list" role="button" aria-pressed="false">
+									<span>가입설계1</span><i class="icon icon_arrow_up"></i>
+									<ul class="breadcrumbs_list_sub">
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계1</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계2</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계3</a></li>
+									</ul>
+								</div>
+								<div class="breadcrumbs_list" role="button" aria-pressed="false">
+									<span>가입설계2</span><i class="icon icon_arrow_up"></i>
+									<ul class="breadcrumbs_list_sub">
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계1</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계2</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계3</a></li>
+									</ul>
+								</div>
+								<div class="breadcrumbs_list" role="button" aria-pressed="false">
+									<span>가입설계3</span><i class="icon icon_arrow_up"></i>
+									<ul class="breadcrumbs_list_sub">
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계1</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계2</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계3</a></li>
+									</ul>
+								</div>
+								<div class="breadcrumbs_list" role="button" aria-pressed="false">
+									<span>가입설계4</span><i class="icon icon_arrow_up"></i>
+									<ul class="breadcrumbs_list_sub">
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계1</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계2</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계3</a></li>
+									</ul>
+								</div>
+								<div class="breadcrumbs_list" role="button" aria-pressed="false">
+									<span>가입설계5</span><i class="icon icon_arrow_up"></i>
+									<ul class="breadcrumbs_list_sub">
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계1</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계2</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계3</a></li>
+									</ul>
+								</div>
+							</div>
+							<a href="javascript://" class="btn_all"><img src="./resources/pt/images/icons/icon_menu_all_white.svg" alt="전체메뉴"></a>
+						</div>
+						<div class="breadcrumbs_fixed_wrap2">
+							<div class="breadcrumbs_location">
+								<a href="javascript://" class="breadcrumbs_home"><img src="./resources/pt/images/icons/icon_man.svg" alt="User info"><span
+										class="userInfo">김하나(<span class="num">800101-2******</span>)</span></a>
+								<div class="breadcrumbs_list2">
+									<span class="breadcrumbs_list_item num">1234567890</span>
+								</div>
+								<div class="breadcrumbs_list2">
+									<span class="breadcrumbs_list_item"><span class="flag purple">유지</span>(무)걱정말아요 암보험(갱신형)</span>
+								</div>
+							</div>
+							<div class="searchBox">
+								<select class="ipt">
+									<option selected>계약사항</option>
+									<option>계약사항 내용1</option>
+									<option>계약사항 내용2</option>
+									<option>계약사항 내용3</option>
+									<option>계약사항 내용4</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- breadcrumbs (e) -->
+			</div>
+			<!-- header (e) -->
+			<!-- container (s) -->
+			<div class="container" id="content">
+			<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+			<div class="section">
+			  <h1 class="tit01 mb0">승환계약</h1>
+			  <div class="bgskyblue round">
+					<span class="info_txt">수수료 업데이트 : 매월 15일 (휴일일 경우 전일 working day)+3일</span>
+			  </div>
+			  <ul class="formList div3">
+			    <li class="full">
+			      <div class="th">마감월도</div>
+			      <div class="td">
+			        <div class="setHalf">
+			          <input type="text" class="ipt date" placeholder="YYYY.MM.DD" onkeyup="fn_calDate(this)">
+			          <span class="sign">~</span>
+			          <input type="text" class="ipt date" placeholder="YYYY.MM.DD" onkeyup="fn_calDate(this)">
+			        </div>
+			        <ul class="iptFilt">
+			          <li>
+			            <input type="radio" class="ipt" name="filter0" id="filter0_1" checked="">
+			            <label for="filter0_1">1주일</label>
+			          </li>
+			          <li>
+			            <input type="radio" class="ipt" name="filter0" id="filter0_2" >
+			            <label for="filter0_2">1개월</label>
+			          </li>
+			          <li>
+			            <input type="radio" class="ipt" name="filter0" id="filter0_3">
+			            <label for="filter0_3">3개월</label>
+			          </li>
+			          <li>
+			            <input type="radio" class="ipt" name="filter0" id="filter0_4">
+			            <label for="filter0_3">6개월</label>
+			          </li>
+			        </ul>
+			      </div>
+			    </li>
+			    <li>
+			      <div class="th">지점</div>
+			      <div class="td">
+			        <select class="ipt">
+			          <option selected="">전체</option>
+			        </select>
+			      </div>
+			    </li>
+			    <li>
+			      <div class="th">지점검색</div>
+			      <div class="td">
+			        <select class="ipt">
+			        	<option selected="">전체</option>
+			        </select>
+			      </div>
+			    </li>
+			    <li>
+			      <div class="th">증권번호 검색</div>
+			      <div class="td">
+			        <select class="ipt">
+			          <option selected="">전체</option>
+			        </select>
+			      </div>
+			    </li>
+			  </ul>
+			
+			  <div class="btn_wrap">
+			    <!-- <button type="button" class="btn_white xl" id="btnReset">초기화</button> -->
+			    <button type="button" class="btn_primary xl" id="btnSearch">조회</button>
+			  </div>
+			
+			<div class="sort_wrap">
+			    <div class="sort">
+			      <ul class="count">
+			        <li>총 <span class="count_num count_num_accent" id="totalCnt">1,000</span>건</li>
+			        <li><span class="count_num count_num_accent" id="currentPage">1</span>/<span id="totalPage">100</span>페이지</li>
+			      </ul>
+			    </div>
+			    <button type="button" class="btn_white_round m" onclick="">엑셀다운로드</button>
+			  </div>
+			
+			  <div class="tabl_area xscroll">
+			    <!--조회 테이블 (s)-->
+			    <table>
+			      <caption>정보</caption>
+			      <colgroup>
+			        <col span="53" style="width:auto;">
+			      </colgroup>
+			      <thead>
+			        <tr>
+			          	<th scope="col"><span>승환최초발생업적월도</span></th>
+						<th scope="col"><span>승환계약환수구분</span></th>
+						<th scope="col"><span>승환판정환산성적</span></th>
+						<th scope="col"><span>지급</span></th>
+						<th scope="col"><span>환수</span></th>
+						<th scope="col"><span>기지급수수료환수</span></th>
+						<th scope="col"><span>마감월도</span></th>
+						<th scope="col"><span>신)증권번호</span></th>
+						<th scope="col"><span>신)채널명</span></th>
+						<th scope="col"><span>신)지점명</span></th>
+						<th scope="col"><span>신)계약일자</span></th>
+						<th scope="col"><span>신)최종월도</span></th>
+						<th scope="col"><span>신)최종횟수</span></th>
+						<th scope="col"><span>신)계약상태</span></th>
+						<th scope="col"><span>신)납입방법</span></th>
+						<th scope="col"><span>신)보험기간</span></th>
+						<th scope="col"><span>신)저축성여부</span></th>
+						<th scope="col"><span>신)보험료</span></th>
+						<th scope="col"><span>신)MCP</span></th>
+						<th scope="col"><span>신)MMCP</span></th>
+						<th scope="col"><span>기)증번</span></th>
+						<th scope="col"><span>기)채널명</span></th>
+						<th scope="col"><span>기)지점명</span></th>
+						<th scope="col"><span>기)계약일자</span></th>
+						<th scope="col"><span>기)최종월도</span></th>
+						<th scope="col"><span>기)최종횟수</span></th>
+						<th scope="col"><span>기)계약상태</span></th>
+						<th scope="col"><span>기)실효해약일자</span></th>
+						<th scope="col"><span>기)납입방법</span></th>
+						<th scope="col"><span>기)보험기간</span></th>
+						<th scope="col"><span>기)저축성여부</span></th>
+						<th scope="col"><span>기)보험료</span></th>
+						<th scope="col"><span>기)MCP</span></th>
+						<th scope="col"><span>기)MMCP</span></th>
+						<th scope="col"><span>신)증권번호</span></th>
+						<th scope="col"><span>신)사원코드</span></th>
+						<th scope="col"><span>신)사원명</span></th>
+						<th scope="col"><span>신)상품코드</span></th>
+						<th scope="col"><span>신)상품명</span></th>
+						<th scope="col"><span>신)계약자명</span></th>
+						<th scope="col"><span>신)계약자주민번호</span></th>
+						<th scope="col"><span>신)피보험자명</span></th>
+						<th scope="col"><span>신)피보험자주민번호</span></th>
+						<th scope="col"><span>기)증권번호</span></th>
+						<th scope="col"><span>기)사원코드</span></th>
+						<th scope="col"><span>기)사원명</span></th>
+						<th scope="col"><span>기)상품코드</span></th>
+						<th scope="col"><span>기)상품명</span></th>
+						<th scope="col"><span>기)계약자명</span></th>
+						<th scope="col"><span>기)계약자주민번호</span></th>
+						<th scope="col"><span>기)피보험자명</span></th>
+						<th scope="col"><span>기)피보험자주민번호</span></th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			        <tr>
+			          	<td><span>202311</span></td>
+						<td><span>지급예정수수료</span></td>
+						<td><span>42239</span></td>
+						<td><span>23231</span></td>
+						<td><span></span></td>
+						<td><span>0</span></td>
+						<td><span>202311</span></td>
+						<td><span>11392897</span></td>
+						<td><span>GA</span></td>
+						<td><span>에이플러스에셋</span></td>
+						<td><span>2023/04/21</span></td>
+						<td><span>202311</span></td>
+						<td><span>8</span></td>
+						<td><span>정상유지</span></td>
+						<td><span>월납</span></td>
+						<td><span>99</span></td>
+						<td><span>0</span></td>
+						<td><span>150855</span></td>
+						<td><span>150855</span></td>
+						<td><span>84478</span></td>
+						<td><span>11392643</span></td>
+						<td><span>GA</span></td>
+						<td><span>에이플러스에셋</span></td>
+						<td><span>2023/04/20</span></td>
+						<td><span>202307</span></td>
+						<td><span>4</span></td>
+						<td><span>기실효</span></td>
+						<td><span>2023/10/01</span></td>
+						<td><span>월납</span></td>
+						<td><span>99</span></td>
+						<td><span>0</span></td>
+						<td><span>150855</span></td>
+						<td><span>150855</span></td>
+						<td><span>84478</span></td>
+						<td><span>11392897</span></td>
+						<td><span>5998GK</span></td>
+						<td><span>에이플러스에셋</span></td>
+						<td><span>436501</span></td>
+						<td><span>(무)하나로THE연결된종신보험</span></td>
+						<td><span>윤왕희</span></td>
+						<td><span>790115-102***</span></td>
+						<td><span>윤왕희</span></td>
+						<td><span>790115-102***</span></td>
+						<td><span>11392643</span></td>
+						<td><span>5998GK</span></td>
+						<td><span>에이플러스에셋</span></td>
+						<td><span>436501</span></td>
+						<td><span>(무)하나로THE연결된종신보험</span></td>
+						<td><span>윤왕희</span></td>
+						<td><span>790115-102***</span></td>
+						<td><span>윤왕희</span></td>
+						<td><span>790115-102***</span></td>
+			        </tr>
+			        <tr>
+			        	<td><span>202311</span></td>
+						<td><span>지급예정수수료</span></td>
+						<td><span>265000</span></td>
+						<td><span></span></td>
+						<td><span>874492</span></td>
+						<td><span>0</span></td>
+						<td><span>202311</span></td>
+						<td><span>11395470</span></td>
+						<td><span>GA</span></td>
+						<td><span>아이에프에이</span></td>
+						<td><span>2023/05/02</span></td>
+						<td><span>202311</span></td>
+						<td><span>7</span></td>
+						<td><span>정상유지</span></td>
+						<td><span>월납</span></td>
+						<td><span>85</span></td>
+						<td><span>1</span></td>
+						<td><span>1000000</span></td>
+						<td><span>1000000</span></td>
+						<td><span>530000</span></td>
+						<td><span>11443942</span></td>
+						<td><span>GA</span></td>
+						<td><span>아이에프에이</span></td>
+						<td><span>2023/08/31</span></td>
+						<td><span>202308</span></td>
+						<td><span>1</span></td>
+						<td><span>기실효</span></td>
+						<td><span>2023/11/01</span></td>
+						<td><span>월납</span></td>
+						<td><span>99</span></td>
+						<td><span>0</span></td>
+						<td><span>1001920</span></td>
+						<td><span>1001920</span></td>
+						<td><span>561075</span></td>
+						<td><span>11395470</span></td>
+						<td><span>5994GK</span></td>
+						<td><span>아이에프에이</span></td>
+						<td><span>129015</span></td>
+						<td><span>(무)하나로연결된변액연금보험</span></td>
+						<td><span>이정석</span></td>
+						<td><span>940917-102***</span></td>
+						<td><span>이정석</span></td>
+						<td><span>940917-102***</span></td>
+						<td><span>11443942</span></td>
+						<td><span>5994GK</span></td>
+						<td><span>아이에프에이</span></td>
+						<td><span>436501</span></td>
+						<td><span>(무)하나로THE연결된종신보험</span></td>
+						<td><span>김지현</span></td>
+						<td><span>920715-202***</span></td>
+						<td><span>김지현</span></td>
+						<td><span>920715-202***</span></td>
+			        </tr>
+			        <tr>
+			          	<td><span>202311</span></td>
+						<td><span>지급예정수수료</span></td>
+						<td><span>42239</span></td>
+						<td><span>23231</span></td>
+						<td><span></span></td>
+						<td><span>0</span></td>
+						<td><span>202311</span></td>
+						<td><span>11392897</span></td>
+						<td><span>GA</span></td>
+						<td><span>에이플러스에셋</span></td>
+						<td><span>2023/04/21</span></td>
+						<td><span>202311</span></td>
+						<td><span>8</span></td>
+						<td><span>정상유지</span></td>
+						<td><span>월납</span></td>
+						<td><span>99</span></td>
+						<td><span>0</span></td>
+						<td><span>150855</span></td>
+						<td><span>150855</span></td>
+						<td><span>84478</span></td>
+						<td><span>11392643</span></td>
+						<td><span>GA</span></td>
+						<td><span>에이플러스에셋</span></td>
+						<td><span>2023/04/20</span></td>
+						<td><span>202307</span></td>
+						<td><span>4</span></td>
+						<td><span>기실효</span></td>
+						<td><span>2023/10/01</span></td>
+						<td><span>월납</span></td>
+						<td><span>99</span></td>
+						<td><span>0</span></td>
+						<td><span>150855</span></td>
+						<td><span>150855</span></td>
+						<td><span>84478</span></td>
+						<td><span>11392897</span></td>
+						<td><span>5998GK</span></td>
+						<td><span>에이플러스에셋</span></td>
+						<td><span>436501</span></td>
+						<td><span>(무)하나로THE연결된종신보험</span></td>
+						<td><span>윤왕희</span></td>
+						<td><span>790115-102***</span></td>
+						<td><span>윤왕희</span></td>
+						<td><span>790115-102***</span></td>
+						<td><span>11392643</span></td>
+						<td><span>5998GK</span></td>
+						<td><span>에이플러스에셋</span></td>
+						<td><span>436501</span></td>
+						<td><span>(무)하나로THE연결된종신보험</span></td>
+						<td><span>윤왕희</span></td>
+						<td><span>790115-102***</span></td>
+						<td><span>윤왕희</span></td>
+						<td><span>790115-102***</span></td>
+			        </tr>
+			        <tr>
+			        	<td><span>202311</span></td>
+						<td><span>지급예정수수료</span></td>
+						<td><span>265000</span></td>
+						<td><span></span></td>
+						<td><span>874492</span></td>
+						<td><span>0</span></td>
+						<td><span>202311</span></td>
+						<td><span>11395470</span></td>
+						<td><span>GA</span></td>
+						<td><span>아이에프에이</span></td>
+						<td><span>2023/05/02</span></td>
+						<td><span>202311</span></td>
+						<td><span>7</span></td>
+						<td><span>정상유지</span></td>
+						<td><span>월납</span></td>
+						<td><span>85</span></td>
+						<td><span>1</span></td>
+						<td><span>1000000</span></td>
+						<td><span>1000000</span></td>
+						<td><span>530000</span></td>
+						<td><span>11443942</span></td>
+						<td><span>GA</span></td>
+						<td><span>아이에프에이</span></td>
+						<td><span>2023/08/31</span></td>
+						<td><span>202308</span></td>
+						<td><span>1</span></td>
+						<td><span>기실효</span></td>
+						<td><span>2023/11/01</span></td>
+						<td><span>월납</span></td>
+						<td><span>99</span></td>
+						<td><span>0</span></td>
+						<td><span>1001920</span></td>
+						<td><span>1001920</span></td>
+						<td><span>561075</span></td>
+						<td><span>11395470</span></td>
+						<td><span>5994GK</span></td>
+						<td><span>아이에프에이</span></td>
+						<td><span>129015</span></td>
+						<td><span>(무)하나로연결된변액연금보험</span></td>
+						<td><span>이정석</span></td>
+						<td><span>940917-102***</span></td>
+						<td><span>이정석</span></td>
+						<td><span>940917-102***</span></td>
+						<td><span>11443942</span></td>
+						<td><span>5994GK</span></td>
+						<td><span>아이에프에이</span></td>
+						<td><span>436501</span></td>
+						<td><span>(무)하나로THE연결된종신보험</span></td>
+						<td><span>김지현</span></td>
+						<td><span>920715-202***</span></td>
+						<td><span>김지현</span></td>
+						<td><span>920715-202***</span></td>
+			        </tr>
+			        <tr>
+			          	<td><span>202311</span></td>
+						<td><span>지급예정수수료</span></td>
+						<td><span>42239</span></td>
+						<td><span>23231</span></td>
+						<td><span></span></td>
+						<td><span>0</span></td>
+						<td><span>202311</span></td>
+						<td><span>11392897</span></td>
+						<td><span>GA</span></td>
+						<td><span>에이플러스에셋</span></td>
+						<td><span>2023/04/21</span></td>
+						<td><span>202311</span></td>
+						<td><span>8</span></td>
+						<td><span>정상유지</span></td>
+						<td><span>월납</span></td>
+						<td><span>99</span></td>
+						<td><span>0</span></td>
+						<td><span>150855</span></td>
+						<td><span>150855</span></td>
+						<td><span>84478</span></td>
+						<td><span>11392643</span></td>
+						<td><span>GA</span></td>
+						<td><span>에이플러스에셋</span></td>
+						<td><span>2023/04/20</span></td>
+						<td><span>202307</span></td>
+						<td><span>4</span></td>
+						<td><span>기실효</span></td>
+						<td><span>2023/10/01</span></td>
+						<td><span>월납</span></td>
+						<td><span>99</span></td>
+						<td><span>0</span></td>
+						<td><span>150855</span></td>
+						<td><span>150855</span></td>
+						<td><span>84478</span></td>
+						<td><span>11392897</span></td>
+						<td><span>5998GK</span></td>
+						<td><span>에이플러스에셋</span></td>
+						<td><span>436501</span></td>
+						<td><span>(무)하나로THE연결된종신보험</span></td>
+						<td><span>윤왕희</span></td>
+						<td><span>790115-102***</span></td>
+						<td><span>윤왕희</span></td>
+						<td><span>790115-102***</span></td>
+						<td><span>11392643</span></td>
+						<td><span>5998GK</span></td>
+						<td><span>에이플러스에셋</span></td>
+						<td><span>436501</span></td>
+						<td><span>(무)하나로THE연결된종신보험</span></td>
+						<td><span>윤왕희</span></td>
+						<td><span>790115-102***</span></td>
+						<td><span>윤왕희</span></td>
+						<td><span>790115-102***</span></td>
+			        </tr>
+			        <tr>
+			        	<td><span>202311</span></td>
+						<td><span>지급예정수수료</span></td>
+						<td><span>265000</span></td>
+						<td><span></span></td>
+						<td><span>874492</span></td>
+						<td><span>0</span></td>
+						<td><span>202311</span></td>
+						<td><span>11395470</span></td>
+						<td><span>GA</span></td>
+						<td><span>아이에프에이</span></td>
+						<td><span>2023/05/02</span></td>
+						<td><span>202311</span></td>
+						<td><span>7</span></td>
+						<td><span>정상유지</span></td>
+						<td><span>월납</span></td>
+						<td><span>85</span></td>
+						<td><span>1</span></td>
+						<td><span>1000000</span></td>
+						<td><span>1000000</span></td>
+						<td><span>530000</span></td>
+						<td><span>11443942</span></td>
+						<td><span>GA</span></td>
+						<td><span>아이에프에이</span></td>
+						<td><span>2023/08/31</span></td>
+						<td><span>202308</span></td>
+						<td><span>1</span></td>
+						<td><span>기실효</span></td>
+						<td><span>2023/11/01</span></td>
+						<td><span>월납</span></td>
+						<td><span>99</span></td>
+						<td><span>0</span></td>
+						<td><span>1001920</span></td>
+						<td><span>1001920</span></td>
+						<td><span>561075</span></td>
+						<td><span>11395470</span></td>
+						<td><span>5994GK</span></td>
+						<td><span>아이에프에이</span></td>
+						<td><span>129015</span></td>
+						<td><span>(무)하나로연결된변액연금보험</span></td>
+						<td><span>이정석</span></td>
+						<td><span>940917-102***</span></td>
+						<td><span>이정석</span></td>
+						<td><span>940917-102***</span></td>
+						<td><span>11443942</span></td>
+						<td><span>5994GK</span></td>
+						<td><span>아이에프에이</span></td>
+						<td><span>436501</span></td>
+						<td><span>(무)하나로THE연결된종신보험</span></td>
+						<td><span>김지현</span></td>
+						<td><span>920715-202***</span></td>
+						<td><span>김지현</span></td>
+						<td><span>920715-202***</span></td>
+			        </tr>
+			        <tr>
+			          	<td><span>202311</span></td>
+						<td><span>지급예정수수료</span></td>
+						<td><span>42239</span></td>
+						<td><span>23231</span></td>
+						<td><span></span></td>
+						<td><span>0</span></td>
+						<td><span>202311</span></td>
+						<td><span>11392897</span></td>
+						<td><span>GA</span></td>
+						<td><span>에이플러스에셋</span></td>
+						<td><span>2023/04/21</span></td>
+						<td><span>202311</span></td>
+						<td><span>8</span></td>
+						<td><span>정상유지</span></td>
+						<td><span>월납</span></td>
+						<td><span>99</span></td>
+						<td><span>0</span></td>
+						<td><span>150855</span></td>
+						<td><span>150855</span></td>
+						<td><span>84478</span></td>
+						<td><span>11392643</span></td>
+						<td><span>GA</span></td>
+						<td><span>에이플러스에셋</span></td>
+						<td><span>2023/04/20</span></td>
+						<td><span>202307</span></td>
+						<td><span>4</span></td>
+						<td><span>기실효</span></td>
+						<td><span>2023/10/01</span></td>
+						<td><span>월납</span></td>
+						<td><span>99</span></td>
+						<td><span>0</span></td>
+						<td><span>150855</span></td>
+						<td><span>150855</span></td>
+						<td><span>84478</span></td>
+						<td><span>11392897</span></td>
+						<td><span>5998GK</span></td>
+						<td><span>에이플러스에셋</span></td>
+						<td><span>436501</span></td>
+						<td><span>(무)하나로THE연결된종신보험</span></td>
+						<td><span>윤왕희</span></td>
+						<td><span>790115-102***</span></td>
+						<td><span>윤왕희</span></td>
+						<td><span>790115-102***</span></td>
+						<td><span>11392643</span></td>
+						<td><span>5998GK</span></td>
+						<td><span>에이플러스에셋</span></td>
+						<td><span>436501</span></td>
+						<td><span>(무)하나로THE연결된종신보험</span></td>
+						<td><span>윤왕희</span></td>
+						<td><span>790115-102***</span></td>
+						<td><span>윤왕희</span></td>
+						<td><span>790115-102***</span></td>
+			        </tr>
+			        <tr>
+			        	<td><span>202311</span></td>
+						<td><span>지급예정수수료</span></td>
+						<td><span>265000</span></td>
+						<td><span></span></td>
+						<td><span>874492</span></td>
+						<td><span>0</span></td>
+						<td><span>202311</span></td>
+						<td><span>11395470</span></td>
+						<td><span>GA</span></td>
+						<td><span>아이에프에이</span></td>
+						<td><span>2023/05/02</span></td>
+						<td><span>202311</span></td>
+						<td><span>7</span></td>
+						<td><span>정상유지</span></td>
+						<td><span>월납</span></td>
+						<td><span>85</span></td>
+						<td><span>1</span></td>
+						<td><span>1000000</span></td>
+						<td><span>1000000</span></td>
+						<td><span>530000</span></td>
+						<td><span>11443942</span></td>
+						<td><span>GA</span></td>
+						<td><span>아이에프에이</span></td>
+						<td><span>2023/08/31</span></td>
+						<td><span>202308</span></td>
+						<td><span>1</span></td>
+						<td><span>기실효</span></td>
+						<td><span>2023/11/01</span></td>
+						<td><span>월납</span></td>
+						<td><span>99</span></td>
+						<td><span>0</span></td>
+						<td><span>1001920</span></td>
+						<td><span>1001920</span></td>
+						<td><span>561075</span></td>
+						<td><span>11395470</span></td>
+						<td><span>5994GK</span></td>
+						<td><span>아이에프에이</span></td>
+						<td><span>129015</span></td>
+						<td><span>(무)하나로연결된변액연금보험</span></td>
+						<td><span>이정석</span></td>
+						<td><span>940917-102***</span></td>
+						<td><span>이정석</span></td>
+						<td><span>940917-102***</span></td>
+						<td><span>11443942</span></td>
+						<td><span>5994GK</span></td>
+						<td><span>아이에프에이</span></td>
+						<td><span>436501</span></td>
+						<td><span>(무)하나로THE연결된종신보험</span></td>
+						<td><span>김지현</span></td>
+						<td><span>920715-202***</span></td>
+						<td><span>김지현</span></td>
+						<td><span>920715-202***</span></td>
+			        </tr>
+			      </tbody>
+			    </table>
+			    <!--// 조회 테이블 (e)-->
+			    <!-- No Result (s) -->
+<!--  			<div class="noresultWrap">
+			      <img src="./resources/pt/images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+			      <div class="noresultText">조회 결과가 없습니다.</div>
+			    </div>  -->
+			    <!--// No Result (e) -->
+			  </div>
+			
+			  <div class="pagination" id="pageArea">
+			  		<button type="button" class="icoBtn_first" aria-label="처음"></button>
+					<button type="button" class="icoBtn_prev" aria-label="이전"></button>
+					<ul>
+						<li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+						<li><a href="#"><span class="blind">페이지</span>2</a></li>
+						<li><a href="#"><span class="blind">페이지</span>3</a></li>
+						<li><a href="#"><span class="blind">페이지</span>4</a></li>
+						<li><a href="#"><span class="blind">페이지</span>5</a></li>
+						<li><a href="#"><span class="blind">페이지</span>6</a></li>
+						<li><a href="#"><span class="blind">페이지</span>7</a></li>
+						<li><a href="#"><span class="blind">페이지</span>8</a></li>
+						<li><a href="#"><span class="blind">페이지</span>9</a></li>
+						<li><a href="#"><span class="blind">페이지</span>10</a></li>
+					</ul>
+					<button type="button" class="icoBtn_next" aria-label="다음"></button>
+					<button type="button" class="icoBtn_last" aria-label="마지막"></button>
+			  </div>
+			  <form name="excelForm">
+			  	<input  type="hidden" name="inqRecpPrcynCd"/>
+			  	<input  type="hidden" name="inqStartDate"/>
+			  	<input  type="hidden" name="inqEndDate"/>
+			  	<input  type="hidden" name="inqReqAngcId"/>
+			  	<input  type="hidden" name="inqReqBonbuId"/>
+			  	<input  type="hidden" name="inqReqBrfId"/>
+			  	<input  type="hidden" name="inqRecpAngcId"/>
+			  	<input  type="hidden" name="inqRecpBonbuId"/>
+			  	<input  type="hidden" name="inqRecpBrfId"/>
+			  	<input  type="hidden" name="inqTxt"/>
+			  	<input  type="hidden" name="reqUpCd"/>
+			  </form>
+			  
+			</div>
+			<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+			</div><!-- container (e) -->
+	  	</div>
+	  	<!-- wrapper(e) -->
+	</body>
+</html>
+</html>

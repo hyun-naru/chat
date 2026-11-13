@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+    <path data-name="사각형 984" style="fill:transparent" d="M0 0h64v64H0z"/>
+    <g data-name="그룹 3772">
+        <g data-name="그룹 1448">
+            <g data-name="패스 807" style="stroke-linejoin:round;fill:none;stroke-linecap:round">
+                <path d="M445 70a27 27 0 1 1-27 27 27 27 0 0 1 27-27z" style="stroke:none" transform="translate(-413 -65.001)"/>
+                <path d="M445 72.001a24.919 24.919 0 0 0-17.678 7.321A24.916 24.916 0 0 0 420 97a24.921 24.921 0 0 0 7.323 17.678A24.92 24.92 0 0 0 445 122a24.92 24.92 0 0 0 17.677-7.323A24.92 24.92 0 0 0 470 97a24.916 24.916 0 0 0-7.322-17.677A24.918 24.918 0 0 0 445 72.001m0-2c14.911 0 27 12.086 27 26.998S459.911 124 445 124s-27-12.089-27-27C418 82.086 430.089 70 445 70z" style="fill:#111;stroke:none" transform="translate(-413 -65.001)"/>
+            </g>
+        </g>
+        <g data-name="그룹 1449" transform="translate(-150.5 -194)">
+            <path data-name="선 172" transform="translate(183 212)" style="stroke:#009591;stroke-width:3px;fill:none;stroke-linecap:round" d="M0 0v18"/>
+            <circle data-name="타원 105" cx="2" cy="2" r="2" transform="translate(181 236)" style="fill:#009591"/>
+        </g>
+    </g>
+</svg>

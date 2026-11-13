@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section">
+
+  <h1 class="tit01">개인별 수수료 조회</h1>
+  <ul class="formList div3">
+    <li class="full abs">
+      <div class="th">조회 기간</div>
+      <div class="td">
+        <div class="setHalf">
+          <input type="tel" class="ipt date" placeholder="YYYY.MM" id="ID_Setting_Plz01221">
+          <span class="sign">~</span>
+          <input type="tel" class="ipt date" placeholder="YYYY.MM" id="ID_Setting_Plz1231">
+        </div>
+      </div>
+    </li>
+    <li class="full">
+      <div class="th">직급 조회 범위</div>
+      <div class="td">
+        <ul class="iptGroup">
+          <li>
+            <input type="radio" class="ipt" name="rdo2" id="rdo2_1" disabled>
+            <label for="rdo2_1">지점장</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="rdo2" id="rdo2_2" disabled>
+            <label for="rdo2_2">SM</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="rdo2" id="rdo2_3" disabled>
+            <label for="rdo2_3">교육SM</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="rdo2" id="rdo2_4" disabled checked>
+            <label for="rdo2_4">FP</label>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div class="th">채널</div>
+      <div class="td">
+        <select class="ipt" readonly>
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">본부</div>
+      <div class="td">
+        <select class="ipt" readonly>
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">지점</div>
+      <div class="td">
+        <select class="ipt" readonly>
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li class="oneThirdDiv">
+      <div class="th">팀</div>
+      <div class="td">
+        <select class="ipt" readonly>
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li class="twoThirdsDiv">
+      <div class="th">판매인</div>
+      <div class="td">
+        <select class="ipt mid" readonly>
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+  </ul>
+
+  <div class="btn_wrap">
+    <button type="button" class="btn_white xl">초기화</button>
+    <button type="button" class="btn_primary xl">조회</button>
+  </div>
+
+  <h2 class="tit02">인적사항 <div class="toolTip col_3">차월은 마감 연월 기준 입니다.</div></h2>
+  <ul class="formList div3">
+    <li>
+      <div class="th">위촉월</div>
+      <div class="td"><span>data</span></div>
+    </li>
+    <li>
+      <div class="th">차월</div>
+      <div class="td"><span>data</span></div>
+    </li>
+    <li>
+      <div class="th">직급</div>
+      <div class="td"><span>팀장</span></div>
+    </li>
+  </ul>
+
+  <h2 class="tit02">성과 <div class="toolTip col_3">조회 마감 연월의 총계 입니다.</div></h2>
+  <div class="tableTotal_Wrap round">
+    <div class="tableTotal count5">
+      <div class="countWrap">
+        <div class="countWrap_tit txt_b">실지급액</div>
+        <div class="countWrap_desc"><span>100,000,000</span>원</div>
+      </div>
+      <div class="countWrap">
+        <div class="countWrap_tit txt_b">건수</div>
+        <div class="countWrap_desc"><span>90</span>건</div>
+      </div>
+      <div class="countWrap">
+        <div class="countWrap_tit txt_b">MCP</div>
+        <div class="countWrap_desc"><span>100,000,000</span>원</div>
+      </div>
+      <div class="countWrap">
+        <div class="countWrap_tit txt_b">유지율</div>
+        <div class="countWrap_desc"><span>90.6</span>%</div>
+      </div>
+      <div class="countWrap">
+        <div class="countWrap_tit txt_b">불판율</div>
+        <div class="countWrap_desc"><span>10.6</span>%</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="tit02">상세내역</h2>
+
+  <div class="dataWrap">
+    <!-- dataHead (s) -->
+    <div class="dataHead" aria-hidden="true">
+      <div class="infoCell">항목</div>
+      <div class="moneyCell">2022.01</div>
+      <div class="moneyCell">2022.02</div>
+      <div class="moneyCell">2022.03</div>
+      <div class="accoBtnCell"></div>
+    </div>
+    <!-- dataHead (e) -->
+    <!-- dataList (s) -->
+    <ul class="dataList">
+      <li>
+        <div class="block bold">
+          <div class="infoCell">실지급액</div>
+          <div class="moneyCell">0,000</div>
+          <div class="moneyCell">0,000</div>
+          <div class="moneyCell">0,000</div>
+          <div class="accoBtnCell"></div>
+        </div>
+      </li>
+      <li class="on">
+        <div class="block">
+          <div class="infoCell">수수료</div>
+          <div class="moneyCell">0,000</div>
+          <div class="moneyCell">0,000</div>
+          <div class="moneyCell">0,000</div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+        <div class="detail accoBody pd0">
+          <div class="block">
+            <div class="infoCell">모집성과수수료</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="accoBtnCell"></div>
+          </div>
+          <div class="block">
+            <div class="infoCell">유지성과수수료</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="accoBtnCell"></div>
+          </div>
+          <div class="block">
+            <div class="infoCell">신인유치수수료</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="accoBtnCell"></div>
+          </div>
+          <div class="block">
+            <div class="infoCell">위촉교육수수료</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="accoBtnCell"></div>
+          </div>
+          <div class="block">
+            <div class="infoCell">초기지원수수료</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="accoBtnCell"></div>
+          </div>
+          <div class="block">
+            <div class="infoCell">기본수수료</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="moneyCell">000,000,000</div>
+            <div class="accoBtnCell"></div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="block">
+          <div class="infoCell">과표</div>
+          <div class="moneyCell txt_c">Data</div>
+          <div class="moneyCell txt_c">Data</div>
+          <div class="moneyCell txt_c">Data</div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="block">
+          <div class="infoCell">유지율</div>
+          <div class="moneyCell txt_c">00.0</div>
+          <div class="moneyCell txt_c">00.0</div>
+          <div class="moneyCell txt_c">00.0</div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="block">
+          <div class="infoCell">불판율</div>
+          <div class="moneyCell txt_c">00.00</div>
+          <div class="moneyCell txt_c">00.00</div>
+          <div class="moneyCell txt_c">00.00</div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+      </li>
+      <li class="bgskyblue">
+        <div class="block">
+          <div class="infoCell txt_b">수수료명세서</div>
+          <div class="moneyCell txt_c"><button type="button" class="btn_white s">수수료명세서<img src="./resources/pt/images/icons/icon_viewer.svg" class="icon icon_right"></button></div>
+          <div class="moneyCell txt_c"><button type="button" class="btn_white s">수수료명세서<img src="./resources/pt/images/icons/icon_viewer.svg" class="icon icon_right"></button></div>
+          <div class="moneyCell txt_c"><button type="button" class="btn_white s">수수료명세서<img src="./resources/pt/images/icons/icon_viewer.svg" class="icon icon_right"></button></div>
+          <div class="accoBtnCell"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section">
+  <h1 class="tit01">VOC 통계</h1>
+
+  <h2 class="tit02">조회조건</h2>
+
+  <ul class="formList div3">
+    <li>
+      <div class="th">채널</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">H/B</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">본부</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">A</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">지점</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">A1</option>
+        </select>
+      </div>
+    </li>
+    <li class="oneThirdDiv">
+      <div class="th">팀</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">전체</option>
+        </select>
+      </div>
+    </li>
+    <li class="twoThirdsDiv">
+      <div class="th">판매인</div>
+      <div class="td">
+        <select class="ipt mid">
+          <option selected="">전체</option>
+        </select>
+      </div>
+    </li>
+    <li class="full">
+      <div class="th">기간입력</div>
+      <div class="td">
+        <div class="setHalf">
+          <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz">
+          <span class="sign">~</span>
+          <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz">
+        </div>
+        <ul class="iptFilt">
+          <li>
+            <input type="radio" class="ipt" name="filter0" id="filter0_1" checked>
+            <label for="filter0_1">1개월</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="filter0" id="filter0_2">
+            <label for="filter0_2">3개월</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="filter0" id="filter0_3">
+            <label for="filter0_3">6개월</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="filter0" id="filter0_3">
+            <label for="filter0_3">1년</label>
+          </li>
+        </ul>
+        <span class="fontColor6">* 접수일 기준입니다.</span>
+      </div>
+    </li>
+  </ul>
+  <p class="txtList remark mt15">통계 데이터는 전일자 기준으로 조회됩니다</p>
+  <div class="btn_wrap">
+    <button type="button" class="btn_white">초기화</button>
+    <button type="button" class="btn_primary">조회</button>
+  </div>
+
+  <h2 class="tit02">접수/처리현황</h2>
+
+  <div class="tabl_area" data-tbody="1090">
+    <table>
+      <colgroup>
+        <col style="width: auto;">
+        <col style="width: auto;">
+        <col style="width: auto;">
+        <col style="width: auto;">
+        <col style="width: auto;">
+        <col style="width: auto;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>조회년월</th>
+          <th>총 접수 건</th>
+          <th>진행</th>
+          <th>미진행</th>
+          <th>종결</th>
+          <th>종결률</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2022.04</td>
+          <td>10</td>
+          <td>8</td>
+          <td>2</td>
+          <td>0</td>
+          <td>80</td>
+        </tr>
+        <tr>
+          <td>2022.04</td>
+          <td>10</td>
+          <td>8</td>
+          <td>2</td>
+          <td>0</td>
+          <td>80</td>
+        </tr>
+        <tr>
+          <td>2022.04</td>
+          <td>10</td>
+          <td>8</td>
+          <td>2</td>
+          <td>0</td>
+          <td>80</td>
+        </tr>
+        <tr>
+          <td>2022.04</td>
+          <td>10</td>
+          <td>8</td>
+          <td>2</td>
+          <td>0</td>
+          <td>80</td>
+        </tr>
+        <tr>
+          <td>2022.04</td>
+          <td>10</td>
+          <td>8</td>
+          <td>2</td>
+          <td>0</td>
+          <td>80</td>
+        </tr>
+        <tr>
+          <td>2022.04</td>
+          <td>10</td>
+          <td>8</td>
+          <td>2</td>
+          <td>0</td>
+          <td>80</td>
+        </tr>
+        <tr>
+          <td>2022.04</td>
+          <td>10</td>
+          <td>8</td>
+          <td>2</td>
+          <td>0</td>
+          <td>80</td>
+        </tr>
+        <tr>
+          <td>2022.04</td>
+          <td>10</td>
+          <td>8</td>
+          <td>2</td>
+          <td>0</td>
+          <td>80</td>
+        </tr>
+        <tr>
+          <td>2022.04</td>
+          <td>10</td>
+          <td>8</td>
+          <td>2</td>
+          <td>0</td>
+          <td>80</td>
+        </tr>
+        <tr>
+          <td>2022.04</td>
+          <td>10</td>
+          <td>8</td>
+          <td>2</td>
+          <td>0</td>
+          <td>80</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="cell_subtotal bold">
+          <td>합계</td>
+          <td>N,NNN</td>
+          <td>N,NNN</td>
+          <td>N,NNN</td>
+          <td>N,NNN</td>
+          <td>N,NNN</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <h2 class="tit02">채널별 처리현황</h2>
+  <div class="tabl_area" data-tbody="1164">
+    <table>
+      <colgroup>
+        <col style="width: 12%;">
+        <col style="width: auto;">
+        <col style="width: auto;">
+        <col style="width: auto;">
+        <col style="width: auto;">
+        <col style="width: auto;">
+        <col style="width: auto;">
+        <col style="width: auto;">
+        <col style="width: auto;">
+        <col style="width: auto;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th rowspan="2">조회년월</th>
+          <th colspan="3">홈페이지</th>
+          <th colspan="3">콜접수</th>
+          <th colspan="3">모바일창구</th>
+        </tr>
+        <tr>
+          <th class="accent">진행</th>
+          <th class="accent">미진행</th>
+          <th class="accent">종결</th>
+          <th class="accent">진행</th>
+          <th class="accent">미진행</th>
+          <th class="accent">종결</th>
+          <th class="accent">진행</th>
+          <th class="accent">미진행</th>
+          <th class="accent">종결</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2022.10</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>2022.09</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>2022.08</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>2022.07</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>2022.06</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>2022.05</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>2022.04</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>2022.03</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>2022.02</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>2022.01</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="cell_subtotal bold">
+          <td>합계</td>
+          <td>N,NNN</td>
+          <td>N,NNN</td>
+          <td>N,NNN</td>
+          <td>N,NNN</td>
+          <td>N,NNN</td>
+          <td>N,NNN</td>
+          <td>N,NNN</td>
+          <td>N,NNN</td>
+          <td>N,NNN</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+
+
+
+</div>
+
+
+
+
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+
+</html>

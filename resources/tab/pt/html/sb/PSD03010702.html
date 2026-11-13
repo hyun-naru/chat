@@ -1,0 +1,93 @@
+<!--
+Copyright ⓒ 2022 Hana Life Insurance, All Rights Reserved.
+------------------------------------------------------------------
+프로젝트 : 하나생명 NEW SFA 시스템
+파 일 명 : PSD03010702.html
+타 이 틀 :
+설   명 : 청약 > 취미활동 입력 팝업
+------------------------------------------------------------------
+수정일           수정자              수정내용
+------------------------------------------------------------------
+2022.07.18    70100              최초생성
+------------------------------------------------------------------
+-->
+
+<!-- popup (s) -->
+<div class="popWrap">
+  <div class="popContain">
+    <div class="popup">
+      <div class="popHead">
+        <h1 class="tit01">취미활동</h1>
+      </div>
+      <div class="popBody col_8">
+<!-- 팝업 내용 시작 (s) -->
+        <section>
+          <div class="subtxt">최근 1년 이내 다음과 같은 취미를 반복적으로 하고 있거나 관련 자격증을 가지고 있을경우 상세하게 기록해 주세요. </div>
+          <div class="box_graybg">
+            <ol>
+              <li>① 스쿠버다이빙</li>
+              <li>② 행글라이딩, 패러글라이딩</li>
+              <li>③ 스카이다이빙</li>
+              <li>④ 수상스키 </li>
+              <li>⑤ 자동차, 오토바이경주</li>
+              <li>⑥ 번지점프</li>
+              <li>⑦ 빙벽, 암벽등반</li>
+              <li>⑧ 제트스키</li>
+              <li>⑨ 래프팅</li>
+            </ol>
+          </div>
+
+          <ul class="formList" name="insData" data-index="0">
+            <li>
+              <div class="td">
+                <span class="single">
+                  <input type="checkbox" class="ipt" name="" id="single_chk_0">
+                  <label for="single_chk_0"><span class="blind">직접입력</span></label>
+                </span>
+                <input type="text" class="ipt full" placeholder="자격증명 입력" >
+              </div>
+            </li>
+            <li>
+              <div class="th">빈도</div>
+              <div class="td">
+                <input type="tel" class="ipt" data-unit="년간">
+                <span class="txt ml10 mr10">/ 월</span>
+                <input type="tel" class="ipt" data-unit="회">
+              </div>
+            </li>
+          </ul>
+
+          <div id="btnDiv" class="bottom_btn rt">
+            <button id="addBtn" type="button" class="btn_primary_reverse l">추가</button>
+            <button id="removeBtn" type="button" class="btn_white l">삭제</button>
+          </div>
+
+
+        </section>
+<!-- 팝업 내용 끝 (e) -->
+      </div>
+      <div class="btn_wrap">
+        <button type="button" class="btn_gray" onclick="lp.close();">취소</button>
+        <button type="button" class="btn_primary">확인</button>
+      </div>
+      <button type="button" class="icoBtn_close" onclick="lp.close();"><span>팝업 닫기</span></button>
+    </div>
+  </div>
+</div>
+<!-- popup (e) -->
+
+
+<!-- wrapper (s) -->
+<div class="wrapper">
+  <div class="header"></div>
+
+  <!-- container (s) -->
+  <div class="container" id="content">
+<div class="section">
+<h1 class="tit01">페이지 타이틀</h1>
+</div>
+  </div><!-- container (e) -->
+  <div class="footer"></div>
+</div>
+
+

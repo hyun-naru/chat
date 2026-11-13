@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section pcs_wrap">
+
+    <div class="personal_current ">
+      <h1 class="tit01">개인정보동의 현황 </h1>
+      <ul class="formList div3">
+        <li class="full abs">
+          <div class="th">조회기간</div>
+          <div class="td">
+            <div class="setHalf">
+              <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz1">
+              <span class="sign">~</span>
+              <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz2">
+            </div>
+
+            <ul class="iptFilt">
+              <li>
+                <input type="radio" class="ipt " name="filter0" id="filter0_1" checked="">
+                <label for="filter0_1">당일</label>
+              </li>
+              <li>
+                <input type="radio" class="ipt" name="filter0" id="filter0_2" >
+                <label for="filter0_2">1주일</label>
+              </li>
+              <li>
+                <input type="radio" class="ipt" name="filter0" id="filter0_3">
+                <label for="filter0_3">1개월</label>
+              </li>
+              <li>
+                <input type="radio" class="ipt" name="filter0" id="filter0_4">
+                <label for="filter0_4">3개월</label>
+              </li>
+              <li>
+                <input type="radio" class="ipt" name="filter0" id="filter0_5">
+                <label for="filter0_5">6개월</label>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="th">고객명</div>
+          <div class="td">
+            <input type="text" class="ipt" placeholder="예: 김하나">
+          </div>
+        </li>
+        <li >
+          <div class="th">생명월일</div>
+          <div class="td">
+            <input type="text" class="ipt" placeholder="숫자만 입력">
+          </div>
+        </li>
+        <li>
+          <div class="th">동의방법</div>
+          <div class="td">
+            <select class="ipt" >
+              <option selected="">전체</option>
+            </select>
+          </div>
+        </li>
+        <li>
+          <div class="th">동의서발행 번호</div>
+          <div class="td">
+          <input type="text" class="ipt" placeholder="숫자만 입력" disabled>
+          </div>
+        </li>
+        <li>
+          <div class="th">동의서제출</div>
+          <div class="td">
+            <select class="ipt" disabled>
+              <option selected="">하나팀</option>
+            </select>
+          </div>
+        </li>
+        <li class="lastLi">
+          <div class="th">승인여부</div>
+          <div class="td">
+            <select class="ipt" disabled>
+              <option selected="">전체</option>
+            </select>
+          </div>
+        </li>
+      </ul>
+      <div class="btn_wrap">
+        <button type="button" class="btn_white">초기화</button>
+        <button type="button" class="btn_primary">조회</button>
+      </div>
+    </div>
+
+    <div class="count_list">
+      <div class="sort_wrap">
+        <div class="sort">
+          <ul class="count">
+            <li>총 <span class="count_num count_num_accent">106</span>건</li>
+          </ul>
+          <select class="ipt">
+            <option selected="">10개씩 보기</option>
+          </select>
+        </div>
+
+        <div class="sortRight">
+          <button type="button" class="btn_white_round m">주민등록번호 검증</button><!-- 230518 -->
+          <button type="button" class="btn_white_round m" onclick="lp.open('./popup_test.html'); return false;"> 고객등록</button>
+          <button type="button" class="btn_white_round m"><img src="./resources/pt/images/icons/icon_print2.svg" class="icon">동의서출력</button>
+        </div>
+      </div>
+      <div class="tabl_area pc">
+        <table>
+          <caption>정보</caption>
+          <colgroup>
+            <col style="width: 6.5%;">
+            <col style="width: 6.5%;">
+            <col style="width: 10%;">
+            <col style="width: 9%;">
+            <col style="width: 10%;">
+            <col style="width: 7%;">
+            <col style="width: auto;">
+            <col style="width: 10%;">
+            <col style="width: 135px;">
+            <col style="width: 135px;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col" ><span>선택</span></th>
+              <th scope="col" ><span>승인</span></th>
+              <th scope="col" ><span>동의서<br>발행번호</span></th>
+              <th scope="col" ><span>고객명</span></th>
+              <th scope="col" ><span>생년월일</span></th>
+              <th scope="col" ><span>성별</span></th>
+              <th scope="col" ><span>휴대폰<br>번호</span></th>
+              <th scope="col" ><span>동의방법</span></th>
+              <th scope="col" ><span>동의서제출일</span></th>
+              <th scope="col" ><span>동의일</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="single">
+                  <input type="radio" class="ipt" name="" id="rdo_1"><label for="rdo_1"></label>
+                </span>
+              </td>
+              <td>
+                <span>N</span>
+              </td>
+              <td><span>920501002</span></td>
+              <td><a href="" class="links">김하나</a></td>
+              <td><span>810101</span></td>
+              <td><span>여자</span></td>
+              <td>-</td>
+              <td><span>출력물(서면)</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="single">
+                  <input type="radio" class="ipt" name="" id="rdo_2"><label for="rdo_2"></label>
+                </span>
+              </td>
+              <td>
+                <span>N</span>
+              </td>
+              <td><span>920501002</span></td>
+              <td><a href="" class="links">김하나</a></td>
+              <td><span>810101</span></td>
+              <td><span>여자</span></td>
+              <td>-</td>
+              <td><span>출력물(서면)</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+              <td><span>대기중</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="single">
+                  <input type="radio" class="ipt" name="" id="rdo_3"><label for="rdo_3"></label>
+                </span>
+              </td>
+              <td>
+                <span>N</span>
+              </td>
+              <td><span>920501002</span></td>
+              <td><a href="" class="links">김하나</a></td>
+              <td><span>810101</span></td>
+              <td><span>여자</span></td>
+              <td class="alignV">
+                010-1234-4567
+              </td>
+              <td><span>전자자필서명</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="single">
+                  <input type="radio" class="ipt" name="" id="rdo_4"><label for="rdo_4"></label>
+                </span>
+              </td>
+              <td>
+                <span>N</span>
+              </td>
+              <td><span>920501002</span></td>
+              <td><a href="" class="links">김하나</a></td>
+              <td><span>810101</span></td>
+              <td><span>여자</span></td>
+              <td class="alignV">
+                010-1234-4567
+              </td>
+              <td><span>출력물(서면)</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="single">
+                  <input type="radio" class="ipt" name="" id="rdo_5"><label for="rdo_5"></label>
+                </span>
+              </td>
+              <td>
+                <span>N</span>
+              </td>
+              <td><span>920501002</span></td>
+              <td><span>김하나</span></td>
+              <td><span>810101</span></td>
+              <td><span>여자</span></td>
+              <td>-</td>
+              <td><span>출력물(서면)</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="single">
+                  <input type="radio" class="ipt" name="" id="rdo_6"><label for="rdo_6"></label>
+                </span>
+              </td>
+              <td>
+                <span>N</span>
+              </td>
+              <td><span>920501002</span></td>
+              <td><span>김하나</span></td>
+              <td><span>810101</span></td>
+              <td><span>여자</span></td>
+              <td>-</td>
+              <td><span>출력물(서면)</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="single">
+                  <input type="radio" class="ipt" name="" id="rdo_7"><label for="rdo_7"></label>
+                </span>
+              </td>
+              <td>
+                <span>N</span>
+              </td>
+              <td><span>920501002</span></td>
+              <td><span>김하나</span></td>
+              <td><span>810101</span></td>
+              <td><span>여자</span></td>
+              <td>-</td>
+              <td><span>출력물(서면)</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="single">
+                  <input type="radio" class="ipt" name="" id="rdo_8"><label for="rdo_8"></label>
+                </span>
+              </td>
+              <td>
+                <span>N</span>
+              </td>
+              <td><span>920501002</span></td>
+              <td><span>김하나</span></td>
+              <td><span>810101</span></td>
+              <td><span>여자</span></td>
+              <td>-</td>
+              <td><span>출력물(서면)</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="single">
+                  <input type="radio" class="ipt" name="" id="rdo_9"><label for="rdo_9"></label>
+                </span>
+              </td>
+              <td>
+                <span>N</span>
+              </td>
+              <td><span>920501002</span></td>
+              <td><span>김하나</span></td>
+              <td><span>810101</span></td>
+              <td><span>여자</span></td>
+              <td>-</td>
+              <td><span>출력물(서면)</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="single">
+                  <input type="radio" class="ipt" name="" id="rdo_10"><label for="rdo_10"></label>
+                </span>
+              </td>
+              <td>
+                <span>N</span>
+              </td>
+              <td><span>920501002</span></td>
+              <td><span>김하나</span></td>
+              <td><span>810101</span></td>
+              <td><span>여자</span></td>
+              <td>-</td>
+              <td><span>출력물(서면)</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+              <td><span>YYYY.MM.DD</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn_area left">
+          <button type="button" class="btn_primary_reverse l">동의 정보 업데이트</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+		<button type="button" class="icoBtn_first" aria-label="처음"></button>
+		<button type="button" class="icoBtn_prev" aria-label="이전"></button>
+		<ul>
+			<li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+			<li><a href="#"><span class="blind">페이지</span>2</a></li>
+			<li><a href="#"><span class="blind">페이지</span>3</a></li>
+			<li><a href="#"><span class="blind">페이지</span>4</a></li>
+			<li><a href="#"><span class="blind">페이지</span>5</a></li>
+			<li><a href="#"><span class="blind">페이지</span>6</a></li>
+			<li><a href="#"><span class="blind">페이지</span>7</a></li>
+			<li><a href="#"><span class="blind">페이지</span>8</a></li>
+			<li><a href="#"><span class="blind">페이지</span>9</a></li>
+			<li><a href="#"><span class="blind">페이지</span>10</a></li>
+		</ul>
+		<button type="button" class="icoBtn_next" aria-label="다음"></button>
+		<button type="button" class="icoBtn_last" aria-label="마지막"></button>
+	</div>
+
+</div>
+
+
+
+
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+
+</html>

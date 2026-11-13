@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+    <defs>
+        <clipPath id="9f2664nbua">
+            <path data-name="사각형 16002" style="stroke:#707070;fill:#fff" d="M0 0h48v23H0z"/>
+        </clipPath>
+    </defs>
+    <g transform="translate(19 5)" style="stroke-width:1.5px;stroke-miterlimit:10;stroke:#111;fill:#fff">
+        <circle cx="13" cy="13" r="13" style="stroke:none"/>
+        <circle cx="13" cy="13" r="12.25" style="fill:none"/>
+    </g>
+    <g data-name="그룹 103135">
+        <g data-name="마스크 그룹 150" transform="translate(8 36)" style="clip-path:url(#9f2664nbua)">
+            <g data-name="사각형 16001" style="fill:none;stroke-width:1.5px;stroke:#111">
+                <rect width="48" height="44" rx="16" style="stroke:none"/>
+                <rect x=".75" y=".75" width="46.5" height="42.5" rx="15.25" style="fill:none"/>
+            </g>
+        </g>
+        <g data-name="사각형 16008" transform="translate(8 55.001)" style="stroke:#111;fill:#fff">
+            <rect width="1.5" height="5" rx=".75" style="stroke:none"/>
+            <rect x=".5" y=".5" width=".5" height="4" rx=".25" style="fill:none"/>
+        </g>
+        <g data-name="사각형 16009" transform="translate(54.5 55.001)" style="stroke:#111;fill:#fff">
+            <rect width="1.5" height="5" rx=".75" style="stroke:none"/>
+            <rect x=".5" y=".5" width=".5" height="4" rx=".25" style="fill:none"/>
+        </g>
+    </g>
+</svg>

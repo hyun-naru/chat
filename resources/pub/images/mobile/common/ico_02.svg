@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <defs>
+        <clipPath id="2a36bp06ya">
+            <path d="M-7937-4344v-27h25v11h-14v16z" transform="translate(9270 4670)" style="opacity:.45;fill:red"/>
+        </clipPath>
+    </defs>
+    <g style="clip-path:url(#2a36bp06ya)" transform="translate(-1330 -297)">
+        <g data-name="사각형 16563" transform="translate(1333 299)" style="stroke-width:1.5px;stroke:#333;fill:none">
+            <rect width="25" height="27" rx="4" style="stroke:none"/>
+            <rect x=".75" y=".75" width="23.5" height="25.5" rx="3.25" style="fill:none"/>
+        </g>
+    </g>
+    <g data-name="타원 567" transform="translate(16 16)" style="fill:#c8f7f4;stroke-width:1.5px;stroke:#333">
+        <circle cx="6.75" cy="6.75" r="6.75" style="stroke:none"/>
+        <circle cx="6.75" cy="6.75" r="6" style="fill:none"/>
+    </g>
+    <g data-name="사각형 16564" transform="translate(8.5 9)" style="stroke:#333;fill:none">
+        <rect width="13" height="1.5" rx=".75" style="stroke:none"/>
+        <rect x=".5" y=".5" width="12" height=".5" rx=".25" style="fill:none"/>
+    </g>
+    <g data-name="사각형 16565" transform="translate(8.647 14.001)" style="stroke:#333;fill:none">
+        <rect width="7" height="1.5" rx=".75" style="stroke:none"/>
+        <rect x=".5" y=".5" width="6" height=".5" rx=".25" style="fill:none"/>
+    </g>
+    <g data-name="사각형 16568" transform="translate(10.248 27.5)" style="stroke:#333;fill:none">
+        <rect width="5.399" height="1.5" rx=".75" style="stroke:none"/>
+        <rect x=".5" y=".5" width="4.399" height=".5" rx=".25" style="fill:none"/>
+    </g>
+    <g data-name="사각형 16569" transform="rotate(-90 20.573 -5.927)" style="stroke:#333;fill:none">
+        <rect width="5.399" height="1.5" rx=".75" style="stroke:none"/>
+        <rect x=".5" y=".5" width="4.399" height=".5" rx=".25" style="fill:none"/>
+    </g>
+    <path data-name="패스 19730" d="m1351.5 319 1.71 1.71 2.942-2.942" transform="translate(-1331.076 -296.489)" style="stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;stroke:#333;fill:none"/>
+</svg>

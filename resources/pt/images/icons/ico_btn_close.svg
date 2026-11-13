@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <clipPath id="hemfayxz5a">
+            <path transform="translate(4 4.445)" style="fill:red;opacity:0" d="M0 0h14v14H0z"/>
+        </clipPath>
+    </defs>
+    <circle cx="11" cy="11" r="11" transform="translate(1 1)" style="fill:#aaa"/>
+    <g data-name="btn_close_24">
+        <g data-name="그룹 103312" transform="translate(7.69 7.245)" style="clip-path:url(#hemfayxz5a)">
+            <rect data-name="사각형 16194" width="1.083" height="11.736" rx=".542" transform="rotate(45 4.15 10.018)" style="fill:#fff"/>
+            <rect data-name="사각형 16195" width="1.083" height="11.736" rx=".542" transform="rotate(135 2.814 6.027)" style="fill:#fff"/>
+        </g>
+    </g>
+</svg>

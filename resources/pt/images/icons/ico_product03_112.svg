@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+    <g data-name="그룹 103739">
+        <g data-name="그룹 103740">
+            <g data-name="사각형 16463" transform="translate(10 12)" style="stroke-width:2px;stroke:#111;fill:#fff">
+                <rect width="58" height="54" rx="8" style="stroke:none"/>
+                <rect x="1" y="1" width="56" height="52" rx="7" style="fill:none"/>
+            </g>
+            <g data-name="사각형 16456" transform="rotate(-90 20 9)" style="stroke:#000;stroke-miterlimit:10;stroke-width:2px">
+                <path style="stroke:none" d="M0 0h2v56H0z"/>
+                <rect x="1" y="1" height="54" style="fill:none"/>
+            </g>
+        </g>
+        <g data-name="타원 552" transform="translate(44 44.001)" style="fill:#c8f7f4;stroke-width:2px;stroke:#111">
+            <circle cx="15" cy="15" r="15" style="stroke:none"/>
+            <circle cx="15" cy="15" r="14" style="fill:none"/>
+        </g>
+        <path data-name="패스 19704" d="m322.5 638 2.75 7 2.75-7 2.75 7 2.75-7" transform="translate(-269 -582.499)" style="stroke-linejoin:round;stroke-linecap:round;fill:none;stroke-width:2px;stroke:#111"/>
+        <path data-name="선 277" transform="translate(52.25 59.001)" style="stroke-linecap:round;fill:none;stroke-width:2px;stroke:#111" d="M0 0h2.5"/>
+        <path data-name="선 278" transform="translate(63.25 59.001)" style="stroke-linecap:round;fill:none;stroke-width:2px;stroke:#111" d="M0 0h2.5"/>
+        <g data-name="사각형 16454" transform="translate(24 8)" style="stroke-width:1.5px;fill:none;stroke:#000;stroke-miterlimit:10">
+            <rect width="2" height="10" rx="1" style="stroke:none"/>
+            <rect x=".75" y=".75" width=".5" height="8.5" rx=".25" style="fill:none"/>
+        </g>
+        <g data-name="사각형 16458" transform="translate(52 8)" style="stroke-width:1.5px;fill:none;stroke:#000;stroke-miterlimit:10">
+            <rect width="2" height="10" rx="1" style="stroke:none"/>
+            <rect x=".75" y=".75" width=".5" height="8.5" rx=".25" style="fill:none"/>
+        </g>
+    </g>
+</svg>

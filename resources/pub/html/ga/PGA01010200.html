@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section gaWrap">
+
+  <h1 class="tit01">GA정보</h1>
+  <ul class="formList div3">
+    <li>
+      <div class="th">최초등록</div>
+      <div class="td">
+        <span>김하나(12345)</span>,&nbsp;<span>2022.08.02</span>
+      </div>
+    </li>
+    <li>
+      <div class="th">최종수정</div>
+      <div class="td">
+        <span>김하나(12345)</span>,&nbsp;<span>2022.08.02</span>
+      </div>
+    </li>
+    <li>
+      <div class="th">영업중지일</div>
+      <div class="td">
+        <span>2022.08.02</span>
+      </div>
+    </li>
+  </ul>
+
+  <h2 class="tit02">대리점 정보</h2>
+  <ul class="formList div3">
+    <li>
+      <div class="th">대리점명</div>
+      <div class="td">
+        <input type="text" class="ipt">
+      </div>
+    </li>
+    <li>
+      <div class="th">대리점코드</div>
+      <div class="td">
+        Data
+      </div>
+    </li>
+    <li>
+      <div class="th">상태</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">정상</option>
+          <option>영업중지</option>
+          <option>폐업</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">사업자번호</div>
+      <div class="td">
+        123-12-12345
+      </div>
+    </li>
+    <li>
+      <div class="th">법인번호</div>
+      <div class="td">
+        123456-1234567
+      </div>
+    </li>
+    <li>
+      <div class="th">수수료 방식</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+          <option>분할지급</option>
+          <option>5회차분 선지급</option>
+          <option>11회차분 선지급</option>
+        </select>
+      </div>
+    </li>
+    <li class="full abs">
+      <div class="th">대표자</div>
+      <div class="td">
+        김하나(123456), 남궁하나생명(123456), 홍길동(123456)
+      </div>
+    </li>
+    <li class="full">
+      <div class="th">대표연락처</div>
+      <div class="td">
+        <div class="setPhone">
+          <select class="ipt" title="전화번호 앞자리">
+            <option>02</option>
+            <option>031</option>
+            <option>032</option>
+          </select>
+          <input type="tel" class="ipt" maxlength="8" title="전화번호 뒷자리" placeholder="숫자만 입력">
+        </div>
+      </div>
+    </li>
+    <li class="full abs">
+      <div class="th">대표이메일</div>
+      <div class="td">
+        <input type="email" class="ipt" placeholder="이메일 입력">
+      </div>
+    </li>
+    <li class="full abs">
+      <div class="th">대표팩스번호</div>
+      <div class="td">
+        <div class="setPhone">
+          <select class="ipt" title="전화번호 앞자리">
+            <option>02</option>
+            <option>031</option>
+            <option>032</option>
+          </select>
+          <input type="tel" class="ipt" maxlength="8" title="전화번호 뒷자리" placeholder="숫자만 입력">
+        </div>
+      </div>
+    </li>
+    <li class="full abs">
+      <div class="th">대리점 주소</div>
+      <div class="td">
+        <input type="text" class="ipt" value="04538" disabled>
+        <button type="button" class="btn_primary l">검색</button>
+        <input type="text" class="ipt full mr0 mb5 mt5" value="서울 중구 을지로 66 하나금융그룹명동사옥" disabled>
+        <input type="text" class="ipt full" value="13층(을지로2가 181)" disabled>
+      </div>
+    </li>
+  </ul>
+
+  <h2 class="tit02">보증보험 정보</h2>
+  <ul class="formList div3">
+    <li>
+      <div class="th">영업보증금액</div>
+      <div class="td">
+        <input type="tel" class="ipt" data-unit="원" placeholder="숫자만 입력">
+      </div>
+    </li>
+    <li>
+      <div class="th">가입일</div>
+      <div class="td">
+        <input type="tel" class="ipt date" placeholder="YYYY.MM.DD" id="input_ID_Setting_Plz000">
+      </div>
+    </li>
+    <li>
+      <div class="th">만기일</div>
+      <div class="td">
+        <input type="tel" class="ipt date" placeholder="YYYY.MM.DD" id="input_ID_Setting_Plz000">
+      </div>
+    </li>
+  </ul>
+
+  <ul class="formList div3 mt20">
+    <li class="oneThirdDiv">
+      <div class="th">이행보증대상</div>
+      <div class="td">
+        <select class="ipt" >
+          <option selected="">가입 대상</option>
+        </select>
+      </div>
+    </li>
+    <li class="twoThirdsDiv">
+      <div class="th">면제사유</div>
+      <div class="td">
+        <input type="text" class="ipt full uiAct" placeholder="" disabled>
+      </div>
+    </li>
+    <li>
+      <div class="th">이행보증금액</div>
+      <div class="td">
+        <input type="tel" class="ipt" data-unit="원" placeholder="숫자만 입력">
+      </div>
+    </li>
+    <li>
+      <div class="th">가입일</div>
+      <div class="td">
+        <input type="tel" class="ipt date " placeholder="YYYY.MM.DD" id="input_ID_Setting_Plz000">
+      </div>
+    </li>
+    <li class="last">
+      <div class="th">만기일</div>
+      <div class="td">
+        <input type="tel" class="ipt date" placeholder="YYYY.MM.DD" id="input_ID_Setting_Plz000">
+      </div>
+    </li>
+  </ul>
+
+  <h2 class="tit02">판매인 정보</h2>
+  <ul class="formList div3">
+    <li>
+      <div class="th">판매인수</div>
+      <div class="td">
+        <a href="" class="link under_line">120</a>
+      </div>
+    </li>
+    <li >
+      <div class="th">위촉 신청<br>(대기중)</div>
+      <div class="td">
+        <a href="" class="link under_line">10</a>
+      </div>
+    </li>
+    <li>
+      <div class="th">해촉 신청<br>(대기중)</div>
+      <div class="td">
+        <a href="" class="link under_line">10</a>
+      </div>
+    </li>
+  </ul>
+  <div class="btn_wrap">
+    <button type="button" class="btn_white">취소</button>
+    <button type="button" class="btn_primary">수정</button>
+  </div>
+</div>
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+</html>

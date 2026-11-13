@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <g data-name="타원 525" style="stroke:#aaa;fill:#fff;stroke-width:1.5px">
+        <circle cx="20" cy="20" r="20" style="stroke:none"/>
+        <circle cx="20" cy="20" r="19.25" style="fill:none"/>
+    </g>
+    <g data-name="ico_arrow_16*12">
+        <g data-name="사각형 16175" transform="rotate(90 4.35 23.65)" style="fill:none;stroke:#aaa">
+            <rect width="1.5" height="14" rx=".75" style="stroke:none"/>
+            <rect x=".5" y=".5" width=".5" height="13" rx=".25" style="fill:none"/>
+        </g>
+        <g data-name="그룹 103309">
+            <g data-name="사각형 16176" transform="rotate(135 4.274 16.153)" style="fill:none;stroke:#aaa">
+                <rect width="1.5" height="8" rx=".75" style="stroke:none"/>
+                <rect x=".5" y=".5" width=".5" height="7" rx=".25" style="fill:none"/>
+            </g>
+            <g data-name="사각형 16177" transform="rotate(-135 10.883 7.804)" style="fill:none;stroke:#aaa">
+                <rect width="1.5" height="8" rx=".75" style="stroke:none"/>
+                <rect x=".5" y=".5" width=".5" height="7" rx=".25" style="fill:none"/>
+            </g>
+        </g>
+    </g>
+</svg>

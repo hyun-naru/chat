@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <g data-name="사각형 15538" style="stroke:#111;stroke-width:1.5px;fill:none">
+        <path d="M4 0h20a4 4 0 0 1 4 4v10H0V4a4 4 0 0 1 4-4z" style="stroke:none" transform="translate(10)"/>
+        <path d="M4 .75h20A3.25 3.25 0 0 1 27.25 4v9.25H.75V4A3.25 3.25 0 0 1 4 .75z" style="fill:none" transform="translate(10)"/>
+    </g>
+    <g data-name="사각형 16167" transform="translate(1 12.5)" style="stroke:#111;stroke-width:1.5px;fill:none">
+        <rect width="46" height="25" rx="4" style="stroke:none"/>
+        <rect x=".75" y=".75" width="44.5" height="23.5" rx="3.25" style="fill:none"/>
+    </g>
+    <g data-name="사각형 16168" transform="translate(7 30)" style="stroke:#111;stroke-width:1.5px;fill:none">
+        <rect width="34" height="1.5" rx=".75" style="stroke:none"/>
+        <rect x=".75" y=".75" width="32.5" style="fill:none"/>
+    </g>
+    <g data-name="사각형 16172" transform="translate(7 19)" style="stroke:#111;stroke-width:1.5px;fill:none">
+        <rect width="4" height="1.5" rx=".75" style="stroke:none"/>
+        <rect x=".75" y=".75" width="2.5" style="fill:none"/>
+    </g>
+    <g data-name="사각형 16169" style="fill:#f7f8f9;stroke:#111;stroke-width:1.5px">
+        <path d="M0 0h30v14a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V0z" style="stroke:none" transform="translate(9 30)"/>
+        <path d="M.75.75h28.5V14A3.25 3.25 0 0 1 26 17.25H4A3.25 3.25 0 0 1 .75 14V.75z" style="fill:none" transform="translate(9 30)"/>
+    </g>
+    <g data-name="사각형 16170" transform="translate(18 35.5)" style="stroke:#111;stroke-width:1.5px;fill:none">
+        <rect width="12" height="1.5" rx=".75" style="stroke:none"/>
+        <rect x=".75" y=".75" width="10.5" style="fill:none"/>
+    </g>
+    <g data-name="사각형 16171" transform="translate(18 40.5)" style="stroke:#111;stroke-width:1.5px;fill:none">
+        <rect width="12" height="1.5" rx=".75" style="stroke:none"/>
+        <rect x=".75" y=".75" width="10.5" style="fill:none"/>
+    </g>
+</svg>

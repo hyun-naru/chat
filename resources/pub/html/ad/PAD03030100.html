@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section">
+  <h1 class="tit01">메뉴 관리</h1>
+
+  <div class="admin_wrap">
+    <div class="admin_left">
+      <button type="button" class="btn_white_round m" onclick="ui.treemenuExpanded(true)">전체펼침</button>
+      <button type="button" class="btn_white_round m" onclick="ui.treemenuExpanded(false)">전체닫기</button>
+      <div class="tree_wrap">
+        <p class="treetxt">조회/수정할 메뉴를 선택해 주세요.</p>
+
+        <ul class="treemenu">
+          <li class="depth1">
+            <div class="item">
+              <span class="single">
+                <input type="radio" class="ipt" name="treeRdoGrp" id="rio_1"><label for="rio_1">1Depth 메뉴명 1</label>
+              </span>
+              <button class="btn_drop">접기</button>
+            </div>
+
+            <ul class="depth2">
+              <li>
+                <div class="item">
+                  <span class="single">
+                    <input type="radio" class="ipt" name="treeRdoGrp" id="rio1_1"><label for="rio1_1">2Depth 메뉴명 1</label>
+                  </span>
+                  <button class="btn_drop">접기</button>
+                </div>
+                <ul class="depth3">
+                  <li>
+                    <div class="item">
+                      <span class="single">
+                        <input type="radio" class="ipt" name="treeRdoGrp" id="rio1_2"><label for="rio1_2">3Depth 메뉴명 1</label>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item">
+                      <span class="single">
+                        <input type="radio" class="ipt" name="treeRdoGrp" id="rio1_3"><label for="rio1_3">3Depth 메뉴명 2</label>
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div class="item">
+                  <span class="single">
+                    <input type="radio" class="ipt" name="treeRdoGrp" id="rio2_2"><label for="rio2_2">2Depth 메뉴명 2</label>
+                  </span>
+                  <button class="btn_drop">접기</button>
+                </div>
+                <ul class="depth3">
+                  <li>
+                    <div class="item">
+                      <span class="single">
+                        <input type="radio" class="ipt" name="treeRdoGrp" id="rio2_2_1"><label for="rio2_2_1">3Depth 메뉴명 1</label>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item">
+                      <span class="single">
+                        <input type="radio" class="ipt" name="treeRdoGrp" id="rio2_2_2"><label for="rio2_2_2">3Depth 메뉴명 2</label>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item">
+                      <span class="single">
+                        <input type="radio" class="ipt" name="treeRdoGrp" id="rio2_2_3"><label for="rio2_2_3">3Depth 메뉴명 3</label>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item">
+                      <span class="single">
+                        <input type="radio" class="ipt" name="treeRdoGrp" id="rio2_2_4"><label for="rio2_2_4">3Depth 메뉴명 4</label>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item">
+                      <span class="single">
+                        <input type="radio" class="ipt" name="treeRdoGrp" id="rio2_2_5"><label for="rio2_2_5">3Depth 메뉴명 5</label>
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div class="item">
+                  <span class="single">
+                    <input type="radio" class="ipt" name="treeRdoGrp" id="rio2_3"><label for="rio2_3">2Depth 메뉴명 3</label>
+                  </span>
+                  <button class="btn_drop down">펼치기</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="depth1">
+            <div class="item">
+              <span class="single">
+                <input type="radio" class="ipt" name="treeRdoGrp" id="rio_2"><label for="rio_2">1Depth 메뉴명 2</label>
+              </span>
+              <button class="btn_drop down">펼치기</button>
+            </div>
+          </li>
+          <li class="depth1">
+            <div class="item">
+              <span class="single">
+                <input type="radio" class="ipt" name="treeRdoGrp" id="rio_3"><label for="rio_3">1Depth 메뉴명 3</label>
+              </span>
+              <button class="btn_drop down">펼치기</button>
+            </div>
+          </li>
+          <li class="depth1">
+            <div class="item">
+              <span class="single">
+                <input type="radio" class="ipt" name="treeRdoGrp" id="rio_4"><label for="rio_4">1Depth 메뉴명 4</label>
+              </span>
+              <button class="btn_drop down">펼치기</button>
+            </div>
+          </li>
+          <li class="depth1">
+            <div class="item">
+              <span class="single">
+                <input type="radio" class="ipt" name="treeRdoGrp" id="rio_5"><label for="rio_5">1Depth 메뉴명 5</label>
+              </span>
+              <button class="btn_drop down">접기</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bottom_btn">
+        <div>
+          <button type="button" class="btn_white_round img" onclick="ui.treemenuMove( $('.treemenu'), 'up')"><img src="./resources/pt/images/icons/ico_arrowdrop_up.svg" class="icon"></button>
+          <button type="button" class="btn_white_round img" onclick="ui.treemenuMove( $('.treemenu'), 'down')"><img src="./resources/pt/images/icons/ico_arrowdrop_down.svg" class="icon"></button>
+        </div>
+
+        <button type="button" class="btn_primary_reverse l">메뉴생성</button>
+      </div>
+    </div>
+
+    <div class="admin_right">
+      <ol class="txtList numS">
+        <li>좌측 메뉴 선택 시 메뉴의 자세한 정보가 표시 됩니다.</li>
+        <li>
+          메뉴 생성 시 <span class="pointC1">[메뉴생성]</span> 버튼 선택 후 생성 하고자 하는 메뉴 레벨 선택 후<br>
+          좌측  메뉴에서 선택한 메뉴 하단에 생성 되며 우측에 입력창이 생성 됩니다.
+        </li>
+        <li>
+          메뉴 순서 변경 시 메뉴 선택 후 위/아래 버튼으로 위치 변경 가능 합니다. <br>
+          단, 최상위 레벨 이동은 불가하며, <span class="pointC1">같은 레벨 내에서만 이동 가능</span> 합니다.
+        </li>
+      </ol>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+    </div><!-- container (e) -->
+    <!-- <div class="footer"></div> -->
+  </div>
+</body>
+
+</html>

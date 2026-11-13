@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <g transform="translate(9 1)">
+        <rect data-name="사각형 238" width="6" height="6" rx="3" transform="translate(8 8)" style="fill:#fff"/>
+        <g data-name="사각형 240" transform="translate(8)" style="fill:#ed1651;stroke:#ed1651;stroke-width:2px">
+            <rect width="6" height="6" rx="3" style="stroke:none"/>
+            <rect x="1" y="1" width="4" height="4" rx="2" style="fill:none"/>
+        </g>
+        <rect data-name="사각형 241" width="6" height="6" rx="3" transform="translate(0 8)" style="fill:#fff"/>
+        <rect data-name="사각형 242" width="6" height="6" rx="3" style="fill:#fff"/>
+        <rect data-name="사각형 15864" width="6" height="6" rx="3" transform="translate(-8)" style="fill:#fff"/>
+        <rect data-name="사각형 15865" width="6" height="6" rx="3" transform="translate(-8 8)" style="fill:#fff"/>
+        <rect data-name="사각형 15866" width="6" height="6" rx="3" transform="translate(-8 16)" style="fill:#fff"/>
+        <rect data-name="사각형 15867" width="6" height="6" rx="3" transform="translate(0 16)" style="fill:#fff"/>
+        <rect data-name="사각형 15868" width="6" height="6" rx="3" transform="translate(8 16)" style="fill:#fff"/>
+    </g>
+</svg>

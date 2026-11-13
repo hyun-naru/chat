@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section manager">
+  <h1 class="tit01">활동입력/조회</h1>
+
+  <div class="tab tab_cm tab_default mt0">
+    <ul class="tab_bar">
+      <li><a href="#" class="active">활동조회</a></li>
+      <li><a href="#">활동입력</a></li>
+    </ul>
+    <div class="tab_cont">
+      <div class="tab_cont_list active">
+        <div class="inquiry_wrap">
+          <div class="pdinquiry">
+            <h2 class="tit02">${YYYY.MM.N주차}$ 활동</h2>
+            <div class="tabl_area roundBox">
+              <table>
+                <caption>고객관리등록</caption>
+                <colgroup>
+                  <col style="width: auto;">
+                  <col style="width: 16%;">
+                  <col style="width: 16%;">
+                  <col style="width: 16%;">
+                  <col style="width: 16%;">
+                  <col style="width: 16%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>
+                      구분 
+                      <div class="toolTip col_3">
+                        TA(전화&방문약속)<br>
+                        AP(초회면담)<br>
+                        PT(제안)<br>
+                        RL(소개확보)<br>
+                        CS(고객관리)
+                      </div>
+                    </th>
+                    <th>TA</th>
+                    <th>AP</th>
+                    <th>PT</th>
+                    <th>RL</th>
+                    <th>CS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="date">월(1일)</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                  </tr>
+                  <tr>
+                    <td class="date">월(1일)</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                  </tr>
+                  <tr>
+                    <td class="date">월(1일)</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                  </tr>
+                  <tr>
+                    <td class="date">월(1일)</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                  </tr>
+                  <tr>
+                    <td class="date">월(1일)</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                  </tr>
+                  <tr>
+                    <td class="date">월(1일)</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                  </tr>
+                  <tr>
+                    <td class="date">월(1일)</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="sort_wrap">
+              <div class="sort">
+                <h2 class="tit02">고객 이벤트</h2>
+              </div>
+              <div class="sortRight">
+                <button type="button" class="btn_white_round m">전체 이벤트</button>
+              </div>
+            </div>
+            <div class="eventDay">
+              <h4 class="tit04">오늘 생일</h4>
+              <div class="swiperWrap clientCardWrap" data-per-view="3" data-between="12" data-auto="false" data-loop="false">
+                <div class="slideList">
+                  <div>
+                    <div class="clientCard">
+                      <div class="profile"><img src="./resources/pt/images/icons/ico_p_prof.svg"></div>
+                      <div class="info">
+                        <span class="fieldday">9월8일</span>김하나 고객님
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="clientCard">
+                      <div class="profile"><img src="./resources/pt/images/icons/ico_p_prof.svg"></div>
+                      <div class="info">
+                        <span class="fieldday">9월8일</span>김하나 고객님
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="clientCard">
+                      <div class="profile"><img src="./resources/pt/images/icons/ico_p_prof.svg"></div>
+                      <div class="info">
+                        <span class="fieldday">9월8일</span>김하나 고객님
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="clientCard">
+                      <div class="profile"><img src="./resources/pt/images/icons/ico_p_prof.svg"></div>
+                      <div class="info">
+                        <span class="fieldday">9월8일</span>김하나 고객님
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="clientCard">
+                      <div class="profile"><img src="./resources/pt/images/icons/ico_p_prof.svg"></div>
+                      <div class="info">
+                        <span class="fieldday">9월8일</span>김하나 고객님
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h4 class="tit04 mt40">이번주 상령일</h4>
+              <div class="swiperWrap clientCardWrap" data-per-view="3" data-between="12" data-auto="false" data-loop="false">
+                <div class="slideList">
+                  <div>
+                    <div class="clientCard">
+                      <div class="profile"><img src="./resources/pt/images/icons/ico_p_prof.svg"></div>
+                      <div class="info">
+                        <span class="fieldday">9월8일</span>김하나 고객님
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="clientCard">
+                      <div class="profile"><img src="./resources/pt/images/icons/ico_p_prof.svg"></div>
+                      <div class="info">
+                        <span class="fieldday">9월8일</span>김하나 고객님
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="clientCard">
+                      <div class="profile"><img src="./resources/pt/images/icons/ico_p_prof.svg"></div>
+                      <div class="info">
+                        <span class="fieldday">9월8일</span>김하나 고객님
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="clientCard">
+                      <div class="profile"><img src="./resources/pt/images/icons/ico_p_prof.svg"></div>
+                      <div class="info">
+                        <span class="fieldday">9월8일</span>김하나 고객님
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!----------------------------------------- 경우의수 체크용 삭제 예정 (s) -------------------------------------------->
+              <h4 class="tit04 mt40">3개</h4>
+              <div class="swiperWrap clientCardWrap" data-per-view="3" data-between="12" data-auto="false" data-loop="false">
+                <div class="slideList">
+                  <div>
+                    <div class="clientCard">
+                      <div class="profile"><img src="./resources/pt/images/icons/ico_p_prof.svg"></div>
+                      <div class="info">
+                        <span class="fieldday">9월8일</span>김하나 고객님
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="clientCard">
+                      <div class="profile"><img src="./resources/pt/images/icons/ico_p_prof.svg"></div>
+                      <div class="info">
+                        <span class="fieldday">9월8일</span>김하나 고객님
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="clientCard">
+                      <div class="profile"><img src="./resources/pt/images/icons/ico_p_prof.svg"></div>
+                      <div class="info">
+                        <span class="fieldday">9월8일</span>김하나 고객님
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h4 class="tit04 mt40">2개</h4>
+              <div class="swiperWrap clientCardWrap" data-per-view="3" data-between="12" data-auto="false" data-loop="false">
+                <div class="slideList">
+                  <div>
+                    <div class="clientCard">
+                      <div class="profile"><img src="./resources/pt/images/icons/ico_p_prof.svg"></div>
+                      <div class="info">
+                        <span class="fieldday">9월8일</span>김하나 고객님
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="clientCard">
+                      <div class="profile"><img src="./resources/pt/images/icons/ico_p_prof.svg"></div>
+                      <div class="info">
+                        <span class="fieldday">9월8일</span>김하나 고객님
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h4 class="tit04 mt40">1개</h4>
+              <div class="swiperWrap clientCardWrap" data-per-view="3" data-between="12" data-auto="false" data-loop="false">
+                <div class="slideList">
+                  <div>
+                    <div class="clientCard">
+                      <div class="profile"><img src="./resources/pt/images/icons/ico_p_prof.svg"></div>
+                      <div class="info">
+                        <span class="fieldday">9월8일</span>김하나 고객님
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h4 class="tit04 mt40">noData</h4>
+              <div class="swiperWrap clientCardWrap" data-per-view="3" data-between="12" data-auto="false" data-loop="false">
+                <div class="slideList">
+                  <div>
+                    <!-- 데이타 없음(s) -->
+                    <div class="clientCard noData">
+                      <p class="noDataMsg">이벤트가 없습니다.</p>
+                    </div>
+                    <!-- 데이타 없음(e) -->
+                  </div>
+                </div>
+              </div>
+            <!----------------------------------------- 경우의수 체크용 삭제 예정 (e) -------------------------------------------->
+            </div>
+          </div>
+          <div class="schedule">
+            <div class="navDate">
+              <button type="button" class="btnPrev"><span>이전</span></button>
+              <h2 class="tit02">${MM.N주차}$</h2>
+              <button type="button" class="btnNext"><span>다음</span></button>
+            </div>
+            <div class="roundBox">
+              <!-- 기본 (s) -->
+              <ol class="btnWeekGroup">
+                <li><button type="button"><span>월</span><span class="date">8</span></button></li>
+                <li><button type="button"><span>화</span><span class="date">9</span></button></li>
+                <li><button type="button"><span>수</span><span class="date">10</span></button></li>
+                <li class="on"><button type="button"><span>목</span><span class="date">11</span></button></li>
+                <li><button type="button"><span>금</span><span class="date">12</span></button></li>
+                <li><button type="button"><span>토</span><span class="date">13</span></button></li>
+                <li><button type="button"><span>일</span><span class="date">14</span></button></li>
+              </ol>
+
+              <!-- 타임라인 기본 (s) -->
+              <div class="timelineWrap">
+                <ol class="timeline">
+                  <li class="ap">
+                    <time>09:00</time>
+                    <a href="#" class="message">[AP] 김하나 고객님</a>
+                  </li>
+                  <li class="pt">
+                    <time>10:00</time>
+                    <a href="#" class="message">[PT] 김하나 고객님</a>
+                  </li>
+                  <li class="ap">
+                    <time>11:00</time>
+                    <a href="#" class="message">[AP] 김하나 고객님</a>
+                  </li>
+                  <li class="ta">
+                    <time>12:00</time>
+                    <a href="#" class="message">[TA] 김하나 고객님</a>
+                  </li>
+                  <li class="cs">
+                    <time>12:44</time>
+                    <a href="#" class="message">[전화상담] 김하나 고객님</a>
+                  </li>
+                  <li class="etc">
+                    <time>13:00</time>
+                    <a href="#" class="message">[PT] 김하나 고객님</a>
+                  </li>
+                  <li class="ap">
+                    <time>14:00</time>
+                    <a href="#" class="message">[AP] 김하나 고객님</a>
+                  </li>
+                  <li class="pt">
+                    <time>15:00</time>
+                    <a href="#" class="message">[PT] 김하나 고객님</a>
+                  </li>
+                  <li class="ap">
+                    <time>16:00</time>
+                    <a href="#" class="message">[AP] 김하나 고객님</a>
+                  </li>
+                  <li class="ta">
+                    <time>17:00</time>
+                    <a href="#" class="message">[TA] 김하나 고객님</a>
+                  </li>
+                </ol>
+              </div>
+              <!-- 타임라인 기본 (e) -->
+
+              
+              <!-- noData는 timelineWrap 대신 아래 코드 넣으시면 됩니다 (s) -->
+              <div class="noData">
+                <p class="noDataMsg">이벤트가 없습니다.</p>
+              </div>
+              <!-- noData는 timelineWrap 대신 아래 코드 넣으시면 됩니다 (e) -->
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="tab_cont_list ">
+        <ul class="formList">
+          <li>
+            <div class="th">조회 연월</div>
+            <div class="td">
+              <input type="tel" class="ipt date" value="2022.06" id="input_ID_Setting_Plzfds">
+            </div>
+          </li>
+          <li>
+            <div class="th">조회일</div>
+            <div class="td">
+              <input type="tel" class="ipt date" value="2022.06.22" id="input_ID_Setting_Plzfds">
+            </div>
+          </li>
+          <li>
+            <div class="th">활동 구분</div>
+            <div class="td">
+              <ul class="iptGroup">
+                <li>
+                  <input type="checkbox" class="ipt" name="chk2" id="chk2_1" checked="">
+                  <label for="chk2_1">전체</label>
+                </li>
+                <li>
+                  <input type="checkbox" class="ipt" name="chk2" id="chk2_2">
+                  <label for="chk2_2">TA(전화&방문약속)</label>
+                </li>
+                <li>
+                  <input type="checkbox" class="ipt" name="chk2" id="chk2_3">
+                  <label for="chk2_3">AP(초회면담)</label>
+                </li>
+                <li>
+                  <input type="checkbox" class="ipt" name="chk2" id="chk2_4">
+                  <label for="chk2_4">PT(제안)</label>
+                </li>
+                <li>
+                  <input type="checkbox" class="ipt" name="chk2" id="chk2_5">
+                  <label for="chk2_5">RL(소개확보)</label>
+                </li>
+                <li>
+                  <input type="checkbox" class="ipt" name="chk2" id="chk2_6">
+                  <label for="chk2_6">CS(고객관리)</label>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <div class="btn_wrap">
+          <button type="button" class="btn_white">초기화</button>
+          <button type="button" class="btn_primary">조회</button>
+        </div>
+        <div class="sort_wrap">
+          <div class="sort">
+            <ul class="iptFilt tab">
+              <li>
+                <input type="radio" class="ipt" value="week" name="weekFilter" id="weekFilter_0" checked>
+                <label for="weekFilter_0">주간</label>
+              </li>
+              <li>
+                <input type="radio" class="ipt" value="day" name="weekFilter" id="weekFilter_1" >
+                <label for="weekFilter_1">일간</label>
+              </li>
+            </ul>
+          </div>
+          <div class="sortCenter navDate pb0">
+            <button type="button" class="btnPrev"><span>이전</span></button>
+            ${YYYY.MM.N주차}$
+            <button type="button" class="btnNext"><span>다음</span></button>
+          </div>
+          <div class="sortRight">
+            <button type="button" class="btn_white_round m"><img src="./resources/pt/images/icons/icon_print2.svg" class="icon">인쇄</button>
+            <button type="button" class="btn_navy_dark m">활동등록</button>
+          </div>
+        </div>
+
+        <div class="tabl_area roundBox week">
+          <table>
+            <caption>고객관리등록</caption>
+            <colgroup>
+              <col style="width: auto;">
+              <col style="width: 16%;">
+              <col style="width: 16%;">
+              <col style="width: 16%;">
+              <col style="width: 16%;">
+              <col style="width: 16%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>
+                  구분 
+                  <div class="toolTip col_3">
+                    TA(전화&방문약속)<br>
+                    AP(초회면담)<br>
+                    PT(제안)<br>
+                    RL(소개확보)<br>
+                    CS(고객관리)
+                  </div>
+                </th>
+                <th>TA</th>
+                <th>AP</th>
+                <th>PT</th>
+                <th>RL</th>
+                <th>CS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="date">월(1일)</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+              </tr>
+              <tr>
+                <td class="date">월(1일)</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+              </tr>
+              <tr>
+                <td class="date">월(1일)</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+              </tr>
+              <tr>
+                <td class="date">월(1일)</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+              </tr>
+              <tr>
+                <td class="date">월(1일)</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+              </tr>
+              <tr>
+                <td class="date">월(1일)</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+              </tr>
+              <tr>
+                <td class="date">월(1일)</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+              </tr>
+              <tr class="all_count">
+                <td class="date">합계</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tabl_area roundBox day" data-tbody="700">
+          <table>
+            <caption>고객관리등록</caption>
+            <colgroup>
+              <col style="width: 164px;">
+              <col style="width: auto;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>시간</th>
+                <th>금(5일)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="date">09:00</td>
+                <td><a href="#" class="ap">[AP] 김하나 고객님</a></td>
+              </tr>
+              <tr>
+                <td class="date">10:00</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="date">11:00</td>
+                <td><a href="#" class="pt">[PT] 김하나 고객님</a></td>
+              </tr>
+              <tr>
+                <td class="date">12:00</td>
+                <td><a href="#" class="cs">[CS] 김하나 고객님</a></td>
+              </tr>
+              <tr>
+                <td class="date">13:00</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="date">14:00</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="date">15:00</td>
+                <td><a href="#" class="ta">[TA] 김하나 고객님</a></td>
+              </tr>
+              <tr>
+                <td class="date">17:00</td>
+                <td><a href="#" class="ap">[AP] 김하나 고객님</a></td>
+              </tr>
+              <tr>
+                <td class="date">18:00</td>
+                <td><a href="#" class="ap">[AP] 김하나 고객님</a></td>
+              </tr>
+              <tr>
+                <td class="date">19:00</td>
+                <td><a href="#" class="ap">[AP] 김하나 고객님</a></td>
+              </tr>
+              <tr>
+                <td class="date">20:00</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="date">21:00</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="date">22:00</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="date">23:00</td>
+                <td><a href="#" class="ap">[AP] 김하나 고객님</a></td>
+              </tr>
+              <tr>
+                <td class="date">24:00</td>
+                <td><a href="#" class="ap">[AP] 김하나 고객님</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+    </div><!-- container (e) -->
+    <div class="footer"></div>
+  </div>
+</body>
+
+<script type="text/javascript">
+// 주간, 일간 전환 테스트용
+$(document).ready(function(){
+  $('input[name=weekFilter]').bind({
+    'change' : function(e){
+      $('.fakeTheadWrap.roundBox, .tabl_area.roundBox').hide();
+      $('.roundBox.'+e.target.value).show();
+    }
+  });
+  var weekFilter = $('input[name=weekFilter]:checked').val();
+  $('.fakeTheadWrap.roundBox, .tabl_area.roundBox.week').hide();
+  $('.roundBox.'+weekFilter).show();
+});
+</script>
+
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section">
+  <h1 class="tit01">고객문의 진행현황</h1>
+
+  <div class="tableTotal_Wrap type2 mb60">
+    <div class="tableTotalTitle">고객문의 현황
+      <span>(전체 30건, 종결제외)</span>
+      <div class="toolTip col_5">
+        <ul class="txtList disc">
+          <li>신규: 신규 배정된 고객문의입니다.</li>
+          <li>진행중: 신규 고객문의 진행사항 작성 시 진행중으로 전환됩니다.</li>
+          <li>처리기한임박: 고객문의 접수일 기준 +3일 이후부터 표시됩니다.</li>
+          <li>처리기한경과: 처리기한일 기준 +1일 이후부터 표시됩니다.</li>
+          <li>종결: 관리자가 최종 종결 처리한 고객문의입니다.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tableTotal count5">
+      <div class="countWrap vertical">
+        <div class="countWrap_tit">신규</div>
+        <div class="countWrap_desc"><a href="#"><span>8</span></a>건</div>
+      </div>
+      <div class="countWrap vertical">
+        <div class="countWrap_tit">진행중</div>
+        <div class="countWrap_desc"><a href="#"><span>13</span></a>건</div>
+      </div>
+      <div class="countWrap vertical">
+        <div class="countWrap_tit red">처리기한임박</div>
+        <div class="countWrap_desc"><span class="nothing">0</span>건</div>
+      </div>
+      <div class="countWrap vertical">
+        <div class="countWrap_tit red">처리기한경과</div>
+        <div class="countWrap_desc"><span class="nothing">0</span>건</div>
+      </div>
+      <div class="countWrap vertical">
+        <div class="countWrap_tit">종결</div>
+        <div class="countWrap_desc"><a href="#"><span>20</span></a>건</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab tab_cm tab_default">
+    <ul class="tab_bar">
+      <li class="on">
+        <a href="#">진행중인 고객문의</a>
+      </li>
+      <li>
+        <a href="#">종결된 고객문의</a>
+      </li>
+    </ul>
+
+    <div class="tab_cont">
+      <!-- tab_cont_list (s) -->
+      <div class="tab_cont_list">
+
+        <h2 class="tit02">조회조건</h2>
+
+        <ul class="formList div3">
+          <li>
+            <div class="th">채널</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">H/B</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="th">본부</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">A</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="th">지점</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">A1</option>
+              </select>
+            </div>
+          </li>
+          <li class="oneThirdDiv">
+            <div class="th">팀</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">전체</option>
+              </select>
+            </div>
+          </li>
+          <li class="twoThirdsDiv">
+            <div class="th">판매인</div>
+            <div class="td">
+              <select class="ipt mid">
+                <option selected="">전체</option>
+              </select>
+            </div>
+          </li>
+          <li class="full">
+            <div class="th">기간입력</div>
+            <div class="td">
+              <div class="setHalf">
+                <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz">
+                <span class="sign">~</span>
+                <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz">
+              </div>
+              <ul class="iptFilt">
+                <li>
+                  <input type="radio" class="ipt" name="filter0" id="filter0_1" checked>
+                  <label for="filter0_1">1개월</label>
+                </li>
+                <li>
+                  <input type="radio" class="ipt" name="filter0" id="filter0_2">
+                  <label for="filter0_2">2개월</label>
+                </li>
+                <li>
+                  <input type="radio" class="ipt" name="filter0" id="filter0_3">
+                  <label for="filter0_3">3개월</label>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="th">문의유형</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">전체</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="th">고객명</div>
+            <div class="td">
+              <input type="text" class="ipt" placeholder="예: 김하나">
+            </div>
+          </li>
+          <li>
+            <div class="th">상태</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">전체</option>
+              </select>
+            </div>
+          </li>
+        </ul>
+        <div class="btn_wrap">
+          <button type="button" class="btn_white">초기화</button>
+          <button type="button" class="btn_primary">조회</button>
+        </div>
+
+        <div class="sort_wrap">
+          <div class="sort">
+            <ul class="count">
+              <li>총 <span class="count_num count_num_accent">200</span>건</li>
+              <li><span class="count_num count_num_accent">1</span>/100페이지</li>
+            </ul>
+          </div>
+          <div class="sortRight">
+            <select class="ipt">
+              <option selected="">최신순</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tabl_area">
+          <table>
+            <colgroup>
+              <col style="width: 15%;">
+              <col style="width: 15%;">
+              <col style="width: 15%;">
+              <col style="width: 15%;">
+              <col style="width: 10%;">
+              <col style="width: auto;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>상태</th>
+                <th>접수일<br>처리기한</th>
+                <th>판매인 최근 피드백</th>
+                <th>판매인</th>
+                <th>고객명</th>
+                <th>문의유형</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <p class="pointC2">처리기한임박</p>
+                  진행중
+                </td>
+                <td>
+                  <p>YYYY.MM.DD</p>
+                  <p>YYYY.MM.DD</p>
+                </td>
+                <td>
+                  YYYY.MM.DD
+                </td>
+                <td>
+                  홍길동<br>
+                  <span>01234567</span>
+                </td>
+                <td>
+                  홍길동
+                </td>
+                <td class="tlL">
+                  <a href="" class="links">문의드려요.</a>
+                </td>
+              </tr>
+              <tr>
+                <td>신규</td>
+                <td>
+                  <p>YYYY.MM.DD</p>
+                  <p>YYYY.MM.DD</p>
+                </td>
+                <td>
+                  YYYY.MM.DD
+                </td>
+                <td>
+                  홍길동<br>
+                  <span>01234567</span>
+                </td>
+                <td>
+                  홍길동
+                </td>
+                <td class="tlL">
+                  <a href="" class="links">문의드려요.</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bottom_btn">
+          <button type="button" class="btn_primary_reverse l">엑셀 다운로드</button>
+        </div>
+
+        <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+		<button type="button" class="icoBtn_first" aria-label="처음"></button>
+		<button type="button" class="icoBtn_prev" aria-label="이전"></button>
+		<ul>
+			<li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+			<li><a href="#"><span class="blind">페이지</span>2</a></li>
+			<li><a href="#"><span class="blind">페이지</span>3</a></li>
+			<li><a href="#"><span class="blind">페이지</span>4</a></li>
+			<li><a href="#"><span class="blind">페이지</span>5</a></li>
+			<li><a href="#"><span class="blind">페이지</span>6</a></li>
+			<li><a href="#"><span class="blind">페이지</span>7</a></li>
+			<li><a href="#"><span class="blind">페이지</span>8</a></li>
+			<li><a href="#"><span class="blind">페이지</span>9</a></li>
+			<li><a href="#"><span class="blind">페이지</span>10</a></li>
+		</ul>
+		<button type="button" class="icoBtn_next" aria-label="다음"></button>
+		<button type="button" class="icoBtn_last" aria-label="마지막"></button>
+	</div>
+
+
+      </div>
+      <!-- tab_cont_list (e) -->
+      <!-- tab_cont_list (s) -->
+      <div class="tab_cont_list">
+
+        <h2 class="tit02">조회조건</h2>
+
+        <ul class="formList div3">
+          <li>
+            <div class="th">채널</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">H/B</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="th">본부</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">A</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="th">지점</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">A1</option>
+              </select>
+            </div>
+          </li>
+          <li class="oneThirdDiv">
+            <div class="th">팀</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">전체</option>
+              </select>
+            </div>
+          </li>
+          <li class="twoThirdsDiv">
+            <div class="th">판매인</div>
+            <div class="td">
+              <select class="ipt mid">
+                <option selected="">전체</option>
+              </select>
+            </div>
+          </li>
+          <li class="full">
+            <div class="th">기간입력</div>
+            <div class="td">
+              <div class="setHalf">
+                <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz">
+                <span class="sign">~</span>
+                <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz">
+              </div>
+              <ul class="iptFilt">
+                <li>
+                  <input type="radio" class="ipt" name="filter0" id="filter0_1" checked>
+                  <label for="filter0_1">1개월</label>
+                </li>
+                <li>
+                  <input type="radio" class="ipt" name="filter0" id="filter0_2">
+                  <label for="filter0_2">2개월</label>
+                </li>
+                <li>
+                  <input type="radio" class="ipt" name="filter0" id="filter0_3">
+                  <label for="filter0_3">3개월</label>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="oneThirdDiv">
+            <div class="th">문의유형</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">전체</option>
+              </select>
+            </div>
+          </li>
+          <li class="twoThirdsDiv">
+            <div class="th">고객명</div>
+            <div class="td">
+              <input type="text" class="ipt mid" placeholder="예: 김하나">
+            </div>
+          </li>
+        </ul>
+
+        <div class="btn_wrap">
+          <button type="button" class="btn_white">초기화</button>
+          <button type="button" class="btn_primary">조회</button>
+        </div>
+
+        <div class="sort_wrap">
+          <div class="sort">
+            <ul class="count">
+              <li>총 <span class="count_num count_num_accent">200</span>건</li>
+              <li><span class="count_num count_num_accent">1</span>/100페이지</li>
+            </ul>
+          </div>
+          <div class="sortRight">
+            <select class="ipt">
+              <option selected="">최신순</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tabl_area">
+          <table>
+            <colgroup>
+              <col style="width: auto;">
+              <col style="width: auto;">
+              <col style="width: 15%;">
+              <col style="width: 10%;">
+              <col style="width: 45%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>접수일<br>처리기한</th>
+                <th>관리자 최근 피드백<br>종결일</th>
+                <th>판매인</th>
+                <th>고객명</th>
+                <th>문의유형</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <p>YYYY.MM.DD</p>
+                  <p>YYYY.MM.DD</p>
+                </td>
+                <td>
+                  <p>YYYY.MM.DD</p>
+                  <p>YYYY.MM.DD</p>
+                </td>
+                <td>
+                  홍길동<br>
+                  <sapn>01234567</sapn>
+                </td>
+                <td>홍길동</td>
+                <td class="tlL">
+                  <a href="" class="links">문의드려요.</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>YYYY.MM.DD</p>
+                  <p>YYYY.MM.DD</p>
+                </td>
+                <td>
+                  <p>YYYY.MM.DD</p>
+                  <p>YYYY.MM.DD</p>
+                </td>
+                <td>
+                  홍길동<br>
+                  <sapn>01234567</sapn>
+                </td>
+                <td>홍길동</td>
+                <td class="tlL">
+                  <a href="" class="links">문의드려요.</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>YYYY.MM.DD</p>
+                  <p>YYYY.MM.DD</p>
+                </td>
+                <td>
+                  <p>YYYY.MM.DD</p>
+                  <p>YYYY.MM.DD</p>
+                </td>
+                <td>
+                  홍길동<br>
+                  <sapn>01234567</sapn>
+                </td>
+                <td>홍길동</td>
+                <td class="tlL">
+                  <a href="" class="links">문의드려요.</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+		<button type="button" class="icoBtn_first" aria-label="처음"></button>
+		<button type="button" class="icoBtn_prev" aria-label="이전"></button>
+		<ul>
+			<li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+			<li><a href="#"><span class="blind">페이지</span>2</a></li>
+			<li><a href="#"><span class="blind">페이지</span>3</a></li>
+			<li><a href="#"><span class="blind">페이지</span>4</a></li>
+			<li><a href="#"><span class="blind">페이지</span>5</a></li>
+			<li><a href="#"><span class="blind">페이지</span>6</a></li>
+			<li><a href="#"><span class="blind">페이지</span>7</a></li>
+			<li><a href="#"><span class="blind">페이지</span>8</a></li>
+			<li><a href="#"><span class="blind">페이지</span>9</a></li>
+			<li><a href="#"><span class="blind">페이지</span>10</a></li>
+		</ul>
+		<button type="button" class="icoBtn_next" aria-label="다음"></button>
+		<button type="button" class="icoBtn_last" aria-label="마지막"></button>
+	</div>
+
+      </div>
+      <!-- tab_cont_list (e) -->
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+
+</html>

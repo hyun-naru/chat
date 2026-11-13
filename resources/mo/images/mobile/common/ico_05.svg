@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <g data-name="사각형 16592" style="stroke:#333;stroke-width:1.5px;fill:#c8f7f4">
+        <path d="M0 0h5.5a4 4 0 0 1 4 4v15H0V0z" style="stroke:none" transform="translate(20.5 10)"/>
+        <path d="M.75.75H5.5A3.25 3.25 0 0 1 8.75 4v14.25h-8V.75z" style="fill:none" transform="translate(20.5 10)"/>
+    </g>
+    <g data-name="사각형 16593" transform="translate(0 27.5)" style="fill:#fff;stroke:#333;stroke-width:1.5px">
+        <rect width="32" height="1.5" rx=".75" style="stroke:none"/>
+        <rect x=".75" y=".75" width="30.5" style="fill:none"/>
+    </g>
+    <g data-name="1">
+        <g data-name="사각형 16591" style="fill:#fff;stroke:#333;stroke-width:1.5px">
+            <path d="M4 0h12a4 4 0 0 1 4 4v22H0V4a4 4 0 0 1 4-4z" style="stroke:none" transform="translate(2 3)"/>
+            <path d="M4 .75h12A3.25 3.25 0 0 1 19.25 4v21.25H.75V4A3.25 3.25 0 0 1 4 .75z" style="fill:none" transform="translate(2 3)"/>
+        </g>
+        <g data-name="사각형 16596" transform="translate(7 9)" style="fill:#fff;stroke:#333;stroke-width:1.5px">
+            <rect width="10" height="1.5" rx=".75" style="stroke:none"/>
+            <rect x=".75" y=".75" width="8.5" style="fill:none"/>
+        </g>
+        <g data-name="사각형 16610" transform="translate(7 13.5)" style="fill:#fff;stroke:#333;stroke-width:1.5px">
+            <rect width="10" height="1.5" rx=".75" style="stroke:none"/>
+            <rect x=".75" y=".75" width="8.5" style="fill:none"/>
+        </g>
+        <g data-name="사각형 16611" transform="translate(7 18)" style="fill:#fff;stroke:#333;stroke-width:1.5px">
+            <rect width="10" height="1.5" rx=".75" style="stroke:none"/>
+            <rect x=".75" y=".75" width="8.5" style="fill:none"/>
+        </g>
+        <g data-name="사각형 16597" style="fill:#fff;stroke:#333;stroke-width:1.5px">
+            <path d="M1.5 0h3A1.5 1.5 0 0 1 6 1.5V6H0V1.5A1.5 1.5 0 0 1 1.5 0z" style="stroke:none" transform="translate(9.25 23)"/>
+            <path d="M1.5.75h3a.75.75 0 0 1 .75.75v3.75H.75V1.5A.75.75 0 0 1 1.5.75z" style="fill:none" transform="translate(9.25 23)"/>
+        </g>
+    </g>
+</svg>

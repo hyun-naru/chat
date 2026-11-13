@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section manager">
+  <h1 class="tit01">상품 그룹 관리</h1>
+
+  <div class="tabBoxWrap">
+    <ul class="tabBoxList single">
+      <li><a href="#" class="tabBoxItem active">변액</a></li>
+      <li><a href="#" class="tabBoxItem">종신</a></li>
+      <li><a href="#" class="tabBoxItem">연금/저축</a></li>
+      <li><a href="#" class="tabBoxItem">보장성</a></li>
+    </ul>
+    <div class="tabBoxDisplay">
+      <div class="tabBoxDisplayItem active">
+        <!-- 그룹관리 테이블(s) -->
+        <div class="tabl_area">
+          <table>
+            <colgroup>
+              <col style="width: 7%;">
+              <col style="width: auto;">
+              <col style="width: 15%;" span="4">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col"><span>선택</span></th>
+                <th scope="col"><span>그룹명</span></th>
+                <th scope="col"><span>등록자</span></th>
+                <th scope="col"><span>등록일</span></th>
+                <th scope="col"><span>최종수정자</span></th>
+                <th scope="col"><span>최종수정일</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input type="radio" class="ipt" name="rdo1" id="rdo_1"><label for="rdo_1"></label>
+                </td>
+                <td>
+                  <input type="text" class="ipt" placeholder="첫번째 그룹명">
+                </td>
+                <td>
+                  홍길동(123465)
+                </td>
+                <td>
+                  2022.01.01
+                </td>
+                <td>
+                  홍길동(132456)
+                </td>
+                <td>
+                  2022.01.03
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="radio" class="ipt" name="rdo1" id="rdo_2"><label for="rdo_2"></label>
+                </td>
+                <td>
+                  <input type="text" class="ipt" placeholder="두번째 그룹명">
+                </td>
+                <td>
+                  홍길동(123465)
+                </td>
+                <td>
+                  2022.01.01
+                </td>
+                <td>
+                  홍길동(132456)
+                </td>
+                <td>
+                  2022.01.03
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="radio" class="ipt" name="rdo1" id="rdo_6"><label for="rdo_6"></label>
+                </td>
+                <td>
+                  <input type="text" class="ipt" placeholder="세번째 그룹명">
+                </td>
+                <td>
+                  홍길동(123465)
+                </td>
+                <td>
+                  2022.01.01
+                </td>
+                <td>
+                  홍길동(132456)
+                </td>
+                <td>
+                  2022.01.03
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="bottom_btn rt">
+            <button type="button" class="btn_primary_reverse l">추가</button>
+            <button type="button" class="btn_white l">삭제</button>
+          </div>
+        </div>
+        <!-- 그룹관리 테이블(e) -->
+      </div>
+      <div class="tabBoxDisplayItem ">
+        
+        <!-- 그룹관리 테이블(s) -->
+        <div class="tabl_area">
+          <table>
+            <colgroup>
+              <col style="width: 7%;">
+              <col style="width: auto;">
+              <col style="width: 15%;" span="4">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col"><span>선택</span></th>
+                <th scope="col"><span>그룹명</span></th>
+                <th scope="col"><span>등록자</span></th>
+                <th scope="col"><span>등록일</span></th>
+                <th scope="col"><span>최종수정자</span></th>
+                <th scope="col"><span>최종수정일</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input type="radio" class="ipt" name="rdo2" id="rdo_3"><label for="rdo_3"></label>
+                </td>
+                <td>
+                  <input type="text" class="ipt" placeholder="세번째 그룹명">
+                </td>
+                <td>
+                  등록자(123465)
+                </td>
+                <td>
+                  2022.01.01
+                </td>
+                <td>
+                  등록자(132456)
+                </td>
+                <td>
+                  2022.01.03
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="radio" class="ipt" name="rdo2" id="rdo_4"><label for="rdo_4"></label>
+                </td>
+                <td>
+                  <input type="text" class="ipt" placeholder="두번째 그룹명">
+                </td>
+                <td>
+                  홍길동(123465)
+                </td>
+                <td>
+                  2022.01.01
+                </td>
+                <td>
+                  홍길동(132456)
+                </td>
+                <td>
+                  2022.01.03
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="radio" class="ipt" name="rdo2" id="rdo_5"><label for="rdo_5"></label>
+                </td>
+                <td>
+                  <input type="text" class="ipt" placeholder="두번째 그룹명">
+                </td>
+                <td>
+                  홍길동(123465)
+                </td>
+                <td>
+                  2022.01.01
+                </td>
+                <td>
+                  홍길동(132456)
+                </td>
+                <td>
+                  2022.01.03
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="bottom_btn rt">
+            <button type="button" class="btn_primary_reverse l">추가</button>
+            <button type="button" class="btn_white l">삭제</button>
+          </div>
+        </div>
+      </div>
+      <div class="tabBoxDisplayItem ">
+        <!-- 그룹관리 테이블영역 -->
+      </div>
+      <div class="tabBoxDisplayItem ">
+        <!-- 그룹관리 테이블영역 -->
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="btn_wrap ">
+    <button type="button" class="btn_primary">수정</button>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+    </div><!-- container (e) -->
+    <!-- <div class="footer"></div> -->
+  </div>
+</body>
+
+</html>

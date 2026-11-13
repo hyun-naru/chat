@@ -1,0 +1,3142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section pcs_wrap">
+  <div class="personal_current">
+    <h1 class="tit01">부활건 조회/관리</h1>
+    <div class="sort_wrap mt0">
+      <div class="sort"></div>
+        <div class="sortRight">
+          <div class="sort">
+            <span class="mr5">증권번호 </span>
+            <input type="text" class="ipt" placeholder="숫자만 입력">
+            <span class="mr5 ml15">부활일 </span>
+            <input type="tel" class="ipt date" value="2022.06.25" id="input_ID_Setting_Plz000">
+            <button type="button" class="btn_primary l">조회</button>
+          </div>
+      </div>
+    </div>
+    <div class="summaryBox">
+      <div class="infoArea">
+        <div class="infoCell">
+          <strong class="tit">홍길동(800101, 남자)</strong>
+          <ul class="infoList">
+            <li>
+              <div class="item">피보험자</div>
+              <div class="val">홍길동(800101, 남자)</div>
+            </li>
+            <li>
+              <div class="item">&nbsp;</div>
+              <div class="val"></div>
+            </li>
+          </ul>
+        </div>
+        <div class="detailCell">
+          <ul class="infoList">
+            <li>
+              <div class="item">부활지점</div>
+              <div class="val">보험서비스팀 (0000000)</div>
+            </li>
+            <li>
+              <div class="item">수금지점</div>
+              <div class="val">모바일본부(0000000) </div>
+            </li>
+            <li>
+              <div class="item">설계사</div>
+              <div class="val">하나모바일(0000000)</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="btn_group">
+        <button type="button" class="btn_navy_dark m">부활입력</button>
+        <button type="button" class="btn_navy m">부활수정</button>
+        <button type="button" class="btn_navy m">부활삭제</button>
+        <button type="button" class="btn_navy_dark m">부활청약서</button>
+        <button type="button" class="btn_navy_dark m">고지의무(청약서용)</button>
+      </div>
+    </div> 
+  </div>
+
+  <!-- 탭 -->
+  <div class="tabBoxWrap">
+    <ul class="tabBoxList">
+      <li><a href="#" class="tabBoxItem ">부활보험료</a></li>
+      <li><a href="#" class="tabBoxItem">가입조건</a></li>
+      <li><a href="#" class="tabBoxItem">계약관련자</a></li>
+      <li><a href="#" class="tabBoxItem ">고지사항</a></li>
+      <li><a href="#" class="tabBoxItem">CDD/EDD</a></li>
+      <li><a href="#" class="tabBoxItem">특별조건부</a></li>
+    </ul>
+    <div class="tabBoxDisplay">
+      <!-- 고객정보 시작 -->
+      <div class="tabBoxDisplayItem ">
+        <div class="personal_current">
+          <h2 class="tit02 mt0">부활보험료</h2>
+          <ul class="formList div3">
+            <li>
+              <div class="th">최종월도</div>
+              <div class="td">YYYY.MM</div>
+            </li>
+            <li>
+              <div class="th">부활횟수</div>
+              <div class="td">4</div>
+            </li>
+            <li>
+              <div class="th">연체보험료</div>
+              <div class="td txt_r">200,000원</div>
+            </li>
+            <li>
+              <div class="th">납입횟수</div>
+              <div class="td">1</div>
+            </li>
+            <li>
+              <div class="th">부활시작월도</div>
+              <div class="td">2022.04</div>
+            </li>
+            <li>
+              <div class="th">연체이자</div>
+              <div class="td txt_r">285원</div>
+            </li>
+            <li>
+              <div class="th">누적일수</div>
+              <div class="td">0</div>
+            </li>
+            <li>
+              <div class="th">부활끝월도</div>
+              <div class="td">2022.07</div>
+            </li>
+            <li>
+              <div class="th">할인액</div>
+              <div class="td txt_r">0원</div>
+            </li>
+            <li class="twoThirdsDiv">
+              <div class="th">지급중지여부</div>
+              <div class="td">정상</div>
+            </li>
+            <li class="oneThirdDiv">
+              <div class="th">납입보험료</div>
+              <div class="td txt_r">200,285원</div>
+            </li>
+          </ul>
+
+          <div class="tabl_area">
+            <!-- 테이블 (s) -->
+            <table>
+              <caption>부활보험료</caption>
+              <colgroup>
+                <col style="width: auto;" span="6">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" ><span>납입종료일자(변경전)</span></th>
+                  <th scope="col" ><span>납입종료일자(변경후)</span></th>
+                  <th scope="col" ><span>연금개시일자(변경전)</span></th>
+                  <th scope="col" ><span>연금개시일자(변경후)</span></th>
+                  <th scope="col" ><span>월대체합계</span></th>
+                  <th scope="col" ><span>월대체후적립금</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span>YYYY.MM.DD</span></td>
+                  <td><span>YYYY.MM.DD</span></td>
+                  <td><span>YYYY.MM.DD</span></td>
+                  <td><span>YYYY.MM.DD</span></td>
+                  <td><span>200,285원</span></td>
+                  <td><span>200,285원</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- //테이블 (e) -->
+          </div>
+
+          <h2 class="tit02">연체정보</h2>
+          <div class="tabl_area">
+            <!-- 테이블 (s) -->
+            <table>
+              <caption>가족정보</caption>
+              <colgroup>
+                <col style="width: auto;">
+                <col style="width: 15%;">
+                <col style="width: 15%;">
+                <col style="width: 15%;">
+                <col style="width: 15%;">
+                <col style="width: 15%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" ><span>부활기간</span></th>
+                  <th scope="col" ><span>입력일자</span></th>
+                  <th scope="col" ><span>연체보험료</span></th>
+                  <th scope="col" ><span>연체이자</span></th>
+                  <th scope="col" ><span>할인액</span></th>
+                  <th scope="col" ><span>납입보험료</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2022.04 2회~2022.07 5회</td>
+                  <td>2022.07.17</td>
+                  <td>200,000원</td>
+                  <td>285원</td>
+                  <td>0원</td>
+                  <td>200,285원</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- //테이블 (e) -->
+          </div>
+
+          <h2 class="tit02">송금 계좌정보</h2>
+          <ul class="formList div3">
+            <li>
+              <div class="th">은행</div>
+              <div class="td">
+                <select class="ipt">
+                  <option selected="">하나은행</option>
+                </select>
+              </div>
+            </li>
+            <li>
+              <div class="th">계좌번호</div>
+              <div class="td">
+                <input type="text" class="ipt" value="000-00-0000000">
+              </div>
+            </li>
+            <li>
+              <div class="th">예금주</div>
+              <div class="td">
+                <input type="text" class="ipt" value="홍길동">
+              </div>
+            </li>
+          </ul>
+
+          <div class="tit02_wrap rt">
+
+            <h2 class="tit02">결제 계좌정보</h2>
+            <div>
+              <button type="button" class="btn_white_round m">직납요청</button>
+              <button type="button" class="btn_white_round m">직납수정</button>
+              <button type="button" class="btn_white m">직납삭제</button>
+            </div>
+
+          </div>
+          <ul class="formList div2">
+            <li class="full">
+              <div class="th">결제방법</div>
+              <div class="td">직납</div>
+            </li>
+            <li>
+              <div class="th">입금일</div>
+              <div class="td">
+                <input type="tel" class="ipt date" value="2022.06.25" id="input_ID_Setting_Plz000">
+              </div>
+            </li>
+            <li>
+              <div class="th">입금액</div>
+              <div class="td txt_r">200,285원</div>
+            </li>
+            <li>
+              <div class="th">송금자</div>
+              <div class="td">홍길동</div>
+            </li>
+            <li>
+              <div class="th">송금계좌</div>
+              <div class="td">
+                <select class="ipt">
+                  <option selected="">선택</option>
+                </select>
+              </div>
+            </li>
+            <li class="full">
+              <div class="th">비고</div>
+              <div class="td">
+                <input type="text" class="ipt full">
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--// 부활보험료 (e) -->
+
+      <!-- 가입조건 (s) -->
+      <div class="tabBoxDisplayItem ">
+        <h2 class="tit02 mt0">계약사항</h2>
+        <div class="tabl_area">
+          <!-- 테이블 (s) -->
+          <table>
+            <caption>계약사항</caption>
+            <colgroup>
+              <col style="width: auto;">
+              <col style="width: 15%;">
+              <col style="width: 15%;">
+              <col style="width: 15%;">
+              <col style="width: 15%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col" ><span>상품명</span></th>
+                <th scope="col" ><span>보험기간</span></th>
+                <th scope="col" ><span>납입기간</span></th>
+                <th scope="col" ><span>가입금액</span></th>
+                <th scope="col" ><span>보험료</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="txt_l">(무)손안에 VIP상해보험_종합보장형_5년만기_보험료형_위험등급</td>
+                <td>5년</td>
+                <td>3년</td>
+                <td>5,000만원</td>
+                <td>50,000원</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- //테이블 (e) -->
+        </div>
+
+        <ul class="formList div3 mt30">
+          <li>
+            <div class="th">합계보험료</div>
+            <div class="td txt_r">50,000원</div>
+          </li>
+          <li>
+            <div class="th">할인보험료</div>
+            <div class="td txt_r">0원</div>
+          </li>
+          <li>
+            <div class="th">실납입보험료</div>
+            <div class="td txt_r">50,000원</div>
+          </li>
+        </ul>
+
+        <h2 class="tit02">펀드정보</h2>
+        <div class="tabl_area" data-tbody="860" >
+          <!-- 테이블 (s) -->
+          <table>
+            <caption>펀드정보</caption>
+            <colgroup>
+              <col style="width: 20%;">
+              <col style="width: auto;">
+              <col style="width: 20%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col" ><span>펀드코드</span></th>
+                <th scope="col" ><span>펀드명</span></th>
+                <th scope="col" ><span>펀드비율</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BBK100</td>
+                <td class="txt_l">국내주식형</td>
+                <td>20%</td>
+              </tr>
+              <tr>
+                <td>BBK100</td>
+                <td class="txt_l">국내주식형</td>
+                <td>20%</td>
+              </tr>
+              <tr>
+                <td>BBK100</td>
+                <td class="txt_l">국내주식형</td>
+                <td>20%</td>
+              </tr>
+              <tr>
+                <td>BBK100</td>
+                <td class="txt_l">국내주식형</td>
+                <td>20%</td>
+              </tr>
+              <tr>
+                <td>BBK100</td>
+                <td class="txt_l">국내주식형</td>
+                <td>20%</td>
+              </tr>
+              <tr>
+                <td>BBK100</td>
+                <td class="txt_l">국내주식형</td>
+                <td>20%</td>
+              </tr>
+              <tr>
+                <td>BBK100</td>
+                <td class="txt_l">국내주식형</td>
+                <td>20%</td>
+              </tr>
+              <tr>
+                <td>BBK100</td>
+                <td class="txt_l">국내주식형</td>
+                <td>20%</td>
+              </tr>
+              <tr>
+                <td>BBK100</td>
+                <td class="txt_l">국내주식형</td>
+                <td>20%</td>
+              </tr>
+              <tr>
+                <td>BBK100</td>
+                <td class="txt_l">국내주식형</td>
+                <td>20%</td>
+              </tr>
+              <tr>
+                <td>BBK100</td>
+                <td class="txt_l">국내주식형</td>
+                <td>20%</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- //테이블 (e) -->
+        </div>
+        <div class="tableTotal_Wrap">
+          <div class="tableTotal right">
+            <div class="sdR horizon">
+              <div class="sdrR_tit">펀드비율합계</div>
+              <div class="sdrR_desc">%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--// 가입조건 (e)-->
+
+      <!-- 계약관련자 (s) -->
+      <div class="tabBoxDisplayItem ">
+        <h2 class="tit02 mt0">계약관련자(계약자, 피보험자)</h2>
+        <div class="tabl_area">
+          <table>
+            <caption>계약관련자 정보</caption>
+            <colgroup>
+              <col style="width: 11%;">
+              <col style="width: 12%;">
+              <col style="width: 10%;">
+              <col style="width: 12%;">
+              <col style="width: 6%;">
+              <col style="width: auto;">
+              <col style="width: 6%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>계약관련자</th>
+                <th>관계</th>
+                <th>이름(법인명)</th>
+                <th>생년월일(사업자번호)</th>
+                <th>나이</th>
+                <th>직업(신체등급) 및 차종</th>
+                <th>신체등급</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>계약자</td>
+                <td>
+                  <select class="ipt">
+                    <option selected="">본인</option>
+                    <option>상속인</option>
+                  </select>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="홍길동" readonly>
+                </td>
+                <td>
+                  <div class="alginFlex">
+                    <input type="text" class="ipt noLine letter6" placeholder="" value="YYMMDD" readonly>
+                    <input type="text" class="ipt noLine" placeholder="" value="남자" readonly>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="41" readonly>
+                </td>
+                <td>
+                  <div class="alginFlex">
+                    <span class="fontSize15 txt_b mr5">직업</span>
+                    <input type="text" class="ipt min" placeholder="" readonly> 
+                    <button type="button" class="btn_primary l">검색</button> 
+                    <input type="text" class="ipt" placeholder="" readonly> 
+                  </div>
+                  <div class="alginFlex mt5">
+                    <span class="fontSize15 txt_b mr5">차종</span>
+                    <select class="ipt">
+                      <option selected="">선택</option>
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="0" readonly>
+                </td>
+              </tr>
+              <tr>
+                <td>주피보험자</td>
+                <td>
+                  <select class="ipt">
+                    <option selected="">본인</option>
+                    <option>상속인</option>
+                  </select>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="하나주식회사" readonly>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="000-00-00000" readonly>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="41" readonly>
+                </td>
+                <td>
+                  <div class="alginFlex">
+                    <span class="fontSize15 txt_b mr5">직업</span>
+                    <input type="text" class="ipt min" placeholder=""> 
+                    <button type="button" class="btn_primary l">검색</button> 
+                    <input type="text" class="ipt" placeholder=""> 
+                  </div>
+                  <div class="alginFlex mt5">
+                    <span class="fontSize15 txt_b mr5">차종</span>
+                    <select class="ipt">
+                      <option selected="">선택</option>
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="0" readonly>
+                </td>
+              </tr>
+              <tr>
+                <td>종피보험자1</td>
+                <td>
+                  <select class="ipt">
+                    <option selected="">본인</option>
+                    <option>상속인</option>
+                  </select>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="" readonly>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="" readonly>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="" readonly>
+                </td>
+                <td>
+                  <div class="alginFlex">
+                    <span class="fontSize15 txt_b mr5">직업</span>
+                    <input type="text" class="ipt min" placeholder=""> 
+                    <button type="button" class="btn_primary l">검색</button> 
+                    <input type="text" class="ipt" placeholder=""> 
+                  </div>
+                  <div class="alginFlex mt5">
+                    <span class="fontSize15 txt_b mr5">차종</span>
+                    <select class="ipt">
+                      <option selected="">선택</option>
+                    </select>
+                  </div>
+                </td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>종피보험자2</td>
+                <td>
+                  <select class="ipt">
+                    <option selected="">본인</option>
+                    <option>상속인</option>
+                  </select>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="" readonly>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="" readonly>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="" readonly>
+                </td>
+                <td>
+                  <div class="alginFlex">
+                    <span class="fontSize15 txt_b mr5">직업</span>
+                    <input type="text" class="ipt min" placeholder=""> 
+                    <button type="button" class="btn_primary l">검색</button> 
+                    <input type="text" class="ipt" placeholder=""> 
+                  </div>
+                  <div class="alginFlex mt5">
+                    <span class="fontSize15 txt_b mr5">차종</span>
+                    <select class="ipt">
+                      <option selected="">선택</option>
+                    </select>
+                  </div>
+                </td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h2 class="tit02">계약관련자(수익자)</h2>
+        <div class="tabl_area">
+          <table>
+            <caption>계약자 정보</caption>
+            <colgroup>
+              <col style="width: 15%;">
+              <col style="width: 6%;">
+              <col style="width: 18%;">
+              <col style="width: 20%;">
+              <col style="width: auto;" span="3">
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="2">계약관련자</th>
+                <th>이름(법인명)</th>
+                <th>주민번호</th>
+                <th>연령</th>
+                <th>관계</th>
+                <th>분담율</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th colspan="2">만기·생존 시</th>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="홀길동" readonly>
+                </td>
+                <td>800101-1234567</td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="41" readonly>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="본인" readonly>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" data-unit="%" placeholder="" value="100" readonly>
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2">입원·상해 시</th>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="홀길동" readonly>
+                </td>
+                <td>800101-1234567</td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="41" readonly>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="본인" readonly>
+                </td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th rowspan="3">사망시</th>
+                <th class="accent">1</th>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="상속인" readonly>
+                </td>
+                <td>-</td>
+                <td>-</td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="상속인" readonly>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" data-unit="%" placeholder="" value="100" readonly>
+                </td>
+              </tr>
+              <tr>
+                <th class="accent">2</th>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="홀길동" readonly>
+                </td>
+                <td>800101-1234567</td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="41" readonly>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="배우자" readonly>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" data-unit="%" placeholder="" value="0" readonly>
+                </td>
+              </tr>
+              <tr>
+                <th class="accent">3</th>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="홀길동" readonly>
+                </td>
+                <td>800101-1234567</td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="41" readonly>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" placeholder="" value="배우자" readonly>
+                </td>
+                <td>
+                  <input type="text" class="ipt noLine" data-unit="%" placeholder="" value="0" readonly>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="tit02">지정대리인</h2>
+        <div class="tabl_area">
+          <table>
+            <caption>지정대리인</caption>
+            <colgroup>
+              <col style="width: 20%;">
+              <col style="width: 20%;">
+              <col style="width: 25%;">
+              <col style="width: auto;" span="2">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>계약관련자</th>
+                <th>이름</th>
+                <th>주민번호</th>
+                <th>연령</th>
+                <th>관계</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>지정대리인1</th>
+                <td>
+                  홍길동
+                </td>
+                <td>800101-1234567</td>
+                <td>
+                  41
+                </td>
+                <td>
+                  본인
+                </td>
+              </tr>
+              <tr>
+                <th>지정대리인2</th>
+                <td>
+                  홍길동
+                </td>
+                <td>800101-1234567</td>
+                <td>
+                  41
+                </td>
+                <td>
+                  본인
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="tit02">친권자</h2>
+        <ul class="formList">
+          <li>
+            <div class="th">피보험자의 친권자</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">선택</option>
+              </select>
+              <input type="text" class="ipt mr20" disabled> 
+
+              <select class="ipt">
+                <option selected="">선택</option>
+              </select>
+              <input type="text" class="ipt mr20" disabled>
+              <span class="single">
+                <input type="checkbox" class="ipt" name="" id="chk_1"><label for="chk_1">1인 지정</label>
+              </span>
+            </div>
+            
+          </li>
+        </ul>
+
+        <h2 class="tit02">통신수단을 이용한 계약해지 동의</h2>
+        <ul class="formList">
+          <li>
+            <div class="th">동의여부</div>
+            <div class="td">예</div>
+          </li>
+        </ul>
+        
+        <!-- 개발요청으로 싸는 DIV 추가 -->
+        <div>
+          <h2 class="tit02">마케팅동의 정보</h2>
+          <div class="tit02_wrap rt mt0">
+            <h3 class="tit04 mt0 mb0 v_am">1. 개인정보 수집&middot;이용</h3>
+            <div>
+              <button type="button" class="btn_white_round m">일반정보변경</button>
+            </div>
+          </div>
+
+          <div class="tabl_area">
+            <table>
+              <caption>개인정보 수집 이용 동의여부</caption>
+              <colgroup>
+                <col style="width: 18%;">
+                <col style="width: auto;">
+                <col style="width: 18%;">
+                <col style="width: auto;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th colspan="2">계약자</th>
+                  <th colspan="2">피보험자</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>동의여부</th>
+                  <td class="txt_l">
+                    <ul class="iptGroup">
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_1" id="rdo2_1_1" checked="">
+                        <label for="rdo2_1_1">동의</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_1" id="rdo2_1_2">
+                        <label for="rdo2_1_2">미동의</label>
+                      </li>
+                    </ul>
+                  </td>
+                  <th>동의여부</th>
+                  <td class="txt_l">
+                    <ul class="iptGroup">
+                      <li>
+                        <input type="radio" class="ipt" name="rdo3" id="rdo3_1" checked="" disabled>
+                        <label for="rdo3_1">동의</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="rdo3" id="rdo3_2" disabled>
+                        <label for="rdo3_2">미동의</label>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th>가입권유 연락방식</th>
+                  <td class="txt_l">
+                    <ul class="iptGroup">
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_1" checked="">
+                        <label for="chk2_1">전체</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_2">
+                        <label for="chk2_2">전화</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_3">
+                        <label for="chk2_3">SMS</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_4">
+                        <label for="chk2_4">이메일</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_5">
+                        <label for="chk2_5">우편</label>
+                      </li>
+                    </ul>
+                  </td>
+                  <th>가입권유 연락방식</th>
+                  <td class="txt_l">
+                    <ul class="iptGroup">
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk3" id="chk2_3_1" checked="" disabled>
+                        <label for="chk2_3_1">전체</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk3" id="chk2_3_2" disabled>
+                        <label for="chk2_3_2">전화</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk3" id="chk2_3_3" disabled>
+                        <label for="chk2_3_3">SMS</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk3" id="chk2_3_4" disabled>
+                        <label for="chk2_3_4">이메일</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk3" id="chk2_3_5" disabled>
+                        <label for="chk2_3_5">우편</label>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th>정보 보유 이용기간</th>
+                  <td class="txt_l">
+                    <ul class="iptGroup">
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_2" id="rdo2_2_1" checked="">
+                        <label for="rdo2_2_1">1년</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_2" id="rdo2_2_2">
+                        <label for="rdo2_2_2">2년</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_2" id="rdo2_2_3">
+                        <label for="rdo2_2_3">3년</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_2" id="rdo2_2_4">
+                        <label for="rdo2_2_4">4년</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_2" id="rdo2_2_5">
+                        <label for="rdo2_2_5">5년</label>
+                      </li>
+                    </ul>
+                  </td>
+                  <th>정보 보유 이용기간</th>
+                  <td class="txt_l">
+                    <ul class="iptGroup">
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_3" id="rdo2_3_1" checked="" disabled>
+                        <label for="rdo2_3_1">1년</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_3" id="rdo2_3_2" disabled>
+                        <label for="rdo2_3_2">2년</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_3" id="rdo2_3_3" disabled>
+                        <label for="rdo2_3_3">3년</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_3" id="rdo2_3_4" disabled>
+                        <label for="rdo2_3_4">4년</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_3" id="rdo2_3_5" disabled>
+                        <label for="rdo2_3_5">5년</label>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 class="tit04">2. 광고성 정보의 수신동의</h3>
+          <div class="tabl_area">
+            <table>
+              <caption>광고성 정보의 수신동의 동의여부</caption>
+              <colgroup>
+                <col style="width: 18%;">
+                <col style="width: auto;">
+                <col style="width: 18%;">
+                <col style="width: auto;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th colspan="2">계약자</th>
+                  <th colspan="2">피보험자</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>동의여부</th>
+                  <td class="txt_l">
+                    <ul class="iptGroup">
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_4" id="rdo2_4_1" checked="">
+                        <label for="rdo2_4_1">동의</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_4" id="rdo2_4_2">
+                        <label for="rdo2_4_2">미동의</label>
+                      </li>
+                    </ul>
+                  </td>
+                  <th>동의여부</th>
+                  <td class="txt_l">
+                    <ul class="iptGroup">
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_5" id="rdo2_5_1" checked="" disabled>
+                        <label for="rdo2_5_1">동의</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_5" id="rdo2_5_2" disabled>
+                        <label for="rdo2_5_2">미동의</label>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 class="tit04">3. 제공 항목의 동의</h3>
+          <div class="tabl_area">
+            <table>
+              <caption>제공 항목의 동의여부</caption>
+              <colgroup>
+                <col style="width: 18%;">
+                <col style="width: auto;">
+                <col style="width: 18%;">
+                <col style="width: auto;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th colspan="2">계약자</th>
+                  <th colspan="2">피보험자</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>동의여부</th>
+                  <td class="txt_l">
+                    <ul class="iptGroup">
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_6" id="rdo2_6_1" checked="">
+                        <label for="rdo2_6_1">동의</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_6" id="rdo2_6_2">
+                        <label for="rdo2_6_2">미동의</label>
+                      </li>
+                    </ul>
+                  </td>
+                  <th>동의여부</th>
+                  <td class="txt_l">
+                    <ul class="iptGroup">
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_7" id="rdo2_7_1" checked="" disabled>
+                        <label for="rdo2_7_1">동의</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="rdo2_7" id="rdo2_7_2" disabled>
+                        <label for="rdo2_7_2">미동의</label>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- <div class="trems_wrap">
+            <ul class="trems_chklist">
+              <li>
+                <span class="single">
+                  <input type="checkbox" class="ipt" name="" id="chk_5"><label for="chk_5">[선택] 상품소개를 위한 상세동의서</label>
+                </span>
+                <button class="btn_view">view</button>
+              </li>
+            </ul>
+          </div> -->
+        </div>
+        <!-- 개발요청으로 싸는 DIV 추가 -->
+        
+      </div>
+      <!--// 계약관련자 (e) -->
+
+      <!-- 고지사항 (s) -->
+      <div class="tabBoxDisplayItem " >
+
+        <div class="sort_wrap mt0">
+          <div class="sort"></div>
+          <div class="sortRight">
+            <button type="button" class="btn_white_round m">고지 수정</button>
+            <button type="button" class="btn_white_round m">초기화</button>
+          </div>
+        </div>
+      
+        <ul class="accoList box">
+          <li class="on">
+            <div class="accoHead">
+              <a class="accoBtn">질병상태 및 장애여부</a>
+            </div>
+            <div class="accoBody">
+              <!-- 아코디언 본문내용 시작(s) -->
+              <ul class="formList column">
+                <li>
+                  <div class="th">1. 최근 3개월 이내에 의사로부터 진찰 또는 검사(건강검진 포함)를 통하여 다음과 같은 의료행위를 받은 사실이 있습니까?
+                  </div>
+                  <div class="td">
+                    <ul class="iptGroup">
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_1">
+                        <label for="chk2_1">질병확정진단</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_2">
+                        <label for="chk2_2">질병의심소견</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_3">
+                        <label for="chk2_3">치료</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_4">
+                        <label for="chk2_4">입원</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_5">
+                        <label for="chk2_5">수술(제왕절개포함)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_6">
+                        <label for="chk2_6">투약</label>
+                      </li>
+                    </ul>
+                    <div class="form_grp">
+                      <ul class="iptFilt">
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_1">
+                          <label for="iptFilt_1">예</label>
+                        </li>
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_2">
+                          <label for="iptFilt_2">아니요</label>
+                        </li>
+                      </ul>
+                      <!-- '예' 선택 시 display --> <!-- v1.03 삭제-->
+                      <!-- <div class="flex_grp">
+                        <input type="text" class="ipt" readonly>
+                        <button type="button" class="btn_primary l">병력입력</button>
+                      </div> -->
+                        <!-- // '예' 선택 시 display -->
+                    </div>
+                    <div class="graybox mt15">
+                      <ul class="txtList disc sm mb0">
+                        <li>질병의심소견이란 의사로부터 진단서 또는 소견서를 발급받은 경우를 말합니다.</li>
+                        <li>투약이란 의사가 환자에게 약을 처방하는 행위를 말하는 것으로 실제로 약을 구입하지 않았어도 기재해야 합니다.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">2. 최근 3개월 이내에 마약을 사용하거나 혈압강하제, 신경안정제, 수면제, 각성제(흥분제), 진통제 등 약물을 상시 복용한 사실이 있습니까?
+                  </div>
+                  <div class="td">
+                    <div class="form_grp">
+                      <ul class="iptFilt">
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt1" id="iptFilt_3">
+                          <label for="iptFilt_3">예</label>
+                        </li>
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt1" id="iptFilt_4">
+                          <label for="iptFilt_4">아니요</label>
+                        </li>
+                      </ul>
+                      <!-- '예' 선택 시 display --> <!-- v1.03 삭제-->
+                      <!-- <div class="flex_grp">
+                        <input type="text" class="ipt" readonly>
+                        <button type="button" class="btn_primary l">병력입력</button>
+                      </div> -->
+                        <!-- // '예' 선택 시 display -->
+                    </div>
+                    <div class="graybox mt15">
+                      <ul class="txtList disc sm mb0">
+                        <li>혈압강하제란 혈압을 내리게 하는 의약품을 말합니다.</li>
+                        <li>각성제란 신경계를 흥분시켜 잠이 오는 것을 억제하는 의약품을 말합니다.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">3. 최근 1년 이내에 의사로부터 진찰 또는 검사를 통하여 추가검사(재검사)를 받은 사실이 있습니까?
+                  </div>
+                  <div class="td">
+                    <div class="form_grp">
+                      <ul class="iptFilt">
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt2" id="iptFilt_5">
+                          <label for="iptFilt_5">예</label>
+                        </li>
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt2" id="iptFilt_6">
+                          <label for="iptFilt_6">아니요</label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">4. 최근 5년 이내에 의사로부터 진찰 또는 검사를 통하여 다음과 같은 의료행위를 받은 사실이 있습니까?
+                  </div>
+                  <div class="td">
+                    <ul class="iptGroup">
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk4" id="chk4_1">
+                        <label for="chk4_1">입원</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk4" id="chk4_2">
+                        <label for="chk4_2">수술(제왕절개포함)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk4" id="chk4_3">
+                        <label for="chk4_3">계속하여 7일 이상</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk4" id="chk4_4">
+                        <label for="chk4_4">계속하여 30일 이상 투약</label>
+                      </li>
+                    </ul>
+                    <div class="form_grp">
+                      <ul class="iptFilt">
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt3" id="iptFilt_9">
+                          <label for="iptFilt_9">예</label>
+                        </li>
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt3" id="iptFilt_10">
+                          <label for="iptFilt_10">아니요</label>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="graybox mt15">
+                      <ul class="txtList disc sm mb0">
+                        <li>여기서 ‘계속하여’란 같은 원인으로 치료 시작 후 완료일까지 실제 치료, 투약받은 일수를 말합니다.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">5. 최근 5년 이내에 아래 10대 질병으로 의사로부터 진찰 또는 검사를 통하여 다음과 같은 의료행위를 받은 사실이 있습니까?
+                  </div>
+                  <div class="td">
+                    <div class="graybox">
+                      <p>〈10대질병〉</p>
+                      <ol class="txtList_inline">
+                        <li>①암</li>
+                        <li>②백혈병</li>
+                        <li>③고혈압</li>
+                        <li>④협심증</li>
+                        <li>⑤심근경색</li>
+                        <li>⑥심장판막증</li>
+                        <li>⑦간경화증</li>
+                        <li>⑧뇌졸중증(뇌출혈, 뇌경색)</li>
+                        <li>⑨당뇨병</li>
+                        <li>⑩에이즈(AIDS) 및 HIV(에이즈 원인이 되는 바이러스) 보균</li>
+                      </ol>
+                    </div>
+                    <ul class="iptGroup">
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk5" id="chk5_1">
+                        <label for="chk5_1">질병확정진단</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk5" id="chk5_2">
+                        <label for="chk5_2">치료</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk5" id="chk5_3">
+                        <label for="chk5_3">입원</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk5" id="chk5_4">
+                        <label for="chk5_4">수술(제왕절개포함)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk5" id="chk5_5">
+                        <label for="chk5_5">투약</label>
+                      </li>
+                    </ul>
+                    <div class="form_grp">
+                      <ul class="iptFilt">
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt4" id="iptFilt_11">
+                          <label for="iptFilt_11">예</label>
+                        </li>
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt4" id="iptFilt_12">
+                          <label for="iptFilt_12">아니요</label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">6. 현재 임신중입니까?</div>
+                  <div class="td">
+                    <ul class="iptGroup">
+                      <li>
+                        <ul class="iptFilt">
+                          <li>
+                            <input type="radio" class="ipt" name="iptFilt5" id="iptFilt_13">
+                            <label for="iptFilt_13">예</label>
+                          </li>
+                          <li>
+                            <input type="radio" class="ipt" name="iptFilt5" id="iptFilt_14">
+                            <label for="iptFilt_14">아니요</label>
+                          </li>
+                        </ul>
+                      </li>
+                      <!-- '예' 선택 시 display -->
+                      <li>
+                        <span class="fontSize18 v_am mr10">임신</span>
+                        <input type="tel" class="ipt" data-unit="주" placeholder="숫자만 입력">
+                      </li>
+                      <!-- // '예' 선택 시 display -->
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              
+              <p class="mt40 bold">※ 1~5번의 질문 항목 중 “예”인 경우 그 내용을 정확하게 기재하여 주세요. (최대3개) </p>
+              <div class="tit_th">진단명1</div>
+              <ul class="formList data div2">
+                <li>
+                  <div class="th">진단명(질병, 상해), 검사종류</div>
+                  <div class="td">
+                    <input type="text" class="ipt" placeholder="">
+                  </div>
+                </li>
+                <li>
+                  <div class="th">검사결과/수술명</div>
+                  <div class="td">
+                    <input type="text" class="ipt" placeholder="">
+                  </div>
+                </li>
+                <li class="full">
+                  <div class="th">치료기간<br>(입원, 통원 기간)</div>
+                  <div class="td">
+                    <div class="setHalf flexitem">
+                      <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz01221">
+                      <span class="sign">~</span>
+                      <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz1231">
+                    </div>
+                    <input type="" class="ipt min" data-unit="일" >
+                  </div>
+                </li>
+                <li class="full">
+                  <div class="th">치료방법 및 치료내용/치료병원
+                    </div>
+                  <div class="td">
+                    <input type="text" class="ipt full" placeholder="">
+                  </div>
+                </li>
+                <li>
+                  <div class="th">재발경험</div>
+                  <div class="td">
+                    <ul class="iptFilt">
+                      <li>
+                        <input type="radio" class="ipt" name="filter10" id="filter10_1" checked="">
+                        <label for="filter10_1">예</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="filter10" id="filter10_2">
+                        <label for="filter10_2">아니요</label>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">완치여부</div>
+                  <div class="td">
+                    <ul class="iptFilt">
+                      <li>
+                        <input type="radio" class="ipt" name="filter10" id="filter10_1" checked="">
+                        <label for="filter10_1">예</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="filter10" id="filter10_2">
+                        <label for="filter10_2">아니요</label>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <div class="bottom_btn rt">
+                <button type="button" class="btn_primary_reverse l">추가</button>
+              </div>
+      
+              <div class="tit_th">진단명2</div>
+              <ul class="formList data div2">
+                <li>
+                  <div class="th">진단명(질병, 상해), 검사종류</div>
+                  <div class="td">
+                    <input type="text" class="ipt" placeholder="">
+                  </div>
+                </li>
+                <li>
+                  <div class="th">검사결과/수술명</div>
+                  <div class="td">
+                    <input type="text" class="ipt" placeholder="">
+                  </div>
+                </li>
+                <li class="full">
+                  <div class="th">치료기간<br>(입원, 통원 기간)</div>
+                  <div class="td">
+                    <div class="setHalf flexitem">
+                      <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz01221">
+                      <span class="sign">~</span>
+                      <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz1231">
+                    </div>
+                    <input type="tel" class="ipt min" data-unit="일" >
+                  </div>
+                </li>
+                <li class="full">
+                  <div class="th">치료방법 및 치료내용/치료병원
+                    </div>
+                  <div class="td">
+                    <input type="text" class="ipt full" placeholder="">
+                  </div>
+                </li>
+                <li>
+                  <div class="th">재발경험</div>
+                  <div class="td">
+                    <ul class="iptFilt">
+                      <li>
+                        <input type="radio" class="ipt" name="filter10" id="filter10_1" checked="">
+                        <label for="filter10_1">예</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="filter10" id="filter10_2">
+                        <label for="filter10_2">아니요</label>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">완치여부</div>
+                  <div class="td">
+                    <ul class="iptFilt">
+                      <li>
+                        <input type="radio" class="ipt" name="filter10" id="filter10_1" checked="">
+                        <label for="filter10_1">예</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="filter10" id="filter10_2">
+                        <label for="filter10_2">아니요</label>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <div class="bottom_btn rt">
+                <button type="button" class="btn_white l">삭제</button>
+                <button type="button" class="btn_primary_reverse l">추가</button>
+              </div>
+              <!-- 아코디언 본문내용 시작(e) -->
+            </div>
+          </li>
+          <li>
+            <div class="accoHead">
+              <a class="accoBtn">직업 및 취미활동</a>
+            </div>
+            <div class="accoBody">
+              <!-- 아코디언 본문내용 시작(s) -->
+              <ul class="formList column">
+                <li>
+                  <div class="th">1. 귀하의 직업은 무엇입니까?</div>
+                  <div class="td">
+                    <div class="tabl_area">
+                      <table>
+                        <caption>정보</caption>
+                        <colgroup>
+                          <col style="width: 12%;">
+                          <col style="width: 20%;">
+                          <col style="width: auto;">
+                          <col style="width: auto;">
+                          <col style="width: 35%;">
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th scope="col"><span>보험대상자</span></th>
+                            <th scope="col"><span>근무처명(회사명)</span></th>
+                            <th scope="col"><span>근무지역</span></th>
+                            <th scope="col"><span>업종</span></th>
+                            <th scope="col"><span>취급업무<span class="txt_n bold">(구체적으로 기재하여 주십시오)</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><span>주피보험자</span></td>
+                            <td><input type="text" class="ipt" placeholder="근무처명 입력"></td>
+                            <td><input type="text" class="ipt" placeholder="근무지역 입력"></td>
+                            <td><input type="text" class="ipt" placeholder="업종 입력"></td>
+                            <td><input type="text" class="ipt" placeholder="취급업무 입력"></td>
+                          </tr>
+                          <tr>
+                            <td><span>종피보험자</span></td>
+                            <td><input type="text" class="ipt" placeholder="근무처명 입력"></td>
+                            <td><input type="text" class="ipt" placeholder="근무지역 입력"></td>
+                            <td><input type="text" class="ipt" placeholder="업종 입력"></td>
+                            <td><input type="text" class="ipt" placeholder="취급업무 입력"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">2. 현재 운전을 하고 있습니까?</div>
+                  <div class="td">
+                    <div class="form_grp">
+                      <ul class="iptFilt">
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt11" id="iptFilt10_3">
+                          <label for="iptFilt10_3">예</label>
+                        </li>
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt11" id="iptFilt10_4">
+                          <label for="iptFilt10_4">아니요</label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="th sub">2-1. “예”인 경우 현재 운전하고 계신 차종을 모두 선택해 주십시오.
+                    <p class="txtList remark">기타에 해당하는 경우 구체적으로 기재하고, 둘 이상의 차량을 운전하거나 하나의 차량을 둘 이상의 목적으로 사용하는 경우 해당되는 사항을 모두 기재</p>
+                  </div>
+                  <div class="td">
+                    <ul class="iptGroup ml20">
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_1">
+                        <label for="chk2_1">승용차(영업용)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_2">
+                        <label for="chk2_2">승용차(자가용)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_3">
+                        <label for="chk2_3">승합차(영업용)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_4">
+                        <label for="chk2_4">승합차(자가용)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_5">
+                        <label for="chk2_5">화물차(영업용)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_6">
+                        <label for="chk2_6">화물차(자가용)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_7">
+                        <label for="chk2_7">오토바이(50cc미만 포함)(영업용)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_8">
+                        <label for="chk2_8">오토바이(50cc미만 포함)(자가용)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_9">
+                        <label for="chk2_9">건설기계</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_10">
+                        <label for="chk2_10">농기계</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_11">
+                        <label for="chk2_11">기타</label>
+                      </li>
+                    </ul>
+                    <div class="form_grp">
+                      <div class="flex_grp">
+                        <input type="text" class="ipt" placeholder="기타 입력">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">3. 개인형 이동장치(전동킥보드, 전동휠 등을 포함하여 장애인 또는 교통약자가 사용하는 보행보조용 의자차인 전동휠체어, 의료용 스쿠터 등은 제외합니다.)를 사용하십니까?
+                    <p class="txtList remark">계속적으로 사용(직업, 직무 또는 동호회 활동과 출퇴근용도 등으로 주로 사용하는 경우에 한함)하는 경우 기재</p>
+                  </div>
+                  <div class="td">
+                    <div class="form_grp">
+                      <ul class="iptFilt">
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt12" id="iptFilt_15">
+                          <label for="iptFilt_15">예</label>
+                        </li>
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt12" id="iptFilt_16">
+                          <label for="iptFilt_16">아니요</label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">4. 최근 1년 이내에 다음과 같은 취미를 반복적으로 하고 있거나 관련 자격증을 가지고 있습니까?</div>
+                  <div class="td">
+                    <div class="graybox mb15">
+                      <ol class="txtList_inline">
+                        <li>①스쿠버다이빙</li>
+                        <li>②행글라이딩, 패러글라이딩</li>
+                        <li>③스카이다이빙</li>
+                        <li>④수상스키</li>
+                        <li>⑤자동차, 오토바이경주</li>
+                        <li>⑥번지점프</li>
+                        <li>⑦빙벽, 암벽등반</li>
+                        <li>⑧제트스키</li>
+                        <li>⑨래프팅</li>
+                      </ol>
+                    </div>
+                    <div class="form_grp">
+                      <ul class="iptFilt">
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt13" id="iptFilt_17">
+                          <label for="iptFilt_17">예</label>
+                        </li>
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt13" id="iptFilt_18">
+                          <label for="iptFilt_18">아니요</label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <!-- 4번 문항 예 선택시 (s) -->
+              <ul class="formList data ">
+                <li>
+                  <div class="th">자격증명</div>
+                  <div class="td"><input type="text" class="ipt full" placeholder="자격증명 입력"></div>
+                </li>
+                <li>
+                  <div class="th">빈도</div>
+                  <div class="td">
+                    <input type="tel" class="ipt" placeholder="숫자만 입력" data-unit="년간"> 
+                    <span class="mr5"> / </span>
+                    <input type="tel" class="ipt" placeholder="숫자만 입력" data-unit="회">
+                  </div>
+                </li>
+              </ul>
+              <!-- 4번 문항 예 선택시 (e) -->
+      
+              <!-- 아코디언 본문내용 시작(e) -->
+            </div>
+          </li>
+          <li>
+            <div class="accoHead">
+              <a class="accoBtn">기타정보</a>
+            </div>
+            <div class="accoBody">
+              <!-- 아코디언 본문내용 시작(s) -->
+              <ul class="formList column">
+                <li>
+                  <div class="th">1. 부업 또는 겸업, 계절적으로 종사하는 업무가 있습니까?</div>
+                  <div class="td">
+                    <div class="form_grp">
+                      <ul class="iptFilt">
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt14" id="iptFilt_19">
+                          <label for="iptFilt_19">예</label>
+                        </li>
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt14" id="iptFilt_20">
+                          <label for="iptFilt_20">아니요</label>
+                        </li>
+                      </ul>
+                      <!-- '예' 선택 시 display -->
+                      <div class="flex_grp">
+                        <input type="text" class="ipt" placeholder="업무명 입력">
+                      </div>
+                      <!-- // '예' 선택 시 display -->
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">2. 향후 3개월 이내에 다음과 같은 해외위험지역으로 출국할 예정이 있습니까? (전쟁지역, 열대·한대 등 미개척지, 등반산악지대) </div>
+                  <div class="td">
+                    <div class="form_grp">
+                      <ul class="iptFilt">
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt15" id="iptFilt_21">
+                          <label for="iptFilt_21">예</label>
+                        </li>
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt15" id="iptFilt_22">
+                          <label for="iptFilt_22">아니요</label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+      
+              <!-- 2번 문항 예 선택시 (s) -->
+              <ul class="formList data ">
+                <li>
+                  <div class="th">기간</div>
+                  <div class="td">
+                    <div class="setHalf flexitem">
+                      <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz01221">
+                      <span class="sign">~</span>
+                      <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz1231">
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">지역</div>
+                  <div class="td"><input type="text" class="ipt mid" placeholder="지역 입력"></div>
+                </li>
+                <li>
+                  <div class="th">목적</div>
+                  <div class="td"><input type="text" class="ipt full" placeholder="목적 입력"></div>
+                </li>
+              </ul>
+              <!-- 2번 문항 예 선택시 (e) -->
+              
+              <ul class="formList column">
+                <li>
+                  <div class="th">3. 음주를 하십니까? (음주량 소주 기준)</div>
+                  <div class="td">
+                    <ul class="iptGroup">
+                      <li>
+                        <ul class="iptFilt">
+                          <li>
+                            <input type="radio" class="ipt" name="iptFilt16" id="iptFilt_23">
+                            <label for="iptFilt_23">예</label>
+                          </li>
+                          <li>
+                            <input type="radio" class="ipt" name="iptFilt16" id="iptFilt_24">
+                            <label for="iptFilt_24">아니요</label>
+                          </li>
+                        </ul>
+                      </li>
+                      <!-- '예' 선택 시 display -->
+                      <li>
+                        <span class="fontSize18 v_am mr10">주</span>
+                        <input type="tel" class="ipt" data-unit="회" placeholder="숫자만 입력">
+                      </li>
+                      <li>
+                        <span class="fontSize18 v_am mr10">1회</span>
+                        <input type="tel" class="ipt" data-unit="병" placeholder="숫자만 입력">
+                      </li>
+                      <!-- // '예' 선택 시 display -->
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">4.흡연을 하십니까? (흡연량 / 흡연기간)</div>
+                  <div class="td">
+                    <ul class="iptGroup">
+                      <li>
+                        <ul class="iptFilt">
+                          <li>
+                            <input type="radio" class="ipt" name="iptFilt17" id="iptFilt_25">
+                            <label for="iptFilt_25">예</label>
+                          </li>
+                          <li>
+                            <input type="radio" class="ipt" name="iptFilt17" id="iptFilt_26">
+                            <label for="iptFilt_26">아니요</label>
+                          </li>
+                        </ul>
+                      </li>
+                      <!-- '예' 선택 시 display -->
+                      <li class="mr0">
+                        <span class="fontSize18 v_am mr10">1일</span>
+                        <input type="tel" class="ipt" data-unit="개피" placeholder="숫자만 입력">
+                      </li>
+                      <li>
+                        <span class="fontSize18 v_am ml10 mr10">/ </span>
+                        <input type="tel" class="ipt" data-unit="년" placeholder="숫자만 입력">
+                      </li>
+                      <!-- // '예' 선택 시 display -->
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">5. 다른 보험회사에 생명보험 또는 장기손해보험을 가입하고 있습니까?</div>
+                  <div class="td">
+                    <div class="form_grp">
+                      <ul class="iptFilt">
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt18" id="iptFilt_27">
+                          <label for="iptFilt_27">예</label>
+                        </li>
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt18" id="iptFilt_28">
+                          <label for="iptFilt_28">아니요</label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+      
+              <!-- 4번 문항 예 선택시 (s) -->
+              <ul class="formList data div2 ">
+                <li class="full">
+                  <div class="th">회사명</div>
+                  <div class="td"><input type="text" class="ipt mid" placeholder="회사명 입력"></div>
+                </li>
+                <li>
+                  <div class="th">건수</div>
+                  <div class="td">
+                    <input type="tel" class="ipt" data-unit="건" placeholder="숫자만 입력">
+                  </div>
+                  
+                </li>
+                <li>
+                  <div class="th">보험료</div>
+                  <div class="td">
+                    <input type="tel" class="ipt" data-unit="만원" placeholder="숫자만 입력">
+                  </div>
+                </li>
+              </ul>
+              <!-- 4번 문항 예 선택시 (e) -->
+      
+              <ul class="formList column">
+                <li>
+                  <div class="th">6. 월평균 소득(계약자 기준)은 얼마인가요?</div>
+                  <div class="td">
+                    <ul class="iptGroup">
+                      <li>
+                        <input type="tel" class="ipt" data-unit="만원" placeholder="숫자만 입력">
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">7. 현재의 체격(키/몸무게)은 어떻게 되시나요?</div>
+                  <div class="td">
+                    <ul class="iptGroup">
+                      <li>
+                        <span class="fontSize18 v_am mr10">키</span>
+                        <input type="tel" class="ipt" data-unit="cm">
+                      </li>
+                      <li>
+                        <span class="fontSize18 v_am mr10">몸무게</span>
+                        <input type="tel" class="ipt" data-unit="kg">
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <!-- 아코디언 본문내용 시작(e) -->
+            </div>
+          </li>
+        </ul>
+        
+        <ul class="accoList box">
+          <li class="on">
+            <div class="accoHead">
+              <a class="accoBtn">질병상태 및 장애여부</a>
+            </div>
+            <div class="accoBody">
+              <!-- 아코디언 본문내용 시작(s) -->
+              <ul class="formList column">
+                <li>
+                  <div class="th">1. 최근 3개월 이내에 의사로부터 진찰 또는 검사(건강검진 포함)를 통하여 다음과 같은 의료행위를 받은 사실이 있습니까?
+                  </div>
+                  <div class="td">
+                    <ul class="iptGroup">
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_1">
+                        <label for="chk2_1">입원 필요 소견</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_2">
+                        <label for="chk2_2">수술 필요 소견</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_3">
+                        <label for="chk2_3">추가검사(재검사) 필요 소견</label>
+                      </li>
+                    </ul>
+                    <div class="form_grp">
+                      <ul class="iptFilt">
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_1">
+                          <label for="iptFilt_1">예</label>
+                        </li>
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_2">
+                          <label for="iptFilt_2">아니요</label>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="graybox mt15">
+                      <ul class="txtList disc sm mb0">
+                        <li>여기서 필요 소견이란 의사가 진단서, 소견서 등에 기재한 경우를 말합니다.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">2. 최근 2년 이내에 질병이나 사고로 인하여 다음과 같은 의료행위를 받은 사실이 있습니까?</div>
+                  <div class="td">
+                    <div class="form_grp">
+                      <ul class="iptGroup">
+                        <li>
+                          <input type="checkbox" class="ipt" name="chk2" id="chk2_1">
+                          <label for="chk2_1">입원</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" class="ipt" name="chk2" id="chk2_2">
+                          <label for="chk2_2">수술(제왕절개 포함)</label>
+                        </li>
+                      </ul>
+                    </div>
+                    <ul class="iptFilt">
+                      <li>
+                        <input type="radio" class="ipt" name="iptFilt1" id="iptFilt_3">
+                        <label for="iptFilt_3">예</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="iptFilt1" id="iptFilt_4">
+                        <label for="iptFilt_4">아니요</label>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">3. 최근 5년 이내에 의사로부터 진찰 또는 검사를 통하여 암으로 “진단” 받거나 암으로 “입원 또는 수술”을 받은 적이 있습니까?</div>
+                  <div class="td">
+                    <div class="form_grp">
+                      <ul class="iptFilt">
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt2" id="iptFilt_5">
+                          <label for="iptFilt_5">예</label>
+                        </li>
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt2" id="iptFilt_6">
+                          <label for="iptFilt_6">아니요</label>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="graybox mt15">
+                      <ul class="txtList disc sm mb0">
+                        <li>암에는 악성신생물, 백혈병 및 기타 혈액종양이 포함됩니다.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <p class="mt40 bold">※ 1~3번의 질문 항목 중 “예”인 경우 그 내용을 정확하게 기재하여 주세요. (최대3개) </p>
+              <div class="tit_th pt20">진단명1</div>
+              <ul class="formList data div2">
+                <li>
+                  <div class="th">진단명(질병, 상해), 검사종류</div>
+                  <div class="td">
+                    <input type="text" class="ipt" placeholder="">
+                  </div>
+                </li>
+                <li>
+                  <div class="th">검사결과/수술명</div>
+                  <div class="td">
+                    <input type="text" class="ipt" placeholder="">
+                  </div>
+                </li>
+                <li class="full">
+                  <div class="th">치료기간<br>(입원, 통원 기간)</div>
+                  <div class="td">
+                    <div class="setHalf flexitem">
+                      <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz01221">
+                      <span class="sign">~</span>
+                      <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz1231">
+                    </div>
+                    <input type="tel" class="ipt min" data-unit="일" >
+                  </div>
+                </li>
+                <li class="full">
+                  <div class="th">치료방법 및 치료내용/치료병원
+                    </div>
+                  <div class="td">
+                    <input type="text" class="ipt full" placeholder="">
+                  </div>
+                </li>
+                <li>
+                  <div class="th">재발경험</div>
+                  <div class="td">
+                    <ul class="iptFilt">
+                      <li>
+                        <input type="radio" class="ipt" name="filter10" id="filter10_1" checked="">
+                        <label for="filter10_1">예</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="filter10" id="filter10_2">
+                        <label for="filter10_2">아니요</label>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">완치여부</div>
+                  <div class="td">
+                    <ul class="iptFilt">
+                      <li>
+                        <input type="radio" class="ipt" name="filter11" id="filter10_3" checked="">
+                        <label for="filter10_3">예</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="filter11" id="filter10_4">
+                        <label for="filter10_4">아니요</label>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <div class="bottom_btn rt">
+                <button type="button" class="btn_primary_reverse l">추가</button>
+              </div>
+      
+              <div class="tit_th">진단명2</div>
+              <ul class="formList data div2">
+                <li>
+                  <div class="th">진단명(질병, 상해), 검사종류</div>
+                  <div class="td">
+                    <input type="text" class="ipt" placeholder="">
+                  </div>
+                </li>
+                <li>
+                  <div class="th">검사결과/수술명</div>
+                  <div class="td">
+                    <input type="text" class="ipt" placeholder="">
+                  </div>
+                </li>
+                <li class="full">
+                  <div class="th">치료기간<br>(입원, 통원 기간)</div>
+                  <div class="td">
+                    <div class="setHalf flexitem">
+                      <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz01221">
+                      <span class="sign">~</span>
+                      <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz1231">
+                    </div>
+                    <input type="tel" class="ipt min" data-unit="일" >
+                  </div>
+                </li>
+                <li class="full">
+                  <div class="th">치료방법 및 치료내용/치료병원
+                    </div>
+                  <div class="td">
+                    <input type="text" class="ipt full" placeholder="">
+                  </div>
+                </li>
+                <li>
+                  <div class="th">재발경험</div>
+                  <div class="td">
+                    <ul class="iptFilt">
+                      <li>
+                        <input type="radio" class="ipt" name="filter12" id="filter12_1" checked="">
+                        <label for="filter12_1">예</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="filter12" id="filter12_2">
+                        <label for="filter12_2">아니요</label>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">완치여부</div>
+                  <div class="td">
+                    <ul class="iptFilt">
+                      <li>
+                        <input type="radio" class="ipt" name="filter10" id="filter13_1" checked="">
+                        <label for="filter13_1">예</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="filter10" id="filter13_2">
+                        <label for="filter13_2">아니요</label>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <div class="bottom_btn rt">
+                <button type="button" class="btn_white l">삭제</button>
+                <button type="button" class="btn_primary_reverse l">추가</button>
+              </div>
+              <!-- 아코디언 본문내용 시작(e) -->
+            </div>
+          </li>
+          <li>
+            <div class="accoHead">
+              <a class="accoBtn">직업 및 기타정보</a>
+            </div>
+            <div class="accoBody">
+              <!-- 아코디언 본문내용 시작(s) -->
+              <ul class="formList column">
+                <li>
+                  <div class="th">1. 귀하의 직업은 무엇입니까?</div>
+                  <div class="td">
+                    <div class="tabl_area">
+                      <table>
+                        <caption>정보</caption>
+                        <colgroup>
+                          <col style="width: 12%;">
+                          <col style="width: 20%;">
+                          <col style="width: auto;">
+                          <col style="width: auto;">
+                          <col style="width: 35%;">
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th scope="col"><span>보험대상자</span></th>
+                            <th scope="col"><span>근무처명(회사명)</span></th>
+                            <th scope="col"><span>근무지역</span></th>
+                            <th scope="col"><span>업종</span></th>
+                            <th scope="col"><span>취급업무<span class="txt_n bold">(구체적으로 기재하여 주십시오)</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><span>주피보험자</span></td>
+                            <td><input type="text" class="ipt" placeholder="근무처명 입력"></td>
+                            <td><input type="text" class="ipt" placeholder="근무지역 입력"></td>
+                            <td><input type="text" class="ipt" placeholder="업종 입력"></td>
+                            <td><input type="text" class="ipt" placeholder="취급업무 입력"></td>
+                          </tr>
+                          <tr>
+                            <td><span>종피보험자</span></td>
+                            <td><input type="text" class="ipt" placeholder="근무처명 입력"></td>
+                            <td><input type="text" class="ipt" placeholder="근무지역 입력"></td>
+                            <td><input type="text" class="ipt" placeholder="업종 입력"></td>
+                            <td><input type="text" class="ipt" placeholder="취급업무 입력"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">2. 현재 운전을 하고 있습니까?</div>
+                  <div class="td">
+                    <div class="form_grp">
+                      <ul class="iptFilt">
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt4" id="iptFilt_11">
+                          <label for="iptFilt_11">예</label>
+                        </li>
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt4" id="iptFilt_12">
+                          <label for="iptFilt_12">아니요</label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="th sub">2-1. “예”인 경우 현재 운전하고 계신 차종을 3종까지 선택해 주십시오.
+                    <p class="txtList remark">기타에 해당하는 경우 구체적으로 기재하고, 둘 이상의 차량을 운전하거나 하나의 차량을 둘 이상의 목적으로 사용하는 경우 해당되는 사항을 모두 기재</p>
+                  </div>
+                  <div class="td">
+                    <ul class="iptGroup ml20">
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_1">
+                        <label for="chk2_1">승용차(영업용)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_2">
+                        <label for="chk2_2">승용차(자가용)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_3">
+                        <label for="chk2_3">승합차(영업용)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_4">
+                        <label for="chk2_4">승합차(자가용)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_5">
+                        <label for="chk2_5">화물차(영업용)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_6">
+                        <label for="chk2_6">화물차(자가용)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_7">
+                        <label for="chk2_7">오토바이(50cc미만 포함)(영업용)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_8">
+                        <label for="chk2_8">오토바이(50cc미만 포함)(자가용)</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_9">
+                        <label for="chk2_9">건설기계</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_10">
+                        <label for="chk2_10">농기계</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="ipt" name="chk2" id="chk2_11">
+                        <label for="chk2_11">기타</label>
+                      </li>
+                    </ul>
+                    <div class="form_grp">
+                      <div class="flex_grp">
+                        <input type="text" class="ipt" placeholder="기타 입력">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">3. 개인형 이동장치(전동킥보드, 전동휠 등을 포함하여 장애인 또는 교통약자가 사용하는 보행보조용 의자차인 전동휠체어, 의료용 스쿠터 등은 제외합니다.)를 사용하십니까?
+                    <p class="txtList remark">계속적으로 사용(직업, 직무 또는 동호회 활동과 출퇴근용도 등으로 주로 사용하는 경우에 한함)하는 경우 기재</p>
+                  </div>
+                  <div class="td">
+                    <div class="form_grp">
+                      <ul class="iptFilt">
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt5" id="iptFilt_13">
+                          <label for="iptFilt_13">예</label>
+                        </li>
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt5" id="iptFilt_14">
+                          <label for="iptFilt_14">아니요</label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">4. 월평균 소득은 얼마인가요?</div>
+                  <div class="td">
+                    <ul class="iptGroup">
+                      <li>
+                        <span class="fontSize18 v_am mr10">계약자 기준</span>
+                        <input type="tel" class="ipt" data-unit="만원" placeholder="숫자만 입력">
+                        <span class="fontSize18 v_am ml30 mr10">피보험자 기준</span>
+                        <input type="tel" class="ipt" data-unit="만원" placeholder="숫자만 입력">
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <!-- 아코디언 본문내용 시작(e) -->
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!--// 고지사항 (e) -->
+
+      <!-- CDD/EDD/FATCA (s) -->
+      <div class="tabBoxDisplayItem ">
+        <ul class="accoList box">
+          <li class="on">
+            <div class="accoHead">
+              <a class="accoBtn">고객확인 기본정보</a>
+            </div>
+            <div class="accoBody">
+              <!-- 아코디언 본문내용 시작(s) -->
+      
+              <!--  //////////////////////주민등록증  (s) //////////////////////// -->
+              <ul class="formList data div2">
+                <li class="full">
+                  <div class="th">신원확인증</div>
+                  <div class="td">
+                    <select class="ipt mid">
+                      <option selected="">주민등록증</option>
+                    </select>
+                  </div>
+                </li>
+                <li class="full">
+                  <div class="th">이름</div>
+                  <div class="td">
+                    <input type="text" class="ipt mid" placeholder="예: 김하나">
+                  </div>
+                </li>
+                <li>
+                  <div class="th">영문이름</div>
+                  <div class="td">
+                    <input type="text" class="ipt mid" placeholder="예: Kim Hana">
+                  </div>
+                </li>
+                <li>
+                  <div class="th">국적</div>
+                  <div class="td">
+                    <input type="text" class="ipt min" value="KOR" readonly>
+                    <button type="button" class="btn_primary l">검색</button>
+                    <input type="text" class="ipt mid" value="대한민국" readonly>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">발급기관</div>
+                  <div class="td">
+                    <input type="text" class="ipt" placeholder="발급기관 입력">
+                  </div>
+                </li>
+                <li>
+                  <div class="th">발급일</div>
+                  <div class="td">
+                    <input type="tel" class="ipt date" value="2022.06.25" id="input_ID_Setting_Plz000">
+                  </div>
+                </li>
+              </ul>
+              <!--  //////////////////////주민등록증  (e) //////////////////////// -->
+      
+              <!--  //////////////////////운전면허증  (s) //////////////////////// -->
+              <ul class="formList data div2">
+                <li class="full">
+                  <div class="th">신원확인증</div>
+                  <div class="td">
+                    <select class="ipt mid">
+                      <option selected="">운전면허증</option>
+                    </select>
+                  </div>
+                </li>
+                <li class="">
+                  <div class="th">이름</div>
+                  <div class="td">
+                    <input type="text" class="ipt mid" placeholder="예: 김하나">
+                  </div>
+                </li>
+                <li>
+                  <div class="th">면허번호</div>
+                  <div class="td">
+                    <select class="ipt min" title="면허번호 앞자리">
+                      <option>11(서울)</option>
+                    </select>
+                    <input type="text" class="ipt" placeholder="나머지 번호 입력"> 
+                  </div>
+                </li>
+                <li>
+                  <div class="th">발급기관</div>
+                  <div class="td">
+                    <input type="text" class="ipt" placeholder="발급기관 입력">
+                  </div>
+                </li>
+                <li>
+                  <div class="th">발급일</div>
+                  <div class="td">
+                    <input type="tel" class="ipt date" value="2022.06.25" id="input_ID_Setting_Plz000">
+                  </div>
+                </li>
+              </ul>
+              <div class="btn_wrap">
+                <button type="button" class="btn_primary xl">신분증 진위여부 확인</button>
+                <button type="button" class="btn_primary xl" disabled>신분증 진위 확인 완료</button><!--진위확인 후 버튼명 변경-->
+              </div>
+              <!--  //////////////////운전면허증 (e) ///////////////// -->
+
+              <h4 class="tit04 mt20">&lt;직장/사업장 정보&gt;
+              </h4>
+              <ul class="formList data div2 mt20">
+                <li class="full">
+                  <div class="th">직업구분</div>
+                  <div class="td">
+                    <ul class="iptFilt">
+                      <li>
+                        <input type="radio" class="ipt" name="iptFilt1" id="iptFilt_3" checked>
+                        <label for="iptFilt_3">급여소득자</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="iptFilt1" id="iptFilt_4">
+                        <label for="iptFilt_4">개인사업자</label>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="">
+                  <div class="th">회사명</div>
+                  <div class="td">
+                    <input type="text" class="ipt mid" placeholder="회사명 입력">
+                  </div>
+                </li>
+                <li class="">
+                  <div class="th">직업</div>
+                  <div class="td">
+                    <input type="text" class="ipt mid" placeholder="직업 입력">
+                  </div>
+                </li>
+                <li>
+                  <div class="th">부서</div>
+                  <div class="td">
+                    <input type="text" class="ipt mid" placeholder="부서 입력">
+                  </div>
+                </li>
+                <li>
+                  <div class="th">직위</div>
+                  <div class="td">
+                    <input type="text" class="ipt mid" placeholder="직위 입력">
+                  </div>
+                </li>
+              </ul>
+              <!-- ////////////////////////급여 소득자 E ///////////////////// -->
+      
+              <!-- ////////////////////////개인사업자 S ///////////////////// -->
+              <ul class="formList data mt20 div2">
+              <li class="full">
+                <div class="th">직업구분</div>
+                <div class="td">
+                  <ul class="iptFilt">
+                    <li>
+                      <input type="radio" class="ipt" name="iptFilt5" id="iptFilt_6" >
+                      <label for="iptFilt_6">급여소득자</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="ipt" name="iptFilt5" id="iptFilt_7" checked>
+                      <label for="iptFilt_7">개인사업자</label>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="">
+                <div class="th">사업자명</div>
+                <div class="td">
+                  <input type="text" class="ipt mid" placeholder="사업자명 입력">
+                </div>
+              </li>
+              <li class="">
+                <div class="th">사업자등록번호</div>
+                <div class="td">
+                  <input type="text" class="ipt mid" placeholder="사업자등록번호 입력">
+                </div>
+              </li>
+              <li>
+                <div class="th">업종</div>
+                <div class="td">
+                  <input type="text" class="ipt mid" placeholder="업종 입력">
+                </div>
+              </li>
+              <li>
+                <div class="th">설립일자</div>
+                <div class="td">
+                  <input type="tel" class="ipt date" value="2022.06.25" id="input_ID_Setting_Plz000">
+                </div>
+              </li>
+            </ul>
+      
+            <h4 class="tit04 mt40">&lt;추가정보&gt;</h4>
+            <ul class="formList data div2 mt20">
+              <li class="full">
+                <div class="th">거래목적</div>
+                <div class="td">
+                  <select class="ipt mid">
+                    <option selected="">선택</option>
+                  </select>
+                  <input type="text" class="ipt" placeholder="" disabled>
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">자금의 원천</div>
+                <div class="td">
+                  <select class="ipt mid">
+                    <option selected="">선택</option>
+                  </select>
+                  <input type="text" class="ipt" placeholder="" disabled>
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">총자산
+                  <br>(부동산, 금융자산 포함)
+                </div>
+                <div class="td">
+                  <ul class="iptFilt">
+                    <li>
+                      <input type="radio" class="ipt" name="iptFilt8" id="iptFilt_9">
+                      <label for="iptFilt_9">3억원 미만</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="ipt" name="iptFilt8" id="iptFilt_10" checked="">
+                      <label for="iptFilt_10">5억원 미만</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="ipt" name="iptFilt8" id="iptFilt_11">
+                      <label for="iptFilt_11">10억원 미만</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="ipt" name="iptFilt8" id="iptFilt_12">
+                      <label for="iptFilt_12">10억원 이상</label>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">연소득</div>
+                <div class="td">
+                  <ul class="iptFilt">
+                    <li>
+                      <input type="radio" class="ipt" name="iptFilt9" id="iptFilt_13">
+                      <label for="iptFilt_13">3천만원 미만</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="ipt" name="iptFilt9" id="iptFilt_14" checked="">
+                      <label for="iptFilt_14">5천만원 미만</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="ipt" name="iptFilt9" id="iptFilt_15">
+                      <label for="iptFilt_15">1억원 미만</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="ipt" name="iptFilt9" id="iptFilt_16">
+                      <label for="iptFilt_16">1억원 이상</label>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+              <!-- 아코디언 본문내용 시작(e) -->
+            </div>
+          </li>
+          
+          <!-- CASE2. 법인고객(s) -->
+          <li class="on">
+            <div class="accoHead">
+              <a class="accoBtn">실제소유자</a>
+            </div>
+            <div class="accoBody">
+              <ul class="formList column">
+                <li>
+                  <div class="th">1. 귀 법인/단체는 국가·지자체·공공단체·금융회사 및 사업보고서 제출대상 법인입니까?
+                  </div>
+                  <div class="td">
+                    <div class="form_grp">
+                      <ul class="iptFilt">
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_1">
+                          <label for="iptFilt_1">예</label>
+                        </li>
+                        <li>
+                          <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_2">
+                          <label for="iptFilt_2">아니요</label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">2. 귀 법인/단체의 25% 이상의 지분을 소유한 사람이 있습니까?
+                  </div>
+                  <div class="td">
+                    <ul class="iptGroup">
+                      <li>
+                        <ul class="iptFilt">
+                          <li>
+                            <input type="radio" class="ipt" name="iptFilt5" id="iptFilt_13">
+                            <label for="iptFilt_13">예</label>
+                          </li>
+                          <li>
+                            <input type="radio" class="ipt" name="iptFilt5" id="iptFilt_14">
+                            <label for="iptFilt_14">아니요</label>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="fontSize18 v_am mr10">최대 지분 소유자 1인 지분율</span>
+                        <input type="tel" class="ipt" data-unit="%" placeholder="숫자만 입력">
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="th">3. 2번 문항을 확인할 수 없는 경우
+                  </div>
+                  <div class="td">
+                    <ul class="iptGroup vertical">
+                      <li>
+                        <input type="radio" class="ipt" name="rdo3" id="rdo3_1">
+                        <label for="rdo3_1" class="txt_n">대표자&middot;임원&middot;업무집행사원의 과반수를 선임한 주주</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="rdo3" id="rdo3_2">
+                        <label class="mr10" for="rdo3_2">최대 지분 소유자 1인 : 지분율</label> 
+                        <input type="tel" class="ipt mb5" data-unit="%" placeholder="숫자만 입력" disabled>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="rdo3" id="rdo3_3">
+                        <label for="rdo3_3">법인/단체를 사실상 지배하는 사람</label>
+                      </li>
+                      <li>
+                        <input type="radio" class="ipt" name="rdo3" id="rdo3_4">
+                        <label for="rdo3_4">법인 또는 단체의 대표자</label>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <h4 class="tit04 bold mt40 mb20">법인/단체 실제 소유자</h4>
+              <ul class="formList data">
+                <li class="full">
+                  <div class="th">성명</div>
+                  <div class="td">
+                    <input type="text" class="ipt mid" placeholder="예: 김하나">
+                  </div>
+                </li>
+                <li>
+                  <div class="th">생년월일</div>
+                  <div class="td">
+                    <input type="text" class="ipt mid" placeholder="예: 19800101" title="">
+                  </div>
+                </li>
+                <li>
+                  <div class="th">국적</div>
+                  <div class="td">
+                    <input type="text" class="ipt min" value="KOR" readonly>
+                    <button type="button" class="btn_primary l">검색</button>
+                    <input type="text" class="ipt mid" value="대한민국" readonly>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!-- CASE2. 법인고객(e) -->
+
+          <li class="on">
+            <div class="accoHead">
+              <a class="accoBtn">고객확인 기본정보</a>
+            </div>
+            <div class="accoBody">
+              <!-- 아코디언 본문내용 시작(s) -->
+
+            <!--  ////////////////////// case2 법인고객(s) //////////////////////// -->
+            <h4 class="tit04 bold mb20"> &lt;고객정보&gt;</h4>
+            <ul class="formList data div2">
+              <li class="">
+                <div class="th">법인명(한글)</div>
+                <div class="td">
+                  <input type="text" class="ipt mid" placeholder="예: 하나주식회사" title="">
+                </div>
+              </li>
+              <li class="">
+                <div class="th">법인명(영문)</div>
+                <div class="td">
+                  <input type="text" class="ipt mid" placeholder="예: Hana Corp " title="">
+                </div>
+              </li>
+              <li class="">
+                <div class="th">사업자번호</div>
+                <div class="td">
+                  <input type="text" class="ipt mid" placeholder="숫자만입력" title="">
+                </div>
+              </li>
+              <li class="">
+                <div class="th">회사 전화번호</div>
+                <div class="td">
+                  <div class="setPhone">
+                    <select class="ipt" title="전화번호 앞자리">
+                      <option>02</option>
+                      <option>031</option>
+                      <option>032</option>
+                    </select>
+                    <input type="tel" class="ipt" maxlength="8" title="전화번호 뒷자리" placeholder="숫자만 입력">
+                  </div>
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">회사주소</div>
+                <div class="td">
+                  <div class="adress">
+                    <div class="iptWrap"><input type="text" class="ipt" readonly ><button class="icoBtn_del" tabindex="-1"><span class="blind"></span></button></div>
+                    <button type="button" class="btn_primary l">검색</button>
+                    <input type="text" class="ipt full add" >
+                    <input type="text" class="ipt full">
+                  </div>
+                </div>
+              </li>
+              <li class="">
+                <div class="th">업종</div>
+                <div class="td">
+                  <input type="text" class="ipt mid" placeholder="업종 입력" title="">
+                  <button type="button" class="btn_primary l">검색</button>
+                </div>
+              </li>
+              <li class="">
+                <div class="th">설립목적</div>
+                <div class="td">
+                  <input type="text" class="ipt mid" placeholder="예: 의료복지, 교육, 공공기관, 기타" title="">
+                </div>
+              </li>
+              <li class="">
+                <div class="th">설립일자</div>
+                <div class="td">
+                  <input type="tel" class="ipt date" placeholder="YYYY.MM.DD" value="" id="date01">
+                </div>
+              </li>
+              <li class="">
+                <div class="th">설립국가</div>
+                <div class="td">
+                  <input type="text" class="ipt min" value="KOR" readonly>
+                  <button type="button" class="btn_primary l">검색</button>
+                  <input type="text" class="ipt mid" value="대한민국" readonly>
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">법인구분</div>
+                <div class="td">
+                  <ul class="iptGroup">
+                    <li>
+                      <input type="radio" class="ipt" name="rdo2" id="rdo2_1" checked="">
+                      <label for="rdo2_1">국가/지방자치단체</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="ipt" name="rdo2" id="rdo2_2">
+                      <label for="rdo2_2">공공기관</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="ipt" name="rdo2" id="rdo2_3">
+                      <label for="rdo2_3">금융회사</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="ipt" name="rdo2" id="rdo2_4">
+                      <label for="rdo2_4">대기업</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="ipt" name="rdo2" id="rdo2_5">
+                      <label for="rdo2_5">중소기업</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="ipt" name="rdo2" id="rdo2_6">
+                      <label for="rdo2_6">기타</label>
+                      <input type="text" class="ipt ml10" value="" disabled>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">상장여부</div>
+                <div class="td">
+                  <ul class="iptGroup">
+                    <li>
+                      <input type="radio" class="ipt" name="rdo1" id="rdo1_1">
+                      <label for="rdo1_1">코스닥</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="ipt" name="rdo1" id="rdo1_2">
+                      <label for="rdo1_2">사업보고서 제출 대상</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="ipt" name="rdo1" id="rdo1_3">
+                      <label for="rdo1_3">외부감사 대상</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="ipt" name="rdo1" id="rdo1_4">
+                      <label for="rdo1_4">기타</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="ipt" name="rdo1" id="rdo1_5">
+                      <label for="rdo1_5">비상장</label>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">거래목적</div>
+                <div class="td">
+                  <select class="ipt mid">
+                    <option selected="">기타</option>
+                  </select>
+                  <input type="text" class="ipt mid" placeholder="거래목적 입력" title="">
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">자금의 원천</div>
+                <div class="td">
+                  <select class="ipt mid">
+                    <option selected="">선택</option>
+                  </select>
+                  <input type="text" class="ipt mid" placeholder="" title="" readonly>
+                </div>
+              </li>
+              <li class="">
+                <div class="th">대표자 성명(한글)</div>
+                <div class="td">
+                  <input type="text" class="ipt mid" placeholder="예: 김하나" title="">
+                </div>
+              </li>
+              <li class="">
+                <div class="th">대표자 성명(영문)</div>
+                <div class="td">
+                  <input type="text" class="ipt mid" placeholder="예: Kim Hana" title="">
+                </div>
+              </li>
+              <li class="">
+                <div class="th">생년월일</div>
+                <div class="td">
+                  <input type="text" class="ipt mid" placeholder="예: 19800101" title="">
+                </div>
+              </li>
+              <li class="">
+                <div class="th">국적</div>
+                <div class="td">
+                  <input type="text" class="ipt min" value="KOR" readonly>
+                  <button type="button" class="btn_primary l">검색</button>
+                  <input type="text" class="ipt mid" value="대한민국" readonly>
+                </div>
+              </li>
+              <li class="">
+                <div class="th">성별</div>
+                <div class="td">
+                  <ul class="iptGroup">
+                    <li>
+                      <input type="radio" class="ipt" name="sex" id="sex1">
+                      <label for="sex1">남자</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="ipt" name="sex" id="sex2">
+                      <label for="sex2">여자</label>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+    
+            <!--  //////////////////////주민등록증/외국인등록증  (s) //////////////////////// -->
+            <h4 class="tit04 bold mt40 mb20"> &lt;대리인 정보 : 법인대표 또는 임직원 작성&gt;</h4>
+            <ul class="formList data div2">
+              <li class="full">
+                <div class="th">대리인 관계</div>
+                <div class="td">
+                  <select class="ipt mid">
+                    <option selected="">관계 선택</option>
+                  </select>
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">신원확인증</div>
+                <div class="td">
+                  <select class="ipt mid">
+                    <option selected="">주민등록증</option>
+                  </select>
+                </div>
+              </li>
+              <li>
+                <div class="th">이름</div>
+                <div class="td">
+                  <input type="text" class="ipt mid" placeholder="예: 김하나">
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">실명번호</div>
+                <div class="td">
+                  <div class="setHalf">
+                    <input type="tel" class="ipt" maxlength="6" title="주민등록번호 앞 생년월일 6자리" placeholder="숫자만 입력">
+                    <span class="sign">-</span>
+                    <div class="keypad">
+                      <input type="password" class="ipt" maxlength="7" title="주민등록번호 뒤 7자리" placeholder="숫자만 입력">
+                      <button type="button" class="icoBtn_view"><span class="blind">비밀번호 보이기</span></button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="th">발급기관</div>
+                <div class="td">
+                  <input type="text" class="ipt" placeholder="발급기관 입력">
+                </div>
+              </li>
+              <li>
+                <div class="th">발급일</div>
+                <div class="td">
+                  <input type="tel" class="ipt date" value="2022.06.25" id="date11">
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">휴대폰번호</div>
+                <div class="td">
+                  <div class="setPhone">
+                    <select class="ipt" title="휴대폰번호 앞자리">
+                      <option>02</option>
+                      <option>031</option>
+                      <option>032</option>
+                    </select>
+                    <input type="tel" class="ipt" maxlength="8" title="휴대폰번호 뒷자리" placeholder="숫자만 입력">
+                  </div>
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">주소</div>
+                <div class="td">
+                  <div class="adress">
+                    <div class="iptWrap"><input type="text" class="ipt " value="04538" readonly ><button class="icoBtn_del" tabindex="-1"><span class="blind"></span></button></div>
+                    <button type="button" class="btn_primary l">검색</button>
+                    <input type="text" class="ipt full add" readonly value="서울 중구 을지로 66 하나금융그룹명동사옥" >
+                    <input type="text" class="ipt full " readonly value="13층(을지로2가 181)" >
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <!--  //////////////////////주민등록증/외국인등록증  (e) //////////////////////// -->
+    
+            <!--  //////////////////////운전면허증  (s) //////////////////////// -->
+            <ul class="formList data div2">
+              <li class="full">
+                <div class="th">대리인 관계</div>
+                <div class="td">
+                  <select class="ipt mid">
+                    <option selected="">관계 선택</option>
+                  </select>
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">신원확인증</div>
+                <div class="td">
+                  <select class="ipt mid">
+                    <option selected="">운전면허증</option>
+                  </select>
+                </div>
+              </li>
+              <li>
+                <div class="th">이름</div>
+                <div class="td">
+                  <input type="text" class="ipt mid" placeholder="예: 김하나">
+                </div>
+              </li>
+              <li>
+                <div class="th">면허번호</div>
+                <div class="td">
+                    <select class="ipt min" title="면허번호 앞자리">
+                      <option>11(서울)</option>
+                    </select>
+                    <input type="text" class="ipt" placeholder="나머지 번호 입력"> 
+                </div>
+              </li>
+              <li>
+                <div class="th">발급기관</div>
+                <div class="td">
+                  <input type="text" class="ipt" placeholder="발급기관 입력">
+                </div>
+              </li>
+              <li>
+                <div class="th">발급일</div>
+                <div class="td">
+                  <input type="tel" class="ipt date" value="2022.06.25" id="date11">
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">휴대폰번호</div>
+                <div class="td">
+                  <div class="setPhone">
+                    <select class="ipt" title="휴대폰번호 앞자리">
+                      <option>02</option>
+                      <option>031</option>
+                      <option>032</option>
+                    </select>
+                    <input type="tel" class="ipt" maxlength="8" title="휴대폰번호 뒷자리" placeholder="숫자만 입력">
+                  </div>
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">주소</div>
+                <div class="td">
+                  <div class="adress">
+                    <div class="iptWrap"><input type="text" class="ipt " value="04538" readonly ><button class="icoBtn_del" tabindex="-1"><span class="blind"></span></button></div>
+                    <button type="button" class="btn_primary l">검색</button>
+                    <input type="text" class="ipt full add" readonly value="서울 중구 을지로 66 하나금융그룹명동사옥" >
+                    <input type="text" class="ipt full " readonly value="13층(을지로2가 181)" >
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <!--  //////////////////운전면허증 (e) ///////////////// -->
+    
+             <!--  //////////////////////국내거소신고증  (s) //////////////////////// -->
+            <ul class="formList data div2">
+              <li class="full">
+                <div class="th">대리인 관계</div>
+                <div class="td">
+                  <select class="ipt mid">
+                    <option selected="">관계 선택</option>
+                  </select>
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">신원확인증</div>
+                <div class="td">
+                  <select class="ipt mid">
+                    <option selected="">국내거소신고증</option>
+                  </select>
+                </div>
+              </li>
+              <li>
+                <div class="th">이름(한글)</div>
+                <div class="td">
+                  <input type="text" class="ipt mid" placeholder="예: 김하나">
+                </div>
+              </li>
+              <li>
+                <div class="th">이름(영문명)</div>
+                <div class="td">
+                  <input type="text" class="ipt mid" placeholder="예: Kim Hana">
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">실명번호</div>
+                <div class="td">
+                  <div class="setHalf">
+                    <input type="tel" class="ipt" maxlength="6" title="주민등록번호 앞 생년월일 6자리" placeholder="숫자만 입력">
+                    <span class="sign">-</span>
+                    <div class="keypad">
+                      <input type="password" class="ipt" maxlength="7" title="주민등록번호 뒤 7자리" placeholder="숫자만 입력">
+                      <button type="button" class="icoBtn_view"><span class="blind">비밀번호 보이기</span></button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="th">발급기관</div>
+                <div class="td">
+                  <input type="text" class="ipt" placeholder="발급기관 입력">
+                </div>
+              </li>
+              <li>
+                <div class="th">발급일</div>
+                <div class="td">
+                  <input type="tel" class="ipt date" value="2022.06.25" id="date12">
+                </div>
+              </li>
+              <li>
+                <div class="th">생년월일</div>
+                <div class="td">
+                  <input type="text" class="ipt mid" placeholder="예: 19800101" title="">
+                </div>
+              </li>
+              <li class="">
+                <div class="th">국적</div>
+                <div class="td">
+                  <input type="text" class="ipt min" value="KOR" readonly>
+                  <button type="button" class="btn_primary l">검색</button>
+                  <input type="text" class="ipt mid" value="대한민국" readonly>
+                </div>
+              </li>
+              <li class="">
+                <div class="th">성별</div>
+                <div class="td">
+                  남자
+                </div>
+              </li>
+              <li>
+                <div class="th">휴대폰번호</div>
+                <div class="td">
+                  <div class="setPhone">
+                    <select class="ipt" title="휴대폰번호 앞자리">
+                      <option>02</option>
+                      <option>031</option>
+                      <option>032</option>
+                    </select>
+                    <input type="tel" class="ipt" maxlength="8" title="휴대폰번호 뒷자리" placeholder="숫자만 입력">
+                  </div>
+                </div>
+              </li>
+              <li class="full">
+                <div class="th">주소</div>
+                <div class="td">
+                  <div class="adress">
+                    <div class="iptWrap"><input type="text" class="ipt " value="04538" readonly ><button class="icoBtn_del" tabindex="-1"><span class="blind"></span></button></div>
+                    <button type="button" class="btn_primary l">검색</button>
+                    <input type="text" class="ipt full add" readonly value="서울 중구 을지로 66 하나금융그룹명동사옥" >
+                    <input type="text" class="ipt full " readonly value="13층(을지로2가 181)" >
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="btn_wrap">
+              <button type="button" class="btn_primary xl">신분증 진위여부 확인</button>
+              <button type="button" class="btn_primary xl" disabled>신분증 진위 확인 완료</button><!--진위확인 후 버튼명 변경-->
+            </div>
+            <!--  //////////////////국내거소신고증 (e) ///////////////// -->
+            <!--  //////////////////case2 법인고객 (e) ///////////////// -->
+            
+              <!-- 아코디언 본문내용 시작(e) -->
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!--// CDD/EDD/FATCA (e) -->
+
+      <!-- 특별조건부 (s) -->
+      <div class="tabBoxDisplayItem ">
+
+        <h2 class="tit02 mt0">특정부위부담보</h2>
+        <div class="tabl_area">
+          <table>
+            <caption>특정부위부담보 조회</caption>
+            <colgroup>
+              <col style="width: 15%;">
+              <col style="width: auto;">
+              <col style="width: 15%;">
+              <col style="width: 15%;">
+              <col style="width: 15%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">피보구분</th>
+                <th scope="col">부담보항목</th>
+                <th scope="col">부담보기간</th>
+                <th scope="col">시작일</th>
+                <th scope="col">사인코드</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  DATA
+                </td>
+                <td>
+                  DATA
+                </td>
+                <td>
+                  DATA
+                </td>
+                <td>
+                  YYYY.MM.DD
+                </td>
+                <td>
+                  DATA
+                </td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="tit02">특별조건부(삭감)</h2>
+        <div class="tabl_area">
+          <table>
+            <caption>특별조건부(삭감) 조회</caption>
+            <colgroup>
+              <col style="width: 15%;">
+              <col style="width: 15%;">
+              <col style="width: 15%;">
+              <col style="width: auto;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">피보구분</th>
+                <th scope="col">삭감기간</th>
+                <th scope="col">사인코드</th>
+                <th scope="col">사인사항</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  DATA
+                </td>
+                <td>
+                  DATA
+                </td>
+                <td>
+                  DATA
+                </td>
+                <td>
+                  DATA
+                </td>
+                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+      <!--// 특별조건부 (e) -->
+
+    </div>
+  </div>
+  <!-- 탭 -->
+
+  
+
+</div>
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+
+</html>

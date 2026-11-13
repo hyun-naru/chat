@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section">
+
+  <h1 class="tit01">입금 현황 조회</h1>
+
+  <ul class="formList div3">
+    <li>
+      <div class="th">채널</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">본부</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">지점</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li class="oneThirdDiv">
+      <div class="th">팀</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li class="twoThirdsDiv">
+      <div class="th">판매인</div>
+      <div class="td">
+        <select class="ipt mid">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">조회월</div>
+      <div class="td">YYYY.MM ~ YYYY.MM</div>
+    </li>
+    <li>
+      <div class="th">수금방법</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">전체</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">증권번호</div>
+      <div class="td">
+        <input type="text" class="ipt">
+      </div>
+    </li>
+  </ul>
+  <div class="btn_wrap">
+    <button type="button" class="btn_white ">초기화</button>
+    <button type="button" class="btn_primary ">조회</button>
+  </div>
+
+  <div class="tab tab_cm tab_default">
+    <ul class="tab_bar">
+      <li><a href="#">총 건수</a></li>
+      <li><a href="#">계약 목록</a></li>
+    </ul>
+    <div class="tab_cont">
+      <div class="tab_cont_list">
+        <div class="tabl_area">
+          <table>
+            <caption>정보</caption>
+            <colgroup>
+              <col style="width: auto;">
+              <col style="width: auto;">
+              <col style="width: auto;">
+              <col style="width: auto;">
+              <col style="width: auto;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col"><span>조회구분</span></th>
+                <th scope="col"><span>전체</span></th>
+                <th scope="col"><span>당월</span></th>
+                <th scope="col"><span>연체</span></th>
+                <th scope="col"><span>입금</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th><span>건수</span></th>
+                <td class="txt_r"><span>0,000</span>건</td>
+                <td class="txt_r"><span>0,000</span>건</td>
+                <td class="txt_r"><span>0,000</span>건</td>
+                <td class="txt_r"><span>0,000</span>건</td>
+              </tr>
+              <tr>
+                <th><span>보험료</span></th>
+                <td class="txt_r"><span>0,000,000</span>원</td>
+                <td class="txt_r"><span>0,000,000</span>원</td>
+                <td class="txt_r"><span>0,000,000</span>원</td>
+                <td class="txt_r"><span>0,000,000</span>원</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="txtList remark">조회 조건으로 설정한 정보 기준이며 실제 마감된 성적과 다를 수 있습니다.</p>
+      </div>
+      <div class="tab_cont_list">
+				<!-- 26.06.12 -->
+				<div class="sort_wrap end">
+					<button type="button" class="btn_primary_reverse m" id="btnExclDown">엑셀다운로드</button>
+				</div>				
+				<!-- //26.06.12 -->
+        <div class="sort_wrap">
+          <div class="sort">
+            <ul class="count">
+              <li>총 <span class="count_num count_num_accent">106</span>건</li>
+              <li><span class="count_num count_num_accent">1</span>/100페이지</li>
+            </ul>
+          </div>
+          <div class="sortRight">
+            <ul class="iptGroup">
+              <li>
+                <input type="radio" class="ipt" name="gubunRdo" id="rdo2_1" checked="" value="">
+                <label for="rdo2_1">전체</label>
+              </li>
+              <li>
+                <input type="radio" class="ipt" name="gubunRdo" id="rdo2_4"  value="0">
+                <label for="rdo2_4">당월입금</label>
+              </li>
+              <li>
+                <input type="radio" class="ipt" name="gubunRdo" id="rdo2_2"  value="1">
+                <label for="rdo2_2">당월미입급</label>
+              </li>
+              <li>
+                <input type="radio" class="ipt" name="gubunRdo" id="rdo2_3"  value="2">
+                <label for="rdo2_3">실효예정</label>
+              </li>
+              <li>
+                <input type="radio" class="ipt" name="gubunRdo" id="rdo2_5"  value="3">
+                <label for="rdo2_5">완납</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="tabl_area">
+          <!-- 조회 테이블 (s) -->
+          <table>
+            <colgroup>
+              <col style="width: 10%;">
+              <col style="width: 11%;">
+              <col style="width: 22%;">
+              <col style="width: 12%;">
+              <col style="width: 12%;">
+              <col style="width: auto">
+            </colgroup>
+            <thead>
+              <tr>
+                <th><span>조회구분<br>납입회차</span></th>
+                <th><span>수금방법</span></th>
+                <th><span>수금인 정보</span></th>
+                <th><span>증권번호<br>계약자</span></th>
+                <th><span>계약일</span></th>
+                <th><span>상품정보</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <p>당월</p><p>99</p>
+                </td>
+                <td>
+                  <span>카드결제</span>
+                </td>
+                <td>
+                  <p>홍길동(123456A)</p><p class="ellipsis">지점명1이노출됩니다</p>
+                </td>
+                <td>
+                  <p>01234567</p>
+                  <p>홍길동</p>
+                </td>
+                <td>
+                  <span>YYYY.MM.DD</span>
+                </td>
+                <td class="txt_l">
+                  <p>(무)걱정말아요 암보험Ⅱ(갱신형)</p>
+                  <ul class="sdlist_info">
+                    <li>
+                      <strong>모집인</strong><span>홍길동(123456A)</span>
+                    </li>
+                    <li>
+                      <strong>직전납입일</strong><span>YYYY.MM.DD</span>
+                    </li>
+                    <li>
+                      <strong>보험료</strong><span>000,000,000</span>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>당월</p><p>99</p>
+                </td>
+                <td>
+                  <span>카드결제</span>
+                </td>
+                <td>
+                  <p>홍길동(123456A)</p><p class="ellipsis">지점명최대10글자노출</p>
+                </td>
+                <td>
+                  <p>01234567</p>
+                  <p>홍길동</p>
+                </td>
+                <td>
+                  <span>YYYY.MM.DD</span>
+                </td>
+                <td class="txt_l">
+                  <p>(무)걱정말아요 암보험Ⅱ(갱신형)</p>
+                  <ul class="sdlist_info">
+                    <li>
+                      <strong>모집인</strong><span>홍길동(123456A)</span>
+                    </li>
+                    <li>
+                      <strong>직전납입일</strong><span>YYYY.MM.DD</span>
+                    </li>
+                    <li>
+                      <strong>보험료</strong><span>000,000,000</span>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- //조회 테이블 (e) -->
+          <!-- No Result (s) -->
+          <div class="noresultWrap">
+            <img src="../../images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+            <div class="noresultText">조회 결과가 없습니다.</div>
+          </div>
+          <!--// No Result (e) -->
+        </div>
+      
+        <!-- 26.06.12<div class="bottom_btn">
+          <button type="button" class="btn_primary_reverse l">엑셀다운로드</button>
+        </div> -->
+      
+        <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+          <button type="button" class="icoBtn_first" aria-label="처음"></button>
+          <button type="button" class="icoBtn_prev" aria-label="이전"></button>
+          <ul>
+            <li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+            <li><a href="#"><span class="blind">페이지</span>2</a></li>
+            <li><a href="#"><span class="blind">페이지</span>3</a></li>
+            <li><a href="#"><span class="blind">페이지</span>4</a></li>
+            <li><a href="#"><span class="blind">페이지</span>5</a></li>
+            <li><a href="#"><span class="blind">페이지</span>6</a></li>
+            <li><a href="#"><span class="blind">페이지</span>7</a></li>
+            <li><a href="#"><span class="blind">페이지</span>8</a></li>
+            <li><a href="#"><span class="blind">페이지</span>9</a></li>
+            <li><a href="#"><span class="blind">페이지</span>10</a></li>
+          </ul>
+          <button type="button" class="icoBtn_next" aria-label="다음"></button>
+          <button type="button" class="icoBtn_last" aria-label="마지막"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+
+</html>

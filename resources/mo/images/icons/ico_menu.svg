@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+    <path data-name="투명 BG" d="M0 0h28v28H0z" style="fill:transparent"/>
+    <path data-name="모양 1" transform="rotate(90 8.5 14.5)" style="fill:#3f3f3f;stroke:#000;stroke-linecap:round;stroke-width:2px" d="M0 0v18"/>
+    <path data-name="모양 1 복사" transform="rotate(90 4.5 18.5)" style="fill:#3f3f3f;stroke:#000;stroke-linecap:round;stroke-width:2px" d="M0 0v18"/>
+    <path data-name="모양 1 복사 2" transform="rotate(90 .5 22.5)" style="fill:#3f3f3f;stroke:#000;stroke-linecap:round;stroke-width:2px" d="M0 0v18"/>
+</svg>

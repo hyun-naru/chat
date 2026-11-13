@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+  <!-- <script type="text/javascript" src="../../js/ui.campaign.js"></script> -->
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section">
+  <h1 class="tit01">캠페인 생성/조회</h1>
+
+  <div class="formList" id="campaignInquire">
+    <li class="active">
+      <div class="th">조회 구분</div>
+      <div class="td">
+        <ul class="iptGroup" id="campaignInquireLists">
+          <li>
+            <input type="radio" class="ipt" name="rdo2" id="rdo1_1" value="1" checked>
+            <label for="rdo1_1">월별조회</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="rdo2" id="rdo1_2" value="2">
+            <label for="rdo1_2">기간설정</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="rdo2" id="rdo1_3" value="3">
+            <label for="rdo1_3">캠페인명으로 검색</label>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="active">
+      <div class="th">연월 선택</div>
+      <div class="td">
+        <select class="ipt min">
+          <option>년</option>
+          <option selected="">2022</option>
+          <option>2021</option>
+          <option>2020</option>
+          <option>2019</option>
+          <option>2018</option>
+          <option>2017</option>
+          <option>2016</option>
+          <option>2015</option>
+          <option>2014</option>
+          <option>2013</option>
+        </select>
+        <select class="ipt min">
+          <option selected="">월</option>
+          <option>1월</option>
+          <option>2월</option>
+          <option>3월</option>
+          <option>4월</option>
+          <option>5월</option>
+          <option>6월</option>
+          <option>7월</option>
+          <option>8월</option>
+          <option>9월</option>
+          <option>10월</option>
+          <option>11월</option>
+          <option>12월</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">기간 설정</div>
+      <div class="td">
+        <div class="setHalf">
+          <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz01221">
+          <span class="sign">~</span>
+          <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz1231">
+        </div>
+        <ul class="iptFilt">
+          <li>
+            <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_1" checked="">
+            <label for="iptFilt_1">당월</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_2">
+            <label for="iptFilt_2">2개월</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_3">
+            <label for="iptFilt_3">3개월</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_4">
+            <label for="iptFilt_4">6개월</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_5">
+            <label for="iptFilt_5">1년</label>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div class="th">캠페인명</div>
+      <div class="td">
+        <input type="text" class="ipt full" placeholder="2글자 이상 입력">
+      </div>
+    </li>
+  </div>
+  <div class="btn_wrap">
+    <button type="button" class="btn_white" id="btnReset">초기화</button>
+    <button type="button" class="btn_primary">조회</button>
+  </div>
+
+  <h2 class="tit02">캠페인 목록</h2>
+  <div class="sort_wrap">
+    <div class="sort">
+      <ul class="count">
+        <li>총 <span class="count_num count_num_accent">200</span>건</li>
+        <li><span class="count_num count_num_accent">1</span>/100건</li>
+      </ul>
+    </div>
+
+    <div class="sortRight">
+      <ul class="iptGroup">
+        <li>
+          <input type="radio" class="ipt" name="rdo21234" id="rdo21234_1" checked="">
+          <label for="rdo21234_1">전체</label>
+        </li>
+        <li>
+          <input type="radio" class="ipt" name="rdo21234" id="rdo21234_2">
+          <label for="rdo21234_2">대기 중</label>
+        </li>
+        <li>
+          <input type="radio" class="ipt" name="rdo21234" id="rdo21234_3">
+          <label for="rdo21234_3">진행중</label>
+        </li>
+      </ul>
+      <select class="ipt">
+        <option selected="">최근등록순</option>
+        <option>셀렉트</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="tabl_area">
+    <table>
+      <caption>캠페인목록</caption>
+      <colgroup>
+        <col style="width:6.7%">
+        <col style="width:auto">
+        <col style="width: 8.667%;">
+        <col style="width: 7.667%;">
+        <col style="width: 8.667%;">
+        <col style="width: 13%;">
+        <col style="width: 13%;">
+        <col style="width: 8.734%;">
+        <col style="width: 13%;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="">No</th>
+          <th scope="">캠페인명</th>
+          <th scope="">대상판매인</th>
+          <th scope="">배정조건</th>
+          <th scope="">배정고객수</th>
+          <th scope="">배정일</th>
+          <th scope="">회수일</th>
+          <th scope="">상태</th>
+          <th scope="">등록일</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="numberS">200</span></td>
+          <td class="txt_l">
+            <a href="" class="links">캠페인명입니다. 캠페인명이 길어질 경우 말줄임표가 아니라 줄바꿈 처리 합니다.</a>
+          </td>
+          <td><span class="numberS">150</span></td>
+          <td><span class="numberS">4</span></td>
+          <td><span class="numberS">200</span></td>
+          <td><span class="numberS">2022.05.26</span></td>
+          <td><span class="numberS">2022.06.26</span></td>
+          <td>
+            대기중
+          </td>
+          <td><span class="numberS">2022.06.26</span></td>
+        </tr>
+        <tr>
+          <td><span class="numberS">199</span></td>
+          <td class="txt_l">
+            <a href="" class="links">캠페인명입니다. 캠페인명이 길어질 경우 말줄임표가 아니라 줄바꿈 처리 합니다.</a>
+          </td>
+          <td><span class="numberS">50</span></td>
+          <td><span class="numberS">4</span></td>
+          <td><span class="numberS">200</span></td>
+          <td><span class="numberS">2022.05.26</span></td>
+          <td><span class="numberS">2022.06.26</span></td>
+          <td>
+            대기중
+          </td>
+          <td><span class="numberS">2022.06.26</span></td>
+        </tr>
+        <tr>
+          <td><span class="numberS">198</span></td>
+          <td class="txt_l">
+            <a href="" class="links">캠페인명입니다. 캠페인명이 길어질 경우 말줄임표가 아니라 줄바꿈 처리 합니다.</a>
+          </td>
+          <td><span class="numberS">50</span></td>
+          <td><span class="numberS">4</span></td>
+          <td><span class="numberS">200</span></td>
+          <td><span class="numberS">2022.05.26</span></td>
+          <td><span class="numberS">2022.06.26</span></td>
+          <td>
+            대기중
+          </td>
+          <td><span class="numberS">2022.06.26</span></td>
+        </tr>
+        <tr>
+          <td><span class="numberS">197</span></td>
+          <td class="txt_l">
+            <a href="" class="links">캠페인명입니다. 캠페인명이 길어질 경우 말줄임표가 아니라 줄바꿈 처리 합니다.</a>
+          </td>
+          <td><span class="numberS">50</span></td>
+          <td><span class="numberS">4</span></td>
+          <td><span class="numberS">200</span></td>
+          <td><span class="numberS">2022.05.26</span></td>
+          <td><span class="numberS">2022.06.26</span></td>
+          <td>
+            대기중
+          </td>
+          <td><span class="numberS">2022.06.26</span></td>
+        </tr>
+        <tr>
+          <td><span class="numberS">196</span></td>
+          <td class="txt_l">
+            <a href="" class="links">캠페인명입니다. 캠페인명이 길어질 경우 말줄임표가 아니라 줄바꿈 처리 합니다.</a>
+          </td>
+          <td><span class="numberS">50</span></td>
+          <td><span class="numberS">4</span></td>
+          <td><span class="numberS">200</span></td>
+          <td><span class="numberS">2022.05.26</span></td>
+          <td><span class="numberS">2022.06.26</span></td>
+          <td>
+            대기중
+          </td>
+          <td><span class="numberS">2022.06.26</span></td>
+        </tr>
+        <tr>
+          <td><span class="numberS">195</span></td>
+          <td class="txt_l">
+            <a href="" class="links">캠페인명입니다. 캠페인명이 길어질 경우 말줄임표가 아니라 줄바꿈 처리 합니다.</a>
+          </td>
+          <td><span class="numberS">50</span></td>
+          <td><span class="numberS">4</span></td>
+          <td><span class="numberS">200</span></td>
+          <td><span class="numberS">2022.05.26</span></td>
+          <td><span class="numberS">2022.06.26</span></td>
+          <td>
+            대기중
+          </td>
+          <td><span class="numberS">2022.06.26</span></td>
+        </tr>
+        <tr>
+          <td><span class="numberS">194</span></td>
+          <td class="txt_l">
+            <a href="" class="links">캠페인명입니다. 캠페인명이 길어질 경우 말줄임표가 아니라 줄바꿈 처리 합니다.</a>
+          </td>
+          <td><span class="numberS">50</span></td>
+          <td><span class="numberS">4</span></td>
+          <td><span class="numberS">200</span></td>
+          <td><span class="numberS">2022.05.26</span></td>
+          <td><span class="numberS">2022.06.26</span></td>
+          <td>
+            대기중
+          </td>
+          <td><span class="numberS">2022.06.26</span></td>
+        </tr>
+        <tr>
+          <td><span class="numberS">193</span></td>
+          <td class="txt_l">
+            <a href="" class="links">캠페인명입니다. 캠페인명이 길어질 경우 말줄임표가 아니라 줄바꿈 처리 합니다.</a>
+          </td>
+          <td><span class="numberS">50</span></td>
+          <td><span class="numberS">4</span></td>
+          <td><span class="numberS">200</span></td>
+          <td><span class="numberS">2022.05.26</span></td>
+          <td><span class="numberS">2022.06.26</span></td>
+          <td>
+            대기중
+          </td>
+          <td><span class="numberS">2022.06.26</span></td>
+        </tr>
+        <tr>
+          <td><span class="numberS">192</span></td>
+          <td class="txt_l">
+            <a href="" class="links">캠페인명입니다. 캠페인명이 길어질 경우 말줄임표가 아니라 줄바꿈 처리 합니다.</a>
+          </td>
+          <td><span class="numberS">50</span></td>
+          <td><span class="numberS">4</span></td>
+          <td><span class="numberS">200</span></td>
+          <td><span class="numberS">2022.05.26</span></td>
+          <td><span class="numberS">2022.06.26</span></td>
+          <td>
+            대기중
+          </td>
+          <td><span class="numberS">2022.06.26</span></td>
+        </tr>
+        <tr>
+          <td><span class="numberS">191</span></td>
+          <td class="txt_l">
+            <a href="" class="links">캠페인명입니다. 캠페인명이 길어질 경우 말줄임표가 아니라 줄바꿈 처리 합니다.</a>
+          </td>
+          <td><span class="numberS">50</span></td>
+          <td><span class="numberS">4</span></td>
+          <td><span class="numberS">200</span></td>
+          <td><span class="numberS">2022.05.26</span></td>
+          <td><span class="numberS">2022.06.26</span></td>
+          <td>
+            대기중
+          </td>
+          <td><span class="numberS">2022.06.26</span></td>
+        </tr>
+        <tr>
+          <td><span class="numberS">190</span></td>
+          <td class="txt_l">
+            <a href="" class="links">캠페인명입니다. 캠페인명이 길어질 경우 말줄임표가 아니라 줄바꿈 처리 합니다.</a>
+          </td>
+          <td><span class="numberS">50</span></td>
+          <td><span class="numberS">4</span></td>
+          <td><span class="numberS">200</span></td>
+          <td><span class="numberS">2022.05.26</span></td>
+          <td><span class="numberS">2022.06.26</span></td>
+          <td>
+            대기중
+          </td>
+          <td><span class="numberS">2022.06.26</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pagination">
+    <a href="#" class="btn_first">처음 페이지로 이동</a>
+    <a href="#" class="btn_prev">이전 페이지로 이동</a>
+    <a href="#" class="num"><span>1</span></a>
+    <span class="current">2</span>
+    <a href="#" class="num"><span>3</span></a>
+    <a href="#" class="num"><span>4</span></a>
+    <a href="#" class="num"><span>5</span></a>
+    <a href="#" class="num"><span>6</span></a>
+    <a href="#" class="num"><span>7</span></a>
+    <a href="#" class="num"><span>8</span></a>
+    <a href="#" class="num"><span>9</span></a>
+    <a href="#" class="num"><span>10</span></a>
+    <a href="#" class="btn_next">다음 페이지로 이동</a>
+    <a href="#" class="btn_last">마지막 페이지로 이동</a>
+  </div>
+
+  <div class="btn_wrap">
+    <button type="button" class="btn_primary">등록</button>
+  </div>
+
+  <ul class="faqList" data-single="true">
+    <li class="no_data">
+      조회 결과가 없습니다.
+    </li>
+  </ul>
+
+
+</div>
+
+
+
+
+
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+    </div><!-- container (e) -->
+    <!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+  </div>
+</body>
+
+</html>

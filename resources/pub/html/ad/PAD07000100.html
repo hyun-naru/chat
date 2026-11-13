@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section">
+  <h1 class="tit01">알림 메세지 관리</h1>
+
+  <ul class="formList div3">
+    <li class="full">
+      <div class="th">조회기간</div>
+      <div class="td">
+        <div class="setHalf">
+          <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz01221">
+          <span class="sign">~</span>
+          <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz1231">
+        </div>
+        <ul class="iptFilt">
+          <li>
+            <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_1" checked>
+            <label for="iptFilt_1">1주일</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_2">
+            <label for="iptFilt_2">1개월</label>
+          </li>
+          <li>
+            <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_3">
+            <label for="iptFilt_3">3개월</label>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div class="th">채널</div>
+      <div class="td">
+        <select class="ipt" disabled>
+          <option selected="">H/B</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">본부</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">지점</div>
+      <div class="td">
+        <select class="ipt" disabled>
+          <option selected="">전체</option>
+        </select>
+      </div>
+    </li>
+    <li class="oneThirdDiv">
+      <div class="th">팀</div>
+      <div class="td">
+        <select class="ipt" disabled>
+          <option selected="">전체</option>
+        </select>
+      </div>
+    </li>
+    <li class="twoThirdsDiv">
+      <div class="th">검색어</div>
+      <div class="td">
+          <select class="ipt min" disabled >
+            <option selected="">선택</option>
+          </select>
+          <input type="text" class="ipt mid" placeholder="예: 김하나">
+      </div>
+    </li>
+  </ul>
+
+  <div class="btn_wrap">
+    <button type="button" class="btn_white">초기화</button>
+    <button type="button" class="btn_primary">조회</button>
+  </div>
+
+  <h2 class="tit02">알림 메시지 목록</h2>
+  <div class="sort_wrap">
+    <div class="sort">
+      <ul class="count">
+        <li>총 <span class="count_num count_num_accent">1,000</span>건</li>
+      </ul>
+    </div>
+    <div class="sortRight">
+      <button type="button" class="btn_white_round m">삭제</button>
+    </div>
+  </div>
+  <div class="tabl_area">
+    <!-- 조회 테이블 (s)-->
+    <table>
+      <caption>알림 메시지 목록</caption>
+      <colgroup>
+        <col style="width: 8%;">
+        <col style="width: 22%;">
+        <col style="width: 13%;">
+        <col style="width: auto;">
+        <col style="width: 14%;">
+        <col style="width: 10%;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col">선택</th>
+          <th scope="col">노출기간</th>
+          <th scope="col">대상자(사번)</th>
+          <th scope="col">내용</th>
+          <th scope="col">등록일</th>
+          <th scope="col">등록자</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span class="single">
+              <input type="checkbox" class="ipt" name="" id="chk_1"><label for="chk_1"></label>
+            </span>
+          </td>
+          <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+          <td>홍길동(123456)</td>
+          <td>
+            <a href="javascript:;" class="links ellipsis">입력된 내용이 추력됩니다. 입력된 내용이 출력됩니다</a>
+          </td>
+          <td>YYYY.MM.DD</td>
+          <td>김하나</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="single">
+              <input type="checkbox" class="ipt" name="" id="chk_1"><label for="chk_1"></label>
+            </span>
+          </td>
+          <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+          <td>홍길동(123456)</td>
+          <td>
+            <a href="javascript:;" class="links ellipsis">입력된 내용이 추력됩니다. 입력된 내용이 출력됩니다</a>
+          </td>
+          <td>YYYY.MM.DD</td>
+          <td>김하나</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="single">
+              <input type="checkbox" class="ipt" name="" id="chk_1"><label for="chk_1"></label>
+            </span>
+          </td>
+          <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+          <td>홍길동(123456)</td>
+          <td>
+            <a href="javascript:;" class="links ellipsis">입력된 내용이 추력됩니다. 입력된 내용이 출력됩니다</a>
+          </td>
+          <td>YYYY.MM.DD</td>
+          <td>김하나</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="single">
+              <input type="checkbox" class="ipt" name="" id="chk_1"><label for="chk_1"></label>
+            </span>
+          </td>
+          <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+          <td>홍길동(123456)</td>
+          <td>
+            <a href="javascript:;" class="links ellipsis">입력된 내용이 추력됩니다. 입력된 내용이 출력됩니다</a>
+          </td>
+          <td>YYYY.MM.DD</td>
+          <td>김하나</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="single">
+              <input type="checkbox" class="ipt" name="" id="chk_1"><label for="chk_1"></label>
+            </span>
+          </td>
+          <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+          <td>홍길동(123456)</td>
+          
+          <td>
+            <a href="javascript:;" class="links ellipsis">입력된 내용이 추력됩니다. 입력된 내용이 출력됩니다</a>
+          </td>
+          <td>YYYY.MM.DD</td>
+          <td>김하나</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--// 조회 테이블 (e)-->
+    <!-- No Result (s) -->
+    <div class="noresultWrap">
+      <img src="./resources/pt/images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+      <div class="noresultText">조회 결과가 없습니다.</div>
+    </div>
+    <!--// No Result (e) -->
+  </div>
+
+  <div class="btn_wrap">
+    <button type="button" class="btn_primary">등록</button>
+  </div>
+
+</div>
+
+
+
+
+
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+    </div><!-- container (e) -->
+    <div class="footer"></div>
+  </div>
+</body>
+
+</html>

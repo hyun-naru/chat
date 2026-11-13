@@ -1,0 +1,660 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html body:not(.hana-branch-app) * {
+    outline: none;
+}
+
+.hana-branch-app {
+  all: initial;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: 1440px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f1f3f5;
+  line-height: 1.6;
+  font-family: "Spoqa Han Sans Neo", "Roboto", sans-serif;
+  color: #333;
+  font-size: 15px;
+}
+
+.hana-branch-app :where(*) {
+  all: revert;
+  box-sizing: border-box;
+  font-family: "Spoqa Han Sans Neo", "Roboto", sans-serif;
+}
+
+.hana-branch-app :where(a, button, input, select, textarea) {
+  font-family: "Spoqa Han Sans Neo", "Roboto", sans-serif;
+  letter-spacing: normal;
+}
+
+
+.hana-branch-app button,
+.hana-branch-app input,
+.hana-branch-app select {
+  font: inherit;
+}
+
+.hana-branch-app button,
+.hana-branch-app a,
+.hana-branch-app input,
+.hana-branch-app select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hana-branch-app button {
+  border: 1px solid #008e71;
+  border-radius: 8px;
+  padding: 9px 16px;
+  color: #008e71;
+  background: white;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.hana-branch-app button:hover {
+  background: #eff8f5;
+}
+
+.hana-branch-app button:disabled {
+  cursor: wait;
+  opacity: .55;
+}
+
+.hana-branch-app input,
+.hana-branch-app select {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 12px;
+  background: white;
+  min-width: 0;
+  color: #333;
+}
+
+.hana-branch-app input:focus-visible,
+.hana-branch-app select:focus-visible,
+.hana-branch-app button:focus-visible,
+.hana-branch-app a:focus-visible,
+.hana-branch-app [tabindex]:focus-visible {
+  outline: 1px solid #008e71;
+}
+
+.hana-branch-app a {
+  color: #445fe6;
+  text-underline-offset: 3px;
+}
+
+.hana-branch-app [hidden] {
+  display: none !important;
+}
+
+.hana-branch-app h1,
+.hana-branch-app h2,
+.hana-branch-app h3,
+.hana-branch-app h4,
+.hana-branch-app p {
+  margin: 0;
+}
+
+.hana-branch-app .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 0;
+    background: #ffffff;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.hana-branch-app .hbl-header {
+  background: #00857E;
+  color: white;
+  padding: 24px 30px;
+  border-bottom: 4px solid #006551;
+    border-radius: 8px 8px 0 0;
+}
+
+.hana-branch-app .hbl-header h1 {
+  font-size: 27px;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.hana-branch-app .hbl-header p {
+  font-size: 14px;
+  color: #d7eeee;
+}
+
+.hana-branch-app .hbl-main-content {
+  padding: 28px 30px;
+  background: white;
+  min-height: calc(100vh - 170px);
+  border-radius: 8px;
+}
+
+.hana-branch-app .hbl-page-heading {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.hana-branch-app .hbl-page-heading h2 {
+  font-size: 25px;
+  color: #008e71;
+}
+
+.hana-branch-app .hbl-data-summary {
+  color: #666;
+  font-size: 13px;
+}
+
+.hana-branch-app .hbl-csv-admin-panel {
+  background: #eff8f5;
+  border: 1px solid #008e71;
+  padding: 17px 20px;
+  margin-bottom: 28px;
+  border-radius: 8px;
+}
+
+.hana-branch-app .hbl-csv-admin-panel h3 {
+  color: #008e71;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.hana-branch-app .hbl-csv-upload-row,
+.hana-branch-app .hbl-csv-file-label,
+.hana-branch-app .hbl-button-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hana-branch-app .hbl-csv-file-label {
+  font-weight: 600;
+  margin-right: auto;
+}
+
+.hana-branch-app .hbl-csv-file-label input {
+  border: 0;
+  padding: 0;
+  max-width: 310px;
+  width: 100%;
+  background: transparent;
+  font-size: 13px;
+}
+
+.hana-branch-app .hbl-csv-file-label input::file-selector-button {
+  border: 1px solid #cdcdcd;
+  background: white;
+  color: #333;
+  padding: 8px 11px;
+  margin-right: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.hana-branch-app .hbl-csv-help {
+  color: #666;
+  font-size: 13px;
+  margin-top: 10px;
+  line-height: 1.7;
+}
+
+.hana-branch-app .hbl-storage-status {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #0065be;
+}
+
+.hana-branch-app .hbl-message {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.hana-branch-app .hbl-message:not(:empty) {
+  margin-top: 10px;
+}
+
+.hana-branch-app .hbl-message.hbl-error {
+  color: #DC231E;
+}
+
+.hana-branch-app .hbl-message.hbl-success {
+  color: #008e71;
+}
+
+.hana-branch-app .hbl-csv-preview {
+  border-top: 1px solid #c6d8d8;
+  padding-top: 16px;
+  margin-top: 16px;
+  min-width: 0;
+}
+
+.hana-branch-app .hbl-csv-preview h4 {
+  font-size: 16px;
+  color: #006551;
+  margin-bottom: 8px;
+}
+
+.hana-branch-app .hbl-csv-preview p {
+  font-size: 13px;
+}
+
+.hana-branch-app .hbl-table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+  margin-top: 12px;
+}
+
+.hana-branch-app .hbl-preview-table {
+  border-collapse: collapse;
+  background: white;
+  font-size: 12px;
+}
+
+.hana-branch-app .hbl-preview-table th,
+.hana-branch-app .hbl-preview-table td {
+  min-width: 95px;
+  max-width: 240px;
+  padding: 8px;
+  border: 1px solid #cdcdcd;
+  white-space: pre-line;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.hana-branch-app .hbl-preview-table th {
+  color: #006551;
+  background: #deecec;
+  white-space: nowrap;
+}
+
+.hana-branch-app .hbl-button-row {
+  margin-top: 14px;
+}
+
+.hana-branch-app .hbl-primary-button {
+  background: #00857e;
+  color: white;
+}
+
+.hana-branch-app .hbl-primary-button:hover {
+  background: #006551;
+}
+
+.hana-branch-app .hbl-lookup-section h3 {
+  color: #006551;
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.hana-branch-app .hbl-search-form {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.hana-branch-app .hbl-search-form input {
+  flex: 1;
+  width: 100%;
+}
+
+.hana-branch-app .hbl-search-form button {
+  flex-shrink: 0;
+  min-width: 72px;
+}
+
+.hana-branch-app .hbl-search-help {
+  margin-top: 8px;
+  color: #666;
+  font-size: 13px;
+}
+
+.hana-branch-app .hbl-select-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.hana-branch-app .hbl-select-field {
+  min-width: 0;
+}
+
+.hana-branch-app .hbl-select-field label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #006551;
+}
+
+.hana-branch-app .hbl-select-field select {
+  width: 100%;
+  min-height: 48px;
+  text-overflow: ellipsis;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #fff url(../../../tab/pt/images/icons/ico_arrowdrop.svg) no-repeat right 8px center;
+}
+
+.hana-branch-app .hbl-select-field select:disabled {
+  color: #777;
+  background-color: #f8f8f8;
+}
+
+.hana-branch-app .hbl-empty-state {
+  background: #f7f8f8;
+  text-align: center;
+  color: #777;
+  padding: 36px 20px;
+  border: 1px solid #cdcdcd;
+  margin-top: 24px;
+  border-radius: 8px;
+}
+
+.hana-branch-app .hbl-search-results {
+  margin-top: 22px;
+}
+
+.hana-branch-app .hbl-result-count {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.hana-branch-app .hbl-search-result-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.hana-branch-app .hbl-search-result {
+  text-align: left;
+  padding: 16px 18px;
+  min-width: 0;
+  border: 1px solid #cdcdcd;
+  border-radius: 8px;
+  color: #333;
+  overflow-wrap: anywhere;
+}
+
+.hana-branch-app .hbl-search-result:hover {
+  border-color: #008e71;
+}
+
+.hana-branch-app .hbl-search-result small {
+  display: block;
+  color: #777;
+  font-size: 12px;
+}
+
+.hana-branch-app .hbl-search-result strong {
+  display: block;
+  font-size: 17px;
+  color: #006551;
+  margin: 4px 0 7px;
+}
+
+.hana-branch-app .hbl-search-result span {
+  display: block;
+  font-size: 13px;
+  color: #666;
+}
+
+.hana-branch-app .hbl-more-results {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.hana-branch-app .hbl-contact-info {
+  margin-top: 28px;
+}
+
+.hana-branch-app .hbl-contact-heading-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #008e71;
+}
+
+.hana-branch-app .hbl-contact-heading-row h3 {
+  margin: 0;
+  font-size: 21px;
+  overflow-wrap: anywhere;
+}
+
+.hana-branch-app .hbl-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.hana-branch-app .hbl-info-card {
+  min-width: 0;
+  border: 1px solid #e5e5e5;
+  background: white;
+}
+
+.hana-branch-app .hbl-info-card h4 {
+  background: #eff8f5;
+  border-bottom: 1px solid #e5e5e5;
+  border-left: 4px solid #008e71;
+  padding: 12px 16px;
+  color: #008e71;
+  font-size: 16px;
+}
+
+.hana-branch-app .hbl-info-body {
+  padding: 8px 18px;
+}
+
+.hana-branch-app .hbl-info-row {
+  display: grid;
+  grid-template-columns: 95px minmax(0, 1fr);
+  padding: 11px 0;
+  border-bottom: 1px solid #edf0f0;
+  gap: 12px;
+}
+
+.hana-branch-app .hbl-info-row:last-child {
+  border-bottom: 0;
+}
+
+.hana-branch-app .hbl-info-title {
+  font-size: 13px;
+  color: #777;
+}
+
+.hana-branch-app .hbl-info-value {
+  overflow-wrap: anywhere;
+  font-size: 15px;
+  white-space: pre-line;
+}
+
+.hana-branch-app .hbl-dm-item {
+  display: grid;
+  grid-template-columns: 95px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid #edf0f0;
+}
+
+.hana-branch-app .hbl-dm-item:last-child {
+  border-bottom: 0;
+}
+
+.hana-branch-app .hbl-dm-name {
+  font-size: 15px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.hana-branch-app .hbl-dm-phone {
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.hana-branch-app footer {
+  border-top: 1px solid #e6ebeb;
+  text-align: center;
+  color: #888;
+  font-size: 12px;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.hana-branch-app .hbl-sr-only,
+.hana-branch-app .hbl-skip-link:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.hana-branch-app .hbl-skip-link:focus {
+  position: fixed;
+  z-index: 100;
+  top: 8px;
+  left: 8px;
+  padding: 10px 15px;
+  background: white;
+  color: #006551;
+}
+
+.hana-branch-app .hbl-copy-fallback {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+}
+
+@media(max-width:1000px) {
+  html:has(div.hana-branch-app) {
+    min-width: auto;
+  }
+  .hana-branch-app .hbl-search-result-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hana-branch-app .hbl-csv-file-label {
+    width: 100%;
+  }
+}
+
+@media(max-width:640px) {
+  .hana-branch-app {
+    padding: 0;
+    font-size: 14px;
+  }
+
+  .hana-branch-app .hbl-header {
+    padding: 20px 18px;
+  }
+
+  .hana-branch-app .hbl-header h1 {
+    font-size: 23px;
+  }
+
+  .hana-branch-app .hbl-main-content {
+    padding: 22px 16px;
+  }
+
+  .hana-branch-app .hbl-page-heading h2 {
+    font-size: 23px;
+  }
+
+  .hana-branch-app .hbl-csv-admin-panel {
+    padding: 15px;
+    margin-bottom: 24px;
+  }
+
+  .hana-branch-app .hbl-csv-file-label {
+    gap: 8px;
+  }
+
+  .hana-branch-app .hbl-csv-file-label input {
+    max-width: 100%;
+  }
+
+  .hana-branch-app .hbl-csv-upload-row>button {
+    flex: 1;
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  .hana-branch-app .hbl-search-form {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .hana-branch-app .hbl-search-form input {
+    flex-basis: 100%;
+    padding: 13px 11px;
+  }
+
+  .hana-branch-app .hbl-search-form button {
+    flex: 1;
+  }
+
+  .hana-branch-app .hbl-select-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .hana-branch-app .hbl-search-result-list,
+  .hana-branch-app .hbl-contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hana-branch-app .hbl-contact-grid {
+    gap: 14px;
+  }
+
+  .hana-branch-app .hbl-contact-heading-row h3 {
+    font-size: 19px;
+  }
+
+  .hana-branch-app .hbl-contact-heading-row button {
+    width: 100%;
+  }
+
+  .hana-branch-app .hbl-info-body {
+    padding: 7px 15px;
+  }
+
+  .hana-branch-app .hbl-info-row,
+  .hana-branch-app .hbl-dm-item {
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .hana-branch-app .hbl-empty-state {
+    padding: 28px 16px;
+  }
+}
+
+.hana-branch-app a[href^="tel:"] {
+  color: #00857e !important;
+}

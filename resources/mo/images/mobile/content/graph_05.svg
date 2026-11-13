@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="736" height="266" viewBox="0 0 736 266">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="619" height="24" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#1aa4a4" stop-opacity="0.078"/>
+      <stop offset="1" stop-color="#0b5d77" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ed1651" stop-opacity="0.078"/>
+      <stop offset="1" stop-color="#770b29" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0065be" stop-opacity="0.078"/>
+      <stop offset="1" stop-color="#00335f" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="graph03하나로연결된변액연금보험_거치형" transform="translate(-497 -376)">
+    <g id="box" transform="translate(497 376)" fill="#fff" stroke="#e5e5e5" stroke-width="1">
+      <rect width="736" height="266" rx="15" stroke="none"/>
+      <rect x="0.5" y="0.5" width="735" height="265" rx="14.5" fill="none"/>
+    </g>
+    <rect id="사각형_16262" data-name="사각형 16262" width="616" height="60" transform="translate(584 518)" fill="#fafafa"/>
+    <rect id="사각형_16261" data-name="사각형 16261" width="616" height="60" transform="translate(584 398)" fill="#fafafa"/>
+    <g id="graph" transform="translate(4 39)">
+      <g id="left">
+        <text id="_90_" data-name="90%" transform="translate(532 531)" fill="#999" font-size="13" font-family="Roboto-Regular, Roboto" letter-spacing="-0.03em"><tspan x="16.627" y="14">90%</tspan></text>
+        <text id="_95_" data-name="95%" transform="translate(525 471)" fill="#999" font-size="13" font-family="Roboto-Regular, Roboto" letter-spacing="-0.03em"><tspan x="23.634" y="14">95%</tspan></text>
+        <text id="_100_" data-name="100%" transform="translate(525 411)" fill="#999" font-size="13" font-family="Roboto-Regular, Roboto" letter-spacing="-0.03em"><tspan x="16.692" y="14">100%</tspan></text>
+        <text id="_105_" data-name="105%" transform="translate(525 351)" fill="#999" font-size="13" font-family="Roboto-Regular, Roboto" letter-spacing="-0.03em"><tspan x="16.698" y="14">105%</tspan></text>
+      </g>
+      <g id="반복_그리드_1" data-name="반복 그리드 1" transform="translate(577 539)" clip-path="url(#clip-path)">
+        <g id="그룹_103485" data-name="그룹 103485" transform="translate(-592 -539)">
+          <text id="_3개월" data-name="3개월" transform="translate(592 547)" fill="#999" font-size="13" font-family="Roboto-Regular, Roboto" letter-spacing="-0.03em"><tspan x="14.771" y="15">3</tspan><tspan y="15" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-weight="500">개월</tspan></text>
+          <g id="사각형_16236" data-name="사각형 16236" transform="translate(668 539)" fill="#fff" stroke="#e5e5e5" stroke-width="1">
+            <rect width="1" height="6" stroke="none"/>
+            <rect x="0.5" y="0.5" height="5" fill="none"/>
+          </g>
+        </g>
+        <g id="그룹_103485-2" data-name="그룹 103485" transform="translate(-455 -539)">
+          <text id="_6개월" data-name="6개월" transform="translate(592 547)" fill="#999" font-size="13" font-family="Roboto-Regular, Roboto" letter-spacing="-0.03em"><tspan x="14.771" y="15">6</tspan><tspan y="15" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-weight="500">개월</tspan></text>
+          <g id="사각형_16236-2" data-name="사각형 16236" transform="translate(668 539)" fill="#fff" stroke="#e5e5e5" stroke-width="1">
+            <rect width="1" height="6" stroke="none"/>
+            <rect x="0.5" y="0.5" height="5" fill="none"/>
+          </g>
+        </g>
+        <g id="그룹_103485-3" data-name="그룹 103485" transform="translate(-318 -539)">
+          <text id="_9개월" data-name="9개월" transform="translate(592 547)" fill="#999" font-size="13" font-family="Roboto-Regular, Roboto" letter-spacing="-0.03em"><tspan x="14.771" y="15">9</tspan><tspan y="15" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-weight="500">개월</tspan></text>
+          <g id="사각형_16236-3" data-name="사각형 16236" transform="translate(668 539)" fill="#fff" stroke="#e5e5e5" stroke-width="1">
+            <rect width="1" height="6" stroke="none"/>
+            <rect x="0.5" y="0.5" height="5" fill="none"/>
+          </g>
+        </g>
+        <g id="그룹_103485-4" data-name="그룹 103485" transform="translate(-181 -539)">
+          <text id="_1년" data-name="1년" transform="translate(592 547)" fill="#999" font-size="13" font-family="Roboto-Regular, Roboto" letter-spacing="-0.03em"><tspan x="20.556" y="15">1</tspan><tspan y="15" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-weight="500">년</tspan></text>
+          <g id="사각형_16236-4" data-name="사각형 16236" transform="translate(668 539)" fill="#fff" stroke="#e5e5e5" stroke-width="1">
+            <rect width="1" height="6" stroke="none"/>
+            <rect x="0.5" y="0.5" height="5" fill="none"/>
+          </g>
+        </g>
+        <g id="그룹_103485-5" data-name="그룹 103485" transform="translate(-44 -539)">
+          <text id="_2년" data-name="2년" transform="translate(592 547)" fill="#999" font-size="13" font-family="Roboto-Regular, Roboto" letter-spacing="-0.03em"><tspan x="20.556" y="15">2</tspan><tspan y="15" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-weight="500">년</tspan></text>
+          <g id="사각형_16236-5" data-name="사각형 16236" transform="translate(668 539)" fill="#fff" stroke="#e5e5e5" stroke-width="1">
+            <rect width="1" height="6" stroke="none"/>
+            <rect x="0.5" y="0.5" height="5" fill="none"/>
+          </g>
+        </g>
+      </g>
+      <g id="graph-2" data-name="graph">
+        <rect id="사각형_16233" data-name="사각형 16233" width="1" height="133" transform="translate(580 410)" fill="#e5e5e5" opacity="0"/>
+        <rect id="사각형_16234" data-name="사각형 16234" width="616" height="1" transform="translate(580 539)" fill="#e5e5e5"/>
+      </g>
+      <g id="line" transform="translate(-7.385 -33)">
+        <g id="초록" transform="translate(598 429)">
+          <path id="패스_19540" data-name="패스 19540" d="M1170.485,542.667l.169-119.792S1005.4,442.273,979.839,446L844.2,450.125,598,464.375V542Z" transform="translate(-598 -429)" fill="url(#linear-gradient)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+          <path id="line-2" data-name="line" d="M599,479s316.535-14.183,380.144-18.149c56.1-8.432,190.34-23.184,190.34-23.184" transform="translate(-598 -443.667)" fill="none" stroke="#1aa4a4" stroke-linecap="round" stroke-width="2"/>
+          <g id="타원_546" data-name="타원 546" transform="translate(568.385 -10)" fill="#fff" stroke="#1aa4a4" stroke-width="2">
+            <circle cx="4" cy="4" r="4" stroke="none"/>
+            <circle cx="4" cy="4" r="3" fill="none"/>
+          </g>
+        </g>
+        <g id="빨강" transform="translate(598 468)">
+          <path id="패스_19539" data-name="패스 19539" d="M1170.487,542.667V474.583l-186.1-3.907L598,468v74Z" transform="translate(-598 -468)" fill="url(#linear-gradient-2)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+          <path id="line-3" data-name="line" d="M599,484s331.194,3.333,393.539,3,176.948,4.667,176.948,4.667" transform="translate(-598 -484.667)" fill="none" stroke="#ed1651" stroke-linecap="round" stroke-width="2"/>
+          <g id="타원_545" data-name="타원 545" transform="translate(568.385 3)" fill="#fff" stroke="#ed1651" stroke-width="2">
+            <circle cx="4" cy="4" r="4" stroke="none"/>
+            <circle cx="4" cy="4" r="3" fill="none"/>
+          </g>
+        </g>
+        <g id="파랑" transform="translate(598 504.323)">
+          <path id="패스_19538" data-name="패스 19538" d="M598.57,473.228V568.14l571.918,1.183v-38.1s-133.752-22.123-195.882-30.7C927.86,495.19,598.57,473.228,598.57,473.228Z" transform="translate(-598.57 -501.323)" fill="url(#linear-gradient-3)" style="mix-blend-mode: hard-light;isolation: isolate"/>
+          <path id="line-4" data-name="line" d="M599,478.667s347.735,25.184,373.588,27c45.647,5.983,196.9,31.333,196.9,31.333" transform="translate(-598 -507.323)" fill="none" stroke="#0065be" stroke-linecap="round" stroke-width="2"/>
+          <g id="타원_544" data-name="타원 544" transform="translate(568.385 25.678)" fill="#fff" stroke="#0065be" stroke-width="2">
+            <circle cx="4" cy="4" r="4" stroke="none"/>
+            <circle cx="4" cy="4" r="3" fill="none"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <text id="투자수익률_4.125_" data-name="투자수익률 4.125%" transform="translate(1080 410)" fill="#111" font-size="11" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-weight="500" letter-spacing="-0.05em"><tspan x="2.902" y="13">투자수익률 </tspan><tspan y="13" font-family="NotoSansCJKkr-Bold, Noto Sans CJK KR" font-weight="700">4.125%</tspan></text>
+    <text id="투자수익률_2.75_" data-name="투자수익률 2.75%" transform="translate(1079 483)" fill="#111" font-size="11" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-weight="500" letter-spacing="-0.05em"><tspan x="8.831" y="13">투자수익률 </tspan><tspan y="13" font-family="NotoSansCJKkr-Bold, Noto Sans CJK KR" font-weight="700">2.75%</tspan></text>
+    <text id="투자수익률_-1.00_" data-name="투자수익률 -1.00%" transform="translate(1079 541)" fill="#111" font-size="11" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-weight="500" letter-spacing="-0.05em"><tspan x="5.311" y="13">투자수익률 </tspan><tspan y="13" font-family="NotoSansCJKkr-Bold, Noto Sans CJK KR" font-weight="700">-1.00%</tspan></text>
+  </g>
+</svg>

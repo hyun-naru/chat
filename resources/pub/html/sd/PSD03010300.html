@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>청약서작성</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section">
+  <h1 class="tit01">청약서작성</h1>
+
+  <!-- tablet 전자청약 -->
+  <div class="progressWrap9">
+    <!-- .progressItem 에 .active 추가하면 color 변경 -->
+    <div class="progressItem active"><a href="#" class="progressCell">개인정보 처리<br>동의</a></div>
+    <div class="progressItem "><a href="#" class="progressCell">1.보험가입<br>내용 확인</a></div>
+    <div class="progressItem"><a href="#" class="progressCell">2. 계약관련자<br>정보 입력</a></div>
+    <div class="progressItem"><a href="#" class="progressCell">3. CDD/EDD<br>/FATCA</a></div>
+    <div class="progressItem"><a href="#" class="progressCell">4. 계약전<br>알릴의무사항</a></div>
+    <div class="progressItem"><a href="#" class="progressCell">5. 주요설명<br>확인</a></div>
+    <div class="progressItem"><a href="#" class="progressCell">6. 청약문서<br>확인 및 서명</a></div>
+    <div class="progressItem"><a href="#" class="progressCell">7. 결제정보<br>입력</a></div>
+    <div class="progressItem"><a href="#" class="progressCell">8. 완료</a></div>
+  </div>
+  <!-- //tablet 전자청약 -->
+
+  <!-- pc 서면청약 -->
+  <div class="progressWrap6" style="display: none">
+    <!-- .progressItem 에 .active 추가하면 color 변경 -->
+    <div class="progressItem active"><a href="#" class="progressCell">1. 보험가입내용<br>확인</a></div>
+    <div class="progressItem"><a href="#" class="progressCell">2. 계약관련자 정보<br>입력</a></div>
+    <div class="progressItem"><a href="#" class="progressCell">3. CDD/EDD<br>/FATCA</a></div>
+    <div class="progressItem"><a href="#" class="progressCell">4. 계약전<br>알릴의무사항</a></div>
+    <div class="progressItem"><a href="#" class="progressCell">5. 결제정보 입력</a></div>
+    <div class="progressItem"><a href="#" class="progressCell">6. 완료</a></div>
+  </div>
+  <!-- //pc 서면청약 -->
+
+  <div class="summaryBox mb60">
+    <div class="infoArea">
+      <div class="detailCell pl0">
+        <strong class="tit mb5">(무)하나변액연금보험Ⅱ(적립형) 개인 기간보증부종신연금형_정액형_10년보증</strong>
+        <ul class="infoList min">
+          <li>
+            <div class="item">계약자/피보험자</div>
+            <div class="val">홍길동</div>
+          </li>
+          <li>
+            <div class="item">보험료</div>
+            <div class="val">75,000원</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="fontM18 mb15">
+    보험계약체결을 위한 개인(신용)정보 처리에 동의해주세요.
+  </div>
+  <div class="trems_wrap">
+    <div class="trems_allchk">
+
+      <input type="checkbox" class="ipt round" name="" id="chk_1"><label for="chk_1">전체동의</label>
+
+    </div>
+    <ul class="trems_chklist">
+      <li>
+        <span class="single">
+          <input type="checkbox" class="ipt" name="" id="chk_3"><label for="chk_3">[필수] 계약의 체결이행을 위한 상세동의서</label>
+        </span>
+        <button class="btn_view">view</button>
+      </li>
+      <li>
+        <span class="single">
+          <input type="checkbox" class="ipt" name="" id="chk_5"><label for="chk_5">[선택] 상품소개를 위한 상세동의서</label>
+        </span>
+        <button class="btn_view">view</button>
+      </li>
+    </ul>
+  </div>
+
+
+
+  <div class="btn_wrap">
+    <button type="button" class="btn_primary">본인인증</button>
+    <!-- <button type="button" class="btn_primary">확인</button> -->
+  </div>
+
+</div>
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+
+</html>

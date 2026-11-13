@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+    <g transform="translate(-186 -1118)">
+        <circle data-name="타원 529" cx="32" cy="32" r="32" transform="translate(186 1118)" style="fill:#f8f8f8"/>
+        <g data-name="그룹 103701" transform="translate(-1 -1)">
+            <circle data-name="타원 538" cx="20" cy="20" r="20" transform="translate(199 1131)" style="fill:#f9b61e"/>
+            <g data-name="그룹 103700">
+                <path data-name="패스 19675" d="M224.122 1146.714a5.788 5.788 0 0 0-8.524-.64c-2.951 2.945-1.526 8.145-4.517 11.52" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:1.5px"/>
+                <path data-name="패스 19676" d="M222.419 1161.072a20.867 20.867 0 0 0 2.871-10.6" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:1.5px"/>
+                <path data-name="패스 19677" d="M215.2 1141.706a9.668 9.668 0 0 1 11.78 2.526c2.933 3.829 2.221 9.277.9 13.582" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:1.5px"/>
+                <path data-name="패스 19678" d="M208.978 1154.117c1.538-3.224.9-7.061 3.221-9.986" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:1.5px"/>
+                <path data-name="패스 19679" d="M217.422 1152.935a15.049 15.049 0 0 1-3.4 7.042" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:1.5px"/>
+                <path data-name="패스 19680" d="M217.8 1161.291a18.207 18.207 0 0 0 3.611-9.685c.046-.983.212-2.294-.653-2.993a1.8 1.8 0 0 0-2.909 1.027" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:1.5px"/>
+            </g>
+        </g>
+    </g>
+</svg>

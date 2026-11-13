@@ -1,0 +1,49 @@
+
+<!-- * 프로젝트 : 하나생명 NEW SFA 시스템 구축
+     * 설   명 : 은행 선택 팝업
+     * 작 성 자 : 이진규
+     *
+     * << 개정이력(Modification Information) >>
+     * ========================================================
+     *   수정일                   수정자             수정 내용
+     * --------------------------------------------------------
+     *   2022.06.23             70112		        최초 생성
+     * ======================================================== -->
+     
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<div class="popWrap">
+  <div class="popContain">
+    <div class="popup">
+      <div class="popHead">
+        <h1 class="tit01">은행선택</h1>
+      </div>
+      <div class="popBody col_6">
+<!-- 팝업 내용 시작 (s) -->
+<section>
+  <div class="tab tab_cm tab_popup">
+      <ul class="tab_bar">
+        <li><a href="#">은행</a></li>
+        <li><a href="#">증권사</a></li>
+      </ul>
+      <div class="tab_cont">
+        <div class="tab_cont_list">
+          <ul class="iptGroup inline3" id="list_Bank">
+          </ul>
+        </div>
+        <div class="tab_cont_list">
+          <ul class="iptGroup inline3" id="list_Stock">
+          </ul>
+        </div>
+      </div>
+    </div>
+</section>
+<!-- 팝업 내용 끝 (e) -->
+      </div>
+      <div class="btn_wrap sticky">
+        <button type="button" class="btn_gray" onclick="lp.close();"><span>취소</span></button>
+        <button type="button" class="btn_primary" id="btn_confirm"><span>확인</span></button>
+      </div>
+      <button type="button" class="icoBtn_close" onclick="lp.close();"><span>팝업 닫기</span></button>
+    </div>
+  </div>
+</div>

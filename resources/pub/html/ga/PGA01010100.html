@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>GA정보</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script>
+  <!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+      <!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+      <div class="section gaWrap">
+
+        <h1 class="tit01">GA정보</h1>
+        
+        <ul class="accoList box">
+          <li>
+            <div class="accoHead">
+              <a class="accoBtn">조직정보 DB 업로드</a>
+            </div>
+            <div class="accoBody fileW">
+              <!-- 아코디언 본문내용 시작(s) -->
+              <div class="sort_wrap">
+                <div class="sort"></div>
+                <div class="sortRight">
+                  <button type="button" class="btn_white_round m">양식 다운로드</button>
+                </div>
+              </div>
+              <ul class="formList data">
+                <li class="full">
+                  <div class="th">파일 첨부</div>
+                  <div class="td">
+                    <div class="">
+                      <button type="button" class="btn_white s">파일첨부</button>
+                      <div class="info_file_wrap">
+                        <div class="file_list div2">
+                          <div class="noice_area">
+                            <span class="icon file"></span>
+                            첨부파일명
+                            <span class="icon close"></span>
+                          </div>
+                          <div class="noice_area">
+                            <span class="icon file"></span>
+                            첨부파일명2
+                            <span class="icon close"></span>
+                          </div>
+                          <div class="noice_area">
+                            <span class="icon file"></span>
+                            첨부파일명34
+                            <span class="icon close"></span>
+                          </div>
+                          <div class="noice_area">
+                            <span class="icon file"></span>
+                            첨부파일명
+                            <span class="icon close"></span>
+                          </div>
+                          <div class="noice_area">
+                            <span class="icon file"></span>
+                            첨부파일명
+                            <span class="icon close"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="bgskyblue round">
+                <span class="info_txt">대리점/지점 코드 기준으로 신규일 경우 생성, 기등록일 경우 내용이 수정됩니다.</span>
+              </div>
+              <div class="btn_wrap">
+                <button type="button" class="btn_primary xl">무결성 검증</button>
+              </div>
+              <div class="tableTotal_Wrap mt80">
+                <div class="tableTotal count3">
+                  <div class="countWrap">
+                    <div class="countWrap_tit">총수량</div>
+                    <div class="countWrap_desc"><span class="fontColor1">12,345</span>건</div>
+                  </div>
+                  <div class="countWrap">
+                    <div class="countWrap_tit">정상</div>
+                    <div class="countWrap_desc"><span>12,345</span>건</div>
+                  </div>
+                  <div class="countWrap">
+                    <div class="countWrap_tit">오류</div>
+                    <div class="countWrap_desc">
+                      <a href="#" class="tooltipTextWrap">
+                        <span class="pointC2 under_line">3건</span>
+                        <div class="toolTip">3행, 12행, 15행</div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="btn_wrap">
+                <button type="button" class="btn_primary">업로드 실행</button>
+              </div>
+              <!-- 아코디언 본문내용 시작(e) -->
+            </div>
+          </li>
+        </ul>
+
+        <ul class="formList div2 mt65">
+          <li>
+            <div class="th">대리점</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">전체</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="th">지점</div>
+            <div class="td">
+              <select class="ipt" disabled>
+                <option selected="">전체</option>
+              </select>
+            </div>
+          </li>
+          <li class="full">
+            <div class="th">상태</div>
+            <div class="td">
+              <ul class="iptGroup">
+                <li>
+                  <input type="checkbox" class="ipt" name="chk2" id="chk2_1" checked="">
+                  <label for="chk2_1">정상</label>
+                </li>
+                <li>
+                  <input type="checkbox" class="ipt" name="chk2" id="chk2_2">
+                  <label for="chk2_2">영업중지</label>
+                </li>
+                <li>
+                  <input type="checkbox" class="ipt" name="chk2" id="chk2_3">
+                  <label for="chk2_2">폐업</label>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="full">
+            <div class="th">검색어</div>
+            <div class="td">
+              <div class="flexArr">
+                <select class="ipt min">
+                  <option selected="">전체</option>
+                </select>
+                <input type="text" class="ipt" placeholder="2자 이상 입력">
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="btn_wrap">
+          <button type="button" class="btn_white xl">초기화</button>
+          <button type="button" class="btn_primary xl">조회</button>
+        </div>
+        <div class="sort_wrap">
+          <div class="sort">
+            <ul class="count">
+              <li>총 <span class="count_num count_num_accent">1,000</span>건</li>
+              <li><span class="count_num count_num_accent">1</span>/100페이지</li>
+            </ul>
+          </div>
+					  <!-- 26.06.12 -->
+					  <div class="sortRight" id="downBtn">
+              <button type="button" class="btn_primary_reverse m" onclick="gaInfoList.gaDownloadAllExcel()">엑셀전체다운로드</button>
+              <button type="button" class="btn_primary_reverse m" onclick="gaInfoList.gaDownloadExcel()">엑셀업로드용다운로드</button>
+					  </div>
+					  <!-- //26.06.12 -->
+        </div>
+        <div class="tabl_area">
+          <!--조회 테이블 (s)-->
+          <table>
+            <caption>GA정보</caption>
+            <colgroup>
+              <col style="width:8%;">
+              <col style="width:auto;">
+              <col style="width:auto;">
+              <col style="width:9.5%;">
+              <col style="width:9.5%;">
+              <col style="width:9.5%;">
+              <col style="width:9.5%;">
+              <col style="width:9.5%;">
+              <col style="width:9.5%;">
+              <col style="width:13.5%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col"><span>번호</span></th>
+                <th scope="col"><span>대리점</span></th>
+                <th scope="col"><span>지점</span></th>
+                <th scope="col"><span>판매인수</span></th>
+                <th scope="col"><span>위촉신청</span></th>
+                <th scope="col"><span>해촉신청</span></th>
+                <th scope="col"><span>상태</span></th>
+                <th scope="col"><span>영업보증</span></th>
+                <th scope="col"><span>이행보증</span></th>
+                <th scope="col"><span>등록일</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>970</td>
+                <td><a href="" class="links">Data</a></td>
+                <td><a href="" class="links">Data</a></td>
+                <td><a href="" class="links">120</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>정상</td>
+                <td>정상</td>
+                <td>정상</td>
+                <td>2022.06.21</td>
+              </tr>
+              <tr>
+                <td>969</td>
+                <td>Data</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>심사중</td>
+                <td>-</td>
+                <td>-</td>
+                <td>2022.06.21</td>
+              </tr>
+              <tr>
+                <td>969</td>
+                <td>Data</td>
+                <td><a href="" class="links">Data</a></td>
+                <td><a href="" class="links">100</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>정상</td>
+                <td>-</td>
+                <td>-</td>
+                <td>2022.06.21</td>
+              </tr>
+              <tr>
+                <td>970</td>
+                <td>Data</td>
+                <td><a href="" class="links">Data</a></td>
+                <td><a href="" class="links">100</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>정상</td>
+                <td>-</td>
+                <td>-</td>
+                <td>2022.06.21</td>
+              </tr>
+              <tr>
+                <td>970</td>
+                <td><a href="" class="links">Data</a></td>
+                <td><a href="" class="links">Data</a></td>
+                <td><a href="" class="links">120</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>정상</td>
+                <td>-</td>
+                <td>-</td>
+                <td>2022.06.21</td>
+              </tr>
+              <tr>
+                <td>970</td>
+                <td><a href="" class="links">Data</a></td>
+                <td><a href="" class="links">Data</a></td>
+                <td><a href="" class="links">120</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>정상</td>
+                <td>-</td>
+                <td>-</td>
+                <td>2022.06.21</td>
+              </tr>
+              <tr>
+                <td>970</td>
+                <td><a href="" class="links">Data</a></td>
+                <td><a href="" class="links">Data</a></td>
+                <td><a href="" class="links">120</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>폐업</td>
+                <td>-</td>
+                <td>-</td>
+                <td>2022.06.21</td>
+              </tr>
+              <tr>
+                <td>970</td>
+                <td><a href="" class="links">Data</a></td>
+                <td><a href="" class="links">Data</a></td>
+                <td><a href="" class="links">120</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>폐업</td>
+                <td>-</td>
+                <td>-</td>
+                <td>2022.06.21</td>
+              </tr>
+              <tr>
+                <td>970</td>
+                <td><a href="" class="links">Data</a></td>
+                <td><a href="" class="links">Data</a></td>
+                <td><a href="" class="links">120</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>폐업</td>
+                <td>-</td>
+                <td>-</td>
+                <td>2022.06.21</td>
+              </tr>
+              <tr>
+                <td>970</td>
+                <td><a href="" class="links">Data</a></td>
+                <td><a href="" class="links">Data</a></td>
+                <td><a href="" class="links">120</a></td>
+                <td>0</td>
+                <td>0</td>
+                <td>폐업</td>
+                <td>-</td>
+                <td>-</td>
+                <td>2022.06.21</td>
+              </tr>
+            </tbody>
+          </table>
+          <!--// 조회 테이블 (e)-->
+          <!-- No Result (s) -->
+          <div class="noresultWrap">
+            <img src="../../images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+            <div class="noresultText">조회 결과가 없습니다.</div>
+          </div>
+          <!--// No Result (e) -->
+        </div>
+
+        <!-- 26.06.12<div class="bottom_btn">
+          <button type="button" class="btn_primary_reverse l">엑셀다운로드</button>
+        </div> -->
+
+        <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+          <button type="button" class="icoBtn_first" aria-label="처음"></button>
+          <button type="button" class="icoBtn_prev" aria-label="이전"></button>
+          <ul>
+            <li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+            <li><a href="#"><span class="blind">페이지</span>2</a></li>
+            <li><a href="#"><span class="blind">페이지</span>3</a></li>
+            <li><a href="#"><span class="blind">페이지</span>4</a></li>
+            <li><a href="#"><span class="blind">페이지</span>5</a></li>
+            <li><a href="#"><span class="blind">페이지</span>6</a></li>
+            <li><a href="#"><span class="blind">페이지</span>7</a></li>
+            <li><a href="#"><span class="blind">페이지</span>8</a></li>
+            <li><a href="#"><span class="blind">페이지</span>9</a></li>
+            <li><a href="#"><span class="blind">페이지</span>10</a></li>
+          </ul>
+          <button type="button" class="icoBtn_next" aria-label="다음"></button>
+          <button type="button" class="icoBtn_last" aria-label="마지막"></button>
+        </div>
+        <div class="btn_wrap">
+          <button type="button" class="btn_primary">등록</button>
+        </div>
+
+      </div>
+      <!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+    </div><!-- container (e) -->
+    <!-- 22.07.21 개발이슈로 footer 삭제 -->
+    <!-- <div class="footer"></div> -->
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+    <g transform="translate(-952 -742.5)">
+        <g data-name="그룹 103086" transform="translate(0 -.482)">
+            <rect data-name="사각형 15942" width="1" height="7" rx=".5" transform="translate(957.5 743.482)" style="fill:#666"/>
+            <g data-name="그룹 103084" transform="rotate(-45 957.833 745.93)">
+                <rect data-name="사각형 15943" width="1" height="5" rx=".5" transform="rotate(90 105 854)" style="fill:#666"/>
+                <rect data-name="사각형 15944" width="1" height="5" rx=".5" transform="rotate(180 477.5 375)" style="fill:#666"/>
+            </g>
+        </g>
+        <rect data-name="사각형 15945" width="1" height="9" rx=".5" transform="rotate(90 105 857.5)" style="fill:#666"/>
+    </g>
+</svg>

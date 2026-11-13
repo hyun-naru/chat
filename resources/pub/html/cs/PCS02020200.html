@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section pcs_wrap">
+
+    <div class="personal_current ">
+      <h1 class="tit01">법인고객 조회/변경</h1>
+      <div class="summaryBox">
+        <div class="infoArea">
+          <div class="infoCell">
+            <strong class="tit">하나주식회사</strong>
+            <ul class="infoList">
+              <li>
+                <div class="item">사업자등록번호</div>
+                <div class="val"><span class="numberS">800-00-00000</span></div>
+              </li>
+              <li>
+                <div class="item">구분</div>
+                <div class="val">법인사업자</div>
+              </li>
+            </ul>
+          </div>
+          <div class="detailCell">
+            <ul class="infoList">
+              <li>
+                <div class="item">대표연락처</div>
+                <div class="val"><span class="numberS">010-1234-4567</span></div>
+              </li>
+              <li>
+                <div class="item">이메일</div>
+                <div class="val">honggildong@naver.com </div>
+              </li>
+              <li>
+                <div class="item">판매인</div>
+                <div class="val">홍길동(123456)</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="btn_group">
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 탭 -->
+    <div class="tabBoxWrap">
+      <ul class="tabBoxList single">
+        <li><a href="#" class="tabBoxItem active">고객정보</a></li>
+        <li><a href="#" class="tabBoxItem">직원정보</a></li>
+        <li><a href="#" class="tabBoxItem">변액적합성</a></li>
+        <li><a href="#" class="tabBoxItem">계약정보</a></li>
+        <li><a href="#" class="tabBoxItem ">가입설계</a></li>
+        <li><a href="#" class="tabBoxItem">상담이력</a></li>
+      </ul>
+      <div class="tabBoxDisplay">
+        <!-- 고객정보 시작 -->
+        <div class="tabBoxDisplayItem active">
+          <div class="personal_current">
+            <ul class="formList div2">
+              <li>
+                <div class="th">사업자명</div>
+                <div class="td">하나주식회사</div>
+              </li>
+              <li>
+                <div class="th">사업자등록번호</div>
+                <div class="td"><span class="numberS">800-00-00000</span></div>
+              </li>
+              <li>
+                <div class="th">구분</div>
+                <div class="td">법인사업자</div>
+              </li>
+              <li>
+                <div class="th">법인등록번호</div>
+                <div class="td"><span class="numberS">800-00-00000</span></div>
+              </li>
+              <li>
+                <div class="th">대표자</div>
+                <div class="td">김하나</div>
+              </li>
+              <li>
+                <div class="th">대표연락처</div>
+                <div class="td"><span class="numberS">010-1234-4567</span></div>
+              </li>
+              <li>
+                <div class="th">직장 전화번호</div>
+                <div class="td"><span class="numberS">02-1234-4567</span></div>
+              </li>
+              <li>
+                <div class="th">직장 주소</div>
+                <div class="td">(<span class="numberS">04538</span>)서울 중구 을지로 66, 13층</div>
+              </li>
+              <li>
+                <div class="th">FAX</div>
+                <div class="td"><span class="numberS">02-1234-4567</span></div>
+              </li>
+
+
+              <li>
+                <div class="th">이메일</div>
+                <div class="td">honggildong@naver.com</div>
+              </li>
+              <li>
+                <div class="th">설립일자</div>
+                <div class="td">YYYY.MM.DD</div>
+              </li>
+              <li>
+                <div class="th">설립국가</div>
+                <div class="td">KOR(대한민국)</div>
+              </li>
+              <li>
+                <div class="th">설립목적</div>
+                <div class="td">내용 출력</div>
+              </li>
+              <li>
+                <div class="th">기업상장여부</div>
+                <div class="td">비상장
+                </div>
+              </li>
+              <li>
+                <div class="th">업태/종목</div>
+                <div class="td">금융 중개업</div>
+              </li>
+              <li>
+                <div class="th">홈페이지 URL</div>
+                <div class="td">www.hanaco.co.kr</div>
+              </li>
+              <li class="full">
+                <div class="th">메모</div>
+                <div class="td">판매인이 고객등록시 메모한 내용이 노출됩니다. </div>
+              </li>
+            </ul>
+          </div>
+          <div class="btn_wrap">
+            <button type="button" class="btn_white">목록</button>
+            <button type="button" class="btn_secondary">고객정보수정</button>
+          </div>
+        </div>
+        <!-- 고객정보 끝 -->
+
+        <!-- 직원정보 -->
+        <div class="tabBoxDisplayItem ">
+          <div class="tabl_area">
+            <table>
+              <caption>가족정보</caption>
+              <colgroup>
+                <col style="width: 13%;">
+                <col style="width: 12%;">
+                <col style="width: 12%;">
+                <col style="width: 7%;">
+                <col style="width: 15%;">
+                <col style="width: 15%;">
+                <col style="width: auto;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" ><span>관계</span></th>
+                  <th scope="col" ><span>고객명</span></th>
+                  <th scope="col" ><span>생년월일</span></th>
+                  <th scope="col" ><span>성별</span></th>
+                  <th scope="col" ><span>나이(보험)</span></th>
+                  <th scope="col" ><span>실제 생년월일</span></th>
+                  <th scope="col" ><span>휴대폰 번호</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>대표자</td>
+                  <td>김하나</td>
+                  <td>810101</td>
+                  <td>여자</td>
+                  <td>41세(<span>40세</span>)</td>
+                  <td>810101</td>
+                  <td>010-1234-7894</td>
+                </tr>
+                <tr>
+                  <td>대표자</td>
+                  <td>김하나</td>
+                  <td>810101</td>
+                  <td>여자</td>
+                  <td>41세(<span>40세</span>)</td>
+                  <td>810101</td>
+                  <td>010-1234-7894</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="btn_wrap">
+            <button type="button" class="btn_white">목록</button>
+            <button type="button" class="btn_secondary">고객정보수정</button>
+          </div>
+          <ul class="faqList" data-single="true">
+            <li class="no_data">
+              조회 결과가 없습니다.
+            </li>
+          </ul>
+        </div>
+        <!-- 직원정보 -->
+
+        <!-- 변액적합성 시작 -->
+        <div class="tabBoxDisplayItem">
+          <!-- 적합성 진단이력 없음 (s)  -->
+          <div class="fontM18">
+            변액보험 적합성 진단 이력이 없습니다.<br>
+            <span class="pointC3">$법인명$</span>고객님에게 변액보험 적합성 진단을 요청해 주세요.
+          </div>
+          <div class="msgArea agree mt40">
+            <span class="msg_icon_print"></span>
+            <!-- <p class="msg">출력물(서면)</p> -->
+            <p class="msg sub">변액보험 적합성 진단 문항을 인쇄하세요.<br/>&nbsp;</p>
+            <div class="btn_wrap">
+              <button type="button" class="btn_white xl"><img src="./resources/pt/images/icons/icon_print2.svg" class="icon">인쇄</button>
+              <button type="button" class="btn_primary xl">입력</button>
+            </div>
+          </div>
+          <!-- 적합성 진단이력 없음 (e)  -->
+          <!-- 적합성 진단이력 있음 (s)  -->
+          <ul class="formList div2">
+            <li>
+              <div class="th">상품성향</div>
+              <div class="td">연금형</div>
+            </li>
+            <li>
+              <div class="th">투자성향</div>
+              <div class="td">위험선호형</div>
+            </li>
+            <li>
+              <div class="th">진단일</div>
+              <div class="td">YYYY.MM.DD</div>
+            </li>
+            <li>
+              <div class="th">진단상태</div>
+              <div class="td">완료(전자) <button type="button" class="btn_white s ml10">재진단</button></div>
+            </li>
+          </ul>
+          <div class="btn_wrap">
+            <button type="button" class="btn_white">목록</button>
+          </div>
+          <!-- 적합성 진단이력 있음 (e)  -->
+
+        </div>
+        <!-- 변액적합성 끝 -->
+
+        <!-- 계약정보 -->
+        <div class="tabBoxDisplayItem ">
+          <div class="sort_wrap">
+            <div class="sort">
+              <ul class="count">
+                <li>총 <span class="count_num count_num_accent">2</span>건</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tabl_area" data-tbody="590">
+            <!-- 조회 테이블 (s) -->
+            <table>
+              <caption>계약정보 조회</caption>
+              <colgroup>
+                <col style="width: 14%;">
+                <col style="width: 20%;">
+                <col style="width: auto;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" ><span>증권번호</span></th>
+                  <th scope="col" ><span>고객명<br>사업자번호</span></th>
+                  <th scope="col" ><span>계약정보</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span>01234567</span></td>
+                  <td><p>하나주식회사</p><span>800-00-00000</span></td>
+                  <td class="tlL">
+                    <div class="product_wrap">
+                      <div class="product">
+                        <span class="flag purple">정상유지</span>
+                        <a href="" title="상품명">(무)걱정말아요 암보험Ⅱ(갱신형) </a>
+                      </div>
+                      <!-- 230524 -->
+                      <div class="contract">
+                        <div>계약일<span>YYYY.MM.DD</span></div>
+                        <div>가입금액<span>000,000,000</span></div>
+                        <div>보험료<span>000,000,000</span></div>
+                        <div>환산P<span>12,000</span></div>
+                      </div>
+                      <div class="contract">
+                        <div>판매인<span>하나하나하나대리점 > 하나하나본부 > 하나하나지점</span><span>홍길동(123456A)</span></div>
+                      </div>
+                      <!-- //230524 -->
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span>01234567</span></td>
+                  <td><p>하나주식회사</p><span>800-00-00000</span></td>
+                  <td class="tlL">
+                    <div class="product_wrap">
+                      <div class="product">
+                        <span class="flag purple">정상유지</span>
+                        <a href="" title="상품명">(무)걱정말아요 암보험Ⅱ(갱신형) </a>
+                      </div>
+                      <!-- 230524 -->
+                      <div class="contract">
+                        <div>계약일<span>YYYY.MM.DD</span></div>
+                        <div>가입금액<span>000,000,000</span></div>
+                        <div>보험료<span>000,000,000</span></div>
+                        <div>환산P<span>12,000</span></div>
+                      </div>
+                      <div class="contract">
+                        <div>판매인<span>하나하나하나대리점 > 하나하나본부 > 하나하나지점</span><span>홍길동(123456A)</span></div>
+                      </div>
+                      <!-- //230524 -->
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span>01234567</span></td>
+                  <td><p>하나주식회사</p><span>800-00-00000</span></td>
+                  <td class="tlL">
+                    <div class="product_wrap">
+                      <div class="product">
+                        <span class="flag purple">정상유지</span>
+                        <a href="" title="상품명">(무)걱정말아요 암보험Ⅱ(갱신형) </a>
+                      </div>
+                      <!-- 230524 -->
+                      <div class="contract">
+                        <div>계약일<span>YYYY.MM.DD</span></div>
+                        <div>가입금액<span>000,000,000</span></div>
+                        <div>보험료<span>000,000,000</span></div>
+                        <div>환산P<span>12,000</span></div>
+                      </div>
+                      <div class="contract">
+                        <div>판매인<span>하나하나하나대리점 > 하나하나본부 > 하나하나지점</span><span>홍길동(123456A)</span></div>
+                      </div>
+                      <!-- //230524 -->
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span>01234567</span></td>
+                  <td><p>하나주식회사</p><span>800-00-00000</span></td>
+                  <td class="tlL">
+                    <div class="product_wrap">
+                      <div class="product">
+                        <span class="flag purple">정상유지</span>
+                        <a href="" title="상품명">(무)걱정말아요 암보험Ⅱ(갱신형) </a>
+                      </div>
+                      <!-- 230524 -->
+                      <div class="contract">
+                        <div>계약일<span>YYYY.MM.DD</span></div>
+                        <div>가입금액<span>000,000,000</span></div>
+                        <div>보험료<span>000,000,000</span></div>
+                        <div>환산P<span>12,000</span></div>
+                      </div>
+                      <div class="contract">
+                        <div>판매인<span>하나하나하나대리점 > 하나하나본부 > 하나하나지점</span><span>홍길동(123456A)</span></div>
+                      </div>
+                      <!-- //230524 -->
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span>01234567</span></td>
+                  <td><p>하나주식회사</p><span>800-00-00000</span></td>
+                  <td class="tlL">
+                    <div class="product_wrap">
+                      <div class="product">
+                        <span class="flag purple">정상유지</span>
+                        <a href="" title="상품명">(무)걱정말아요 암보험Ⅱ(갱신형) </a>
+                      </div>
+                      <!-- 230524 -->
+                      <div class="contract">
+                        <div>계약일<span>YYYY.MM.DD</span></div>
+                        <div>가입금액<span>000,000,000</span></div>
+                        <div>보험료<span>000,000,000</span></div>
+                        <div>환산P<span>12,000</span></div>
+                      </div>
+                      <div class="contract">
+                        <div>판매인<span>하나하나하나대리점 > 하나하나본부 > 하나하나지점</span><span>홍길동(123456A)</span></div>
+                      </div>
+                      <!-- //230524 -->
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span>01234567</span></td>
+                  <td><p>하나주식회사</p><span>800-00-00000</span></td>
+                  <td class="tlL">
+                    <div class="product_wrap">
+                      <div class="product">
+                        <span class="flag purple">정상유지</span>
+                        <a href="" title="상품명">(무)걱정말아요 암보험Ⅱ(갱신형) </a>
+                      </div>
+                      <!-- 230524 -->
+                      <div class="contract">
+                        <div>계약일<span>YYYY.MM.DD</span></div>
+                        <div>가입금액<span>000,000,000</span></div>
+                        <div>보험료<span>000,000,000</span></div>
+                        <div>환산P<span>12,000</span></div>
+                      </div>
+                      <div class="contract">
+                        <div>판매인<span>하나하나하나대리점 > 하나하나본부 > 하나하나지점</span><span>홍길동(123456A)</span></div>
+                      </div>
+                      <!-- //230524 -->
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- //조회 테이블 (e) -->
+            <!-- No Result (s) -->
+            <div class="noresultWrap">
+              <img src="./resources/pt/images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+              <div class="noresultText">조회 결과가 없습니다.</div>
+            </div>
+            <!--// No Result (e) -->
+          </div>
+          <div class="btn_wrap">
+            <button type="button" class="btn_white"> 목록</button>
+            <button type="button" class="btn_primary">계약조회</button>
+          </div>
+        </div>
+        <!-- 계약정보 -->
+
+
+        <!-- 가입설계 -->
+        <div class="tabBoxDisplayItem ">
+          <div class="sort_wrap">
+            <div class="sort">
+              <ul class="count">
+                <li>총 <span class="count_num count_num_accent">2</span>건</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tabl_area">
+            <table>
+              <caption>설계일시 조회</caption>
+              <colgroup>
+                <!-- 230524 -->
+                <col style="width: 4%;">
+                <col style="width: 14%;">
+                <col style="width: 22%;">
+                <col style="width: auto;">
+                <col style="width: 12%;">
+                <!-- //230524 -->
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" ></th>
+                  <th scope="col" ><span>설계일시</span></th>
+                  <th scope="col" ><span>고객명(설계번호)</span></th>
+                  <th scope="col" colspan="2"><span>가입설계내용</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td >
+                    <span class="single">
+                      <input type="checkbox" class="ipt" name="" id="chk_2"><label for="chk_2"></label>
+                    </span>
+                  </td>
+                  <td class="tlL"><span>2020.05.23  16:00:00</span>
+                    <span class="flag reverse yellow">간편설계 </span>
+                  </td>
+                  <td class="tlL">
+                    <div class="client_name">
+                      <div>
+                        계약자 : <span>홍길동(123456)</span>
+                      </div>
+                      <div>
+                        피보험자 : <span>홍길자</span>
+                      </div>
+                      <div class="client_num">1234567A123456123456</div>
+                    </div>
+                  </td>
+                  <td class="tlL">
+                    <div class="client_name">
+                      <div>
+                        (무)하나변액연금보험Ⅱ(적립형) 개인 기간보증부종신연금형_정액형_10년보증
+                      </div>
+                      <!-- 230524 -->
+                      <div class="client_num">
+                        <div>가입금액 : <span class="number">165,700</span>원</div>        
+                        <div>합계보험료 : <span class="number">165,700</span>원</div>
+                      </div>
+                      <div class="client_num">
+                        <div>판매인 : <span>하나하나하나대리점 > 하나하나본부 > 하나하나지점</span> <span>홍길동(123456A)</span></div>
+                      </div>
+                      <!-- //230524 -->
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#" title="이어서하기" class="font_gray8_s">이어서하기</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td >
+                    <span class="single">
+                      <input type="checkbox" class="ipt" name="" id="chk_3"><label for="chk_3"></label>
+                    </span>
+                  </td>
+                  <td class="tlL"><span>2020.05.23  16:00:00</span>
+                    <span class="flag reverse blue">가입설계 </span>
+                  </td>
+                  <td class="tlL">
+                    <div class="client_name">
+                      <div>
+                        계약자 : <span>홍길동(123456)</span>
+                      </div>
+                      <div>
+                        피보험자 : <span>홍길자</span>
+                      </div>
+                      <div class="client_num">1234567A123456123456</div>
+                    </div>
+                  </td>
+                  <td class="tlL">
+                    <div class="client_name">
+                      <div>
+                        (무)하나변액연금보험Ⅱ(적립형) 개인 기간보증부종신연금형_정액형_10년보증
+                      </div>
+                      <!-- 230524 -->
+                      <div class="client_num">
+                        <div>가입금액 : <span class="number">165,700</span>원</div>        
+                        <div>합계보험료 : <span class="number">165,700</span>원</div>
+                      </div>
+                      <div class="client_num">
+                        <div>판매인 : <span>하나하나하나대리점 > 하나하나본부 > 하나하나지점</span> <span>홍길동(123456A)</span></div>
+                      </div>
+                      <!-- //230524 -->
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#" title="이어서하기" class="font_gray8_s">이어서하기</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="btn_wrap">
+            <button type="button" class="btn_primary_reverse l">설계비교(<span>0</span>/<span>3</span>)</button>
+          </div>
+          <div class="pagination">
+            <a href="#" class="btn_first">처음 페이지로 이동</a>
+            <a href="#" class="btn_prev">이전 페이지로 이동</a>
+            <a href="#" class="num">1</a>
+            <span class="current">2</span>
+            <a href="#" class="num">3</a>
+            <a href="#" class="num">4</a>
+            <a href="#" class="num">5</a>
+            <a href="#" class="num">6</a>
+            <a href="#" class="num">7</a>
+            <a href="#" class="num">8</a>
+            <a href="#" class="num">9</a>
+            <a href="#" class="num">10</a>
+            <a href="#" class="btn_next">다음 페이지로 이동</a>
+            <a href="#" class="btn_last">마지막 페이지로 이동</a>
+          </div>
+          <div class="btn_wrap">
+            <button type="button" class="btn_white">목록</button>
+            <button type="button" class="btn_primary">신규가입설계</button>
+          </div>
+        </div>
+        <!-- 가입설계 끝-->
+
+        <!-- 상담이력 -->
+        <div class="tabBoxDisplayItem ">
+          <div class="sort_wrap">
+            <div class="sort">
+              <ul class="count">
+                <li>총 <span class="count_num count_num_accent">16</span>건</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tabl_area">
+            <!-- 테이블 (s)-->
+            <table>
+              <colgroup>
+                <col style="width: 18%;">
+                <col style="width: 14%;">
+                <col style="width: 14%;">
+                <col style="width: 14%;">
+                <col style="width: auto;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>상태</th>
+                  <th>접수일</th>
+                  <th>처리기한</th>
+                  <th>관리자 최근 피드백</th>
+                  <th>제목</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><p class="pointC2">처리기한경과</p>진행중</td>
+                  <td>YYYY.MM.DD</td>
+                  <td>YYYY.MM.DD</td>
+                  <td>YYYY.MM.DD</td>
+                  <td class="txt_l"><a href="" class="links">문의드려요.</a></td>
+                </tr>
+                <tr>
+                  <td><p class="pointC2">처리기한경과</p>진행중</td>
+                  <td>YYYY.MM.DD</td>
+                  <td>YYYY.MM.DD</td>
+                  <td>YYYY.MM.DD</td>
+                  <td class="txt_l"><a href="" class="links">문의드려요.</a></td>
+                </tr>
+                <tr>
+                  <td><p class="pointC2">처리기한경과</p>진행중</td>
+                  <td>YYYY.MM.DD</td>
+                  <td>YYYY.MM.DD</td>
+                  <td>YYYY.MM.DD</td>
+                  <td class="txt_l"><a href="" class="links">제목이 길어질 경우 2줄로 처리됩니다. 제목이 길어질 경우 2줄로 처리됩니다. 제목이 길어질 경우 2줄로 처리됩니다.</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <!--// 테이블 (e)-->
+            <!-- No Result (s) -->
+            <div class="noresultWrap">
+              <img src="./resources/pt/images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+              <div class="noresultText">조회 결과가 없습니다.</div>
+            </div>
+            <!--// No Result (e) -->
+          </div>
+  
+          <div class="pagination">
+            <a href="#" class="btn_first">처음 페이지로 이동</a>
+            <a href="#" class="btn_prev">이전 페이지로 이동</a>
+            <a href="#" class="num">1</a>
+            <span class="current">2</span>
+            <a href="#" class="num">3</a>
+            <a href="#" class="num">4</a>
+            <a href="#" class="num">5</a>
+            <a href="#" class="num">6</a>
+            <a href="#" class="num">7</a>
+            <a href="#" class="num">8</a>
+            <a href="#" class="num">9</a>
+            <a href="#" class="num">10</a>
+            <a href="#" class="btn_next">다음 페이지로 이동</a>
+            <a href="#" class="btn_last">마지막 페이지로 이동</a>
+          </div>
+
+          <div class="btn_wrap">
+            <button type="button" class="btn_white">목록</button>
+          </div>
+
+        </div>
+        <!-- 상담이력 -->
+
+        <!-- <div class="btn_wrap">
+          <button type="button" class="btn_white">목록</button>
+          <button type="button" class="btn_secondary">정보 활용 동의 요청</button>
+        </div> -->
+        <!-- 동의정보 -->
+
+        <div class="tabBoxDisplayItem ">888888888888888888</div>
+        <div class="tabBoxDisplayItem ">999999999999999</div>
+      </div>
+    </div>
+    <!-- 탭 -->
+
+
+    <!--  -->
+
+</div>
+
+
+
+
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+<script>
+  //퍼블 확인용 임시 스크립트입니다.
+  // $(document).ready(function() {
+  //   $(".tab_bar li").click(function(e) {
+  //     e.preventDefault();
+  //     var idx = $(this).index();
+  //     $(".tab_bar li").removeClass("on");
+  //     $(".tab_bar li").eq(idx).addClass("on");
+  //     $(".tab_cont > div").hide();
+  //     $(".tab_cont > div").eq(idx).show();
+  //   })
+  // });
+</script>
+
+</html>

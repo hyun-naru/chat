@@ -1,0 +1,221 @@
+@charset "utf-8";
+
+html {background-color:#fff; font-size:10px;}
+body {min-width:100vw; min-height:100vh; background-color:#fff; font-size:1.4rem; overflow-x:hidden; overflow-y:scroll;}
+body.popOn {overflow: hidden;}
+
+/* ios only */
+@supports (-webkit-touch-callout: none) {
+	body{
+		min-height: -webkit-fill-available;
+	}
+}
+
+/*================================================== Content ==================================================*/
+.content {position:relative; padding:82px 24px 32px;}
+.content.topBg {padding-top:0 !important;}
+.content.prdDetail {padding-top:0 !important;}
+.content.short,
+.popup.short {padding-bottom: 80px;}
+.content.external {padding:82px 0 32px 0;}
+.popup.external {padding:82px 0 80px 0;}
+
+.content.topBg > div:first-of-type.bgGrayArea,
+.content.topBg > div:first-of-type.infoVisual {padding-top:82px;}
+.content > *:first-child.tabWrap,
+.content > *:first-child.tabList,
+.content > *:first-child.iptFilt.pageTab,
+.popup > header + .tabWrap,
+.popup > header + .tabList {margin-top:-27px;}
+
+.content.bgGrayArea,
+.popup.bgGrayArea {min-height:100vh; margin:0; padding-top:82px;}
+@supports (-webkit-touch-callout: none) {
+	.content.bgGrayArea,
+	.popup.bgGrayArea{
+		height: -webkit-fill-available;
+	}
+}
+
+.bgGrayArea .conBlock {margin:-26px -24px 32px; padding:26px 24px 0.01rem; background-color:#fff;}
+
+.iptFilt + .accoList {margin-top:34px;}
+/*================================================== Header & Footer ==================================================*/
+/* GNB Icon Button */
+[class^=icoBtn_app] {width:48px; height:48px; background-position:center center !important; background-size:28px 28px;}
+.icoBtn_appLogo {background-image:url(../images/logos/logo_landing.svg);}
+.icoBtn_appMenu {background-image:url(../images/mobile/common/app_ico_menu.svg);}
+.icoBtn_appPage {background-image:url(../images/mobile/common/app_ico_page.svg);}
+
+.header {position:fixed; width:100%; height:56px; padding:0 50px; background-color:transparent; z-index:1501;}
+.header .bg {position:absolute; left:0; top:0; width:100%; height:56px; border-bottom:1px solid #ddd; background-color:#fff; z-index:-1; opacity:0;}
+.header [class*=icoBtn_app] {position:absolute; top:4px;}
+.header .icoBtn_appLogo {left:8px;}
+.header .icoBtn_appPage {left:2px;}
+.header .icoBtn_appMenu {right:2px;}
+.header .btn_cancel {position:absolute; right:0; top:0; width:70px; height:56px; margin:0; padding:0; color:#666; font-size:1.6rem; font-weight:300; text-align:center;}
+/* .header.def .bg {opacity: 1 !important;} */
+
+.header .flag_btn {position:absolute; top:50%; right:16px; transform:translateY(-50%);}
+.header .flag_btn.al {left:16px; right:auto;}
+
+/* .header h1.logo {display:inline-block; position:absolute; left:24px; top:18px; width:118px; height:20px; background-image:url(../../images/cdh/common/logo_sh_w.svg); background-repeat:no-repeat; background-position:0 center; background-size:118px 120px; transition:all 0.15s ease-out;} */
+.header h1 {display:flex; height:56px; font-size:1.8rem; font-weight:400; text-align:center; align-items:center; justify-content:center; word-break:keep-all;}
+
+/* header logo - landing */
+.header:not(.sticky) h1.logo.landing {margin:0 -50px; background-color:#fff;}
+/* .header h1.logo.landing:before {content:''; display:inline-block; width:118px; height:20px; background:url('../../images/smart/common/logo_sh.svg') no-repeat 0 0; background-size:118px auto;} */
+.header h1.logo.landing span:not(.sticky) {margin-left:10px; font-size:1.6rem;}
+
+/* header bg */
+.main .header:not(.sticky) h1,
+.whiteNav .header:not(.sticky):not(.def) h1 {color:#fff;}
+.main .header:not(.sticky) .icoBtn_appMenu,
+.whiteNav .header:not(.sticky):not(.def) .icoBtn_appMenu {background-image:url(../images/mobile/common/app_ico_menu_w.svg);}
+/* .main .header:not(.sticky) .icoBtn_appPage,
+.whiteNav .header:not(.sticky):not(.def) .icoBtn_appPage {background-image:url(../../images/smart/common/app_ico_page_bg.svg);} */
+
+/* footer */
+.footer {background-color:#f8f8f8;}
+.footer .inner {position:relative; padding:24px 24px 32px; font-size:1.1rem; text-align:center;}
+.footer .copyright {margin-top:10px; color:#777;}
+.content.short ~ .footer {position:fixed; bottom:0; left:0; width:100%;}
+
+/* header sticky */
+.header.sticky {top:0;}
+.mobileTit .header h1.titH1 {transform: translate(0,-60px);}
+.mobileTit .header.titOn h1.titH1 {transform: translate(0,0);}
+.ready .mobileTit .header h1.titH1 {transition: transform 0 ease-out;}
+
+
+/*================================================== gnb ==================================================*/
+.mGnb {position:absolute; top:0; left:0; display:none; width:100%; height:100vh; background-color:#fff; transform:translate(100%,0); transition:transform 0.5s; z-index:2000;}
+.mGnb.ing {position:absolute; }
+.mGnb.on {transform:translate(0,0);}
+.mGnb.on.out {transform:translate(100%,0);}
+.gnbHead {position:relative; height:180px; padding:68px 24px 0; background-color:#fff; z-index:1;}
+.gnbHead .topMenu {position:absolute; top:0; left:0; display:flex; justify-content:flex-end; width:100%; height:56px; padding:6px 10px;}
+.gnbHead .topMenu [class*=icoBtn_] {width:44px; height:44px;}
+.gnbHead .topMenu [class*=icoBtn_]:not(.icoBtn_appLogo) {background-size:32px 32px;}
+.gnbHead .topMenu .icoBtn_appLogo {margin-right:auto;}
+.gnbHead .topMenu .icoBtn_appLogout {background-image:url(../images/mobile/common/app_ico_logout.svg);}
+.gnbHead .topMenu .icoBtn_appSetting {background-image:url(../images/mobile/common/app_ico_setting.svg);}
+.gnbHead .topMenu .icoBtn_appClose {background-image:url(../images/mobile/common/app_ico_close.svg);}
+.gnbHead .userInfo {margin-bottom:15px;}
+.gnbHead .userInfo .name {display:block; font-size:2rem; color:#111;}
+.gnbHead .userInfo .desc {font-size:1.4rem; color:#111;}
+.gnbHead .directLink {margin:0 -24px;	padding-left:24px;	white-space:nowrap; overflow-x:scroll;}
+.gnbHead .directLink [class*=icoBtn_link] {height:24px; margin-right:10px; padding-left:26px; font-size:1.3rem;}
+.gnbHead .icoBtn_linkCert1 {background-image:url(../images/mobile/common/direct_link_cert1.svg);}
+.gnbHead .icoBtn_linkCert2 {background-image:url(../images/mobile/common/direct_link_cert2.svg);}
+.gnbBody {position:relative; height:calc(100vh - 180px)}
+.gnbBody:before {content:''; position:absolute; top:0; left:0; width:132px; height:100%; background-color:#1aa4a4;}
+.gnbBody .menu {position:relative; height:100%; padding:16px 0 0 12px; z-index:1;}
+.gnbBody .menu > li {width:108px; margin-bottom:10px;}
+.gnbBody .menu > li > a {display:block; padding:10px 12px; color:#fff; font-size:1.6rem; font-weight:500; border-radius:6px;}
+.gnbBody .menu > li.on > a {color:#009591; background-color:#fff;}
+.gnbBody .subArea {position:absolute; top:0; left:132px; width:calc(100% - 132px); height:100%; padding:16px 12px 50px; overflow-y:scroll; border-top:1px solid#e5e5e5;}
+.gnbBody .depth2 > li > a {position:relative; display:block; padding:10px 12px; color:#000; font-size:1.6rem; font-weight:500; overflow:hidden; word-break:keep-all;}
+.gnbBody .depth2 > li:not(.isLink) > a:after {content:''; position:absolute; right:8px; top:50%; width:10px; height:10px; margin-top:-3px; border:1px solid #222; border-width:0 2px 2px 0; box-sizing:border-box; transform:translate(-50%, -50%) rotate(45deg); transition:all 0.25s;}
+.gnbBody .depth2 > li.on:not(.isLink) > a:after {margin-top:3px; transform:translate(-50%, -50%) rotate(-135deg);}
+.gnbBody .depth3 > li > a {position:relative; display:block; padding:8px 12px 8px 22px; color:#666; font-size:1.4rem; word-break:keep-all;}
+.gnbBody .depth3 > li > a:before {content:''; position:absolute; top:18px; left:14px; width:2px; height:2px; border-radius:50%; background-color:#777;}
+.gnbBody .depth3 > li.on > a {color:#009591;}
+.gnbBody li:not(.on) > .subArea,
+.gnbBody li > .depth3 {display:none;}
+
+.dimmed {display:none; position:fixed; top:0; left:0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.5); z-index:1502;}
+body.off > *:not(.mGnb) {display:none;}
+/*================================================== quick menu ==================================================*/
+
+
+
+/*================================================== LoadingWrap ==================================================*/
+.loadingWrap {position: fixed; top:0; left:0; right:0; bottom:0; background-color: rgba(0,0,0,0.6); z-index: 20000;}
+.loadingWrap .loading {display: block; position: absolute; top:50%; left:50%; width: 70px; height: 70px; margin: -35px auto auto -35px; border-radius:50%; background-color:#fff; box-shadow: 0 0 10px 10px rgb(44 30 119 / 10%); overflow: hidden;}
+.loadingWrap .symbol {position: absolute; top: 20px; left: 15px; width: 35px; height: 35px; z-index: 10; }
+.loadingWrap .symbol:before,
+.loadingWrap .symbol:after {content:''; position:absolute; right:-1px; top:-1px; width:100%; height:10px; background-color:#715deb; box-sizing:border-box; z-index:2; box-shadow: 0 4px 5px rgb(44 30 119 / 20%);}
+.loadingWrap .symbol:after {right: -1px; top: 8px; width: 10px; height: 26px;}
+.loadingWrap .txt {position: absolute; top: 50%; left: 0; right: 0; margin-top: 50px; color: #fff; text-align: center;}
+
+/* 긴버전 */
+.loadingWrap .loading {animation: bgcolorTrans infinite;}
+.loadingWrap .symbol {animation: loadingAppear forwards cubic-bezier(0.075, 0.820, 0.165, 1.000), loadingLoop infinite linear;}
+.loadingWrap .symbol:before,
+.loadingWrap .symbol:after {animation: logoTrans infinite;}
+/* play time & delay setting */
+.loadingWrap .loading,
+.loadingWrap .symbol:before,
+.loadingWrap .symbol:after {animation-duration: 2.0s; animation-delay:0.9s;}
+.loadingWrap .symbol {animation-duration: 1.8s,2.0s; animation-delay:0s, 0.9s;}
+/**/
+
+/* 짧은버전 */
+.loadingWrap.short .symbol {animation: loadingLoop infinite linear;}
+.loadingWrap.short .symbol,
+.loadingWrap.short .loading,
+.loadingWrap.short.opacity .loading.p,
+.loadingWrap.short .symbol:before,
+.loadingWrap.short .symbol:after {animation-duration: 2.0s; animation-delay:0s;}
+/**/
+
+@keyframes loadingAppear {
+	0% {transform: translate(-84px,73px) scale(8) rotateY(-130deg) rotate(15deg)}
+	50% {transform: translate(0,0) scale(1) rotateY(0deg) rotate(0deg);}
+}
+
+@keyframes loadingLoop {
+	15% {transform: translate(4px,-4px)}
+	25% {transform: translate(40px,-40px)}
+	25.1% {transform: translate(-40px,40px);}
+	35% {transform: translate(-4px,4px)}
+	65% {transform: translate(4px,-4px)}
+	75% {transform: translate(40px,-40px)}
+	75.1% {transform: translate(-40px,40px);}
+	85% {transform: translate(-4px,4px)}
+} 
+
+@keyframes bgcolorTrans {
+	25.0% {background-color: #fff;}
+	35% {background-color: #715deb;}
+	75% {background-color: #715deb;}
+	85% {background-color: #fff;}
+}
+@keyframes logoTrans {
+	25.0% {background-color: #715deb;}
+	25.1% {background-color: #fff;}
+	75% {background-color: #fff;}
+	75.1% {background-color: #715deb;}
+}
+
+/* 2개버전 */
+.loadingWrap.short.opacity .loading,
+.loadingWrap.short.opacity .loading .symbol:before,
+.loadingWrap.short.opacity .loading .symbol:after {animation:unset; z-index: unset;}
+.loadingWrap.short.opacity .loading {animation: loadingOpaTrans1 2s infinite linear; }
+.loadingWrap.short.opacity .loading.p {background-color: #715deb; animation: loadingOpaTrans2 2s infinite linear; opacity: 0}
+.loadingWrap.short.opacity .loading.p .symbol:before,
+.loadingWrap.short.opacity .loading.p .symbol:after {background-color: #fff; }
+.loadingWrap.short.opacity .symbol {z-index: unset;}
+/**/
+
+@keyframes loadingOpaTrans1 {
+	25.0% {opacity: 1;}
+	25.1% {opacity: 0;}
+	75% {opacity: 0;}
+	75.1% {opacity: 1;}
+}
+@keyframes loadingOpaTrans2 {
+	25.0% {opacity: 0;}
+	25.1% {opacity: 1;}
+	75% {opacity: 1;}
+	75.1% {opacity: 0;}
+}
+
+/*************************************************** media ***************************************************/
+
+@media all and (max-width:768px) {
+	
+}
+

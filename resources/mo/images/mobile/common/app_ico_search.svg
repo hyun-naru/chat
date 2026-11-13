@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <g transform="translate(4.01 4.011)">
+        <circle data-name="Op component 1" cx="8.5" cy="8.5" r="8.5" transform="translate(1.99 1.989)" style="stroke-linecap:round;stroke:#222;stroke-width:2px;fill:none"/>
+        <g data-name="사각형 16179" transform="rotate(-45 28.417 -10.356)" style="fill:#fff;stroke:#111;stroke-linejoin:round;stroke-linecap:round">
+            <rect width="2" height="8" rx="1" style="stroke:none"/>
+            <rect x=".5" y=".5" width="1" height="7" rx=".5" style="fill:none"/>
+        </g>
+    </g>
+</svg>

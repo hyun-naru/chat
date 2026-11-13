@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section">
+
+  <h1 class="tit01">계약 유지관리 현황</h1>
+
+  <div class="tableTotal_Wrap type2">
+    <p class="tableTotalTitle">보유계약현황</p>
+    <div class="tableTotal count4">
+      <div class="countWrap vertical">
+        <div class="countWrap_tit">전체</div>
+        <div class="countWrap_desc"><span>000</span>건</div>
+      </div>
+      <div class="countWrap vertical">
+        <div class="countWrap_tit">정상유지</div>
+        <div class="countWrap_desc"><span>000</span>건</div>
+      </div>
+      <div class="countWrap vertical">
+        <div class="countWrap_tit">미결</div>
+        <div class="countWrap_desc"><span>000</span>건</div>
+      </div>
+      <div class="countWrap vertical">
+        <div class="countWrap_tit">이탈</div>
+        <div class="countWrap_desc"><span>000</span>건</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cn_tableTotalContainer mt20">
+    <div class="tableTotalL">
+      <p class="tableTotalTitle">미결 계약 조회</p>
+      <div class="tableTotalL_btnWrap">
+        <button type="button" class="btn_primary_reverse l">완전판매모니터링</button>
+        <button type="button" class="btn_primary l">심사보완</button>
+      </div>
+    </div>
+    <div class="tableTotal_Wrap cn_round">
+      <p class="tableTotalTitle">이탈 계약 조회</p>
+      <div class="tableTotal count6">
+        <div class="countWrap vertical">
+          <div class="countWrap_tit">만기</div>
+          <div class="countWrap_desc"><a href="#"><span>10</span></a></div>
+        </div>
+        <div class="countWrap vertical">
+          <div class="countWrap_tit">당월실효</div>
+          <div class="countWrap_desc"><a href="#"><span>10</span></a></div>
+        </div>
+        <div class="countWrap vertical">
+          <div class="countWrap_tit">기실효</div>
+          <div class="countWrap_desc"><a href="#"><span>20</span></a></div>
+        </div>
+        <div class="countWrap vertical">
+          <div class="countWrap_tit">청약철회</div>
+          <div class="countWrap_desc"><span>0</span></div>
+        </div>
+        <div class="countWrap vertical">
+          <div class="countWrap_tit">반송</div>
+          <div class="countWrap_desc"><a href="#"><span>5</span></a></div>
+        </div>
+        <div class="countWrap vertical">
+          <div class="countWrap_tit">해지</div>
+          <div class="countWrap_desc"><a href="#"><span>25</span></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ul class="accoList box mt65">
+    <li class="on">
+      <div class="accoHead">
+        <a class="accoBtn">연체 계약 <span>99</span>건</a>
+      </div>
+      <div class="accoBody">
+        <!-- 아코디언 본문내용 시작(s) -->
+        <div class="sort_wrap mt0">
+          <div class="sort">
+            <ul class="count">
+              <li>총 <span class="count_num count_num_accent">106</span>건</li>
+              <li><span class="count_num count_num_accent">1</span>/100페이지</li>
+            </ul>
+          </div>
+          <div class="sortRight">
+            <select class="ipt">
+              <option selected="">계약일 최신순</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tabl_area">
+          <!-- //조회 테이블 (s) -->
+          <table>
+            <colgroup>
+              <col style="width: 15%">
+              <col style="width: 16%">
+              <col style="width: 16%">
+              <col style="width: auto">
+              <col style="width: 14%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th><span>증권번호</span></th>
+                <th><span>계약자<br>생년월일(성별)</span></th>
+                <th><span>계약일</span></th>
+                <th colspan="2"><span>상품정보</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="#" class="links">01234567</a></td>
+                <td>
+                  <p>홍길동</p>
+                  <p>800101(남자)</p>
+                </td>
+                <td><span>YYYY.MM.DD</span></td>
+                <td class="txt_l">
+                  <p>(무)걱정말아요 암보험Ⅱ(갱신형)</p>
+                  <ul class="sdlist_info">
+                    <li>
+                      <strong>보험료</strong><span>000,000,000</span>
+                    </li>
+                  </ul>
+                </td>
+                <td class="txt_r"><button type="button" class="btn_primary_reverse s">가상계좌신청</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- //조회 테이블 (e) -->
+          <!-- No Result (s) -->
+          <div class="noresultWrap">
+            <img src="./resources/pt/images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+            <div class="noresultText">연체중인 계약이 없습니다.</div>
+          </div>
+          <!--// No Result (e) -->
+        </div>
+
+        <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+		<button type="button" class="icoBtn_first" aria-label="처음"></button>
+		<button type="button" class="icoBtn_prev" aria-label="이전"></button>
+		<ul>
+			<li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+			<li><a href="#"><span class="blind">페이지</span>2</a></li>
+			<li><a href="#"><span class="blind">페이지</span>3</a></li>
+			<li><a href="#"><span class="blind">페이지</span>4</a></li>
+			<li><a href="#"><span class="blind">페이지</span>5</a></li>
+			<li><a href="#"><span class="blind">페이지</span>6</a></li>
+			<li><a href="#"><span class="blind">페이지</span>7</a></li>
+			<li><a href="#"><span class="blind">페이지</span>8</a></li>
+			<li><a href="#"><span class="blind">페이지</span>9</a></li>
+			<li><a href="#"><span class="blind">페이지</span>10</a></li>
+		</ul>
+		<button type="button" class="icoBtn_next" aria-label="다음"></button>
+		<button type="button" class="icoBtn_last" aria-label="마지막"></button>
+	</div>
+        <!-- 아코디언 본문내용 시작(e) -->
+      </div>
+    </li>
+
+    <li>
+      <div class="accoHead">
+        <a class="accoBtn">부활 계약 <span>99</span>건</a>
+      </div>
+      <div class="accoBody">
+        <!-- 아코디언 본문내용 시작(s) -->
+        <div class="sort_wrap mt0">
+          <div class="sort">
+            <ul class="count">
+              <li>총 <span class="count_num count_num_accent">106</span>건</li>
+              <li><span class="count_num count_num_accent">1</span>/100페이지</li>
+            </ul>
+          </div>
+          <div class="sortRight">
+            <select class="ipt">
+              <option selected="">계약일 최신순</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tabl_area">
+          <!-- //조회 테이블 (s) -->
+          <table>
+            <colgroup>
+              <col style="width: 15%">
+              <col style="width: 16%">
+              <col style="width: 16%">
+              <col style="width: auto">
+              <col style="width: 14%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th><span>증권번호</span></th>
+                <th><span>계약자<br>생년월일(성별)</span></th>
+                <th><span>계약일</span></th>
+                <th colspan="2"><span>상품정보</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="#" class="links">01234567</a></td>
+                <td>
+                  <p>홍길동</p>
+                  <p>800101(남자)</p>
+                </td>
+                <td><span>YYYY.MM.DD</span></td>
+                <td class="txt_l">
+                  <p>(무)걱정말아요 암보험Ⅱ(갱신형)</p>
+                  <ul class="sdlist_info">
+                    <li>
+                      <strong>보험료</strong><span>000,000,000</span>
+                    </li>
+                  </ul>
+                </td>
+                <td class="txt_r"><button type="button" class="btn_primary_reverse s">부활신청</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- //조회 테이블 (e) -->
+          <!-- No Result (s) -->
+          <div class="noresultWrap">
+            <img src="./resources/pt/images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+            <div class="noresultText">부활 대상 계약이 없습니다.</div>
+          </div>
+          <!--// No Result (e) -->
+        </div>
+
+        <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+		<button type="button" class="icoBtn_first" aria-label="처음"></button>
+		<button type="button" class="icoBtn_prev" aria-label="이전"></button>
+		<ul>
+			<li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+			<li><a href="#"><span class="blind">페이지</span>2</a></li>
+			<li><a href="#"><span class="blind">페이지</span>3</a></li>
+			<li><a href="#"><span class="blind">페이지</span>4</a></li>
+			<li><a href="#"><span class="blind">페이지</span>5</a></li>
+			<li><a href="#"><span class="blind">페이지</span>6</a></li>
+			<li><a href="#"><span class="blind">페이지</span>7</a></li>
+			<li><a href="#"><span class="blind">페이지</span>8</a></li>
+			<li><a href="#"><span class="blind">페이지</span>9</a></li>
+			<li><a href="#"><span class="blind">페이지</span>10</a></li>
+		</ul>
+		<button type="button" class="icoBtn_next" aria-label="다음"></button>
+		<button type="button" class="icoBtn_last" aria-label="마지막"></button>
+	</div>
+        <!-- 아코디언 본문내용 시작(e) -->
+      </div>
+    </li>
+  </ul>
+
+</div>
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+
+</html>

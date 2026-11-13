@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+<!-- popup (s) -->
+<div class="popWrap">
+  <div class="popContain">
+    <div class="popup">
+      <div class="popHead">
+        <h1 class="tit01">팝업 설정 등록</h1>
+      </div>
+      <div class="popBody col_8">
+        <!-- 팝업 내용 시작 (s) -->
+        <section>
+            
+            <ul class="formList">
+			    <li class="">
+			      <div class="th">마감월도</div>
+			      <div class="td">
+			        <div class="setHalf">
+			          <input type="text" class="ipt date" placeholder="YYYY.MM.DD" onkeyup="fn_calDate(this)">
+			          <span class="sign">~</span>
+			          <input type="text" class="ipt date" placeholder="YYYY.MM.DD" onkeyup="fn_calDate(this)">
+			        </div>
+			      </div>
+			    </li>
+			    <li class="">
+			      <div class="th">안내기간</div>
+			      <div class="td">
+			        <div class="setHalf">
+			          <input type="text" class="ipt date" placeholder="YYYY.MM.DD" onkeyup="fn_calDate(this)">
+			          <span class="sign">~</span>
+			          <input type="text" class="ipt date" placeholder="YYYY.MM.DD" onkeyup="fn_calDate(this)">
+			        </div>
+			      </div>
+			    </li>
+			    <li class="">
+			      <div class="th">내용</div>
+			      <div class="td">
+                    <div class="iptWrap full">
+                      <textarea class="ipt" placeholder="내용 입력(최대 200자 입력)"></textarea>
+                      <p class="byteTxt"><span class="num">0</span> / <span>200</span></p>
+                    </div>
+			      </div>
+			    </li>
+            </ul>
+        </section>
+        <!-- 팝업 내용 끝 (e) -->
+      </div>
+      <div class="btn_wrap sticky">
+        <button type="button" class="btn_primary"><span>등록</span></button>
+      </div>
+      <button type="button" class="icoBtn_close" onclick="lp.close();"><span>팝업 닫기</span></button>
+    </div>
+  </div>
+</div>
+<!-- popup (e) -->
+
+
+<!-- wrapper (s) -->
+<div class="wrapper">
+  <div class="header"></div>
+
+  <!-- container (s) -->
+  <div class="container" id="content">
+<div class="section">
+<h1 class="tit01">페이지 타이틀</h1>
+</div>
+  </div><!-- container (e) -->
+  <!-- 22.07.21 개발이슈로 footer 삭제 -->
+  <!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+<script type="text/javascript">
+// 퍼블 작업 화면을 보기 위한 스크립트입니다. 실제 페이지에선 사용하지 않고 구동 되지도 않습니다.
+$(document).ready(function(){
+  setTimeout(function(){
+    lp.open('.popWrap');
+  },100)
+})
+</script>
+</html>

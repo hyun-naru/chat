@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <g data-name="사각형 15538" transform="translate(6)" style="stroke:#111;stroke-width:1.5px;fill:none">
+        <rect width="28" height="40" rx="4" style="stroke:none"/>
+        <rect x=".75" y=".75" width="26.5" height="38.5" rx="3.25" style="fill:none"/>
+    </g>
+    <g data-name="사각형 15539" transform="translate(15 32)" style="fill:#fff;stroke:#111;stroke-width:1.5px">
+        <rect width="10" height="1.5" rx=".75" style="stroke:none"/>
+        <rect x=".75" y=".75" width="8.5" style="fill:none"/>
+    </g>
+    <g data-name="사각형 15981" style="fill:#fff;stroke:#111;stroke-width:1.5px">
+        <path d="M0 0h14v3a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V0z" style="stroke:none" transform="translate(13)"/>
+        <path d="M.75.75h12.5V3A1.25 1.25 0 0 1 12 4.25H2A1.25 1.25 0 0 1 .75 3V.75z" style="fill:none" transform="translate(13)"/>
+    </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <path data-name="투명 BG" d="M0 0h16v16H0z" style="fill:none"/>
+    <g data-name="그룹 2931" transform="translate(.438 1.438)">
+        <g data-name="타원 28" transform="translate(-.438 -.438)" style="stroke:#333;stroke-linecap:round;stroke-linejoin:round;fill:none">
+            <circle cx="7.5" cy="7.5" r="7.5" style="stroke:none"/>
+            <circle cx="7.5" cy="7.5" r="7" style="fill:none"/>
+        </g>
+        <rect data-name="사각형 16333" width="1" height="5" rx=".5" transform="translate(6.563 3.563)" style="fill:#333"/>
+        <rect data-name="사각형 16334" width="1" height="5" rx=".5" transform="rotate(-90 7.562 1)" style="fill:#333"/>
+    </g>
+</svg>

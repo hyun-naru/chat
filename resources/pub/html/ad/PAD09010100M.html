@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="Shortcut Icon" href="./resources/pt/images/fav/favicon.png">
+		<title>타이틀</title>
+		<link rel="stylesheet" type="text/css" href="/jsp/frame/pt/cssLib.css" />
+		<script src="./resources/comm/js/jquery-3.5.1.min.js"></script>
+		<script src="./resources/comm/js/jquery.form.min.js"></script>
+		<script src="./resources/comm/js/jquery.serializeObject.min.js"></script>
+		<script src="./resources/comm/js/jquery-ui.js"></script>
+		<script src="./resources/comm/js/jquery.ui.monthpicker.js"></script>
+		<script src="./resources/comm/js/jquery.cookie.js"></script>
+		<script src="./resources/comm/js/jquery.blockUI.js"></script>
+		<script src="./resources/comm/js/jquery.MultiFile.js"></script>
+		<script src="./resources/comm/js/swiper.min.js"></script>
+		<script src="./resources/comm/js/lightslider.js"></script>
+		<script src="./resources/comm/js/common-transaction.js"></script>
+		<script src="./resources/comm/js/common-numeral.min.js"></script>
+		<script src="./resources/comm/js/common-moment.min.js"></script>
+		<script src="./resources/comm/js/common-str.js"></script>
+		<script src="./resources/comm/js/common-util.js"></script>
+		<script src="./resources/comm/js/common-code.js"></script>
+		<script src="./resources/comm/js/common-storage.js"></script>
+		<script src="./resources/comm/js/common-timeout.js"></script>
+		<script src="./resources/comm/js/sfaApp.interface.js"></script>
+		<script src="./resources/pt/js/ui.front.js"></script>
+		<script src="./resources/pt/js/ui.common.js"></script>
+		<script src="./resources/pt/js/pt.common.js"></script>
+		<script>
+			let isMoLanding = false;	//모바일 랜딩의 경우
+			$(document).ready(function(){
+			    // ui.front.js 초기 실행
+			    layout.init(); // 페이지가 준비가 됐을 때 딱 한번만 실행 (공통 개발팀에서 호출하는게 좋습니다.)
+			    ui.init(); // 페이지가 동적으로 바뀔때마다 실행 (개발을 붙였더니 뭔가 동작을 안할때 개발페이지 개발자들이 호출하는게 좋습니다.)
+			    myfuncInit(); // 차장님이 짜신 함수. 아래에 자세히 설명 써드리겠습니다.
+	
+			    sfaCommonCode.init();
+			    sbCommonCode.init();
+			    userInfo.init();
+		    	menuDepDraw();//location 정의
+	
+		    	sfaApp.getVersion();	//앱 버전 체크 및 플랫폼 체크
+	
+		    	//serverMode = $('#templateComm input[name="serverMode"]').val();
+			});
+		</script>
+		
+		<style type="text/css">
+			.popContain.col_13 {
+				width: 1200px !important;
+			}
+		</style>
+	</head>
+	<body>
+	  	<!-- wrapper (s) -->
+	  	<div class="wrapper" id="wrapper">
+	    	<!-- header (s) -->
+			<div class="header">
+				<div class="header_top">
+					<div class="inner">
+						<div class="user_info_wrap">
+							<div class="user_name"><a href="javascript://"><span><c:out value="${userInfo.usrNm}" /> </span></a>님, 반갑습니다</div>
+							<div class="user_classification"><span><c:out value="${userInfo.bonbuNm}" /> </span> <span><c:out value="${userInfo.jijumNm}" /></span></div>
+						</div>
+						<ul class="user_util">
+						    <li class="time_extension">
+						      	<span class="time" id="remainTime">00분 00초</span><a href="javascript://" onclick="vTimeout.renewalSession();">연장</a>
+						    </li>
+						    <li><a href="javascript://" onclick="ptComm.logout();"><span>로그아웃</span></a></li>
+						    <li><a href="/cm/pt/comm/settingsView.do">설정</a></li>
+	
+						    <li class="certify_menu">
+						      	<a href="#" class="certify_menu_btn">인증센터</a>
+						      	<ul class="certify_menu_sub">
+						      		<li><a href="#" onclick="authCenter.finCertRegPageMv();">금융인증서 등록/해지</a></li>
+						      		<li><a href="#" onclick="authCenter.finCertManage();">금융인증서 관리</a></li>
+						        	<li><a href="#" onclick="authCenter.pinRegPageMv();">간편비밀번호 등록/해지</a></li>
+						        	<li><a href="#" onclick="authCenter.bioRegPageMv();">바이오 인증 등록/해지</a></li>
+						      	</ul>
+						    </li>
+	
+						</ul>
+					</div>
+				</div>
+				<nav>
+					<div class="nav_wrap">
+						<a href="javascript://" class="logo_hana" onclick="ptComm.home();">
+							<!-- <img src="./resources/pt/images/logos/logo_hana.svg" alt="하나생명 홈 바로가기"> -->
+							<img src="./resources/pt/images/logos/logo_hana_hanaro.png"
+								srcset="./resources/pt/images/logos/logo_hana_hanaro@2x.png 2x,./resources/pt/images/logos/logo_hana_hanaro@3x.png 3x">
+						</a>
+						<ul class="gnb">
+							<c:if test="${serverMode == 'LOCAL'}">
+							<li class="gnb_cell">
+								<a href="javascript://" class="gnb_tab">샘플가이드</a>
+								<div class="gnb_tab_sub">
+									<div class="gnb_tab_sub_wrap">
+										<ul class="gnb_tab_sub_cell">
+											<li style="padding-bottom:15px">공통가이드</li>
+											<li><a href="/sample/pt/calenderGuide.do">달력예제</a></li>
+											<li><a href="/sample/pt/writeController.do">컨트롤러작성법</a></li>
+											<li><a href="/sample/pt/useScript.do">사용스크립트함수 예제</a></li>
+											<li><a href="/sample/pt/layerPopup.do">팝업가이드</a></li>
+											<li><a href="/sample/pt/timeoutPopup.do">타임아웃팝업 예제</a></li>
+											<li><a href="/cs/pt/comm/custPopView.do" >고객팝업 예제</a></li>
+											<li><a href="/sample/pt/upjongComPopSample.do">업종검색 예제</a></li>
+											<li><a href="/sample/pt/sampleGetPdtImCd.do">상품특성조회 예제</a></li>
+										</ul>
+										<ul class="gnb_tab_sub_cell">
+											<li style="padding-bottom:15px">MO가이드</li>
+											<li><a href="/sample/mo/calenderGuide.do">달력예제</a></li>
+											<li><a href="/sample/mo/useScriptMo.do" target="_blank">사용스크립트함수</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							</c:if>
+				   			<c:choose>
+				    			<c:when test="${fn:length(userInfo.menuList) > 0 }">
+					     			<c:forEach var="oneDepthMenu" items="${userInfo.menuList}" varStatus="status">
+					     				<c:set var="oneDepthSubject" value="${fn:substring(oneDepthMenu.mnuId, 0, 2) }" />
+					     				<c:if test="${oneDepthMenu.mnuLve == 1 }">
+											<li class="gnb_cell">
+												<a href="${oneDepthMenu.mnuLinkAddr}" class="gnb_tab" onclick="menuDepSave('${oneDepthMenu.mnuNm}', '${oneDepthMenu.mnuLinkAddr}', '', '', '', '')">${oneDepthMenu.mnuNm}</a>
+												<div class="gnb_tab_sub">
+													<div class="gnb_tab_sub_wrap">
+														<c:forEach var="twoDepthMenu" items="${userInfo.menuList}" varStatus="status">
+										     				<c:set var="twoDepthSubject" value="${fn:substring(twoDepthMenu.mnuId, 0, 2) }" />
+										     				<c:set var="twoDepthOdr" value="${fn:substring(twoDepthMenu.otptOdr, 0, 4) }" />
+															<c:if test="${twoDepthMenu.mnuLve == 2 && (oneDepthSubject == twoDepthSubject) }">
+																<ul class="gnb_tab_sub_cell">
+																	<li><a href="${twoDepthMenu.mnuLinkAddr}" onclick="menuDepSave('${oneDepthMenu.mnuNm}', '${oneDepthMenu.mnuLinkAddr}', '${twoDepthMenu.mnuNm}', '${twoDepthMenu.mnuLinkAddr}', '', '')">${twoDepthMenu.mnuNm}</a></li>
+																	<c:forEach var="threeDepthMenu" items="${userInfo.menuList}" varStatus="status">
+													     				<c:set var="threeDepthSubject" value="${fn:substring(threeDepthMenu.mnuId, 0, 2) }" />
+													     				<c:set var="threeDepthOdr" value="${fn:substring(threeDepthMenu.otptOdr, 0, 4) }" />
+																		<c:if test="${threeDepthMenu.mnuLve == 3 && twoDepthSubject == threeDepthSubject && twoDepthOdr eq threeDepthOdr }">
+																			<li><a href="${threeDepthMenu.mnuLinkAddr}" onclick="menuDepSave('${oneDepthMenu.mnuNm}', '${oneDepthMenu.mnuLinkAddr}', '${twoDepthMenu.mnuNm}', '${twoDepthMenu.mnuLinkAddr}', '${threeDepthMenu.mnuNm}', '${threeDepthMenu.mnuLinkAddr}')">${threeDepthMenu.mnuNm}</a></li>
+																		</c:if>
+																	</c:forEach>
+																</ul>
+															</c:if>
+														</c:forEach>
+													</div>
+												</div>
+											</li>
+					     				</c:if>
+					     			</c:forEach>
+				    			</c:when>
+								<c:otherwise>
+									<li class="gnb_cell"></li>
+								</c:otherwise>
+				   			</c:choose>
+						</ul>
+						<!-- <a href="javascript://" class="btn_all">해당 태그를 삭제하면 메뉴가 밀림.
+							<img src="./resources/pt/images/icons/icon_menu_all.svg" alt="전체메뉴">
+						</a> -->
+					</div>
+				</nav>
+				<!-- breadcrumbs (s) -->
+				<div class="breadcrumbs">
+					<div class="breadcrumbs_wrap">
+						<div class="breadcrumbs_list_wrap" id="breadcrumbs">
+	
+						</div>
+					</div>
+					<div class="breadcrumbs_fixed">
+						<div class="breadcrumbs_fixed_wrap">
+	
+							<div class="breadcrumbs_location">
+								<a href="javascript://" class="breadcrumbs_home"><img src="./resources/pt/images/icons/icon_home_tablet_white.svg"
+										alt="홈 바로가기"></a>
+								<div class="breadcrumbs_list" role="button" aria-pressed="false">
+									<span>가입설계1</span><i class="icon icon_arrow_up"></i>
+									<ul class="breadcrumbs_list_sub">
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계1</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계2</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계3</a></li>
+									</ul>
+								</div>
+								<div class="breadcrumbs_list" role="button" aria-pressed="false">
+									<span>가입설계2</span><i class="icon icon_arrow_up"></i>
+									<ul class="breadcrumbs_list_sub">
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계1</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계2</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계3</a></li>
+									</ul>
+								</div>
+								<div class="breadcrumbs_list" role="button" aria-pressed="false">
+									<span>가입설계3</span><i class="icon icon_arrow_up"></i>
+									<ul class="breadcrumbs_list_sub">
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계1</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계2</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계3</a></li>
+									</ul>
+								</div>
+								<div class="breadcrumbs_list" role="button" aria-pressed="false">
+									<span>가입설계4</span><i class="icon icon_arrow_up"></i>
+									<ul class="breadcrumbs_list_sub">
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계1</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계2</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계3</a></li>
+									</ul>
+								</div>
+								<div class="breadcrumbs_list" role="button" aria-pressed="false">
+									<span>가입설계5</span><i class="icon icon_arrow_up"></i>
+									<ul class="breadcrumbs_list_sub">
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계1</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계2</a></li>
+										<li><a class="breadcrumbs_cell" href="javascript://">가입설계3</a></li>
+									</ul>
+								</div>
+							</div>
+							<a href="javascript://" class="btn_all"><img src="./resources/pt/images/icons/icon_menu_all_white.svg" alt="전체메뉴"></a>
+						</div>
+						<div class="breadcrumbs_fixed_wrap2">
+							<div class="breadcrumbs_location">
+								<a href="javascript://" class="breadcrumbs_home"><img src="./resources/pt/images/icons/icon_man.svg" alt="User info"><span
+										class="userInfo">김하나(<span class="num">800101-2******</span>)</span></a>
+								<div class="breadcrumbs_list2">
+									<span class="breadcrumbs_list_item num">1234567890</span>
+								</div>
+								<div class="breadcrumbs_list2">
+									<span class="breadcrumbs_list_item"><span class="flag purple">유지</span>(무)걱정말아요 암보험(갱신형)</span>
+								</div>
+							</div>
+							<div class="searchBox">
+								<select class="ipt">
+									<option selected>계약사항</option>
+									<option>계약사항 내용1</option>
+									<option>계약사항 내용2</option>
+									<option>계약사항 내용3</option>
+									<option>계약사항 내용4</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- breadcrumbs (e) -->
+			</div>
+			<!-- header (e) -->
+
+
+			<div class="container" id="content">
+				<div class="section">
+					<h1 class="tit01">수익자동의정보 변경</h1>
+			
+					<ul class="formList div3" id="serchChungYak">
+						<li>
+					      <div class="th">채널</div>
+					      <div class="td">
+					        <select class="ipt notDel uiAct">
+					          <option selected="">DM</option>
+					        </select>
+					      </div>
+					    </li>
+					    <li>
+					      <div class="th">본부</div>
+					      <div class="td">
+					        <select class="ipt notDel uiAct">
+					          <option selected="">전체</option>
+					        </select>
+					      </div>
+					    </li>
+					    <li>
+					      <div class="th">지점</div>
+					      <div class="td">
+					        <select class="ipt notDel uiAct">
+					          <option selected="">전체</option>
+					        </select>
+					      </div>
+					    </li>
+					    <li class="oneThirdDiv">
+					      <div class="th">팀</div>
+					      <div class="td">
+					        <select class="ipt notDel uiAct" >
+					          <option selected="">전체</option>
+					        </select>
+					      </div>
+					    </li>
+					    <li class="twoThirdsDiv">
+					      <div class="th">판매인</div>
+					      <div class="td">
+					          <select class="ipt mid notDel uiAct" >
+					          <option selected="">전체</option>
+					        </select>
+					      </div>
+					    </li>
+						<li class="twoThirdsDiv">
+			                <div class="th">청약일</div>
+			                <div class="td">
+			                    <div class="setHalf">
+			                        <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="searchStdt">
+			                        <span class="sign">~</span>
+			                        <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="searchEddt">
+			                    </div>
+			                    <ul class="iptFilt">
+			                        <li>
+			                            <input type="radio" class="ipt" name="searchArea_period" id="filter0_1" value="0"  checked="">
+			                            <label for="filter0_1">당일</label>
+			                        </li>
+			                        <li>
+			                            <input type="radio" class="ipt" name="searchArea_period" value="3" id="filter0_2" >
+			                            <label for="filter0_2">3일</label>
+			                        </li>
+			                        <li>
+			                            <input type="radio" class="ipt" name="searchArea_period" value="7" id="filter0_3" >
+			                            <label for="filter0_3">1주일</label>
+			                        </li>
+			                    </ul>
+			                </div>
+			            </li>
+						<li class="full abs">
+							<div class="th">청약방법</div>
+							<div class="td">
+							<!-- 240517 수정 -->
+								<ul class="iptGroup" id="chnDv">
+									<li>
+						            	<input type="checkbox" class="ipt notDel uiAct" name="chk2" id="chk2_1" checked="">
+						            	<label for="chk2_1">서면청약</label>
+						          	</li>
+								</ul>
+							<!-- //240517 수정 -->
+							</div>
+						</li>
+						<li>
+							<div class="th">증권번호</div>
+							<div class="td">
+							<input type="text" id="srtsNo" class="ipt"  placeholder="숫자만 입력" maxlength="22" >
+							</div>
+						</li>
+						<li>
+							<div class="th">고객명</div>
+							<div class="td">
+								<input type="text" id="csNm" class="ipt mid"  placeholder="예: 김하나" maxlength="10"> <!-- 240517 수정 -->
+							</div>
+						</li>
+				 	</ul>
+			
+					<div class="btn_wrap">
+						<button type="button" class="btn_white" id="searchReset">초기화</button>
+						<button type="button" class="btn_primary" onclick="selChungyakList()">조회</button>
+					</div>
+			
+					<div class="sort_wrap">
+						<div class="sort">
+							<ul class="count">
+								<li>총 <span class="count_num count_num_accent">0</span>건</li>
+							</ul>
+						</div>
+						<div class="sortRight">
+					      <button type="button" class="btn_white_round m">변경</button>
+					    </div>
+					</div>
+					<div class="tabl_area">
+					  <!-- 조회 테이블 (s)-->
+						<table>
+							<caption></caption>
+							<colgroup>
+								<col style="width: 8%;">
+								<col style="width: 12%;">
+								<col style="width: 18%;">
+								<col style="width: auto;">
+								<col style="width: 10%;">
+								<col style="width: 12%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>선택</th>
+									<th>청약일</th>
+									<th>고객명</th>
+									<th>청약내용</th>
+									<th>현재 동의여부</th>
+									<th>변경</th>
+								</tr>
+							</thead>
+							<tbody id="dataList">
+								<tr>
+									<td>
+							            <span class="single">
+							              <input type="checkbox" class="ipt notDel uiAct" name="" id="chk_2"><label for="chk_2"></label>
+							            </span>
+						          	</td>
+						          	<td>2024.05.13</td>
+						          	<td class="txt_l">
+							            <p>계약자: 김하나</p>
+							            <p>피보험자: 최하나</p>
+						          	</td>
+						          	<td class="sdlist">
+							            <p>(무)하나로 THE 연결된 종신보험(일반심사형, 해약환급금 일부지급형, 보장형 계약)</p>
+							            <ul class="sdlist_info">
+							              <li>
+							                증권번호 : <span class="number">12345678</span>
+							              </li>
+							              <li>
+							                합계보험료 : <span class="number">500,758</span>원
+							              </li>
+							            </ul>
+							         </td>
+							         <td>미동의</td>
+							         <td>
+							         	<select class="ipt notDel uiAct">
+								          <option selected="">선택</option>
+								          <option>동의</option>
+								          <option>미동의</option>
+								        </select>
+							         </td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="pagination" id="paging"></div>
+						<div class="noresultWrap">
+							<img src="./resources/pt/images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+							<div class="noresultText">조회 결과가 없습니다.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- <%-- 예금주 변경 팝업 --%>
+			<%@ include file="/WEB-INF/jsp/sfa/pt/sb/psb/PSD08010101P.jsp"%>
+			<%-- 예금주 변경 팝업 --%> -->
+			
+			<div id="dtlistProcSsPopup" class="popWrap">
+			    <div class="popContain">
+			        <div class="popup">
+			            <div class="popHead">
+			                <h1 class="tit01">청약결제 프로세스 목록</h1>
+			            </div>
+			            <div class="popBody col_13">
+							<ul class="formList div2">
+								<li>
+									<div class="th">증권번호</div>
+									<div class="td" id="srtsNoArea"></div>
+								</li>
+								<li>
+									<div class="th">재처리</div>
+									<div class="td" id="reMakeArea"></div>
+								</li>
+								 <li class="full">
+					                <div class="th">문서 출력</div>
+					              	<div class="td" id="rePrintArea">
+					              	</div>
+					             </li>
+							</ul>
+							<div class="tabl_area">
+							  <!-- 조회 테이블 (s)-->
+								<table class="devProcSsTbl">
+									<caption></caption>
+									<colgroup>
+										<col style="width: 8%;">
+										<col style="width: 15%;">
+										<col style="width: 12%;">
+										<col style="width: 6%;">
+										<col style="width: auto;">
+										<col style="width: 13%;">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>순서</th>
+											<th>처리일자</th>
+											<th>청약방법</th>
+											<th>단계</th>
+											<th>상세단계</th>
+											<th>처리결과</th>
+										</tr>
+									</thead>
+									<tbody></tbody>
+								</table>
+								<div class="noresultWrap">
+									<img src="./resources/pt/images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+									<div class="noresultText">조회 결과가 없습니다.</div>
+								</div>
+							</div>
+			            </div>
+			            <button type="button" class="icoBtn_close"><span>팝업 닫기</span></button>
+			        </div>
+			    </div>
+			</div>		
+			<input type="hidden" name="orgList" id="orgList" value="${orgList }">
+			<input type="hidden" name="searchDv" id="searchDv" value="${userSession.searchDv }">
+			<input type="hidden" name="searchLevel" id="searchLevel" value="${userSession.searchLevel }">
+			<input type="hidden" name="usrAuthGrpId" id="usrAuthGrpId" value="${userSession.usrAuthGrpId }">
+			<input type="hidden" name="userChannelId" id="userChannelId" value="${userSession.channelId }">	<br/>
+			<input type="hidden" name="userChannelNm" id="userChannelNm" value="${userSession.channelNm }"><br/>
+			<input type="hidden" name="userBonbuId" id="userBonbuId" value="${userSession.bonbuId }"><br/>
+			<input type="hidden" name="userBonbuNm" id="userBonbuNm" value="${userSession.bonbuNm }"><br/>
+			<input type="hidden" name="userJijumId" id="userJijumId" value="${userSession.jijumId }"><br/>
+			<input type="hidden" name="userJijumNm" id="userJijumNm" value="${userSession.jijumNm }"><br/>
+			<input type="hidden" name="userTeamId" id="userTeamId" value="${userSession.teamId }"><br/>
+			<input type="hidden" name="userTeamNm" id="userTeamNm" value="${userSession.teamNm }"><br/>
+			<input type="hidden" name="userAgentId" id="userAgentId" value="${userSession.usrId }"><br/>
+			<input type="hidden" name="userAgentNm" id="userAgentNm" value="${userSession.usrNm }"><br/>
+			<!-- popup (e) -->
+	  	</div>
+	  	<!-- wrapper(e) -->	
+	</body>
+<!-- 	<script>
+	//퍼블 작업 화면을 보기 위한 스크립트입니다. 실제 페이지에선 사용하지 않고 구동 되지도 않습니다.
+		$(document).ready(function(){
+			setTimeout(function(){
+				lp.open('.popWrap');
+			}, 100)
+		})
+	</script> -->
+</html>

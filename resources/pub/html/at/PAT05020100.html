@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section manager">
+
+  <h1 class="tit01">일자별 활동 현황</h1>
+  <ul class="formList div3">
+    <li class="full abs">
+      <div class="th">조회 기간</div>
+      <div class="td set">
+        <input type="tel" class="ipt date" value="2022.06" id="input_ID_Setting_Plz000">
+        <select class="ipt" title="주차선택">
+          <option>선택</option>
+          <option selected="">1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
+        <span class="ml10">2022.09.01 ~ 2022.09.10</span>
+      </div>
+    </li>
+    <li>
+      <div class="th">채널</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">본부</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">지점</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li class="oneThirdDiv">
+      <div class="th">팀</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li class="twoThirdsDiv">
+      <div class="th">판매인</div>
+      <div class="td">
+        <select class="ipt mid">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+  </ul>
+
+  <!-- GA -->
+  <ul class="formList div3">
+    <li class="full abs">
+      <div class="th">조회 기간</div>
+      <div class="td set">
+        <input type="tel" class="ipt date" value="2022.06" id="input_ID_Setting_Plz000">
+        <select class="ipt" title="주차선택">
+          <option>선택</option>
+          <option selected="">1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
+        <span class="ml10">2022.09.01 ~ 2022.09.10</span>
+      </div>
+    </li>
+    <li>
+      <div class="th">채널</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">대리점</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">지점</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li class="full">
+      <div class="th">판매인</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+  </ul>
+  <!-- //GA -->
+
+  <div class="btn_wrap">
+    <button type="button" class="btn_white">초기화</button>
+    <button type="button" class="btn_primary">조회</button>
+  </div>
+
+  <h2 class="tit02"><span class="pointC1">$본부/지점/팀 명$</span> 주간 활동 현황</h2>
+  <div class="tableTotal_Wrap">
+    <div class="tableTotal count5">
+      <div class="countWrap">
+        <div class="countWrap_tit">전화&방문약속</div>
+        <div class="countWrap_desc"><span>400</span></div>
+      </div>
+      <div class="countWrap">
+        <div class="countWrap_tit">초회면담</div>
+        <div class="countWrap_desc"><span>400</span></div>
+      </div>
+      <div class="countWrap">
+        <div class="countWrap_tit">제안</div>
+        <div class="countWrap_desc"><span>400</span></div>
+      </div>
+      <div class="countWrap">
+        <div class="countWrap_tit">소개확보</div>
+        <div class="countWrap_desc"><span>400</span></div>
+      </div>
+      <div class="countWrap">
+        <div class="countWrap_tit">고객관리</div>
+        <div class="countWrap_desc"><span>400</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GA -->
+  <div class="tableTotal_Wrap">
+    <div class="tableTotal count5">
+      <div class="countWrap">
+        <div class="countWrap_tit">미팅</div>
+        <div class="countWrap_desc"><span>400</span></div>
+      </div>
+      <div class="countWrap">
+        <div class="countWrap_tit">교육</div>
+        <div class="countWrap_desc"><span>400</span></div>
+      </div>
+      <div class="countWrap">
+        <div class="countWrap_tit">전화상담</div>
+        <div class="countWrap_desc"><span>400</span></div>
+      </div>
+      <div class="countWrap">
+        <div class="countWrap_tit">설계지원</div>
+        <div class="countWrap_desc"><span>400</span></div>
+      </div>
+    </div>
+  </div>
+  <!-- //GA -->
+
+  <div class="sort_wrap">
+    <div class="sort"></div>
+    <div class="sortCenter navDate pb0">
+      <button type="button" class="btnPrev"><span>이전</span></button>
+      ${YYYY.MM.N주차}$
+      <button type="button" class="btnNext"><span>다음</span></button>
+    </div>
+    <div class="sortRight"></div>
+  </div>
+
+  <div class="inquiry_wrap pt0">
+    <div class="pdinquiry w100">
+      <div class="tabl_area roundBox" data-tbody="1088">
+        <table>
+          <caption>고객관리등록</caption>
+          <colgroup>
+            <col style="width: auto;">
+            <col style="width: 11%;">
+            <col style="width: 11%;">
+            <col style="width: 11%;">
+            <col style="width: 11%;">
+            <col style="width: 11%;">
+            <col style="width: 11%;">
+            <col style="width: 11%;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>판매인(사번)</th>
+              <th>월(1일)</th>
+              <th>화(2일)</th>
+              <th>수(3일)</th>
+              <th>목(4일)</th>
+              <th>금(5일)</th>
+              <th>토(6일)</th>
+              <th>일(7일)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>김하나(123456A)</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+            </tr>
+            <tr>
+              <td>김하나(123456A)</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+            </tr>
+            <tr>
+              <td>김하나(123456A)</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+            </tr>
+            <tr>
+              <td>김하나(123456A)</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+            </tr>
+            <tr>
+              <td>김하나(123456A)</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+            </tr>
+            <tr>
+              <td>김하나(123456A)</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+            </tr>
+            <tr>
+              <td>김하나(123456A)</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+            </tr>
+            <tr>
+              <td>김하나(123456A)</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+            </tr>
+            <tr>
+              <td>김하나(123456A)</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+            </tr>
+            <tr>
+              <td>김하나(123456A)</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+              <td>Data</td>
+            </tr>
+            <tfoot class="cell_total">
+              <tr>
+                <td>합계</td>
+                <td colspan="7">Data</td>
+              </tr>
+            </tfoot>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="bottom_btn">
+    <button type="button" class="btn_primary_reverse l">엑셀다운로드</button>
+  </div>
+
+</div>
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+</html>

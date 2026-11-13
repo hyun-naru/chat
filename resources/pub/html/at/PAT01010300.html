@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section manager">
+  <h1 class="tit01">활동입력/조회</h1>
+
+  <div class="tab tab_cm tab_default mt0">
+    <ul class="tab_bar">
+      <li><a href="#" class="active">활동조회</a></li>
+      <li><a href="#">활동입력</a></li>
+    </ul>
+    <div class="tab_cont">
+      <div class="tab_cont_list">
+        <ul class="formList div3">
+          <li class="full">
+            <div class="th">조회기간</div>
+            <div class="td">
+              <div class="setHalf">
+                <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz01221">
+                <span class="sign">~</span>
+                <input type="text" class="ipt date" placeholder="YYYY.MM.DD" id="ID_Setting_Plz1231">
+              </div>
+              <ul class="iptFilt">
+                <li>
+                  <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_1">
+                  <label for="iptFilt_1">당일</label>
+                </li>
+                <li>
+                  <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_2" checked="">
+                  <label for="iptFilt_2">1주일</label>
+                </li>
+                <li>
+                  <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_3">
+                  <label for="iptFilt_3">1개월</label>
+                </li>
+                <li>
+                  <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_4">
+                  <label for="iptFilt_4">3개월</label>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="th">조회구분</div>
+            <div class="td">
+              <ul class="iptGroup">
+                <li>
+                  <input type="radio" class="ipt" name="rdo2" id="rdo2_1" checked="">
+                  <label for="rdo2_1">대리점</label>
+                </li>
+                <li>
+                  <input type="radio" class="ipt" name="rdo2" id="rdo2_2">
+                  <label for="rdo2_2">사업단장/GRM</label>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="th">대리점</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">선택</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="th">지점</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">선택</option>
+              </select>
+            </div>
+          </li>
+          <!-- GRM선택시 -->
+          <li>
+            <div class="th">조회구분</div>
+            <div class="td">
+              <ul class="iptGroup">
+                <li>
+                  <input type="radio" class="ipt" name="rdo2" id="rdo2_1" checked="">
+                  <label for="rdo2_1">대리점</label>
+                </li>
+                <li>
+                  <input type="radio" class="ipt" name="rdo2" id="rdo2_2">
+                  <label for="rdo2_2">사업단장/GRM</label>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="th">사업단장/GRM</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">선택</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="th">지점</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">선택</option>
+              </select>
+            </div>
+          </li>
+        </ul>
+        <div class="btn_wrap">
+          <button type="button" class="btn_white">초기화</button>
+          <button type="button" class="btn_primary">조회</button>
+        </div>
+
+        <ul class="accoList box mt65">
+          <li>
+            <div class="accoHead">
+              <a class="accoBtn">대리점활동 총<span>99</span>건</a>
+            </div>
+            <div class="accoBody">
+              <!-- 아코디언 본문내용 시작(s) -->
+              <div class="dataWrap several">
+                <!-- dataHead (s) -->
+                <div class="dataHead" aria-hidden="true">
+                  <div class="infoCell"></div>
+                  <div class="infoCell"></div>
+                  <div class="infoCell">미팅</div>
+                  <div class="infoCell">교육</div>
+                  <div class="infoCell">전화상담</div>
+                  <div class="infoCell">설계지원</div>
+                  <div class="accoBtnCell"></div>
+                </div>
+                <!-- dataHead (e) -->
+                <!-- dataList (s) -->
+                <ul class="dataList">
+                  <li class="on">
+                    <div class="block txt_b">
+                      <div class="infoCell">A대리점</div>
+                      <div class="infoCell">합계</div>
+                      <div class="infoCell">data</div>
+                      <div class="infoCell">data</div>
+                      <div class="infoCell">data</div>
+                      <div class="infoCell">data</div>
+                      <div class="accoBtnCell">
+                        <button type="button" class="icoBtn_acco accoBtn blind"><span>상세내용 보기</span></button>
+                      </div>
+                    </div>
+                    <div class="accoBody pd0 maxheight"  style="max-height: 580px;">
+                      <div class="block">
+                        <div class="infoCell">김하나(123456A)</div>
+                        <div class="infoCell">
+                          <a href="" class="links">미팅</a>
+                        </div>
+                        <div class="infoCell">2022.09.07 09:00 </div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="accoBtnCell"></div>
+                      </div>
+                      <div class="block">
+                        <div class="infoCell">김하나(123456A)</div>
+                        <div class="infoCell">
+                          <a href="" class="links">미팅</a>
+                        </div>
+                        <div class="infoCell">2022.09.07 09:00 </div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="accoBtnCell"></div>
+                      </div>
+                      <div class="block">
+                        <div class="infoCell">김하나(123456A)</div>
+                        <div class="infoCell">
+                          <a href="" class="links">미팅</a>
+                        </div>
+                        <div class="infoCell">2022.09.07 09:00 </div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="accoBtnCell"></div>
+                      </div>
+                      <div class="block">
+                        <div class="infoCell">김하나(123456A)</div>
+                        <div class="infoCell">
+                          <a href="" class="links">미팅</a>
+                        </div>
+                        <div class="infoCell">2022.09.07 09:00 </div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="accoBtnCell"></div>
+                      </div>
+                      <div class="block">
+                        <div class="infoCell">김하나(123456A)</div>
+                        <div class="infoCell">
+                          <a href="" class="links">미팅</a>
+                        </div>
+                        <div class="infoCell">2022.09.07 09:00 </div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="accoBtnCell"></div>
+                      </div>
+                      <div class="block">
+                        <div class="infoCell">김하나(123456A)</div>
+                        <div class="infoCell">
+                          <a href="" class="links">미팅</a>
+                        </div>
+                        <div class="infoCell">2022.09.07 09:00 </div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="accoBtnCell"></div>
+                      </div>
+                      <div class="block">
+                        <div class="infoCell">김하나(123456A)</div>
+                        <div class="infoCell">
+                          <a href="" class="links">미팅</a>
+                        </div>
+                        <div class="infoCell">2022.09.07 09:00 </div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="accoBtnCell"></div>
+                      </div>
+                      <div class="block">
+                        <div class="infoCell">김하나(123456A)</div>
+                        <div class="infoCell">
+                          <a href="" class="links">미팅</a>
+                        </div>
+                        <div class="infoCell">2022.09.07 09:00 </div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="accoBtnCell"></div>
+                      </div>
+                      <div class="block">
+                        <div class="infoCell">김하나(123456A)</div>
+                        <div class="infoCell">
+                          <a href="" class="links">미팅</a>
+                        </div>
+                        <div class="infoCell">2022.09.07 09:00 </div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="accoBtnCell"></div>
+                      </div>
+                      <div class="block">
+                        <div class="infoCell">김하나(123456A)</div>
+                        <div class="infoCell">
+                          <a href="" class="links">미팅</a>
+                        </div>
+                        <div class="infoCell">2022.09.07 09:00 </div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="accoBtnCell"></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- No Result (s) -->
+              <!-- <div class="noresultWrap">
+                <img src="../../images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+                <div class="noresultText">조회 결과가 없습니다.</div>
+              </div> -->
+              <!--// No Result (e) -->
+              <!-- 아코디언 본문내용 시작(e) -->
+            </div>
+          </li>
+
+          <li class="on">
+            <div class="accoHead">
+              <a class="accoBtn">지점 활동</a>
+            </div>
+            <div class="accoBody">
+              <!-- 아코디언 본문내용 시작(s) -->
+              <div class="sort_wrap mt0">
+                <div class="sort">
+                  <ul class="count">
+                    <li>총 <span class="count_num count_num_accent">106</span>지점</li>
+                    <li><span class="count_num count_num_accent">1</span>/100페이지</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="dataWrap several">
+                <!-- dataHead (s) -->
+                <div class="dataHead" aria-hidden="true">
+                  <div class="infoCell"></div>
+                  <div class="infoCell"></div>
+                  <div class="infoCell">미팅</div>
+                  <div class="infoCell">교육</div>
+                  <div class="infoCell">전화상담</div>
+                  <div class="infoCell">설계지원</div>
+                  <div class="accoBtnCell"></div>
+                </div>
+                <!-- dataHead (e) -->
+                <!-- dataList (s) -->
+                <ul class="dataList">
+                  <li>
+                    <div class="block txt_b">
+                      <div class="infoCell">A지점</div>
+                      <div class="infoCell">합계</div>
+                      <div class="infoCell">data</div>
+                      <div class="infoCell">data</div>
+                      <div class="infoCell">data</div>
+                      <div class="infoCell">data</div>
+                      <div class="accoBtnCell">
+                        <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+                      </div>
+                    </div>
+                    <div class="accoBody pd0 maxheight" style="max-height: 1000px;">
+                      <div class="block">
+                        <div class="infoCell">김하나(123456A)</div>
+                        <div class="infoCell">
+                          <a href="" class="links">미팅</a>
+                        </div>
+                        <div class="infoCell">2022.09.07 09:00 </div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="accoBtnCell"></div>
+                      </div>
+                      <div class="block">
+                        <div class="infoCell">김하나(123456A)</div>
+                        <div class="infoCell">
+                          <a href="" class="links">미팅</a>
+                        </div>
+                        <div class="infoCell">2022.09.07 09:00 </div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="accoBtnCell"></div>
+                      </div>
+                      <div class="block">
+                        <div class="infoCell">김하나(123456A)</div>
+                        <div class="infoCell">
+                          <a href="" class="links">미팅</a>
+                        </div>
+                        <div class="infoCell">2022.09.07 09:00 </div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="infoCell"></div>
+                        <div class="accoBtnCell"></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="noresultWrap">
+                  <img src="../../images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+                  <div class="noresultText">조회 결과가 없습니다.</div>
+                </div>
+              </div>
+              <div class="pagination">
+                <a href="#" class="btn_first">처음 페이지로 이동</a>
+                <a href="#" class="btn_prev">이전 페이지로 이동</a>
+                <a href="#" class="num">1</a>
+                <span class="current">2</span>
+                <a href="#" class="num">3</a>
+                <a href="#" class="num">4</a>
+                <a href="#" class="num">5</a>
+                <a href="#" class="num">6</a>
+                <a href="#" class="num">7</a>
+                <a href="#" class="num">8</a>
+                <a href="#" class="num">9</a>
+                <a href="#" class="num">10</a>
+                <a href="#" class="btn_next">다음 페이지로 이동</a>
+                <a href="#" class="btn_last">마지막 페이지로 이동</a>
+              </div>
+              <!-- 아코디언 본문내용 시작(e) -->
+            </div>
+          </li>
+        </ul>
+
+        <div class="sort_wrap">
+          <div class="sort">
+            <ul class="count">
+              <li>총 <span class="count_num count_num_accent">106</span>건</li>
+              <li><span class="count_num count_num_accent">1</span>/100페이지</li>
+            </ul>
+          </div>
+          <!-- 26.06.12 -->
+          <div class="sortRight">
+            <button type="button" class="btn_primary_reverse m" id="btnExcelDown">엑셀다운로드</button>
+          </div>
+          <!-- //26.06.12 -->
+        </div>
+
+        <div class="tabl_area">
+          <table>
+            <caption>활동조회목록</caption>
+            <colgroup>
+              <col style="width: 25%;">
+              <col style="width: 25%;">
+              <col style="width: 25%;">
+              <col style="width: 25%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">사업단장/GRM(사번)</th>
+                <th scope="col">활동지점</th>
+                <th scope="col">활동 항목</th>
+                <th scope="col">활동 일시</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span>홍길동(123456A)</span></td>
+                <td><span>A대리점, A지점</span></td>
+                <td><span><a href="" class="links">미팅</a></span></td>
+                <td><span>2022.09.07 15:00</span></td>
+              </tr>
+              <tr>
+                <td><span>홍길동(123456A)</span></td>
+                <td><span>A대리점,A지점</span></td>
+                <td><span><a href="" class="links">교육</a></span></td>
+                <td><span>2022.09.07 15:00</span></td>
+              </tr>
+              <tr>
+                <td><span>홍길동(123456A)</span></td>
+                <td><span>A대리점,A지점</span></td>
+                <td><span><a href="" class="links">전화상담</a></span></td>
+                <td><span>2022.09.07 15:00</span></td>
+              </tr>
+              <tr>
+                <td><span>홍길동(123456A)</span></td>
+                <td><span>A대리점,A지점</span></td>
+                <td><span><a href="" class="links">설계지원</a></span></td>
+                <td><span>2022.09.07 15:00</span></td>
+              </tr>
+              <tr>
+                <td><span>홍길동(123456A)</span></td>
+                <td><span>A대리점,A지점</span></td>
+                <td><span><a href="" class="links">미팅</a></span></td>
+                <td><span>2022.09.07 15:00</span></td>
+              </tr>
+              <tr>
+                <td><span>홍길동(123456A)</span></td>
+                <td><span>A대리점,A지점</span></td>
+                <td><span><a href="" class="links">미팅</a></span></td>
+                <td><span>2022.09.07 15:00</span></td>
+              </tr>
+              <tr>
+                <td><span>홍길동(123456A)</span></td>
+                <td><span>A대리점,A지점</span></td>
+                <td><span><a href="" class="links">미팅</a></span></td>
+                <td><span>2022.09.07 15:00</span></td>
+              </tr>
+              <tr>
+                <td><span>홍길동(123456A)</span></td>
+                <td><span>A대리점,A지점</span></td>
+                <td><span><a href="" class="links">미팅</a></span></td>
+                <td><span>2022.09.07 15:00</span></td>
+              </tr>
+              <tr>
+                <td><span>홍길동(123456A)</span></td>
+                <td><span>A대리점,A지점</span></td>
+                <td><span><a href="" class="links">미팅</a></span></td>
+                <td><span>2022.09.07 15:00</span></td>
+              </tr>
+              <tr>
+                <td><span>홍길동(123456A)</span></td>
+                <td><span>A대리점,A지점</span></td>
+                <td><span><a href="" class="links">미팅</a></span></td>
+                <td><span>2022.09.07 15:00</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- No Result (s) -->
+          <div class="noresultWrap">
+            <img src="../../images/icons/ico_noresult.svg" alt="아이콘:결과없음" class="icon icon_noresult">
+            <div class="noresultText">조회 결과가 없습니다.</div>
+          </div>
+          <!--// No Result (e) -->
+        </div>
+        <!-- 26.06.12<div class="bottom_btn">
+          <button type="button" class="btn_primary_reverse l">엑셀다운로드</button>
+        </div> -->
+        
+
+        <div class="pagination" role="navigation" aria-label="페이지 선택 영역">
+		<button type="button" class="icoBtn_first" aria-label="처음"></button>
+		<button type="button" class="icoBtn_prev" aria-label="이전"></button>
+		<ul>
+			<li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+			<li><a href="#"><span class="blind">페이지</span>2</a></li>
+			<li><a href="#"><span class="blind">페이지</span>3</a></li>
+			<li><a href="#"><span class="blind">페이지</span>4</a></li>
+			<li><a href="#"><span class="blind">페이지</span>5</a></li>
+			<li><a href="#"><span class="blind">페이지</span>6</a></li>
+			<li><a href="#"><span class="blind">페이지</span>7</a></li>
+			<li><a href="#"><span class="blind">페이지</span>8</a></li>
+			<li><a href="#"><span class="blind">페이지</span>9</a></li>
+			<li><a href="#"><span class="blind">페이지</span>10</a></li>
+		</ul>
+		<button type="button" class="icoBtn_next" aria-label="다음"></button>
+		<button type="button" class="icoBtn_last" aria-label="마지막"></button>
+	</div>
+
+      </div>
+
+
+      <div class="tab_cont_list ">
+        <h2 class="tit02">GRM정보</h2>
+        <ul class="formList">
+          <li>
+            <div class="th">GRM</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">선택</option>
+              </select>
+            </div>
+          </li>
+        </ul>
+        <h2 class="tit02">활동 등록</h2>
+        <ul class="formList div2">
+          <li>
+            <div class="th">대리점</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">선택</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <div class="th">지점</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">선택</option>
+              </select>
+            </div>
+          </li>
+          <li class="full">
+            <div class="th">활동 구분</div>
+            <div class="td">
+              <ul class="iptFilt paT">
+                <li>
+                  <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_1">
+                  <label for="iptFilt_1">미팅</label>
+                </li>
+                <li>
+                  <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_2" checked="">
+                  <label for="iptFilt_2">교육</label>
+                </li>
+                <li>
+                  <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_3">
+                  <label for="iptFilt_3">전화상담</label>
+                </li>
+                <li>
+                  <input type="radio" class="ipt" name="iptFilt0" id="iptFilt_4">
+                  <label for="iptFilt_4">설계지원</label>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="th">약속 일자</div>
+            <div class="td">
+              <input type="tel" class="ipt date" value="2022.06.25" id="input_ID_Setting_Plz000">
+            </div>
+          </li>
+          <li>
+            <div class="th">약속 시간</div>
+            <div class="td">
+              <select class="ipt">
+                <option selected="">00시</option>
+              </select>
+              <select class="ipt">
+                <option selected="">00분</option>
+              </select>
+            </div>
+          </li>
+          <li class="full">
+            <div class="th">약속 장소</div>
+            <div class="td">
+              <input type="text" class="ipt" placeholder="예: 을지로입구 " >
+            </div>
+          </li>
+          <li class="full">
+            <div class="th">메모</div>
+            <div class="td">
+              <div class="iptWrap full">
+                <textarea class="ipt" placeholder="내용 입력(최대 200자 입력)"></textarea>
+                <p class="byteTxt"><span class="num">0</span> / <span>200</span></p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="btn_wrap">
+          <button type="button" class="btn_gray">취소</button>
+          <button type="button" class="btn_primary">수정</button>
+          <button type="button" class="btn_primary">등록</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+    </div><!-- container (e) -->
+    <div class="footer"></div>
+  </div>
+</body>
+
+<script type="text/javascript">
+// 주간, 일간 전환 테스트용
+$(document).ready(function(){
+  $('input[name=weekFilter]').bind({
+    'change' : function(e){
+      $('.fakeTheadWrap.roundBox, .tabl_area.roundBox').hide();
+      $('.roundBox.'+e.target.value).show();
+    }
+  });
+  var weekFilter = $('input[name=weekFilter]:checked').val();
+  $('.fakeTheadWrap.roundBox, .tabl_area.roundBox.week').hide();
+  $('.roundBox.'+weekFilter).show();
+});
+</script>
+
+</html>

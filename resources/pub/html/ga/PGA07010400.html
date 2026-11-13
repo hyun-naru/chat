@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>조직 변경 심사</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section">
+    <h1 class="tit01 mb0">시책 조회 제한</h1>
+  
+    <div class="sort_wrap">
+        <div class="sort">
+            <ul class="count">
+                <li>총 <span class="count_num count_num_accent" id="totalCnt">1,000</span>건</li>
+                <li><span class="count_num count_num_accent" id="currentPage">1</span>/<span id="totalPage">100</span>페이지</li>
+            </ul>
+        </div>
+        <button type="button" class="btn_white_round m" onclick="">등록</button>
+    </div>
+  
+      
+    <div class="tabl_area">
+        <!--조회 테이블 (s)-->
+        <table>
+            <caption>정보</caption>
+            <colgroup>
+                <col span="4">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th><span>마감월도(S)</span></th>
+                    <th><span>마감월도(E)</span></th>
+                    <th><span>제한기간(S)</span></th>
+                    <th><span>제한기간(E)</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="#" class="links pointC1">2025.06</a></td>
+                    <td><span>2025.06</span></td>
+                    <td><span>2025.07.01</span></td>
+                    <td><span>2025.07.18</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+      <div class="pagination" id="pageArea">
+            <button type="button" class="icoBtn_first" aria-label="처음"></button>
+            <button type="button" class="icoBtn_prev" aria-label="이전"></button>
+            <ul>
+                <li class="on"><em><span class="blind">현재 페이지</span>1</em></li>
+                <li><a href="#"><span class="blind">페이지</span>2</a></li>
+                <li><a href="#"><span class="blind">페이지</span>3</a></li>
+                <li><a href="#"><span class="blind">페이지</span>4</a></li>
+                <li><a href="#"><span class="blind">페이지</span>5</a></li>
+                <li><a href="#"><span class="blind">페이지</span>6</a></li>
+                <li><a href="#"><span class="blind">페이지</span>7</a></li>
+                <li><a href="#"><span class="blind">페이지</span>8</a></li>
+                <li><a href="#"><span class="blind">페이지</span>9</a></li>
+                <li><a href="#"><span class="blind">페이지</span>10</a></li>
+            </ul>
+            <button type="button" class="icoBtn_next" aria-label="다음"></button>
+            <button type="button" class="icoBtn_last" aria-label="마지막"></button>
+      </div>
+
+    </div>
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+</div><!-- container (e) -->
+<!-- 22.07.21 개발이슈로 footer 삭제 -->
+<!-- <div class="footer"></div> -->
+</div>
+</body>
+
+</html>

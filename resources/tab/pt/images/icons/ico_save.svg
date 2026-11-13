@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: red;
+        opacity: 0;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke: #111;
+        stroke-miterlimit: 10;
+        stroke-width: 1.2px;
+      }
+    </style>
+  </defs>
+  <g id="ico_save_defualt_24" transform="translate(-796 -680)">
+    <rect id="area" class="cls-1" width="24" height="24" transform="translate(796 680)"/>
+    <path id="ico" class="cls-2" d="M.75,18.234V1.781A1.016,1.016,0,0,1,1.75.75h14a1.016,1.016,0,0,1,1,1.031V18.234a.5.5,0,0,1-.812.4L9.062,12.988a.488.488,0,0,0-.624,0L1.562,18.637A.5.5,0,0,1,.75,18.234Z" transform="translate(799.25 682.25)"/>
+  </g>
+</svg>

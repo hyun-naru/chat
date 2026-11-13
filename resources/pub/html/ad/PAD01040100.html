@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Template</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <script type="text/javascript" src="../../js/pub.include.js"></script><!-- 퍼블리싱 (html) 에서만 사용하는 코드입니다. 실제 개발 페이지에선 사용하면 안됨 -->
+  <script type="text/javascript" src="../../js/ui.common.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header"></div>
+    <!-- container (s) -->
+    <div class="container" id="content">
+<!-- ★★★★ 퍼블리셔 페이지 내용 시작 (s) -->
+<div class="section">
+  <h1 class="tit01">수금률 조회/추이</h1>
+
+  <!-- GA -->
+  <ul class="formList div3">
+    <li class="full">
+      <div class="th">조회기간</div>
+      <div class="td">
+        <div class="setHalf">
+          <input type="text" class="ipt date" placeholder="YYYY.MM" id="ID_Setting_Plz01221">
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="th">채널</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">대리점</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">지점</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li class="full">
+      <div class="th">판매인</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+  </ul>
+  <!-- //GA -->
+
+  <!-- B/H -->
+  <ul class="formList div3">
+    <li class="full">
+      <div class="th">조회기간</div>
+      <div class="td">
+        <div class="setHalf">
+          <input type="text" class="ipt date" placeholder="YYYY.MM" id="ID_Setting_Plz01221">
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="th">채널</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">본부</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">지점</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li>
+      <div class="th">팀</div>
+      <div class="td">
+        <select class="ipt">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+    <li class="twoThirdsDiv">
+      <div class="th">판매인</div>
+      <div class="td">
+        <select class="ipt mid">
+          <option selected="">선택</option>
+        </select>
+      </div>
+    </li>
+  </ul>
+  <!-- //B/H -->
+
+  <div class="btn_wrap">
+    <button type="button" class="btn_white">초기화</button>
+    <button type="button" class="btn_primary">조회</button>
+  </div>
+<!-- 26.06.12 -->
+			  <div class="sort_wrap end">
+				  <button type="button" class="btn_primary_reverse m" id="btnExclDown">엑셀다운로드</button>
+				</div> 
+  <!-- GA -->
+  <div class="dataWrap mt16" data-body="480">
+				<!-- //26.06.12 -->
+    <!-- dataHead (s) -->
+    <div class="dataHead" aria-hidden="true">
+      <div class="basicCell rowspan"><div class="tit">조직명</div></div>
+      <div class="moneyCell colspan"><div class="tit">수금자원</div></div>
+      <div class="moneyCell"></div>
+      <div class="moneyCell colspan"><div class="tit">응당</div></div>
+      <div class="moneyCell"></div>
+      <div class="moneyCell colspan"><div class="tit">연체</div></div>
+      <div class="moneyCell"></div>
+      <div class="accoBtnCell"></div>
+    </div>
+    <div class="dataHead" aria-hidden="true">
+      <div class="basicCell"></div>
+      <div class="moneyCell">건수</div>
+      <div class="moneyCell">보험료</div>
+      <div class="moneyCell">건수</div>
+      <div class="moneyCell">보험료</div>
+      <div class="moneyCell">건수</div>
+      <div class="moneyCell">보험료</div>
+      <div class="accoBtnCell"></div>
+    </div>
+    <!-- dataHead (e) -->
+    <!-- dataList (s) -->
+    <ul class="dataList">
+      <li class="on">
+        <div class="block">
+          <div class="basicCell"><span>대리점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+      </li>
+      <li class="on">
+        <div class="block">
+          <div class="basicCell"><span>지점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+        <div class="detail accoBody pd0">
+          <div class="block">
+            <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+          <div class="block">
+            <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="block">
+          <div class="basicCell"><span>지점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+        <div class="detail accoBody pd0">
+          <div class="block">
+            <div class="basicCell"><span>김하나(123456A)</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+        </div>
+      </li>
+      <li class="on">
+        <div class="block">
+          <div class="basicCell"><span>대리점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+      </li>
+      <li class="on">
+        <div class="block">
+          <div class="basicCell"><span>지점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+        <div class="detail accoBody pd0">
+          <div class="block">
+            <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+          <div class="block">
+            <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="block">
+          <div class="basicCell"><span>지점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+        <div class="detail accoBody pd0">
+          <div class="block">
+            <div class="basicCell"><span>김하나(123456A)</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+        </div>
+      </li>
+      <li class="on">
+        <div class="block">
+          <div class="basicCell"><span>대리점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+      </li>
+      <li class="on">
+        <div class="block">
+          <div class="basicCell"><span>지점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+        <div class="detail accoBody pd0">
+          <div class="block">
+            <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+          <div class="block">
+            <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="block">
+          <div class="basicCell"><span>지점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+        <div class="detail accoBody pd0">
+          <div class="block">
+            <div class="basicCell"><span>김하나(123456A)</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+        </div>
+      </li>
+      <li class="on">
+        <div class="block">
+          <div class="basicCell"><span>대리점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+      </li>
+      <li class="on">
+        <div class="block">
+          <div class="basicCell"><span>지점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+        <div class="detail accoBody pd0">
+          <div class="block">
+            <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+          <div class="block">
+            <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="block">
+          <div class="basicCell"><span>지점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+        <div class="detail accoBody pd0">
+          <div class="block">
+            <div class="basicCell"><span>김하나(123456A)</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+        </div>
+      </li>
+      <li class="on">
+        <div class="block">
+          <div class="basicCell"><span>대리점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+      </li>
+      <li class="on">
+        <div class="block">
+          <div class="basicCell"><span>지점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+        <div class="detail accoBody pd0">
+          <div class="block">
+            <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+          <div class="block">
+            <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="block">
+          <div class="basicCell"><span>지점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+        <div class="detail accoBody pd0">
+          <div class="block">
+            <div class="basicCell"><span>김하나(123456A)</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+        </div>
+      </li>
+      <li class="on">
+        <div class="block">
+          <div class="basicCell"><span>대리점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+      </li>
+      <li class="on">
+        <div class="block">
+          <div class="basicCell"><span>지점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+        <div class="detail accoBody pd0">
+          <div class="block">
+            <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+          <div class="block">
+            <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="block">
+          <div class="basicCell"><span>지점</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+        <div class="detail accoBody pd0">
+          <div class="block">
+            <div class="basicCell"><span>김하나(123456A)</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="moneyCell"><span>0000</span></div>
+            <div class="moneyCell"><span>000,000,000</span></div>
+            <div class="accoBtnCell"></div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- //GA -->
+
+  <!-- H/B -->
+  <div class="dataWrap mt16" data-body="480"><!-- 26.06.12 -->
+    <!-- dataHead (s) -->
+    <div class="dataHead" aria-hidden="true">
+      <div class="basicCell rowspan"><div class="tit">조직명</div></div>
+      <div class="moneyCell colspan"><div class="tit">수금자원</div></div>
+      <div class="moneyCell"></div>
+      <div class="moneyCell colspan"><div class="tit">응당</div></div>
+      <div class="moneyCell"></div>
+      <div class="moneyCell colspan"><div class="tit">연체</div></div>
+      <div class="moneyCell"></div>
+      <div class="accoBtnCell"></div>
+    </div>
+    <div class="dataHead" aria-hidden="true">
+      <div class="basicCell"></div>
+      <div class="moneyCell">건수</div>
+      <div class="moneyCell">보험료</div>
+      <div class="moneyCell">건수</div>
+      <div class="moneyCell">보험료</div>
+      <div class="moneyCell">건수</div>
+      <div class="moneyCell">보험료</div>
+      <div class="accoBtnCell"></div>
+    </div>
+    <!-- dataHead (e) -->
+    <!-- dataList (s) -->
+    <ul class="dataList">
+      <li class="on">
+        <div class="block">
+          <div class="basicCell"><span>본부</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+      </li>
+      <li class="on">
+        <div class="block">
+          <div class="basicCell"><span>팀</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+        <div class="detail accoBody pd0">
+          <div class="accoItem">
+            <div class="block">
+              <div class="basicCell"><span>지점</span></div>
+              <div class="moneyCell"><span>0000</span></div>
+              <div class="moneyCell"><span>000,000,000</span></div>
+              <div class="moneyCell"><span>0000</span></div>
+              <div class="moneyCell"><span>000,000,000</span></div>
+              <div class="moneyCell"><span>0000</span></div>
+              <div class="moneyCell"><span>000,000,000</span></div>
+              <div class="accoBtnCell">
+                <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+              </div>
+            </div>
+
+            <div class="detail accoBody pd0 maxheight">
+              <div class="block">
+                <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="accoBtnCell"></div>
+              </div>
+              <div class="block">
+                <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="accoBtnCell"></div>
+              </div>
+              <div class="block">
+                <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="accoBtnCell"></div>
+              </div>
+              <div class="block">
+                <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="accoBtnCell"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="on">
+        <div class="block">
+          <div class="basicCell"><span>팀</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="moneyCell"><span>0000</span></div>
+          <div class="moneyCell"><span>000,000,000</span></div>
+          <div class="accoBtnCell">
+            <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+          </div>
+        </div>
+        <!-- accoBody (s) -->
+        <div class="detail accoBody pd0">
+          <div class="accoItem">
+            <div class="block">
+              <div class="basicCell"><span>지점</span></div>
+              <div class="moneyCell"><span>0000</span></div>
+              <div class="moneyCell"><span>000,000,000</span></div>
+              <div class="moneyCell"><span>0000</span></div>
+              <div class="moneyCell"><span>000,000,000</span></div>
+              <div class="moneyCell"><span>0000</span></div>
+              <div class="moneyCell"><span>000,000,000</span></div>
+              <div class="accoBtnCell">
+                <button type="button" class="icoBtn_acco accoBtn"><span>상세내용 보기</span></button>
+              </div>
+            </div>
+
+            <div class="detail accoBody pd0 maxheight">
+              <div class="block">
+                <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="accoBtnCell"></div>
+              </div>
+              <div class="block">
+                <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="accoBtnCell"></div>
+              </div>
+              <div class="block">
+                <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="accoBtnCell"></div>
+              </div>
+              <div class="block">
+                <div class="basicCell"><a href="#" class="links">김하나(123456A)</a></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="moneyCell"><span>0000</span></div>
+                <div class="moneyCell"><span>000,000,000</span></div>
+                <div class="accoBtnCell"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- //H/B -->
+
+  <!-- 26.06.12<div class="bottom_btn">
+    <button type="button" class="btn_primary_reverse l">엑셀다운로드</button>
+  </div> -->
+
+</div>
+
+
+
+
+
+
+<!-- ★★★★ 퍼블리셔 페이지 내용 끝 (e) -->
+    </div><!-- container (e) -->
+    <div class="footer"></div>
+  </div>
+</body>
+
+</html>

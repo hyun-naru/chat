@@ -1,0 +1,4285 @@
+/* ==================================================
+   01. 전역 초기화 및 공통 설정
+   ================================================== */
+
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Spoqa Han Sans Neo", "Roboto", sans-serif;
+}
+
+.hana-support-app h3 {
+    margin-top: 0;
+}
+html body:not(.hana-support-app) * {
+    outline: none;
+}
+/* ==================================================
+   02. 공통 레이아웃 및 탭 메뉴
+   ================================================== */
+
+.hana-support-app {
+    margin: 0;
+    padding: 10px;
+    color: #333;
+    font-size: 14px;
+    text-align: left;
+    line-height: normal;
+    isolation: isolate;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    max-width: none;
+    font-family: "Spoqa Han Sans Neo", "Roboto", sans-serif;
+    -webkit-text-size-adjust: 100%;
+    background: #f1f3f5;
+}
+
+.hana-support-app button,
+.hana-support-app input:not([type="file"]):not([type="checkbox"]):not([type="radio"]),
+.hana-support-app select,
+.hana-support-app textarea {
+    font-family: "Spoqa Han Sans Neo", "Roboto", sans-serif;
+    border-radius: 8px;
+}
+
+.hana-support-app table {
+    border-collapse: collapse;
+}
+
+.hana-support-app table th,
+.hana-support-app table td {
+    border: 1px solid #e5e5e5;
+}
+
+.hana-support-app table th {
+    background: #006551;
+    color: white;
+}
+
+.hana-support-app a {
+    color: #445fe6;
+}
+
+.hana-support-app button,
+.btn-down {
+    padding: 9px 16px;
+    font-size: 1.4rem;
+    color: #008e71;
+    background: white;
+    cursor: pointer;
+    line-height: 1.4;
+    border: 1px solid #008e71;
+    border-radius: 8px;
+}
+
+.hana-support-app [hidden] {
+    display: none;
+}
+
+.hana-support-app .tab-menu {
+    display: flex;
+    align-items: stretch;
+    gap: 6px;
+    margin-bottom: 25px;
+    padding: 0 5px;
+    padding-top: 4px;
+    border-bottom: 2px solid #008e71;
+    scrollbar-width: thin;
+}
+
+.hana-support-app .tab-button {
+    flex: 1 1 auto;
+    min-width: 88px;
+    max-width: none;
+    overflow-wrap: normal;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+    line-height: 1.3;
+    color: #6c757d;
+    font-weight: 600;
+    border-radius: 8px 8px 0 0;
+    padding: 12px 18px;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    background: #f0f4f4;
+    border: 1px solid #cdcdcd;
+    border-bottom: none;
+}
+
+.hana-support-app .tab-button:hover {
+    background: #e0ecec;
+    color: #008e71;
+}
+
+.hana-support-app .tab-button.active {
+    background: #00857e;
+    color: #ffffff;
+    border: 1px solid #008e71;
+    border-bottom: 2px solid #008e71;
+    margin-bottom: -2px;
+    box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.hana-support-app .tab-content {
+    display: none;
+}
+
+.hana-support-app .tab-content.active {
+    display: block;
+    animation: hana-support-fadeIn 0.3s;
+}
+
+@keyframes hana-support-fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hana-support-chatDot {
+
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+
+    30% {
+        transform: translateY(-6px);
+        opacity: 1;
+    }
+}
+
+
+.hana-support-app .container {
+    margin: 0 auto;
+    padding-bottom: 0;
+    width: 100%;
+    max-width: 1400px;
+    background: #ffffff;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.hana-support-app .header {
+    display: block;
+    background: #00857E;
+    color: white;
+    padding: 20px;
+    border-bottom: 3px solid #006551;
+    border-radius: 8px 8px 0 0;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "title update" "description update";
+    gap: 10px 24px;
+}
+
+.hana-support-app .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    min-width: 0;
+}
+
+.hana-support-app .header-content > div:first-child {
+    min-width: 0;
+}
+.hana-support-app .header h1 {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 8px;
+    align-items: center;
+    gap: 10px;
+    grid-area: title;
+    line-height: normal;
+    margin: 0;
+    min-width: 0;
+}
+
+.hana-support-app .header > p {
+    grid-area: description;
+    margin: 0;
+    line-height: normal;
+}
+
+.hana-support-app .header-description {
+    font-size: 12px;
+    margin-top: 5px;
+    opacity: .9;
+    line-height: 1.6;
+}
+
+
+
+/* ==================================================
+   03. 검색 / 카테고리 / 업무 선택
+   ================================================== */
+
+.hana-support-app .search-section h2 {
+    color: #008e71;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.hana-support-app .search-input-container {
+    margin-bottom: 20px;
+    align-items: stretch;
+    flex-direction: row;
+    min-width: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.hana-support-app .search-input {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 16px;
+    width: 100%;
+    min-width: 200px;
+    border: 1px solid #e5e5e5;
+    transition: all 0.3s;
+}
+
+.hana-support-app .search-button {
+    padding: 15px 30px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex: 0 0 auto;
+    background: #00857e;
+    box-shadow: none;
+    white-space: nowrap;
+}
+
+.hana-support-app .search-button:hover {    
+    background: #005657;
+}
+
+.hana-support-app .category-selector {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 30px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.hana-support-app .category-card {
+    background: white;
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.hana-support-app .category-card:hover {
+    border-color: #008e71;
+    box-shadow: 0 4px 12px rgba(0, 132, 133, 0.15);
+}
+
+.hana-support-app .category-card.selected {
+    border-color: #008e71;
+    background: #006551;
+    color: white;
+}
+
+.hana-support-app .category-card h3 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.hana-support-app .category-card p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.hana-support-app .task-selector {
+    display: none;
+    margin-top: 30px;
+}
+
+.hana-support-app .task-selector.active {
+    display: block;
+}
+
+.hana-support-app .task-list {
+    display: grid;
+    gap: 10px;
+    margin-top: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+}
+
+.hana-support-app .task-item {
+    padding: 15px;
+    background: white;
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 15px;
+}
+
+.hana-support-app .task-item:hover {
+    border-color: #008e71;
+    background: #f0fffe;
+}
+
+/* ==================================================
+   04. 검색 결과 / 안내 / 문서 콘텐츠
+   ================================================== */
+
+.hana-support-app .result-box {
+    background: #f5f5f5;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: none;
+}
+
+.hana-support-app .result-box.active {
+    display: block;
+}
+
+.hana-support-app .result-box h3 {
+    color: #008e71;
+    margin-bottom: 15px;
+    font-size: 20px;
+    border-left: 4px solid #008e71;
+    padding-left: 12px;
+}
+
+.hana-support-app .result-table {
+    width: 100%;
+    margin-top: 15px;
+    background: white;
+    overflow: visible;
+}
+
+.hana-support-app .result-table th,
+.hana-support-app .result-table td {
+    padding: 12px;
+    text-align: left;
+}
+
+.hana-support-app .result-table th {
+    background: #00857e;
+    color: white;
+    font-weight: bold;
+}
+
+.hana-support-app .result-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+
+.hana-support-app .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.hana-support-app .badge-warning {
+    background: #f8b500;
+    color: white;
+}
+
+.hana-support-app .badge-info {
+    background: #2196F3;
+    color: white;
+}
+
+.hana-support-app .info-box {
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 16px;
+    line-height: 1.8;
+    background: #e8f5f5;
+    border-left: 4px solid #008e71;
+    border-radius: 4px;
+}
+
+.hana-support-app .info-box strong {
+    font-size: 18px;
+}
+
+.hana-support-app .warning-box {
+    background: #fff8e1;
+    border-left: 4px solid #f8b500;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+
+.hana-support-app .suggestion-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.hana-support-app .suggestion-tag {
+    padding: 8px 15px;
+    background: white;
+    border: 1px solid #008e71;
+    color: #008e71;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.3s;
+}
+
+.hana-support-app .suggestion-tag:hover {
+    background: #00857e;
+    color: white;
+}
+
+.hana-support-app .doc-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 4px solid #008e71;
+}
+
+.hana-support-app .doc-item h4 {
+    color: #008e71;
+    margin-bottom: 8px;
+}
+
+.hana-support-app .doc-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.hana-support-app .doc-item li {
+    padding: 5px 0;
+    position: relative;
+}
+
+.hana-support-app .doc-item li:before {
+    content: none;
+    position: absolute;
+    left: 0;
+    color: #008e71;
+    font-weight: bold;
+}
+
+.hana-support-app .tasa-section {
+    background: #f0f8ff;
+    border: 2px solid #4a90e2;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.hana-support-app .tasa-section h3 {
+    color: #4a90e2;
+    margin-bottom: 15px;
+    border-left: 4px solid #4a90e2;
+    padding-left: 12px;
+}
+
+.hana-support-app .multiple-results {
+    background: #e8f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.hana-support-app .multiple-results h4 {
+    color: #008e71;
+    margin-bottom: 15px;
+}
+
+.hana-support-app .result-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #008e71;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.hana-support-app .result-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 132, 133, 0.2);
+}
+
+.hana-support-app .result-item h5 {
+    color: #008e71;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.hana-support-app .result-item p {
+    color: #666;
+    font-size: 14px;
+}
+
+.hana-support-app .information-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #666;
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+/* ==================================================
+   05. 탭 보조 스타일 및 레거시 콘텐츠 컴포넌트
+   ================================================== */
+
+
+.hana-support-app .badge-danger {
+    background: #ff6b6b;
+    color: white;
+}
+
+.hana-support-app .result-item.safe-result {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: white;
+    color: inherit;
+    font: inherit;
+}
+
+.hana-support-app .legacy-text-01 {
+    font-size: 13px;
+    color: #e67e22;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-flex-wrap-01 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.hana-support-app .legacy-text-02 {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #333;
+    width: 100%;
+}
+
+.hana-support-app .legacy-detail-panel-01 {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #fff8e1;
+    border-left: 4px solid #F8B500;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #5a4000;
+    line-height: 1.6;
+}
+
+.hana-support-app .legacy-presentation-strong-01 {
+    color: #008e71;
+}
+
+.hana-support-app .legacy-block-spacing-01 {
+    margin-bottom: 10px;
+}
+
+.hana-support-app .legacy-flex-wrap-02 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.hana-support-app .legacy-control-01 {
+    padding: 8px 16px;
+    background: #00857e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.hana-support-app .legacy-control-02 {
+    padding: 8px 16px;
+    background: white;
+    color: #008e71;
+    border: 2px solid #008e71;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.hana-support-app .legacy-detail-panel-02 {
+    width: 100%;
+    height: 1px;
+    background: #eee;
+    margin: 4px 0;
+}
+
+.hana-support-app .legacy-text-03 {
+    font-size: 13px;
+    color: #666;
+    align-self: center;
+}
+
+.hana-support-app .legacy-control-03 {
+    padding: 8px 14px;
+    background: white;
+    color: #e67e22;
+    border: 2px solid #e67e22;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.hana-support-app .legacy-presentation-div-03 {
+    display: block;
+}
+
+.hana-support-app .legacy-note-01 {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.hana-support-app h2.legacy-heading-01,
+.hana-support-app h3.legacy-heading-01,
+.hana-support-app h4.legacy-heading-01 {
+    color: #008e71;
+    margin-bottom: 15px;
+}
+
+.hana-support-app .legacy-block-spacing-02 {
+    margin-top: 20px;
+}
+.hana-support-app [class*="legacy-badge-"] {
+    display: inline-block;
+}
+.hana-support-app .legacy-badge-01 {
+    background: #ff6b6b;
+    color: white;
+    border-color: #ff6b6b;
+}
+
+.hana-support-app .legacy-note-02 {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+.hana-support-app .legacy-flex-wrap-03 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+    align-items: center;
+}
+
+.hana-support-app .legacy-control-04 {
+    padding: 8px 16px;
+    background: #00857e;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-05 {
+    padding: 8px 16px;
+    background: white;
+    color: #2980b9;
+    border: 2px solid #2980b9;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-06 {
+    padding: 8px 16px;
+    background: white;
+    color: #dc231e;
+    border: 2px solid #dc231e;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-flex-row-01 {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hana-support-app .legacy-control-07 {
+    padding: 8px 14px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 13px;
+    width: 200px;
+    outline: none;
+}
+
+.hana-support-app .legacy-flex-wrap-04 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding: 10px 14px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.hana-support-app .legacy-text-04 {
+    color: #008485;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-text-05 {
+    color: #999;
+}
+
+.hana-support-app .legacy-text-06 {
+    margin-left: 8px;
+    color: #666;
+}
+
+.hana-support-app .legacy-badge-02 {
+    background: #2980b915;
+    color: #2980b9;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-badge-03 {
+    background: #dc231e15;
+    color: #dc231e;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-badge-04 {
+    background: #008e7115;
+    color: #008e71;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-block-spacing-03 {
+    margin-bottom: 28px;
+}
+
+.hana-support-app .legacy-flex-row-02 {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hana-support-app .legacy-presentation-strong-02 {
+    font-size: 15px;
+}
+
+.hana-support-app .legacy-text-08 {
+    margin-left: auto;
+    font-size: 11px;
+    opacity: 0.85;
+}
+
+.hana-support-app .legacy-table-scroll-01 {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.hana-support-app .legacy-data-table-01 {
+    width: 100%;
+    font-size: 12px;
+    min-width: 900px;
+}
+
+.hana-support-app table .legacy-detail-panel-03 th {
+    background: #ebf5fb;
+    text-align: center;
+    color: #1a5276;
+}
+
+.hana-support-app .legacy-table-heading-left-01 {
+    padding: 8px 6px;
+    border: 1px solid #aed6f1;
+    width: 55px;
+}
+
+.hana-support-app .legacy-table-heading-left-02 {
+    padding: 8px 6px;
+    border: 1px solid #aed6f1;
+    min-width: 200px;
+    text-align: left;
+}
+
+.hana-support-app .legacy-table-heading-left-03 {
+    padding: 8px 6px;
+    border: 1px solid #aed6f1;
+    width: 75px;
+}
+
+.hana-support-app .legacy-table-heading-left-04 {
+    padding: 8px 6px;
+    border: 1px solid #aed6f1;
+    width: 70px;
+    font-size: 11px;
+}
+
+.hana-support-app .legacy-table-heading-left-05 {
+    padding: 8px 6px;
+    border: 1px solid #aed6f1;
+    width: 58px;
+    font-size: 11px;
+}
+
+.hana-support-app .legacy-table-heading-left-06 {
+    padding: 8px 6px;
+    border: 1px solid #aed6f1;
+    width: 65px;
+    font-size: 11px;
+}
+
+.hana-support-app .legacy-table-heading-left-07 {
+    padding: 8px 6px;
+    border: 1px solid #aed6f1;
+    width: 72px;
+    font-size: 11px;
+}
+
+.hana-support-app .legacy-table-heading-left-08 {
+    padding: 8px 6px;
+    border: 1px solid #aed6f1;
+    width: 68px;
+    font-size: 11px;
+}
+
+.hana-support-app .legacy-flex-row-03 {
+    background: linear-gradient(135deg, #dc231e, #e74c3c);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hana-support-app  table .legacy-detail-panel-04 th{
+    background: #fdedec;
+    text-align: center;
+    color: #922b21;
+}
+
+.hana-support-app .legacy-table-heading-left-09 {
+    padding: 8px 6px;
+    border: 1px solid #f5b7b1;
+    width: 70px;
+}
+
+.hana-support-app .legacy-table-heading-left-10 {
+    padding: 8px 6px;
+    border: 1px solid #f5b7b1;
+    min-width: 200px;
+    text-align: left;
+}
+
+.hana-support-app .legacy-table-heading-left-11 {
+    padding: 8px 6px;
+    border: 1px solid #f5b7b1;
+    width: 90px;
+}
+
+.hana-support-app .legacy-table-heading-left-12 {
+    padding: 8px 6px;
+    border: 1px solid #f5b7b1;
+    width: 70px;
+    font-size: 11px;
+}
+
+.hana-support-app .legacy-table-heading-left-13 {
+    padding: 8px 6px;
+    border: 1px solid #f5b7b1;
+    width: 58px;
+    font-size: 11px;
+}
+
+.hana-support-app .legacy-table-heading-left-14 {
+    padding: 8px 6px;
+    border: 1px solid #f5b7b1;
+    width: 70px;
+    font-size: 11px;
+}
+
+.hana-support-app .legacy-table-heading-left-15 {
+    padding: 8px 6px;
+    border: 1px solid #f5b7b1;
+    width: 72px;
+    font-size: 11px;
+}
+
+.hana-support-app .legacy-table-heading-left-16 {
+    padding: 8px 6px;
+    border: 1px solid #f5b7b1;
+    width: 75px;
+    font-size: 11px;
+}
+
+.hana-support-app .legacy-note-03 {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.hana-support-app .legacy-block-spacing-04 {
+    margin-bottom: 16px;
+}
+
+.hana-support-app .legacy-note-04 {
+    font-size: 13px;
+    font-weight: bold;
+    color: #008e71;
+    margin-bottom: 10px;
+}
+
+.hana-support-app .legacy-flex-wrap-05 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.hana-support-app .legacy-control-08 {
+    background: #dc231e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hana-support-app .legacy-control-09 {
+    background: #2980b9;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hana-support-app .legacy-control-10 {
+    background: #8e44ad;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hana-support-app .legacy-control-11 {
+    background: #008e71;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hana-support-app .legacy-control-12 {
+    background: #16a085;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hana-support-app .legacy-control-13 {
+    background: #d35400;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hana-support-app .legacy-control-14 {
+    background: #7f8c8d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hana-support-app .legacy-control-15 {
+    background: white;
+    color: #666;
+    border: 2px solid #ccc;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hana-support-app .legacy-block-spacing-05 {
+    border-top: 1px solid #eee;
+    padding-top: 16px;
+    margin-top: 4px;
+}
+
+.hana-support-app .legacy-note-05 {
+    font-size: 12px;
+    color: #999;
+    margin-top: 6px;
+}
+
+.hana-support-app .legacy-flex-wrap-06 {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.hana-support-app .legacy-note-06 {
+    font-size: 12px;
+    color: #999;
+}
+
+.hana-support-app .legacy-flex-wrap-07 {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.hana-support-app .legacy-text-09 {
+    font-size: 11px;
+    color: #666;
+}
+
+.hana-support-app .legacy-detail-panel-05 {
+    background: #00857e;
+    color: white;
+    text-align: center;
+}
+
+.hana-support-app .legacy-table-heading-left-17 {
+    padding: 8px 6px;
+    border: 1px solid #007070;
+    width: 36px;
+}
+
+.hana-support-app .legacy-table-heading-left-18 {
+    padding: 8px 6px;
+    border: 1px solid #007070;
+    width: 60px;
+}
+
+.hana-support-app .legacy-table-heading-left-19 {
+    padding: 8px 6px;
+    border: 1px solid #007070;
+    min-width: 160px;
+}
+
+.hana-support-app .legacy-table-heading-left-20 {
+    padding: 8px 6px;
+    border: 1px solid #007070;
+    min-width: 220px;
+}
+
+.hana-support-app .legacy-table-heading-left-21 {
+    padding: 8px 6px;
+    border: 1px solid #007070;
+    min-width: 100px;
+}
+
+.hana-support-app .legacy-table-heading-left-22 {
+    padding: 8px 6px;
+    border: 1px solid #007070;
+    width: 70px;
+}
+
+.hana-support-app .legacy-table-heading-left-23 {
+    padding: 8px 6px;
+    border: 1px solid #007070;
+    width: 100px;
+    font-size: 11px;
+}
+
+.hana-support-app .legacy-block-spacing-09 {
+    margin-top: 10px;
+}
+
+.hana-support-app .legacy-flex-row-04 {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+    align-items: center;
+}
+
+.hana-support-app .legacy-control-17 {
+    flex: 1;
+    padding: 10px 16px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 14px;
+    outline: none;
+}
+
+.hana-support-app .legacy-control-18 {
+    padding: 10px 18px;
+    background: #eee;
+    border: none;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #555;
+}
+
+.hana-support-app .legacy-flex-wrap-08 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.hana-support-app .legacy-control-19 {
+    padding: 6px 14px;
+    background: #00857e;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-20 {
+    padding: 6px 14px;
+    background: white;
+    color: #2980b9;
+    border: 2px solid #2980b9;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-21 {
+    padding: 6px 14px;
+    background: white;
+    color: #008e71;
+    border: 2px solid #008e71;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-22 {
+    padding: 6px 14px;
+    background: white;
+    color: #8e44ad;
+    border: 2px solid #8e44ad;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-23 {
+    padding: 6px 14px;
+    background: white;
+    color: #dc231e;
+    border: 2px solid #dc231e;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-24 {
+    padding: 6px 14px;
+    background: white;
+    color: #d35400;
+    border: 2px solid #d35400;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-25 {
+    padding: 6px 14px;
+    background: white;
+    color: #16a085;
+    border: 2px solid #16a085;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-26 {
+    padding: 6px 14px;
+    background: white;
+    color: #e67e22;
+    border: 2px solid #e67e22;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-27 {
+    padding: 6px 14px;
+    background: white;
+    color: #7f8c8d;
+    border: 2px solid #7f8c8d;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-28 {
+    padding: 6px 14px;
+    background: white;
+    color: #2c3e50;
+    border: 2px solid #2c3e50;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-29 {
+    padding: 6px 14px;
+    background: white;
+    color: #1abc9c;
+    border: 2px solid #1abc9c;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-30 {
+    padding: 6px 14px;
+    background: white;
+    color: #e74c3c;
+    border: 2px solid #e74c3c;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-31 {
+    padding: 6px 14px;
+    background: white;
+    color: #9b59b6;
+    border: 2px solid #9b59b6;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-32 {
+    padding: 6px 14px;
+    background: white;
+    color: #f39c12;
+    border: 2px solid #f39c12;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-33 {
+    padding: 6px 14px;
+    background: white;
+    color: #3498db;
+    border: 2px solid #3498db;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-block-spacing-13 {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.hana-support-app .legacy-table-scroll-02 {
+    overflow-x: auto;
+}
+
+.hana-support-app .legacy-data-table-02 {
+    width: 100%;
+    font-size: 13px;
+}
+
+.hana-support-app .legacy-detail-panel-12 {
+    background: #00857e;
+    color: white;
+    text-align: left;
+}
+
+.hana-support-app .legacy-table-heading-left-25 {
+    padding: 10px 10px;
+    min-width: 140px;
+}
+
+.hana-support-app .legacy-table-heading-center-01 {
+    padding: 10px 8px;
+    width: 120px;
+    text-align: center;
+}
+
+.hana-support-app .legacy-table-heading-center-02 {
+    padding: 10px 8px;
+    width: 150px;
+    text-align: center;
+}
+
+.hana-support-app .legacy-table-heading-center-03 {
+    padding: 10px 8px;
+    width: 140px;
+    text-align: center;
+}
+
+.hana-support-app .legacy-table-heading-center-04 {
+    padding: 10px 8px;
+    min-width: 140px;
+    text-align: center;
+}
+
+.hana-support-app .legacy-detail-panel-13 {
+    background: white;
+}
+
+.hana-support-app .legacy-table-cell-left-01 {
+    padding: 9px 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-table-cell-center-01 {
+    padding: 9px 10px;
+    text-align: center;
+}
+
+.hana-support-app .legacy-badge-12 {
+    background: #dc231e;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-table-cell-center-02 {
+    padding: 9px 10px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.hana-support-app .legacy-table-cell-center-03 {
+    padding: 9px 10px;
+    font-size: 12px;
+    color: #555;
+    text-align: center;
+}
+
+.hana-support-app .legacy-table-cell-center-04 {
+    padding: 9px 10px;
+    font-size: 12px;
+    color: #2980b9;
+    text-align: center;
+}
+
+.hana-support-app .legacy-detail-panel-14 {
+    background: #f9f9f9;
+}
+
+.hana-support-app .legacy-badge-13 {
+    background: #2c3e50;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-badge-14 {
+    background: #008e71;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-badge-15 {
+    background: #d35400;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-badge-16 {
+    background: #8e44ad;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-badge-17 {
+    background: #2980b9;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-badge-18 {
+    background: #e67e22;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-badge-19 {
+    background: #9b59b6;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-badge-20 {
+    background: #1abc9c;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-table-cell-left-02 {
+    padding: 9px 10px;
+    font-size: 13px;
+    font-weight: bold;
+    vertical-align: middle;
+    border-bottom: 2px solid #ddd;
+}
+
+.hana-support-app .legacy-text-10 {
+    font-size: 11px;
+    color: #888;
+    display: block;
+    margin-top: 2px;
+}
+
+.hana-support-app .legacy-detail-panel-15 {
+    background: #f0f0f0;
+}
+
+.hana-support-app .legacy-badge-21 {
+    background: #f39c12;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-badge-22 {
+    background: #e74c3c;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-badge-23 {
+    background: #7f8c8d;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-badge-24 {
+    background: #3498db;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-flex-wrap-09 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 14px 0 4px;
+}
+
+.hana-support-app .legacy-control-34 {
+    padding: 7px 16px;
+    background: #00857e;
+    color: white;
+    border: 2px solid #008e71;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-35 {
+    padding: 7px 16px;
+    background: white;
+    color: #2980b9;
+    border: 2px solid #2980b9;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-36 {
+    padding: 7px 16px;
+    background: white;
+    color: #8e44ad;
+    border: 2px solid #8e44ad;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-37 {
+    padding: 7px 16px;
+    background: white;
+    color: #008e71;
+    border: 2px solid #008e71;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-38 {
+    padding: 7px 16px;
+    background: white;
+    color: #e67e22;
+    border: 2px solid #e67e22;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-39 {
+    padding: 7px 16px;
+    background: white;
+    color: #dc231e;
+    border: 2px solid #dc231e;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-40 {
+    padding: 7px 14px;
+    background: #eee;
+    border: none;
+    border-radius: 16px;
+    font-size: 12px;
+    cursor: pointer;
+    color: #555;
+    margin-left: auto;
+}
+
+.hana-support-app .legacy-block-spacing-14 {
+    font-size: 12px;
+    color: #666;
+    margin: 8px 0 4px;
+}
+
+.hana-support-app .legacy-block-spacing-15 {
+    margin-top: 10px;
+}
+
+.hana-support-app .legacy-flex-wrap-10 {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.hana-support-app .legacy-detail-panel-16 {
+    background: #e8f5e9;
+    border: 1px solid #a5d6a7;
+    border-radius: 10px;
+    padding: 10px 18px;
+    text-align: center;
+}
+
+.hana-support-app .legacy-presentation-div-06 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.hana-support-app .legacy-block-spacing-16 {
+    font-size: 13px;
+    color: #333;
+    margin-top: 2px;
+    font-weight: 500;
+}
+
+.hana-support-app .legacy-detail-panel-17 {
+    background: #ffebee;
+    border: 1px solid #ef9a9a;
+    border-radius: 10px;
+    padding: 10px 18px;
+    text-align: center;
+}
+
+.hana-support-app .legacy-presentation-div-07 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #c62828;
+}
+
+.hana-support-app .legacy-detail-panel-18 {
+    background: #fff8e1;
+    border: 1px solid #ffcc80;
+    border-radius: 10px;
+    padding: 10px 18px;
+    text-align: center;
+}
+
+.hana-support-app .legacy-presentation-div-08 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e65100;
+}
+
+.hana-support-app .legacy-flex-wrap-11 {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.hana-support-app .legacy-control-41 {
+    padding: 7px 16px;
+    background: #00857e;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-42 {
+    padding: 7px 16px;
+    background: white;
+    color: #2e7d32;
+    border: 2px solid #2e7d32;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-43 {
+    padding: 7px 16px;
+    background: white;
+    color: #c62828;
+    border: 2px solid #c62828;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-control-44 {
+    padding: 7px 16px;
+    background: white;
+    color: #e65100;
+    border: 2px solid #ffcc80;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hana-support-app .legacy-grid-three-columns-01 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.hana-support-app .legacy-flex-row-05 {
+    background: #e8f5e9;
+    border: 2px solid #81c784;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.hana-support-app .legacy-presentation-div-09 {
+    flex-shrink: 0;
+    text-align: center;
+    min-width: 52px;
+}
+
+.hana-support-app .legacy-presentation-div-10 {
+    font-size: 17px;
+    font-weight: bold;
+    color: #0b3c6e;
+}
+
+.hana-support-app .legacy-presentation-div-11 {
+    flex: 1;
+    min-width: 0;
+}
+
+.hana-support-app .legacy-badge-25 {
+    background: #2e7d32;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-flex-row-06 {
+    background: #ffebee;
+    border: 2px solid #e57373;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.hana-support-app .legacy-badge-26 {
+    background: #c62828;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-flex-row-07 {
+    background: #fff8e1;
+    border: 2px solid #ffb300;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.hana-support-app .legacy-badge-27 {
+    background: #e65100;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-block-spacing-17 {
+    font-size: 12px;
+    color: #444;
+    margin-top: 5px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.hana-support-app .legacy-detail-panel-19 {
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: #f0f8ff;
+    border-radius: 10px;
+    border-left: 4px solid #008e71;
+    font-size: 13px;
+    color: #444;
+    line-height: 2.2;
+}
+
+.hana-support-app .legacy-text-15 {
+    color: #dc231e;
+}
+
+.hana-support-app .legacy-detail-panel-26 {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.hana-support-app .legacy-block-spacing-18 {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #008e71;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #008e71;
+}
+
+.hana-support-app .legacy-detail-panel-27 {
+    background: #fff8e1;
+    border-left: 5px solid #ff9800;
+    padding: 18px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.hana-support-app .legacy-presentation-ul-03 {
+    list-style: none;
+    padding-left: 0;
+}
+
+.hana-support-app .legacy-presentation-li-02 {
+    padding: 10px 0 10px 30px;
+    position: relative;
+}
+
+.hana-support-app .legacy-badge-30 {
+    background: #fff9c4;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.hana-support-app .legacy-detail-panel-28 {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+.hana-support-app .legacy-block-spacing-19 {
+    display: block;
+    color: #008e71;
+    margin-bottom: 12px;
+    font-size: 1.1em;
+}
+
+.hana-support-app .legacy-block-spacing-20 {
+    margin-top: 12px;
+    margin-left: 0;
+}
+
+.hana-support-app .legacy-presentation-li-03 {
+    padding: 8px 0;
+}
+
+.hana-support-app .legacy-detail-panel-29 {
+    background: #e8f5e9;
+    border-left: 5px solid #4caf50;
+    padding: 18px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.hana-support-app .legacy-detail-panel-30 {
+    background: #e3f2fd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.hana-support-app .legacy-presentation-strong-05 {
+    color: #1976d2;
+    font-size: 1.15em;
+}
+
+.hana-support-app .legacy-block-spacing-21 {
+    margin-top: 15px;
+    line-height: 2;
+    list-style: none;
+    padding-left: 0;
+}
+
+.hana-support-app .legacy-presentation-li-04 {
+    padding: 5px 0;
+}
+
+.hana-support-app .legacy-block-spacing-22 {
+    margin-left: 30px;
+    margin-top: 8px;
+    list-style: none;
+}
+
+.hana-support-app .legacy-presentation-li-05 {
+    padding-left: 15px;
+    position: relative;
+}
+
+.hana-support-app .legacy-positioned-note-05 {
+    position: absolute;
+    left: 0;
+}
+
+.hana-support-app .legacy-detail-panel-31 {
+    margin-top: 40px;
+    padding: 25px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid #008e71;
+}
+
+.hana-support-app .legacy-block-spacing-23 {
+    color: #008e71;
+    font-size: 1.3em;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.hana-support-app .legacy-note-15 {
+    line-height: 1.9;
+    font-size: 1.05em;
+}
+
+.hana-support-app .legacy-block-spacing-24 {
+    margin-top: 24px;
+    padding: 0 8px 8px;
+}
+
+.hana-support-app .legacy-detail-panel-32 {
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 18px 20px;
+    background: white;
+}
+
+.hana-support-app .legacy-block-spacing-25 {
+    margin-bottom: 18px;
+}
+
+.hana-support-app .legacy-flex-row-09 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #dc231e;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hana-support-app .legacy-badge-31 {
+    background: #dc231e;
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.hana-support-app .legacy-detail-panel-33 {
+    padding: 10px 14px;
+    background: #fff5f5;
+    border-radius: 8px;
+    border-left: 3px solid #dc231e;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.hana-support-app .legacy-text-18 {
+    color: #dc231e;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-text-19 {
+    color: #2c3e50;
+}
+
+.hana-support-app .legacy-flex-row-10 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2980b9;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hana-support-app .legacy-badge-32 {
+    background: #2980b9;
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.hana-support-app .legacy-detail-panel-34 {
+    padding: 10px 14px;
+    background: #ebf5fb;
+    border-radius: 8px;
+    border-left: 3px solid #2980b9;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.hana-support-app .legacy-text-20 {
+    color: #2980b9;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-text-21 {
+    color: #888;
+    font-size: 12px;
+}
+
+.hana-support-app .legacy-text-22 {
+    color: #666;
+    font-size: 12px;
+}
+
+.hana-support-app .legacy-flex-row-11 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #8e44ad;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hana-support-app .legacy-badge-33 {
+    background: #8e44ad;
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.hana-support-app .legacy-detail-panel-35 {
+    padding: 10px 14px;
+    background: #f5eef8;
+    border-radius: 8px;
+    border-left: 3px solid #8e44ad;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.hana-support-app .legacy-detail-panel-36 {
+    padding: 12px 16px;
+    background: #fff8e1;
+    border-radius: 8px;
+    border: 1px solid #ffcc80;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.hana-support-app .legacy-presentation-strong-06 {
+    color: #e65100;
+}
+
+.hana-support-app .legacy-text-23 {
+    color: #555;
+}
+
+.hana-support-app .legacy-block-spacing-29 {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.hana-support-app .legacy-text-26 {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-block-spacing-31 {
+    margin-bottom: 12px;
+}
+
+.hana-support-app h2.legacy-heading-15,
+.hana-support-app h3.legacy-heading-15,
+.hana-support-app h4.legacy-heading-15 {
+    color: #008e71;
+    margin-bottom: 4px;
+}
+
+.hana-support-app .legacy-note-23 {
+    font-size: 12px;
+    color: #666;
+}
+
+.hana-support-app .legacy-table-scroll-03 {
+    overflow: auto;
+    max-height: 70vh;
+    border-radius: 6px;
+}
+
+.hana-support-app .legacy-data-table-04 {
+    width: 100%;
+    font-size: 13px;
+}
+
+.hana-support-app .legacy-detail-panel-43 {
+    background: #00857e;
+    color: white;
+}
+
+.hana-support-app .legacy-table-heading-center-05 {
+    padding: 8px 6px;
+    text-align: center;
+    min-width: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #00857e;
+}
+
+.hana-support-app .legacy-table-heading-center-06 {
+    padding: 8px 6px;
+    text-align: center;
+    min-width: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #00857e;
+}
+
+.hana-support-app .legacy-table-heading-left-26 {
+    padding: 8px 6px;
+    text-align: left;
+    min-width: 200px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #00857e;
+}
+
+.hana-support-app .legacy-table-heading-center-07 {
+    padding: 8px 6px;
+    text-align: center;
+    min-width: 65px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #00857e;
+}
+
+.hana-support-app .legacy-table-heading-center-08 {
+    padding: 8px 6px;
+    text-align: center;
+    min-width: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #00857e;
+}
+
+.hana-support-app .legacy-table-heading-left-27 {
+    padding: 8px 6px;
+    text-align: left;
+    min-width: 100px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #00857e;
+}
+
+.hana-support-app .legacy-table-cell-center-05 {
+    background: #e8f5f5;
+    color: #008e71;
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+}
+
+.hana-support-app .legacy-text-27 {
+    font-size: 11px;
+    color: #008e71;
+    font-weight: normal;
+}
+
+.hana-support-app .legacy-table-cell-center-07 {
+    padding: 7px 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-table-cell-center-08 {
+    padding: 7px 5px;
+    text-align: center;
+}
+
+.hana-support-app .legacy-table-cell-center-09 {
+    padding: 7px 5px;
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+}
+
+.hana-support-app .legacy-table-cell-left-03 {
+    padding: 7px 8px;
+}
+
+.hana-support-app .legacy-table-cell-center-10 {
+    padding: 7px 5px;
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+}
+
+.hana-support-app .legacy-table-cell-left-04 {
+    padding: 7px 6px;
+    font-size: 11px;
+    color: #e67e22;
+}
+
+.hana-support-app .legacy-detail-panel-44 {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #fff;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.hana-support-app .legacy-detail-panel-44 > strong:first-child {
+    font-size: 18px;
+    color: #333;
+    font-weight: 700;
+}
+
+.hana-support-app .legacy-detail-panel-45 {
+    margin: 8px 0;
+    padding: 8px 12px;
+    border: 2px solid #1a5276;
+    border-radius: 6px;
+    background: #eaf2f8;
+}
+
+.hana-support-app .legacy-presentation-strong-08 {
+    color: #1a5276;
+    font-size: 13px;
+}
+
+.hana-support-app .legacy-presentation-strong-09 {
+    color: #1a5276;
+}
+
+.hana-support-app .legacy-detail-panel-46 {
+    margin: 8px 0;
+    padding: 8px 12px;
+    border: 2px solid #008e71;
+    border-radius: 6px;
+    background: #f0f9f0;
+}
+
+.hana-support-app .legacy-presentation-strong-10 {
+    color: #008e71;
+    font-size: 13px;
+}
+
+.hana-support-app h2.legacy-heading-16,
+.hana-support-app h3.legacy-heading-16,
+.hana-support-app h4.legacy-heading-16 {
+    color: #dc231e;
+    margin-bottom: 4px;
+    border-left: 4px solid #dc231e;
+}
+
+.hana-support-app .legacy-detail-panel-47 {
+    background: #dc231e;
+    color: white;
+}
+
+.hana-support-app .legacy-table-heading-center-09 {
+    padding: 8px 6px;
+    text-align: center;
+    min-width: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #dc231e;
+}
+
+.hana-support-app .legacy-table-heading-center-10 {
+    padding: 8px 6px;
+    text-align: center;
+    min-width: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #dc231e;
+}
+
+.hana-support-app .legacy-table-heading-left-28 {
+    padding: 8px 6px;
+    text-align: left;
+    min-width: 220px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #dc231e;
+}
+
+.hana-support-app .legacy-table-heading-left-29 {
+    padding: 8px 6px;
+    text-align: left;
+    min-width: 120px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #dc231e;
+}
+
+.hana-support-app .legacy-table-cell-center-11 {
+    background: #fde8e8;
+    color: #dc231e;
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+}
+
+.hana-support-app .legacy-table-cell-left-05 {
+    padding: 7px 6px;
+    font-size: 11px;
+    color: #dc231e;
+}
+
+.hana-support-app h2.legacy-heading-17,
+.hana-support-app h3.legacy-heading-17,
+.hana-support-app h4.legacy-heading-17 {
+    color: #e67e22;
+    margin-bottom: 4px;
+    border-left: 4px solid #e67e22;
+}
+
+.hana-support-app .legacy-detail-panel-48 {
+    background: #e67e22;
+    color: white;
+}
+
+.hana-support-app .legacy-table-heading-center-11 {
+    padding: 8px 6px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #e67e22;
+}
+
+.hana-support-app .legacy-table-heading-left-30 {
+    padding: 8px 6px;
+    text-align: left;
+    min-width: 220px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #e67e22;
+}
+
+.hana-support-app .legacy-table-heading-center-12 {
+    padding: 8px 6px;
+    text-align: center;
+    min-width: 65px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #e67e22;
+}
+
+.hana-support-app .legacy-table-heading-left-31 {
+    padding: 8px 6px;
+    text-align: left;
+    min-width: 120px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #e67e22;
+}
+
+.hana-support-app .legacy-table-cell-center-12 {
+    padding: 7px 5px;
+    text-align: center;
+    color: #999;
+}
+
+.hana-support-app .legacy-text-28 {
+    font-size: 11px;
+    color: #e67e22;
+}
+
+.hana-support-app .legacy-table-cell-left-06 {
+    padding: 7px 6px;
+    font-size: 12px;
+    color: #777;
+}
+
+.hana-support-app .legacy-table-heading-left-32 {
+    padding: 8px 6px;
+    text-align: left;
+    min-width: 250px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #e67e22;
+}
+
+.hana-support-app .legacy-table-heading-center-13 {
+    padding: 8px 6px;
+    text-align: center;
+    min-width: 55px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #e67e22;
+}
+
+.hana-support-app .legacy-text-29 {
+    font-size: 11px;
+    color: #999;
+}
+
+.hana-support-app h2.legacy-heading-18,
+.hana-support-app h3.legacy-heading-18,
+.hana-support-app h4.legacy-heading-18 {
+    color: #8e44ad;
+    margin-bottom: 4px;
+    border-left: 4px solid #8e44ad;
+}
+
+.hana-support-app .legacy-detail-panel-49 {
+    background: #8e44ad;
+    color: white;
+}
+
+.hana-support-app .legacy-table-heading-center-14 {
+    padding: 8px 6px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #8e44ad;
+}
+
+.hana-support-app .legacy-table-heading-left-33 {
+    padding: 8px 6px;
+    text-align: left;
+    min-width: 150px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #8e44ad;
+}
+
+.hana-support-app .legacy-table-heading-center-15 {
+    padding: 8px 6px;
+    text-align: center;
+    min-width: 65px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #8e44ad;
+}
+
+.hana-support-app .legacy-table-heading-left-34 {
+    padding: 8px 6px;
+    text-align: left;
+    min-width: 120px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #8e44ad;
+}
+
+.hana-support-app h2.legacy-heading-19,
+.hana-support-app h3.legacy-heading-19,
+.hana-support-app h4.legacy-heading-19 {
+    margin-bottom: 14px;
+    color: #008e71;
+}
+
+.hana-support-app .legacy-block-spacing-32 {
+    margin-top: 20px;
+}
+
+.hana-support-app .legacy-detail-panel-50 {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.hana-support-app h2.legacy-heading-20,
+.hana-support-app h3.legacy-heading-20,
+.hana-support-app h4.legacy-heading-20 {
+    color: #4a90e2;
+    margin-bottom: 10px;
+}
+
+.hana-support-app .legacy-note-24 {
+    margin-top: 10px;
+    color: #666;
+    font-size: 13px;
+}
+
+.hana-support-app .legacy-table-heading-left-35 {
+    width: 70%;
+}
+
+.hana-support-app .legacy-table-heading-left-36 {
+    width: 30%;
+}
+
+.hana-support-app .legacy-control-48 {
+    margin-top: 15px;
+    width: 100%;
+    background: #ff6b6b;
+}
+
+.hana-support-app h2.legacy-heading-21,
+.hana-support-app h3.legacy-heading-21,
+.hana-support-app h4.legacy-heading-21 {
+    color: #ff6b6b;
+    border-color: #ff6b6b;
+}
+
+.hana-support-app .legacy-detail-panel-51 {
+    background: #fff5f5;
+    border-color: #ff6b6b;
+}
+
+.hana-support-app .legacy-table-cell-left-07 {
+    line-height: 1.6;
+}
+
+.hana-support-app .legacy-badge-34 {
+    color: white;
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-right: 3px;
+}
+
+.hana-support-app .legacy-block-spacing-33 {
+    margin-top: 10px;
+    border-top: 2px solid #f0f0f0;
+    padding-top: 10px;
+}
+
+.hana-support-app .legacy-block-spacing-34 {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-detail-panel-52 {
+    background: #f5f5f5;
+}
+
+.hana-support-app .legacy-table-heading-left-37 {
+    padding: 7px 10px;
+    text-align: left;
+    border: 1px solid #e0e0e0;
+    font-weight: bold;
+    color: #555;
+}
+
+.hana-support-app .legacy-table-heading-center-16 {
+    padding: 7px 10px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    font-weight: bold;
+    color: #555;
+}
+
+.hana-support-app .legacy-table-cell-left-08 {
+    padding: 7px 10px;
+    border: 1px solid #e0e0e0;
+    color: #444;
+}
+
+.hana-support-app .legacy-table-cell-center-13 {
+    padding: 7px 10px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-block-spacing-35 {
+    margin-top: 10px;
+    border-top: 1px dashed #ddd;
+    padding-top: 8px;
+}
+
+.hana-support-app .legacy-detail-panel-53 {
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+.hana-support-app .legacy-block-spacing-36 {
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.hana-support-app .legacy-text-30 {
+    color: #555;
+    font-size: 12px;
+}
+
+.hana-support-app .legacy-flex-wrap-15 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.hana-support-app .legacy-badge-35 {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.hana-support-app .legacy-badge-36 {
+    background: #e3f2fd;
+    color: #1565c0;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-badge-37 {
+    background: #fff3e0;
+    color: #e65100;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.hana-support-app .legacy-badge-38 {
+    background: #d4edda;
+    color: #155724;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-badge-39 {
+    background: #fce4ec;
+    color: #c62828;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.hana-support-app .legacy-detail-panel-54 {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.hana-support-app .legacy-flex-wrap-16 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.hana-support-app .legacy-badge-40 {
+    color: white;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-text-31 {
+    color: #999;
+    font-size: 12px;
+}
+
+.hana-support-app .legacy-presentation-strong-11 {
+    font-size: 14px;
+    color: #1a1a1a;
+    flex: 1;
+}
+
+.hana-support-app .legacy-badge-41 {
+    font-size: 11px;
+    color: #888;
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.hana-support-app .legacy-block-spacing-37 {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.hana-support-app .legacy-flex-wrap-17 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.hana-support-app .legacy-badge-42 {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.hana-support-app .legacy-badge-43 {
+    background: #e3f2fd;
+    color: #1565c0;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.hana-support-app .legacy-badge-44 {
+    background: #fff3e0;
+    color: #e65100;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.hana-support-app .legacy-badge-45 {
+    background: #fce4ec;
+    color: #c62828;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.hana-support-app .legacy-block-spacing-38 {
+    margin-top: 6px;
+}
+
+.hana-support-app .legacy-detail-panel-55 {
+    margin-bottom: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.hana-support-app .legacy-detail-panel-56 {
+    margin-bottom: 6px;
+    margin-top: 16px;
+    padding: 6px 10px;
+    background: #f8f8f8;
+    border-radius: 6px;
+}
+
+.hana-support-app .legacy-presentation-strong-12 {
+    font-size: 13px;
+}
+
+.hana-support-app .legacy-detail-panel-57 {
+    margin-bottom: 12px;
+    padding: 10px 14px;
+    background: #e8f5e9;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.hana-support-app .legacy-block-spacing-39 {
+    margin-bottom: 6px;
+    margin-top: 16px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #eee;
+}
+
+.hana-support-app .legacy-note-25 {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.hana-support-app .legacy-block-spacing-40 {
+    margin-top: 16px;
+    border-top: 1px dashed #ddd;
+    padding-top: 14px;
+}
+
+.hana-support-app .legacy-block-spacing-41 {
+    font-size: 12px;
+    color: #888;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.hana-support-app .legacy-image-preview-01 {
+    max-width: 220px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: zoom-in;
+    display: block;
+}
+
+.hana-support-app .legacy-block-spacing-42 {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #008e71;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.hana-support-app .legacy-detail-panel-58 {
+    background: white;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.hana-support-app .legacy-flex-wrap-18 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.hana-support-app .legacy-badge-46 {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.hana-support-app h2.legacy-heading-22,
+.hana-support-app h3.legacy-heading-22,
+.hana-support-app h4.legacy-heading-22 {
+    margin: 0;
+    font-size: 17px;
+    color: #222;
+}
+
+.hana-support-app .legacy-presentation-div-13 {
+    font-size: 14px;
+    line-height: 1.85;
+    color: #444;
+}
+
+.hana-support-app .legacy-presentation-div-13 h4 {
+    margin-bottom: 10px;
+}
+.hana-support-app .legacy-presentation-div-13 ul li {
+    margin-left: 16px;
+}
+.hana-support-app .legacy-presentation-div-13 ul li::before {
+    content: "•";
+    color: #008e71;
+    font-weight: bold;
+    display: inline-block;
+    width: 16px;
+    margin-left: -16px;
+}
+
+.hana-support-app .legacy-presentation-div-13 ul + h4,
+.hana-support-app .legacy-presentation-div-13 .table-scroll + .table-scroll,
+.hana-support-app .manual-image-block  {
+    margin-top: 20px;
+}
+.hana-support-app .legacy-presentation-div-13 .table-scroll + ul {
+    margin-top: 10px;
+}
+.hana-support-app .manual-image-block img {
+    margin: 10px 0;
+}
+.hana-support-app .flex-end {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 10px;
+}
+.btn-down {
+    color: #008e71 !important;
+    padding-right: 28px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cg transform='translate(1.5 .5)'%3E%3Cg transform='translate(.964)'%3E%3Crect width='1' height='7' rx='.5' transform='translate(3.036)' style='fill:%2300857e'/%3E%3Cg transform='rotate(-45 5.432 2.25)'%3E%3Crect width='1' height='5' rx='.5' transform='rotate(90 .5 4.5)' style='fill:%2300857e'/%3E%3Crect width='1' height='5' rx='.5' transform='rotate(180 .5 2.5)' style='fill:%2300857e'/%3E%3C/g%3E%3C/g%3E%3Crect width='1' height='9' rx='.5' transform='rotate(90 -.25 9.25)' style='fill:%2300857e'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center right 10px;
+    background-size: 14px auto;
+}
+.hana-support-app .legacy-block-spacing-43 {
+    margin: 20px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #eee;
+}
+
+.hana-support-app .legacy-presentation-strong-13 {
+    font-size: 14px;
+}
+
+.hana-support-app .legacy-table-cell-center-14 {
+    text-align: center;
+    padding: 7px 4px;
+    color: #008485;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.hana-support-app .legacy-table-cell-center-15 {
+    text-align: center;
+    padding: 7px 4px;
+    color: #ddd;
+    font-size: 13px;
+}
+
+.hana-support-app .legacy-table-cell-center-16 {
+    text-align: center;
+    padding: 7px 4px;
+    font-size: 11px;
+    color: #555;
+}
+
+.hana-support-app .legacy-table-cell-center-17 {
+    text-align: center;
+    padding: 7px 4px;
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap;
+}
+
+.hana-support-app .legacy-table-cell-left-09 {
+    padding: 7px 8px;
+    font-size: 12px;
+}
+
+.hana-support-app .legacy-table-cell-center-18 {
+    text-align: center;
+    padding: 7px 4px;
+    font-weight: bold;
+    color: #1a5276;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.hana-support-app .legacy-table-cell-center-19 {
+    text-align: center;
+    padding: 7px 4px;
+    font-weight: bold;
+    color: #922b21;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.hana-support-app .legacy-text-32 {
+    color: #008e71;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.hana-support-app .legacy-text-33 {
+    color: #ddd;
+    font-size: 14px;
+}
+
+.hana-support-app .legacy-text-34 {
+    color: #888;
+}
+
+.hana-support-app .legacy-block-spacing-44 {
+    font-size: 11px;
+    margin-top: 4px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 3px;
+}
+
+.hana-support-app .legacy-table-cell-center-20 {
+    padding: 7px 5px;
+    border: 1px solid #e8e8e8;
+    text-align: center;
+    color: #999;
+    font-size: 11px;
+}
+
+.hana-support-app .legacy-table-cell-center-21 {
+    padding: 7px 5px;
+    border: 1px solid #e8e8e8;
+    text-align: center;
+}
+
+.hana-support-app .legacy-badge-47 {
+    display: inline-block;
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 8px;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+.hana-support-app .legacy-table-cell-left-10 {
+    padding: 7px 8px;
+    border: 1px solid #e8e8e8;
+    font-size: 12px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.hana-support-app .legacy-table-cell-left-11 {
+    padding: 7px 8px;
+    border: 1px solid #e8e8e8;
+    font-size: 11px;
+    color: #444;
+    line-height: 1.5;
+}
+
+.hana-support-app .legacy-table-cell-center-22 {
+    padding: 7px 8px;
+    border: 1px solid #e8e8e8;
+    font-size: 11px;
+    color: #555;
+    text-align: center;
+}
+
+.hana-support-app .legacy-table-cell-center-23 {
+    padding: 7px 5px;
+    border: 1px solid #e8e8e8;
+    font-size: 11px;
+    text-align: center;
+}
+
+.hana-support-app .legacy-table-cell-center-24 {
+    padding: 7px 8px;
+    border: 1px solid #e8e8e8;
+    font-size: 11px;
+    font-weight: bold;
+    color: #1565c0;
+    text-align: center;
+}
+
+.hana-support-app .legacy-table-cell-center-25 {
+    padding: 7px 4px;
+    border: 1px solid #e8e8e8;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* ==================================================
+   06. 페이지 헤더 / 메인 내비게이션 / 공통 테이블
+   ================================================== */
+
+.hana-support-app .main-content {
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: none;
+}
+
+.hana-support-app .main-content,
+.hana-support-app .tab-content,
+.hana-support-app .search-section,
+.hana-support-app .result-box,
+.hana-support-app .doc-item {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.hana-support-app .tab-content,
+.hana-support-app .header {
+    overflow-wrap: anywhere;
+}
+
+.hana-support-app img,
+.hana-support-app svg {
+    max-width: 100%;
+}
+
+.hana-support-app img {
+    height: auto;
+}
+
+.hana-support-app button,
+.hana-support-app input,
+.hana-support-app select,
+.hana-support-app textarea {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.hana-support-app button {
+    touch-action: manipulation;
+}
+
+.hana-support-app button:focus-visible,
+.hana-support-app a:focus-visible,
+.hana-support-app input:focus-visible,
+.hana-support-app select:focus-visible,
+.hana-support-app .table-scroll:focus-visible {
+    outline: 1px solid #008e71;
+}
+
+
+.hana-support-app .search-section [class*="legacy-flex"] {
+    flex-wrap: wrap;
+    min-width: 0;
+}
+
+.hana-support-app .search-section [class*="legacy-grid"]>* {
+    min-width: 0;
+}
+
+
+
+.hana-support-app .category-card,
+.hana-support-app .task-item,
+.hana-support-app .suggestion-tag,
+.hana-support-app .sf-btn,
+.hana-support-app .manual-cat-btn,
+.hana-support-app .cardio-filter-btn,
+.hana-support-app .fg-btn {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.hana-support-app .category-card,
+.hana-support-app .task-item,
+.hana-support-app .result-item,
+.hana-support-app .result-box {
+    box-shadow: none;
+    border: 1px solid #e5e5e5;
+    transition: none;
+    transform: none;
+}
+
+.hana-support-app #staffSearchInput {
+    min-width: 0;
+    flex: 1 1 220px;
+    width: 100%;
+}
+
+.hana-support-app #foreignerGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.hana-support-app .table-scroll {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    border-radius: 0;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.hana-support-app .table-scroll>table {
+    margin-bottom: 0;
+    width: 100%;
+    max-width: none;
+    border: 1px solid #e5e5e5;
+}
+
+.hana-support-app .table-scroll>table.table-medium {
+    min-width: 620px;
+}
+
+.hana-support-app .table-scroll>table.table-wide {
+    min-width: 960px;
+}
+
+.hana-support-app .table-scroll>table.table-wide:has(tr.legacy-detail-panel-04) {
+    min-width: 1200px;
+}
+
+.hana-support-app .table-scroll>table.table-compact {
+    min-width: 0;
+    table-layout: auto;
+}
+
+.hana-support-app .table-scroll th,
+.hana-support-app .table-scroll td {
+    overflow-wrap: anywhere;
+}
+
+.hana-support-app .table-hint {
+    color: #536d70;
+    font-size: 12px;
+    margin: 7px 0 12px;
+}
+
+.hana-support-app .table-hint[hidden] {
+    display: none;
+}
+
+.hana-support-app #staffTableBody .staff-agency-cell {
+    vertical-align: middle;
+    border-bottom: 0;
+    font-weight: 600;
+    text-align: left;
+}
+
+.hana-support-app .sf-btn {
+    background: white;
+    color: var(--staff-color, #008e71);
+    border: 2px solid var(--staff-color, #008e71);
+}
+
+.hana-support-app .sf-btn.is-active {
+    background: var(--staff-color, #008e71);
+    color: white;
+    border: 0;
+}
+
+.hana-support-app .cardio-filter-btn.active {
+    border: 0;
+}
+
+.hana-support-app .chosung-button {
+    border: 1px solid #008e71;
+    border-radius: 6px;
+    color: #008e71;
+    background: white;
+    padding: 6px 11px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.hana-support-app .chosung-button:hover {
+    color: white;
+    background: #00857e;
+}
+
+.hana-support-app .limit-filter-btn {
+    padding: 8px 16px;
+    border: 2px solid #008e71;
+    border-radius: 8px;
+    background: white;
+    color: #008e71;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hana-support-app .limit-filter-btn.limit-merge-btn {
+    padding: 8px 14px;
+    color: #a65913;
+    border-color: #c67822;
+}
+
+.hana-support-app .limit-filter-btn.limit-filter-active {
+    background: #00857e;
+    color: white;
+    border: 0;
+}
+
+.hana-support-app .limit-filter-btn.limit-merge-btn.limit-filter-active {
+    background: #ae631a;
+    color: white;
+}
+
+.hana-support-app #manualList img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hana-support-app #manualImgModal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #000d;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+}
+
+.hana-support-app #manualImgModalPic {
+    max-width: 100%;
+    max-height: 90dvh;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+
+
+
+
+
+
+
+
+.hana-support-app #foreignerGrid .fg-status-unknown {
+    background: #f4f6f7;
+    border: 2px solid #c7d0d4;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.hana-support-app #foreignerGrid .fg-status-unknown span {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 8px;
+    background: #e2e8ec;
+    color: #53616a;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.hana-support-app .table-scroll td {
+    min-width: 42px;
+}
+
+.hana-support-app .table-scroll>table.risk-limit-table,
+.hana-support-app .table-scroll>table.merge-risk-table {
+    min-width: 0;
+}
+
+.hana-support-app #specialFullTableBody tr>td:nth-last-child(-n/**/+2) {
+    padding: 7px 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow-wrap: normal;
+}
+
+.hana-support-app #newContractTab .legacy-detail-panel-28>ul {
+    list-style: disc outside;
+    padding-left: 1em;
+    margin: 12px 0 0;
+}
+
+
+
+.hana-support-app .badge-success {
+    background: #4CAF50;
+    color: white;
+}
+
+/* ==================================================
+   08. 문서 검색 및 결과 목록
+   ================================================== */
+
+
+.hana-support-app .category-card:hover,
+.hana-support-app .task-item:hover,
+.hana-support-app .result-item:hover {
+    background-color: #f4f8f8;
+    border-color: #008e71;
+}
+
+
+.hana-support-app .badge {
+    border-radius: 0;
+}
+
+
+.hana-support-app div[style*="overflow-x:auto"],
+.hana-support-app div[style*="overflow-x: auto"] {
+    border: 1px solid #e5e5e5;
+    border-radius: 0;
+}
+
+
+
+
+.hana-support-app #adminAccess button,
+.hana-support-app #adminAccess a {
+    font: inherit;
+}
+
+
+
+
+
+.hana-support-app .csv-admin-panel {
+    background: #eff8f5;
+    border: 1px solid #008e71;
+    padding: 17px 20px;
+    margin-bottom: 28px;
+    border-radius: 8px;
+}
+
+.hana-support-app .csv-admin-panel > strong {
+    margin-bottom: 12px;
+    display: block;
+    font-size: 16px;
+    color: #008e71;
+    font-weight: 600;
+}
+
+.hana-support-app .csv-upload-row,
+.hana-support-app .csv-file-label {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hana-support-app .csv-file-label {
+    font-weight: 600;
+    margin-right: auto;
+}
+
+.hana-support-app .csv-file-label input {
+    border: 0;
+    padding: 0;
+    max-width: 310px;
+    width: 100%;
+    background: transparent;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.hana-support-app .csv-file-label input::file-selector-button {
+    color: #333;
+    font-weight: 700;
+    padding: 8px 11px;
+    margin-right: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid #cdcdcd;
+    background: white;
+}
+
+
+.hana-support-app .csv-preview:has(.csv-preview-table) {
+    border-top: 1px solid #c6d8d8;
+    padding-top: 16px;
+    margin-top: 16px;
+    min-width: 0;
+}
+
+
+.hana-support-app .csv-preview:has(.csv-preview-table) strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #006551;
+    font-weight: 700;
+
+}
+.hana-support-app .csv-message {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.hana-support-app .csv-preview-table {
+    border-collapse: collapse;
+    background: white;
+    font-size: 12px;
+}
+
+.hana-support-app .csv-preview-table th,
+.hana-support-app .csv-preview-table td {
+    min-width: 95px;
+    max-width: 240px;
+    padding: 8px;
+    border: 1px solid #cdcdcd;
+    white-space: pre-line;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+}
+
+.hana-support-app .csv-preview-table th {
+    color: #006551;
+    background: #deecec;
+    white-space: nowrap;
+}
+
+
+
+.hana-support-app .csv-upload-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.hana-support-app .csv-apply {
+    background: #00857e;
+    color: white;
+    margin-top: 10px;
+}
+.hana-support-app .csv-apply:hover {
+    background: #006551;
+}
+
+.hana-support-app .csv-help {
+    margin-top: 10px;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.hana-support-app .csv-data-version {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #e67e22;
+}
+
+.hana-support-app .simple-warning-mark {
+    color: #e67e22;
+    font-weight: 700;
+}
+
+/* ==================================================
+   10. 수동 안내 / 이미지 모달
+   ================================================== */
+
+.hana-support-app .manual-image-modal {
+    display: flex;
+}
+
+.hana-support-app .manual-modal-image {
+    display: block;
+}
+
+.hana-support-app .manual-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    border: 1px solid white;
+    padding: 8px 16px;
+    color: white;
+    background: #005657;
+    cursor: pointer;
+    font: inherit;
+}
+
+.hana-support-app #adminAccess {
+    margin-top: 5px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hana-support-app #adminAccess a {
+    color: white;
+    text-decoration: underline;
+    padding: 3px 6px;
+}
+
+
+.hana-support-app #specialFullTableBody td:nth-child(n/**/+3):nth-child(-n/**/+8) {
+    white-space: pre-line;
+}
+
+.hana-support-app .csv-availability-note {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    white-space: normal;
+}
+
+.hana-support-app .csv-contract-card {
+    padding: 20px;
+    border: 1px solid #d7e1e1;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.hana-support-app .csv-contract-card h3 {
+    margin: 0 0 12px;
+    color: #008b8b;
+    border-bottom: 2px solid #008b8b;
+    padding-bottom: 10px;
+}
+
+.hana-support-app .csv-foreigner-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    border: 2px solid #a9c2c2;
+    border-radius: 8px;
+    min-width: 0;
+}
+
+/* ==================================================
+   11. CSV 미리보기 / 계약 / 담당자 정보
+   ================================================== */
+
+.hana-support-app .csv-foreigner-card>div:first-child {
+    min-width: 76px;
+    text-align: center;
+}
+
+.hana-support-app .csv-foreigner-card strong,
+.hana-support-app .csv-foreigner-card span {
+    display: block;
+}
+
+.hana-support-app .csv-foreigner-card strong {
+    color: #005080;
+    font-size: 22px;
+}
+
+.hana-support-app .csv-foreigner-card p {
+    font-size: 14px;
+    margin: 8px 0 0;
+}
+
+.hana-support-app .csv-status-가능 {
+    background: #e7f4e8;
+    border-color: #7ac783;
+}
+
+.hana-support-app .csv-status-불가 {
+    background: #ffedef;
+    border-color: #ed7c82;
+}
+
+.hana-support-app .csv-status-조건부 {
+    background: #fff7e0;
+    border-color: #efc26f;
+}
+
+.hana-support-app .csv-status {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 4px;
+    background: white;
+}
+
+.hana-support-app .csv-staff-name {
+    display: inline-block;
+    padding: 3px 12px;
+    border: 2px solid var(--staff-color, #008e71);
+    background: white;
+    color: var(--staff-color, #008e71);
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.hana-support-app .csv-branch {
+    color: #777;
+    font-size: 14px;
+    white-space: pre-wrap;
+    margin-top: 6px;
+}
+
+.hana-support-app .csv-error {
+/* ==================================================
+   12. 문서 목록 및 계약 상세
+   ================================================== */
+
+    color: #b52222;
+}
+
+.hana-support-app .manual-card {
+    overflow-wrap: anywhere;
+}
+
+.hana-support-app .doc-item li::before {
+    content: none;
+}
+
+.hana-support-app .main-content .table-scroll>table.result-table {
+    margin-top: 0;
+}
+
+
+.hana-support-app #specialTab :is(.legacy-badge-42, .legacy-badge-43, .legacy-badge-44) {
+    white-space: pre-line;
+}
+
+
+
+
+
+
+
+.hana-support-app #newContractTab .contract-reference-title {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+}
+
+.hana-support-app .contract-item-list {
+    list-style: disc;
+    margin: 14px 0;
+    padding-left: 24px;
+}
+
+.hana-support-app .contract-item-list>li {
+    padding: 7px 0;
+    line-height: 1.9;
+}
+
+.hana-support-app .contract-item-title {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.hana-support-app .contract-sublist {
+    list-style: none;
+    margin: 6px 0 0;
+    padding-left: 20px;
+}
+
+.hana-support-app .contract-sublist>li {
+    padding: 3px 0;
+}
+
+.hana-support-app .contract-emphasis {
+    background: #fff9c4;
+    color: inherit;
+    padding: 2px 7px;
+    font-weight: 600;
+}
+
+.hana-support-app .contract-reference-notice {
+    border-left: 4px solid;
+    padding: 15px 18px;
+    margin: 14px 0;
+}
+
+.hana-support-app .contract-reference-notice p {
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.9;
+}
+
+.hana-support-app .contract-notice-warning {
+    background: #fff8e1;
+    border-left-color: #e49b21;
+}
+
+.hana-support-app .contract-notice-success {
+    background: #e8f5e9;
+    border-left-color: #4b9760;
+}
+
+.hana-support-app .contract-reference-group {
+    padding: 18px 20px;
+    margin-top: 18px;
+    border: 1px solid #d7e1e1;
+}
+
+.hana-support-app .contract-reference-group h4 {
+    margin: 0 0 10px;
+    font-size: 1.1em;
+    color: #008e71;
+}
+
+.hana-support-app .contract-reference-group .contract-item-list {
+    margin-bottom: 0;
+}
+
+.hana-support-app .contract-group-details {
+    background: #f5f5f5;
+}
+
+.hana-support-app .contract-group-common {
+    background: #e3f2fd;
+    border-color: #c6dfee;
+}
+
+.hana-support-app .contract-group-common h4 {
+    color: #1976d2;
+}
+
+.hana-support-app .contract-final-notice {
+    background: #edf6ed;
+    border: 2px solid #008e71;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.hana-support-app .contract-final-notice p {
+    margin: 10px 0 0;
+    line-height: 1.9;
+}
+
+.hana-support-app .contract-foreigner-notice {
+    margin-top: 16px;
+    padding: 16px 20px;
+    background: #f0f8ff;
+    border-left: 4px solid #008e71;
+}
+
+.hana-support-app .contract-foreigner-notice h3 {
+    margin: 0 0 8px;
+    font-size: 1.1em;
+}
+
+.hana-support-app .contract-foreigner-list {
+    list-style: disc;
+    margin: 0;
+    padding-left: 22px;
+}
+
+.hana-support-app .contract-foreigner-list li {
+    line-height: 2;
+    padding: 3px 0;
+}
+
+.hana-support-app #staffTab .legacy-data-table-02 th,
+.hana-support-app #staffTab .legacy-data-table-02 td {
+    padding: 12px 16px;
+    vertical-align: middle;
+}
+
+.hana-support-app #staffTab .legacy-data-table-02 th {
+    text-align: left;
+}
+
+.hana-support-app #staffTab .legacy-data-table-02 .legacy-table-heading-center-01,
+.hana-support-app #staffTableBody .staff-name-cell {
+    text-align: center;
+}
+
+.hana-support-app #staffTableBody :is(.staff-phone-cell, .staff-fax-cell, .staff-nateon-cell) {
+    text-align: left;
+}
+
+.hana-support-app #staffTableBody :is(.staff-phone-cell, .staff-fax-cell) {
+    white-space: nowrap;
+}
+
+.hana-support-app #staffTableBody .staff-name-cell {
+    font-weight: 400;
+}
+
+.hana-support-app #staffTab .legacy-data-table-02 .legacy-table-heading-center-01 {
+    min-width: 120px;
+}
+
+.hana-support-app #staffTab .legacy-data-table-02 :is(.legacy-table-heading-center-02, .legacy-table-heading-center-03) {
+    min-width: 150px;
+}
+
+.hana-support-app #staffTab .legacy-data-table-02 .legacy-table-heading-center-04 {
+    min-width: 180px;
+}
+
+.hana-support-app .csv-source-status {
+    margin: 0 0 18px;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.hana-support-app .csv-source-status.csv-error {
+    color: #b52222;
+}
+
+/* ==================================================
+   반응형 스타일 (@media)
+   ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hana-support-app *,
+    .hana-support-app *::before,
+    .hana-support-app *::after {
+        animation: none;
+        transition: none;
+        scroll-behavior: auto;
+    }
+}
+@media (max-width: 1150px) {
+    
+    html:has(div.hana-support-app) {
+        min-width: auto;
+    }
+    .hana-support-app .tab-menu {
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    .hana-support-app .tab-menu button {
+        flex: none;
+    }
+    .csv-file-label {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .hana-support-app {
+        padding: 0;
+    }
+
+    .hana-support-app .container {
+        margin: 0;
+        border-left: none;
+        border-right: none;
+        box-shadow: none;
+    }
+
+    .hana-support-app .header {
+        padding: 15px;
+    }
+
+    .hana-support-app .header-content {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .hana-support-app .admin-panel {
+        width: 100%;
+        text-align: left;
+        margin-top: 10px;
+        white-space: normal;
+    }
+
+    .hana-support-app .main-content {
+        padding: 10px;
+    }
+
+    .hana-support-app .main-content > .tab-menu {
+        flex-wrap: wrap;
+        overflow-x: visible;
+        overflow-y: visible;
+    }
+
+    .hana-support-app .main-content > .tab-menu > .tab-button {
+        flex: 1 1 calc(33.333% - 6px);
+        min-width: 0;
+        white-space: normal;
+        font-size: 12px;
+        padding: 9px 6px;
+        border-bottom: 1px solid #cdcdcd;
+        border-radius: 8px;
+    }
+    .hana-support-app .search-section h2 {
+        font-size: 16px;
+    }
+
+    .hana-support-app .search-input-container {
+        flex-direction: column;
+    }
+
+    .hana-support-app .search-section input,
+    .hana-support-app .search-section select,
+    .hana-support-app .search-section textarea {
+        font-size: 16px;
+    }
+
+    .hana-support-app .search-input-container .search-input {
+        flex: 0 1 auto;
+        min-width: 0;
+        flex-basis: auto;
+    }
+
+    .hana-support-app .search-button {
+        width: 100%;
+    }
+
+    .hana-support-app #documentsTab .category-selector {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hana-support-app .task-list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hana-support-app #foreignerGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hana-support-app #limitTab .risk-limit-table th,
+    .hana-support-app #limitTab .merge-risk-table th {
+        padding: 8px 6px;
+        font-size: 13px;
+    }
+
+    .hana-support-app #limitTab .risk-limit-table td {
+        padding: 7px 5px;
+        font-size: 13px;
+        overflow-wrap: normal;
+    }
+
+    .hana-support-app #limitTab .risk-limit-table td:nth-child(-n/**/+2) {
+        font-size: 12px;
+    }
+
+    .hana-support-app #limitTab .risk-limit-table td:nth-child(3) {
+        padding: 7px 8px;
+    }
+
+    .hana-support-app #limitTab .risk-limit-table td:last-child {
+        padding: 7px 6px;
+        font-size: 11px;
+    }
+
+    .hana-support-app #limitTab .merge-risk-table td {
+        padding: 7px 5px;
+        font-size: 13px;
+        overflow-wrap: normal;
+    }
+
+    .hana-support-app #limitTab .merge-risk-table td:nth-child(2) {
+        padding: 7px 8px;
+    }
+
+    .hana-support-app #limitTab .merge-risk-table td:last-child {
+        padding: 7px 6px;
+        font-size: 12px;
+    }
+
+    .hana-support-app .csv-admin-panel {
+        padding: 12px;
+    }
+    
+}
+@media (max-width: 639px) {
+    .hana-support-app {
+        padding: 10px;
+    }
+
+    .hana-support-app .header {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "update" "title" "description";
+        padding: 20px;
+        gap: 14px;
+    }
+
+    .hana-support-app .header h1 {
+        font-size: clamp(22px, 5.4vw, 28px);
+    }
+
+    .hana-support-app .header>p {
+        font-size: 14px;
+    }
+
+    .hana-support-app .main-content {
+        padding: 16px;
+    }
+
+    .hana-support-app .search-input-container {
+        flex-direction: column;
+    }
+
+    .hana-support-app .search-input-container .search-input {
+        flex: 0 1 auto;
+    }
+
+    .hana-support-app .result-box,
+    .hana-support-app .doc-item,
+    .hana-support-app .info-box,
+    .hana-support-app .warning-box {
+        padding: 14px;
+    }
+
+    .hana-support-app .result-box h3 {
+        font-size: 18px;
+        padding-left: 9px;
+    }
+
+    .hana-support-app .table-scroll th,
+    .hana-support-app .table-scroll td {
+        padding: 9px 7px;
+        font-size: 13px;
+    }
+
+    .hana-support-app .category-card {
+        padding: 16px;
+    }
+
+    .hana-support-app #foreignerGrid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hana-support-app .information-footer {
+        margin-top: 20px;
+        padding: 16px 4px;
+    }
+    .hana-support-app .csv-upload-row {
+        align-items: stretch;
+    }
+
+    .hana-support-app .csv-file-label {
+        width: 100%;
+    }
+
+    .hana-support-app .csv-file-label input {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hana-support-app .csv-contract-card {
+        padding: 16px;
+    }
+
+    .hana-support-app .csv-foreigner-card {
+        padding: 14px;
+    }
+}
+
+@media (max-width: 550px) { 
+    .hana-support-app .legacy-flex-row-01 {
+        display: block;
+        margin-left: auto;
+        width: 100%;        
+    }
+    .hana-support-app .legacy-control-07 {
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .hana-support-app .category-selector {
+        grid-template-columns: 1fr;
+    }
+
+    .hana-support-app .main-content > .tab-menu > .tab-button {
+        flex: 1 1 45%;
+        flex-basis: calc(50% - 6px);
+    }
+    .hana-support-app #documentsTab .category-selector {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 359px) {
+
+    .hana-support-app .header,
+    .hana-support-app .main-content {
+        padding: 14px;
+    }
+}
