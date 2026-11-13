@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "sfa"
+    "liveServer.settings.multiRootWorkspaceName": "sfa",
+    "liveServer.settings.port": 5501
 }

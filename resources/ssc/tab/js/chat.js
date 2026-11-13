@@ -118,7 +118,7 @@ window.initChat = function() {
     let currentMenuId = null;
     let currentStep = 1;
 
-    let btnBack = document.getElementById('btnBack');
+    const btnBack = document.getElementById('btnBack');
     const flow01 = document.getElementById('flow01');
     const chatFlow = document.getElementById('chatFlow');
     const chatLive = document.getElementById('chatLive');
@@ -219,7 +219,7 @@ window.initChat = function() {
                         alertMsg = '이름을 입력해 주세요.';
                     } else if (index === 1) {
                         const placeholder = $ipt.attr('placeholder') || '';
-                        alertMsg = `${placeholder}을 입력해 주세요.`;
+                        alertMsg = `${placeholder}를(을) 입력해 주세요.`;
                     }
                     return false;
                 }
@@ -502,6 +502,74 @@ window.initChat = function() {
     const iptFilt3_2 = document.getElementById('iptFilt3_2');
     if (iptFilt3_1) iptFilt3_1.addEventListener('change', toggleSearchArea);
     if (iptFilt3_2) iptFilt3_2.addEventListener('change', toggleSearchArea);
+    /*
+    function fit(p) {
+        p.classList.remove('is-stacked');
+        if (p.clientWidth && p.scrollWidth > p.clientWidth) p.classList.add('is-stacked');
+    }
+    function observeAll() {
+        document.querySelectorAll('.chat-content .paging:not([data-fit])').forEach(function (p) {
+            p.setAttribute('data-fit', '1');
+            new ResizeObserver(function () { fit(p); }).observe(p);
+            fit(p);
+        });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', observeAll);
+    else observeAll();
+    window.initPagingFit = observeAll;   // 페이징을 동적으로 그린 뒤에 호출
+    */
+
+    
+    
+    const branch = document.getElementById('btnBranch');
+    const support = document.getElementById('btnSupport');
+
+
+    // 모바일 기기 판별
+    function isMobileDevice() {
+        const ua = /Android|iPhone|iPad|iPod|Mobile|SamsungBrowser/i.test(navigator.userAgent);
+        // iPadOS는 UA가 Mac으로 나오므로 터치 + 좁은 화면으로도 판별
+        const touchNarrow = window.matchMedia('(pointer: coarse)').matches && window.innerWidth <= 1024;
+        return ua || touchNarrow;
+    }
+
+    // 팝업 오픈 공통 함수
+    function openChatPopup(popupUrl) {
+        // 모바일: 팝업 크기 지정이 무시되므로 전체 화면(새 탭)으로 열기
+        if (isMobileDevice()) {
+            const win = window.open(popupUrl, '_blank');
+            // 팝업 차단 등으로 열리지 않으면 현재 창에서 이동
+            if (!win) window.location.href = popupUrl;
+            return;
+        }
+
+        // PC: 화면의 80% 크기, 최대 폭 1200px, 중앙 정렬
+        const availW = window.screen.availWidth;
+        const availH = window.screen.availHeight;
+        const width  = Math.min(Math.floor(availW * 0.8), 1200);
+        const height = Math.floor(availH * 0.8);
+        const left   = Math.floor((availW - width) / 2);
+        const top    = Math.floor((availH - height) / 2);
+
+        const popupFeatures = `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`;
+        const win = window.open(popupUrl, '_blank', popupFeatures);
+        if (win) win.focus();
+    }
+
+
+    // 지점조회 클릭 시
+    if (branch) {
+        branch.addEventListener('click', function () {
+            openChatPopup('../comm/branch.html');
+        });
+    }
+
+    // 통합시스템 클릭 시
+    if (support) {
+        support.addEventListener('click', function () {
+            openChatPopup('../comm/support.html');
+        });
+    }
 };
 
 

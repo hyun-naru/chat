@@ -201,6 +201,7 @@
     display: flex;
     justify-content: space-between;
     height: calc(100% - 54px);
+    font-weight: 400;
 }
 
 
@@ -420,7 +421,7 @@
     margin-left: 8px;
     cursor: pointer;
     font-size: 1.6rem;
-    font-weight: bold;
+    font-weight: 700;
     transition: background-color 0.2s;
 }
 
@@ -543,7 +544,7 @@ input + .btn-label:focus {
     display: flex;
     gap: 4px;
     font-size: 1.8rem;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 
@@ -694,3 +695,61 @@ button.flag.yellow:disabled {
 .chat-content .flow-box .btn-area.action-btn.home-only .btn-home:hover {
     background-color: #FFCA28;
 }
+
+
+
+/* 기본: 한 줄 */
+.chat-content .pagination {
+    margin: 24px 0 40px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.chat-content .pagination > * { flex: none; }
+.chat-content .pagination .icoBtn_first,
+.chat-content .pagination .icoBtn_prev.first { order: 1; }
+.chat-content .pagination .icoBtn_prev:not(.first) { order: 2; }
+.chat-content .pagination ul { order: 3; }
+.chat-content .pagination .icoBtn_next:not(.last) { order: 4; }
+.chat-content .pagination .icoBtn_last,
+.chat-content .pagination .icoBtn_next.last { order: 5; }
+
+.chat-content .pagination ul {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0;
+}
+.chat-content .pagination ul li { flex: none; min-width: 28px; }
+.chat-content .pagination ul li a,
+.chat-content .pagination ul li em {
+    display: block;
+    padding: 0 6px;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 1.4rem;
+    width: auto;
+}
+
+/* 공간이 모자랄 때: 번호 줄 아래로 « » */
+.chat-content .pagination.is-stacked {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+        "prev  list next"
+        "first .    last";
+    row-gap: 8px;
+}
+.chat-content .pagination.is-stacked ul {
+    grid-area: list;
+    flex-wrap: wrap;           /* 이것도 모자라면 번호 단위로 줄바꿈 */
+    justify-content: center;
+    min-width: 0;
+}
+.chat-content .pagination.is-stacked .icoBtn_first,
+.chat-content .pagination.is-stacked .icoBtn_prev.first { grid-area: first; justify-self: start; }
+.chat-content .pagination.is-stacked .icoBtn_last,
+.chat-content .pagination.is-stacked .icoBtn_next.last  { grid-area: last;  justify-self: end; }
+.chat-content .pagination.is-stacked .icoBtn_prev:not(.first) { grid-area: prev; }
+.chat-content .pagination.is-stacked .icoBtn_next:not(.last)  { grid-area: next; }

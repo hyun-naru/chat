@@ -20,24 +20,80 @@
 
 .btn_chat,
 .btn_chat:focus {
-  width: 60px;
-  height: 60px;
-  background-color: #008e71;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns%23' xmlns='http://www.w3.org/2000/svg' xmlns:cc='http://creativecommons.org/ns%23' xmlns:dc='http://purl.org/dc/elements/1.1/' height='24' width='24' version='1.1'%3E%3Cg transform='translate(0 -1028.4)'%3E%3Cpath d='m5 1031.4c-2.2091 0-4 1.8-4 4v8c0 2.2 1.7909 4 4 4h0.1562v4.8l5.9058-4.8h7.938c2.209 0 4-1.8 4-4v-8c0-2.2-1.791-4-4-4h-14z' fill='%23eeeeee'/%3E%3Cpath d='m4.9375 1030.4c-2.2091 0-4 1.8-4 4v8c0 2.2 1.7909 4 4 4h0.1563v4.8l5.9062-4.8h7.938c2.209 0 4-1.8 4-4v-8c0-2.2-1.791-4-4-4h-14z' fill='%23fff'/%3E%3Cpath d='m6 1037.4c-1.1046 0-2 0.9-2 2s0.8954 2 2 2 2-0.9 2-2-0.8954-2-2-2zm6 0c-1.105 0-2 0.9-2 2s0.895 2 2 2 2-0.9 2-2-0.895-2-2-2zm6 0c-1.105 0-2 0.9-2 2s0.895 2 2 2 2-0.9 2-2-0.895-2-2-2z' fill='%23008e71'/%3E%3Cpath d='m6 1036.4c-1.1046 0-2 0.9-2 2s0.8954 2 2 2 2-0.9 2-2-0.8954-2-2-2zm6 0c-1.105 0-2 0.9-2 2s0.895 2 2 2 2-0.9 2-2-0.895-2-2-2zm6 0c-1.105 0-2 0.9-2 2s0.895 2 2 2 2-0.9 2-2-0.895-2-2-2z' fill='%233c999c'/%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: 32px auto;
-  background-position: center;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.55);
   border-radius: 50%;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #00695c;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M7 4h18a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H15.5L9 29.2V24H7a5 5 0 0 1-5-5V9a5 5 0 0 1 5-5z' fill='%23fff'/%3E%3Cpath d='M16 8.2l1.7 4.6 4.6 1.7-4.6 1.7L16 20.8l-1.7-4.6-4.6-1.7 4.6-1.7z' fill='%2300a389'/%3E%3C/svg%3E"),
+    linear-gradient(135deg, #00a389 0%, #00695c 55%, #004d40 100%);
+  background-repeat: no-repeat;
+  background-size: 34px auto, 100% 100%;
+  background-position: center 45%, center;
+  box-shadow: 0 10px 24px rgba(0, 77, 64, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.35);
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   z-index: 1003;
+  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.25s;
+}
+/* 은은한 펄스 링 */
+.btn_chat::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 163, 137, 0.55);
+  animation: chatPulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+/* AI 배지 */
+.btn_chat::after {
+  content: "AI";
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  min-width: 26px;
+  height: 20px;
+  padding: 0 6px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: #FFD54F;
+  color: #3a2e00;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+.btn_chat:hover {
+  background-color: #00695c;
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 14px 28px rgba(0, 77, 64, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+.btn_chat:active {
+  transform: scale(0.97);
+}
+.btn_chat:focus-visible {
+  outline: 3px solid #b6fbe9;
+  outline-offset: 3px;
+}
+@keyframes chatPulse {
+  0%   { transform: scale(1);   opacity: 0.9; }
+  70%  { transform: scale(1.45); opacity: 0; }
+  100% { transform: scale(1.45); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn_chat::before { animation: none; opacity: 0; }
+  .btn_chat { transition: none; }
 }
 
-.btn_chat:hover {
-  background-color: #006b65;
-}
 
 
 /* =========================================================
@@ -81,7 +137,7 @@
 .popWrap.chat .popup .popBody {
     /* height: calc(100dvh - 55px); */
     height: calc(100vh - 55px);
-    
+    font-weight: 400;    
 }
 
 
@@ -95,7 +151,7 @@
     color: #ffffff;
     padding: 16px 20px;
     font-size: 1.6rem;
-    font-weight: bold;
+    font-weight: 700;
     min-height: 58px;
     display: flex;
     justify-content: space-between;
@@ -152,7 +208,7 @@
 /* chat-flow 스타일 및 트랜지션 */
 .chat-content .chat-flow { 
     position: relative;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     line-height: 1.6;
     gap: 12px;
     flex: 1;
@@ -289,17 +345,30 @@
 
 .chat-flow .flow-box .flow-content + .btn-area {
     position: fixed;
-    bottom: 40px;
+    bottom: 0;
     left: 0;
     right: 0;
     padding: 0 20px 20px;
     background-color: #ffffff;
     z-index: 0;
-    }
-
-.chat-flow.fix-no .flow-box .flow-content + .btn-area {
-    position: static;
 }
+
+.chat-flow .flow-box .flow-content + .btn-area::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;              /* 액션바 바로 위에 붙임 */
+    height: 32px;
+    background: linear-gradient(
+        to top,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.85) 35%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    pointer-events: none;      /* 뒤쪽 목록 클릭/스크롤 방해 안 함 */
+}
+
 
 .chat-flow .flow-box .flow-content + .btn-area.action-btn button {
     flex: 1;
@@ -325,7 +394,7 @@
     white-space: normal;
 }
 
-.chat-content .flow-content div + div:not(.setBtnAdd, .step-label, .document-filters)  {   
+.chat-content .flow-content div + div:not(.setBtnAdd, .step-label, .document-filters, .selectWrap)  {   
     margin-top: 12px;
 }
 .srchIpt {
@@ -379,13 +448,16 @@
     flex-direction: column;
     gap: 4px;
     width: 100%;
-    padding: 12px 16px !important;
     text-align: left;
     font-size: 1.4rem;
     background-color: #f9f9f9;
     border: 1px solid #dbe1e6;
     border-radius: 8px;
     cursor: pointer;
+}
+.btn-label:not(div),
+.btn-label:not(div):focus {
+    padding: 12px 16px !important;
 }
 
 
@@ -406,17 +478,20 @@ input + .btn-label:focus {
 .btn-label .tit {
     display: flex;
     gap: 4px;
-    font-size: 1.6rem;
-    font-weight: bold;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 
 
+.btn-label .info {
+    font-size: 1.6rem;
+}
 .btn-label .info span:first-child {
     color: #666666;
 }
-.list-btn + .paging {
-    margin: 32px -20px 40px !important;
+.paging {
+    margin: 32px -10px 40px !important;
     display: flex;
     justify-content: center;
 }
@@ -619,3 +694,178 @@ button[class*="flag_"]:disabled {
     background-color: #eee !important;
     border-color: #eee !important;
 }
+
+/* ---------------------------------------------------------
+   09. 리스트 아코디언 (.list-btn > div.btn-label, 조회용 카드)
+   --------------------------------------------------------- */
+.list-btn > .btn-label.acc-item {
+    padding: 0;
+    gap: 0;
+    overflow: hidden;
+    transition: border-color .2s, background-color .2s;
+}
+.acc-item .acc-head,
+.acc-item .acc-head:focus {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 16px;
+    background: transparent;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+}
+.acc-item .acc-head:hover { background-color: #EFF8F5; }
+.acc-item .acc-head:focus-visible { outline: 2px solid #006b65; outline-offset: -2px; }
+.acc-item .acc-head .tit { flex: 1; min-width: 0; flex-wrap: wrap; }
+.acc-item .acc-arrow {
+    flex: none;
+    width: 10px;
+    height: 10px;
+    margin-right: 4px;
+    border-right: 2px solid #666;
+    border-bottom: 2px solid #666;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform .25s ease;
+}
+.acc-item.open { border-color: #006b65; background-color: #EFF8F5; }
+.acc-item.open .acc-arrow { transform: rotate(-135deg) translateY(-2px); }
+.acc-item .acc-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .3s ease;
+}
+.acc-item.open .acc-panel { grid-template-rows: 1fr; }
+.acc-item .acc-inner {
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 16px;
+    visibility: hidden;
+    transition: padding .3s ease, visibility .3s;
+}
+.acc-item.open .acc-inner {
+    padding: 4px 16px 14px;
+    visibility: visible;
+    border-top: 1px dashed #dbe1e6;
+    margin: 0 16px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.acc-item .acc-inner .tit { font-size: 1.6rem; }
+@media (prefers-reduced-motion: reduce) {
+    .acc-item .acc-panel, .acc-item .acc-arrow, .acc-item .acc-inner { transition: none; }
+}
+.flow-content .formList > li .th {
+    width: 120px;
+}
+.sort_wrap {
+    margin-top:20px;
+}
+
+/* ---------------------------------------------------------
+   10. 처음으로 버튼 (하단 액션바)
+   --------------------------------------------------------- */
+.chat-content .flow-box .btn-area.action-btn .btn-home {
+    /* flex: 0 0 30%; */
+    min-width: 0;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+.btn-home .ico-home {
+    flex: none;
+    width: 16px;
+    height: 16px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 11.5 12 4l9 7.5'/%3E%3Cpath d='M5.5 10v10h13V10'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+/* 액션바가 없던 화면: 처음으로 단독 강조 */
+.chat-content .flow-box .btn-area.action-btn.home-only .btn-home,
+.chat-content .flow-box .btn-area.action-btn.home-only .btn-home:focus {
+    flex: 1 1 100%;
+    background-color: #FFD54F;
+    border-color: #F2B705;
+    color: #3a2e00;
+    font-weight: 800;
+}
+.chat-content .flow-box .btn-area.action-btn.home-only .btn-home:hover {
+    background-color: #FFCA28;
+}
+
+.setFlex.sel-search > div:first-child {
+    flex: 1;
+}
+.setFlex.sel-search > div:last-child {
+    flex: 2;
+}
+
+.chat-content .formList .itemTh {
+    font-size: 1.6rem;
+}
+
+/* 기본: 한 줄 */
+/*
+.chat-content .paging {
+    margin: 24px -10px 40px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.chat-content .paging > * { flex: none; }
+.chat-content .paging .icoBtn_first,
+.chat-content .paging .icoBtn_prev.first { order: 1; }
+.chat-content .paging .icoBtn_prev:not(.first) { order: 2; }
+.chat-content .paging ul { order: 3; }
+.chat-content .paging .icoBtn_next:not(.last) { order: 4; }
+.chat-content .paging .icoBtn_last,
+.chat-content .paging .icoBtn_next.last { order: 5; }
+
+.chat-content .paging ul {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0;
+}
+.chat-content .paging ul li { flex: none; min-width: 28px; }
+.chat-content .paging ul li a,
+.chat-content .paging ul li em {
+    display: block;
+    padding: 0 2px;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 1.4rem;
+    width: auto;
+}
+
+
+.chat-content .paging.is-stacked {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+        "prev  list next"
+        "first .    last";
+    row-gap: 8px;
+}
+.chat-content .paging.is-stacked ul {
+    grid-area: list;
+    flex-wrap: wrap;          
+    justify-content: center;
+    min-width: 0;
+}
+.chat-content .paging.is-stacked .icoBtn_first,
+.chat-content .paging.is-stacked .icoBtn_prev.first { grid-area: first; justify-self: start; }
+.chat-content .paging.is-stacked .icoBtn_last,
+.chat-content .paging.is-stacked .icoBtn_next.last  { grid-area: last;  justify-self: end; }
+.chat-content .paging.is-stacked .icoBtn_prev:not(.first) { grid-area: prev; }
+.chat-content .paging.is-stacked .icoBtn_next:not(.last)  { grid-area: next; }
+*/
