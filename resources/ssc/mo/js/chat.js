@@ -127,7 +127,7 @@ window.initChat = function() {
 
     if (!flow01) return;
 
-    window.initAccordion();
+    window.initAccordion();//아코디언 리스트 조회 후 호출 필요
 
     initHomeButtons();
 
@@ -354,7 +354,7 @@ window.initChat = function() {
                 // [REQ-CH-005 가입설계서 재발송] 2단계: 대상 계약 선택 체크
                 if (menuId === 'REQ-CH-005' && step === 2) {
                     if (!$('input[name="selectItem005"]:checked').length) {
-                        uiInfo.mo.alert('가입설계서 재발송 대상을 선택해주세요.');
+                        uiInfo.mo.alert('가입설계서 재발송 대상을 선택해 주세요.');
                         return;
                     }
                 }
@@ -362,15 +362,14 @@ window.initChat = function() {
                 // [REQ-CH-005 가입설계서 재발송] 3단계: 라디오 선택 체크 추가
                 if (menuId === 'REQ-CH-005' && step === 3) {
                     if (!$currentBox.find('input[type="radio"]:checked').length) {
-                        uiInfo.mo.alert('재발송 대상을 선택해주세요.');
+                        uiInfo.mo.alert('가입설계서 재발송 대상자를 선택해 주세요.');
                         return;
                     }
                 }
-
                 // [REQ-CH-012] 2단계: 검색조건 선택 체크
                 if (menuId === 'REQ-CH-012' && step === 2) {
                     if (!$currentBox.find('input[type="radio"]:checked').length) {
-                        uiInfo.mo.alert('사용인 검색 조건을 선택해주세요.');
+                        uiInfo.mo.alert('사용인 검색 조건을 선택해 주세요.');
                         return;
                     }
                 }

@@ -108,8 +108,8 @@
 
 .popWrap.chat .popup {
     padding: 0;
-    /* height: 100dvh; */
     height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
 }
@@ -135,8 +135,8 @@
 }
 
 .popWrap.chat .popup .popBody {
-    /* height: calc(100dvh - 55px); */
     height: calc(100vh - 55px);
+    height: calc(100dvh - 55px);
     font-weight: 400;    
 }
 
