@@ -114,6 +114,133 @@ function initHomeButtons() {
     });
 }
 
+// 채팅 화면 열기/닫기 (토글 버튼 상태까지 함께 변경)
+function setChatOpen(open) {
+    const chatLive = document.getElementById('chatLive');
+    const btn = document.getElementById('btnToggleFlow');
+    if (!chatLive || !btn) return;
+    chatLive.classList.toggle('collapsed', !open);
+    const wrap = chatLive.closest('.chat-content');          // 채팅이 열리면 하단 액션바 숨김용 표시
+    if (wrap) wrap.classList.toggle('chat-open', open);
+    btn.classList.toggle('active', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'AI 챗봇 대화 닫기' : 'AI 챗봇 대화 열기');
+    btn.textContent = open ? 'AI 챗봇 닫기 ▲' : 'AI 챗봇 열기 ▼';
+}
+
+// 선택한 문서 목록 (채팅 전송 시 함께 서버로 보낼 수 있음)
+window.selectedDocs = [];
+window.getSelectedDocs = function() { return window.selectedDocs.slice(); };
+
+// 선택완료 → 채팅 화면으로 이동하고 선택 문서 안내 메시지 표시
+function enterChatWithDocs(docs) {
+    window.selectedDocs = docs;
+    const chatMessages = document.getElementById('chatMessages');
+    setChatOpen(true);
+    if (!chatMessages) return;
+
+    const old = chatMessages.querySelector('.docs-notice');   // 다시 선택완료한 경우 이전 안내 교체
+    if (old) old.remove();
+
+    const msg = document.createElement('div');
+    msg.className = 'message received docs-notice';
+    msg.appendChild(document.createTextNode('선택하신 문서 ' + docs.length + '건을 기준으로 답변해 드립니다.'));
+    docs.forEach(function(d) {
+        msg.appendChild(document.createElement('br'));
+        msg.appendChild(document.createTextNode('· ' + d.name));
+    });
+    msg.appendChild(document.createElement('br'));
+    msg.appendChild(document.createTextNode('궁금하신 내용을 입력해 주세요.'));
+    chatMessages.appendChild(msg);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    const input = document.getElementById('messageInput');
+    if (input) input.focus();
+}
+
+// 선택한 문서 패널(.checking-list) : 체크박스 선택 상태와 동기화
+function initCheckingList() {
+    document.querySelectorAll('.checking-list').forEach(function(panel) {
+        const box = panel.closest('.flow-box');
+        if (!box || panel.dataset.bound) return;
+        panel.dataset.bound = '1';
+
+        const chips = panel.querySelector('.checking-chips');
+        const countEl = panel.querySelector('.checking-count em');
+        const getChecks = function() { return box.querySelectorAll('.list-btn input[type="checkbox"]'); };
+        const chkAll = box.querySelector('#chkAll');
+
+        function nameOf(chk) {
+            const label = box.querySelector('label[for="' + chk.id + '"]');
+            const fn = label && label.querySelector('.file-name');
+            const flag = label && label.querySelector('[class*="flag_"]');
+            const txt = fn ? fn.textContent : (label ? label.textContent : chk.id);
+            const name = txt.replace(/\s+/g, ' ').trim();
+            // 판매중 / 판매중지 같은 상태는 [판매중] 형태로 앞에 붙임
+            const status = flag ? flag.textContent.replace(/\s+/g, ' ').trim() : '';
+            return status ? '[' + status + '] ' + name : name;
+        }
+
+        function render() {
+            const checked = Array.from(getChecks()).filter(function(c) { return c.checked; });
+            chips.innerHTML = '';
+            checked.forEach(function(chk) {
+                const name = nameOf(chk);
+                const li = document.createElement('li');
+                const span = document.createElement('span');
+                span.className = 'chip-name';
+                span.textContent = name;
+                span.title = name;
+                const x = document.createElement('button');
+                x.type = 'button';
+                x.className = 'chip-x';
+                x.setAttribute('aria-label', name + ' 선택 해제');
+                x.dataset.target = chk.id;
+                li.appendChild(span);
+                li.appendChild(x);
+                chips.appendChild(li);
+            });
+            countEl.textContent = checked.length;
+            panel.hidden = checked.length === 0;
+            const total = box.querySelector('.tblInfo .info .val');
+            if (total) total.textContent = getChecks().length;
+            if (chkAll) chkAll.checked = checked.length > 0 && checked.length === getChecks().length;
+        }
+
+        // 개별 체크 / 전체선택 변경
+        box.addEventListener('change', function(e) {
+            if (e.target === chkAll) {
+                getChecks().forEach(function(c) { c.checked = chkAll.checked; });
+            }
+            if (e.target === chkAll || (e.target.matches && e.target.matches('.list-btn input[type="checkbox"]'))) render();
+        });
+
+        // 칩의 X / 선택 초기화
+        panel.addEventListener('click', function(e) {
+            const x = e.target.closest('.chip-x');
+            if (x) {
+                const chk = document.getElementById(x.dataset.target);
+                if (chk) chk.checked = false;
+                render();
+                return;
+            }
+            if (e.target.closest('.checking-done')) {
+                const docs = Array.from(getChecks()).filter(function(c) { return c.checked; })
+                    .map(function(c) { return { id: c.id, name: nameOf(c) }; });
+                if (!docs.length) return;
+                showFlowLoading(function() { enterChatWithDocs(docs); }, 300);
+                return;
+            }
+            if (e.target.closest('.checking-reset')) {
+                getChecks().forEach(function(c) { c.checked = false; });
+                render();
+            }
+        });
+
+        panel.render = render;   // 목록을 다시 그린 뒤 panel.render() 호출 가능
+        render();
+    });
+}
+
 // 메인 초기화 함수
 window.initChat = function() {
     let currentMenuId = null;
@@ -130,37 +257,13 @@ window.initChat = function() {
     window.initAccordion();//아코디언 리스트 조회 후 호출 필요
 
     initHomeButtons();
+    initCheckingList();//문서체크
 
-    // 접기/펼치기 토글
+    // 접기/펼치기 토글 (초기 상태: 열림)
     if (btnToggleFlow && chatLive) {
-        chatLive.classList.remove('collapsed');
-
-        // if (chatFlow) {
-        //     chatFlow.classList.add('fix-no');
-        // }
-
-        btnToggleFlow.classList.add('active');
-        btnToggleFlow.setAttribute('aria-expanded', 'true');
-        btnToggleFlow.setAttribute('aria-label', 'AI 챗봇 대화 닫기');
-        btnToggleFlow.textContent = 'AI 챗봇 닫기 ▲';
-
-        // 접기/펼치기 토글
+        setChatOpen(true);
         btnToggleFlow.onclick = function() {
-            const isCollapsed = chatLive.classList.toggle('collapsed');
-
-            // if (chatFlow) {
-            //     chatFlow.classList.toggle('fix-no', !isCollapsed);
-            // }
-
-            btnToggleFlow.classList.toggle('active', !isCollapsed);
-            btnToggleFlow.setAttribute('aria-expanded', String(!isCollapsed));
-            btnToggleFlow.setAttribute(
-                'aria-label',
-                isCollapsed ? 'AI 챗봇 대화 열기' : 'AI 챗봇 대화 닫기'
-            );
-            btnToggleFlow.textContent = isCollapsed
-                ? 'AI 챗봇 열기 ▼'
-                : 'AI 챗봇 닫기 ▲';
+            setChatOpen(chatLive.classList.contains('collapsed'));
         };
     }
     
@@ -263,6 +366,8 @@ window.initChat = function() {
                 msg = '고객명을 입력해 주세요.';
             } else if (menuId === 'REQ-CH-031') {
                 msg = '지점명을 입력해 주세요.';
+            } else if (menuId === 'REQ-CH-013') {
+                msg = '상품명을 입력해 주세요.';
             }
 
             uiInfo.mo.alert(msg, function() {
