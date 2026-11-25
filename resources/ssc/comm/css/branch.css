@@ -27,7 +27,6 @@ html body:not(.hana-branch-app) * {
 }
 
 .hana-branch-app :where(*) {
-  all: revert;
   box-sizing: border-box;
   font-family: "Spoqa Han Sans Neo", "Roboto", sans-serif;
 }
@@ -51,7 +50,7 @@ html body:not(.hana-branch-app) * {
   -webkit-tap-highlight-color: transparent;
 }
 
-.hana-branch-app button {
+.hana-branch-app button:not(.win-close) {
   border: 1px solid #008e71;
   border-radius: 8px;
   padding: 9px 16px;
@@ -61,7 +60,7 @@ html body:not(.hana-branch-app) * {
   line-height: 1.4;
 }
 
-.hana-branch-app button:hover {
+.hana-branch-app button:not(.win-close):hover {
   background: #eff8f5;
 }
 
@@ -115,6 +114,7 @@ html body:not(.hana-branch-app) * {
 }
 
 .hana-branch-app .hbl-header {
+  position: relative;
   background: #00857E;
   color: white;
   padding: 24px 30px;
@@ -132,7 +132,10 @@ html body:not(.hana-branch-app) * {
   font-size: 14px;
   color: #d7eeee;
 }
-
+.win-close {
+  top: 20px;
+  right: 20px;
+}
 .hana-branch-app .hbl-main-content {
   padding: 28px 30px;
   background: white;
@@ -288,8 +291,8 @@ html body:not(.hana-branch-app) * {
 }
 
 .hana-branch-app .hbl-primary-button {
-  background: #00857e;
-  color: white;
+  background: #00857e !important;
+  color: white !important;
 }
 
 .hana-branch-app .hbl-primary-button:hover {

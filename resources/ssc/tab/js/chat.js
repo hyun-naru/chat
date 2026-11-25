@@ -655,10 +655,12 @@ window.initChat = function() {
             return;
         }
 
-        // PC: 화면의 80% 크기, 최대 폭 1200px, 중앙 정렬
+        // PC: 가용 너비가 1200px 이하면 전체 너비, 초과면 80%(최대 1200px), 중앙 정렬
         const availW = window.screen.availWidth;
         const availH = window.screen.availHeight;
-        const width  = Math.min(Math.floor(availW * 0.8), 1200);
+        const width  = availW <= 1200
+            ? availW
+            : Math.min(Math.floor(availW * 0.8), 1200);
         const height = Math.floor(availH * 0.8);
         const left   = Math.floor((availW - width) / 2);
         const top    = Math.floor((availH - height) / 2);
@@ -667,7 +669,6 @@ window.initChat = function() {
         const win = window.open(popupUrl, '_blank', popupFeatures);
         if (win) win.focus();
     }
-
 
     // 지점조회 클릭 시
     if (branch) {
@@ -683,6 +684,17 @@ window.initChat = function() {
         });
     }
 };
+
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.win-close')) return;
+    window.close();
+    // 닫히지 않았다면 이전 페이지로, 이전 기록이 없으면 홈으로
+    setTimeout(() => {
+        if (!window.closed) {
+            history.length > 1 ? history.back() : (location.href = '/');
+        }
+    }, 100);
+});
 
 
 // 최초 자동 실행

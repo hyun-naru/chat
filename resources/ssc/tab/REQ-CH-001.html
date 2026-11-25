@@ -9,6 +9,7 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="Shortcut Icon" href="./resources/pt/images/fav/favicon.png">
     <link rel="stylesheet" type="text/css" href="../../tab/pt/css/cssLib.css" />
+    <link rel="stylesheet" type="text/css" href="../../tab/pt/bugReport/bugReport.css" />
     <link rel="stylesheet" type="text/css" href="./css/chat.css" />
 
     <script src="../../comm/js/jquery-3.5.1.min.js"></script>
@@ -32,6 +33,8 @@
     <script src="../../comm/js/sfaApp.interface.js"></script>
     <script src="../../pt/js/ui.front.js"></script>
     <script src="../../pt/js/pt.common.js"></script>
+    <script src="../../tab/pt/bugReport/captureUtil.js"></script>
+    <script src="../../tab/pt/bugReport/bugReport.js"></script>
     <script src="./js/chat.js"></script>
     <title>하나로 영업지원</title>
     <script>
@@ -46,11 +49,13 @@
 <body>
     <div class="wrapper" id="wrapper">
         <div class="chat-container">
+            <button type="button" id="btnBugReportMain" class="bug-report-main-btn">버그</button>
             <div class="chat-header">
                 <h1>
                     <img src="../images/white_logo.svg" alt="하나생명">
                     <span>영업지원</span>
                 </h1>
+                <button type="button" class="win-close" aria-label="닫기"></button>
             </div>
             <div class="chat-content">
                 <div class="btn-group">
@@ -575,7 +580,6 @@
                         </div>
 
                         <div class="btn-area action-btn">
-                            <button type="button" class="btn_white l btn-prev">이전</button>
                             <button type="button" class="btn_primary l btn-next">신청</button>
                         </div>
                     </div>
@@ -768,7 +772,6 @@
                             </div>
                         </div>
                         <div class="btn-area action-btn">
-                            <button type="button" class="btn_white l btn-prev">이전</button>
                             <button type="button" class="btn_primary l btn-next">확인</button>
                         </div>
                     </div>
@@ -2023,113 +2026,129 @@
                                 문서 검색 후 문서를 선택하지 않으시면<br>
                                 전체 문서에서 답변을 드려 느려질 수 있습니다.
                             </div>
-                            <div>
-                                <div class="iptWrap search active_searchBtn">
-                                    <input type="text" class="ipt search active_searchBtn uiAct" placeholder="상품명" title="상품명 검색">
-                                    <button type="button" class="icoBtn_search" aria-label="검색"></button>
-                                    <button class="icoBtn_del" tabindex="-1"><span class="blind">해당 필드 입력값 삭제</span></button>
+                            <div class="iptWrap search active_searchBtn">
+                                <input type="text" class="ipt search active_searchBtn uiAct" placeholder="상품명" title="상품명 검색">
+                                <button type="button" class="icoBtn_search" aria-label="검색"></button>
+                                <button class="icoBtn_del" tabindex="-1"><span class="blind">해당 필드 입력값 삭제</span></button>
+                            </div>
+                            <div class="sort_wrap">
+                                <div class="sort">
+                                    <ul class="count">
+                                        <li>총 <span class="count_num count_num_accent">1,000</span>건</li>
+                                    </ul>
                                 </div>
-                                <div class="sort_wrap">
-                                    <div class="sort">
-                                        <ul class="count">
-                                            <li>총 <span class="count_num count_num_accent">1,000</span>건</li>
-                                        </ul>
-                                    </div>
-                                    <div class="sortRight">
-                                        <div>
-                                            <input type="checkbox" class="ipt" name="" id="chkAll">
-                                            <label for="chkAll">전체선택</label>
-                                        </div>
+                                <div class="sortRight">
+                                    <div>
+                                        <input type="checkbox" class="ipt" name="" id="chkAll">
+                                        <label for="chkAll">전체선택</label>
                                     </div>
                                 </div>
-                                <div class="list-btn">
-                                    <div>
-                                        <input type="checkbox" name="selectItem13" id="item_013_1" class="ipt">
-                                        <label for="item_013_1" class="btn-label">
-                                            <span class="flag green">판매중</span>
-                                            <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="selectItem13" id="item_013_2" class="ipt">
-                                        <label for="item_013_2" class="btn-label">
-                                            <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="selectItem13" id="item_013_3" class="ipt">
-                                        <label for="item_013_3" class="btn-label">
-                                            <span class="flag gray">판매중지</span>
-                                            <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="selectItem13" id="item_013_4" class="ipt">
-                                        <label for="item_013_4" class="btn-label">
-                                            <span class="flag gray">판매중지</span>
-                                            <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="selectItem13" id="item_013_5" class="ipt">
-                                        <label for="item_013_5" class="btn-label">
-                                            <span class="flag green">판매중</span>
-                                            <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="selectItem13" id="item_013_6" class="ipt">
-                                        <label for="item_013_6" class="btn-label">
-                                            <span class="flag green">판매중</span>
-                                            <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="selectItem13" id="item_013_7" class="ipt">
-                                        <label for="item_013_7" class="btn-label">
-                                            <span class="flag green">판매중</span>
-                                            <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="selectItem13" id="item_013_8" class="ipt">
-                                        <label for="item_013_8" class="btn-label">
-                                            <span class="flag green">판매중</span>
-                                            <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="selectItem13" id="item_013_9" class="ipt">
-                                        <label for="item_013_9" class="btn-label">
-                                            <span class="flag green">판매중</span>
-                                            <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="selectItem13" id="item_013_10" class="ipt">
-                                        <label for="item_013_10" class="btn-label">
-                                            <span class="flag green">판매중</span>
-                                            <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
-                                        </label>
-                                    </div>
+                            </div>
+                            <div class="list-btn">
+                                <div>
+                                    <input type="checkbox" name="selectItem13" id="item_013_1" class="ipt">
+                                    <label for="item_013_1" class="btn-label">
+                                        <!-- 2026.11.24 -->
+                                        <span class="title-line"><span class="flag green">판매중</span><span class="upload-day">2026.04.01</span></span>
+                                        <!-- //2026.11.24 -->
+                                        <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
+                                    </label>
                                 </div>
-                                
-                                <!-- 검색결과 없을 경우 -->
-                                <div class="noData">검색 결과가 없습니다.</div>
-                                <!-- //검색결과 없을 경우 -->
-                                <div class="checking-list" hidden>
-									<div class="checking-sum">
-										<span class="checking-count">문서 <em>0</em>개 선택됨</span>
-                                    </div>
-									<div class="checking-tit-wrap">
-										<p class="checking-tit">선택한 문서</p>
-										<button type="button" class="checking-reset">선택 초기화</button>
-									</div>
-									<ul class="checking-chips"></ul>  
-                                    <div class="btn-area full">
-                                        <button type="button" class="btn_primary s checking-done">선택완료</button>									
-                                    </div>                                   
+                                <div>
+                                    <input type="checkbox" name="selectItem13" id="item_013_2" class="ipt">
+                                    <label for="item_013_2" class="btn-label">
+                                        <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
+                                    </label>
                                 </div>
+                                <div>
+                                    <input type="checkbox" name="selectItem13" id="item_013_3" class="ipt">
+                                    <label for="item_013_3" class="btn-label">
+                                        <!-- 2026.11.24 -->
+                                        <span class="title-line"><span class="flag gray">판매중지</span><span class="upload-day">2026.04.01</span></span>
+                                        <!-- //2026.11.24 -->
+                                        <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="selectItem13" id="item_013_4" class="ipt">
+                                    <label for="item_013_4" class="btn-label">
+                                        <!-- 2026.11.24 -->
+                                        <span class="title-line"><span class="flag gray">판매중지</span><span class="upload-day">2026.04.01</span></span>
+                                        <!-- //2026.11.24 -->
+                                        <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="selectItem13" id="item_013_5" class="ipt">
+                                    <label for="item_013_5" class="btn-label">
+                                        <!-- 2026.11.24 -->
+                                        <span class="title-line"><span class="flag green">판매중</span><span class="upload-day">2026.04.01</span></span>
+                                        <!-- //2026.11.24 -->
+                                        <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="selectItem13" id="item_013_6" class="ipt">
+                                    <label for="item_013_6" class="btn-label">
+                                        <!-- 2026.11.24 -->
+                                        <span class="title-line"><span class="flag green">판매중</span><span class="upload-day">2026.04.01</span></span>
+                                        <!-- //2026.11.24 -->
+                                        <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="selectItem13" id="item_013_7" class="ipt">
+                                    <label for="item_013_7" class="btn-label">
+                                        <!-- 2026.11.24 -->
+                                        <span class="title-line"><span class="flag green">판매중</span><span class="upload-day">2026.04.01</span></span>
+                                        <!-- //2026.11.24 -->
+                                        <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="selectItem13" id="item_013_8" class="ipt">
+                                    <label for="item_013_8" class="btn-label">
+                                        <!-- 2026.11.24 -->
+                                        <span class="title-line"><span class="flag green">판매중</span><span class="upload-day">2026.04.01</span></span>
+                                        <!-- //2026.11.24 -->
+                                        <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="selectItem13" id="item_013_9" class="ipt">
+                                    <label for="item_013_9" class="btn-label">
+                                        <!-- 2026.11.24 -->
+                                        <span class="title-line"><span class="flag green">판매중</span><span class="upload-day">2026.04.01</span></span>
+                                        <!-- //2026.11.24 -->
+                                        <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="selectItem13" id="item_013_10" class="ipt">
+                                    <label for="item_013_10" class="btn-label">
+                                        <!-- 2026.11.24 -->
+                                        <span class="title-line"><span class="flag green">판매중</span><span class="upload-day">2026.04.01</span></span>
+                                        <!-- //2026.11.24 -->
+                                        <span class="file-name">하나로 누리는 건강보험_상품요약서 하나로 누리는 건강보험_상품요약서.pdf</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- 검색결과 없을 경우 -->
+                            <div class="noData">검색 결과가 없습니다.</div>
+                            <!-- //검색결과 없을 경우 -->
+                            <div class="checking-list" hidden>
+                                <div class="checking-sum">
+                                    <span class="checking-count">문서 <em>0</em>개 선택됨</span>
+                                </div>
+                                <div class="checking-tit-wrap">
+                                    <p class="checking-tit">선택한 문서</p>
+                                    <button type="button" class="checking-reset">선택 초기화</button>
+                                </div>
+                                <ul class="checking-chips"></ul>  
+                                <div class="btn-area full">
+                                    <button type="button" class="btn_primary s checking-done">선택완료</button>									
+                                </div>                                   
                             </div>
                         </div>
                     </div>
@@ -2138,7 +2157,9 @@
                 <!-- 우측 AI 챗봇 영역 -->
                 <div class="chat-live collapsed" id="chatLive">
                     <div class="chat-messages" id="chatMessages">
-                        <div class="message received">안녕하세요! 무엇을 도와드릴까요?</div>
+                        <div class="message received">안녕하세요! 
+                            무엇을 도와드릴까요?
+                        </div>
                     </div>
 
                     <div class="chat-input-area">

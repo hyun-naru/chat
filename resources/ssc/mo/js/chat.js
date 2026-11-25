@@ -662,14 +662,14 @@ window.initChat = function() {
     // 지점조회 클릭 시
     if (branch) {
         branch.addEventListener('click', function () {
-            openChatPopup('./resources/ssc/comm/branch.html');
+            openChatPopup('../comm/branch.html');
         });
     }
 
     // 통합시스템 클릭 시
     if (support) {
         support.addEventListener('click', function () {
-            openChatPopup('./resources/ssc/comm/support.html');
+            openChatPopup('../comm/support.html');
         });
     }
 };
@@ -680,6 +680,17 @@ if (document.readyState === 'loading') {
 } else {
     window.initChat();
 }
+
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.win-close')) return;
+    window.close();
+    // 닫히지 않았다면 이전 페이지로, 이전 기록이 없으면 홈으로
+    setTimeout(() => {
+        if (!window.closed) {
+            history.length > 1 ? history.back() : (location.href = '/');
+        }
+    }, 100);
+});
 
 // 메시지 전송 로직
 window.handleKeyPress = function(event) {

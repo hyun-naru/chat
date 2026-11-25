@@ -64,7 +64,7 @@ html body:not(.hana-support-app) * {
     color: #445fe6;
 }
 
-.hana-support-app button,
+.hana-support-app button:not(.win-close),
 .btn-down {
     padding: 9px 16px;
     font-size: 1.4rem;
@@ -122,7 +122,7 @@ html body:not(.hana-support-app) * {
     border: 1px solid #008e71;
     border-bottom: 2px solid #008e71;
     margin-bottom: -2px;
-    box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: -2px -2px 4px rgba(0, 133, 126, 0.3);
 }
 
 
@@ -186,6 +186,8 @@ html body:not(.hana-support-app) * {
 }
 
 .hana-support-app .header-content {
+    position: relative;
+    padding-right: 50px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -222,7 +224,10 @@ html body:not(.hana-support-app) * {
     opacity: .9;
     line-height: 1.6;
 }
-
+.hana-support-app .win-close {
+    top: -5px;
+    right: 0;
+}
 
 
 /* ==================================================
@@ -3689,7 +3694,6 @@ html body:not(.hana-support-app) * {
 }
 
 .hana-support-app #adminAccess {
-    margin-top: 5px;
     display: flex;
     gap: 10px;
     justify-content: flex-end;
@@ -3702,6 +3706,9 @@ html body:not(.hana-support-app) * {
     padding: 3px 6px;
 }
 
+.hana-support-app #adminAccess:not([hidden]) {
+    margin-top: 5px;
+}
 
 .hana-support-app #specialFullTableBody td:nth-child(n/**/+3):nth-child(-n/**/+8) {
     white-space: pre-line;

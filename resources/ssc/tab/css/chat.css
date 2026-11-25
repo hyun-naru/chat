@@ -112,7 +112,6 @@
 .popWrap.chat .popup .popHead h1 img {
     height: 30px;
 }
-
 .popWrap.chat .icoBtn_close {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath transform='rotate(-45 30.484 4.897)' style='fill:%23fff;stroke:%23fff;stroke-linecap:round' d='M0 0h24.009'/%3E%3Cpath transform='rotate(45 -4.525 9.605)' style='fill:%23fff;stroke:%23fff;stroke-linecap:round' d='M0 0h24.009'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
@@ -122,6 +121,10 @@
     z-index: auto;
     overflow: visible !important;
     padding: 0;
+    height: calc(100vh - 200px);
+    height: calc(100dvh - 200px);
+    max-height: calc(100vh - 200px);
+    max-height: calc(100dvh - 200px);
 }
 .popWrap.chat .btn-group {
     top: -48px;
@@ -164,10 +167,20 @@
 .chat-header h1 img {
     height: 30px;
 }
+.win-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath transform='rotate(-45 30.484 4.897)' style='fill:%23fff;stroke:%23fff;stroke-linecap:round' d='M0 0h24.009'/%3E%3Cpath transform='rotate(45 -4.525 9.605)' style='fill:%23fff;stroke:%23fff;stroke-linecap:round' d='M0 0h24.009'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .btn-group {
     position: absolute;
     top: -41px;
-    right: 20px;
+    right: 50px;
     z-index: 2000;
 }
 
@@ -367,8 +380,9 @@
     padding: 12px 16px;
     font-size: 1.4rem;
     line-height: 1.5;
+    text-align: left;
     word-break: break-word;
-    white-space: normal;
+    white-space: pre-line;
     box-sizing: border-box;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* 입체감 부여 */
 }
@@ -433,8 +447,10 @@
 /* ---------------------------------------------------------
    07. 플로우 입력폼 및 선택 버튼
    --------------------------------------------------------- */
-button.flag {
-    height: 30px;
+button.flag,
+button.flag.reverse {
+    height: auto;
+    min-height: 30px;
     font-size: 1.4rem;
 }
 .search-item {
@@ -554,6 +570,15 @@ input + .btn-label:focus {
 .ipt[type=checkbox]:checked + label.btn-label::after {
     top: 15px;
     left: 24px;
+}
+.title-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.title-line .upload-day {
+    font-size: 1.5rem;
+    color: #333;
 }
 .ipt[type=checkbox] + label.btn-label:has(span.flag) .file-name {
     margin-top: 4px;
@@ -720,9 +745,12 @@ button.flag.yellow:disabled {
    11. 선택한 문서 패널 (.checking-list) - 일반 Q&A 문서 선택
    --------------------------------------------------------- */
 .checking-list {
-    position: sticky;
-    bottom: 0;                 /* 하단 액션바(처음으로) 높이만큼 띄움 */
-    z-index: 5;
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 80px;
+    margin-top: 0;   
+    width: calc(100% - 40px) !important;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -733,6 +761,7 @@ button.flag.yellow:disabled {
     border-radius: 12px;
     box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.08);
     box-sizing: border-box;
+    z-index: 5;
 }
 .checking-list::after {
     content: '';
@@ -744,7 +773,13 @@ button.flag.yellow:disabled {
     height: 40px;
     background: transparent;
 }
-.checking-list[hidden] { display: none; }
+.checking-list[hidden] { 
+    display: none; 
+}
+
+.chat-content .flow-box .flow-content:has(.checking-list:not([hidden])) {
+    padding-bottom: 260px;
+}
 .checking-list .checking-chips {
     display: flex;
     flex-wrap: wrap;
@@ -845,6 +880,15 @@ button.flag.yellow:disabled {
 .checking-list .checking-reset:hover { background-color: #f6f8f9; }
 
 
+body:has(.wrapper .chat-container) .bug-report-main-btn {
+    top: 7px;
+    right: 200px;
+}
+body:has(.wrapper .chat-container) .bug-top-nav {
+    opacity: 0;
+    z-index: -1;
+}
+
 
 
 /* 기본: 한 줄 */
@@ -892,7 +936,7 @@ button.flag.yellow:disabled {
 }
 .chat-content .pagination.is-stacked ul {
     grid-area: list;
-    flex-wrap: wrap;           /* 이것도 모자라면 번호 단위로 줄바꿈 */
+    flex-wrap: wrap;            
     justify-content: center;
     min-width: 0;
 }
