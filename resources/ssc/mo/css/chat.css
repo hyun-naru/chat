@@ -171,14 +171,10 @@
 .btn-toggle-flow,
 .btn-toggle-flow:focus {
     width: 100%;
-    height: 40px;
-    font-size: 1.5rem;
+    height: 52px;
+    font-size: 1.6rem;
     color: #ffffff;
     background-color: rgb(0, 107, 101, 0.7);
-    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' id='Layer_1' style='enable-background:new 0 0 32 32;' version='1.1' viewBox='0 0 32 32' xml:space='preserve' fill='%23006b65'%3E%3Cpath d='M14,28V8.8l-4.62,4.62C8.986,13.814,8.516,14,8,14c-0.984,0-2-0.813-2-2c0-0.531,0.193-0.994,0.58-1.38l7.958-7.958C14.866,2.334,15.271,2,16,2s1.08,0.279,1.447,0.646l7.973,7.974C25.807,11.006,26,11.469,26,12c0,1.188-1.016,2-2,2c-0.516,0-0.986-0.186-1.38-0.58L18,8.8V28c0,1.104-0.896,2-2,2S14,29.104,14,28z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 55% 55%; */
     border-radius: 10px 10px 0 0;
     border: none;
     cursor: pointer;
@@ -193,8 +189,6 @@
 .btn-toggle-flow.active {
     border-radius: 0 0 10px 10px;
 }
-
-
 /* =========================================================
    04. 채팅 전체 레이아웃
    ========================================================= */
@@ -232,7 +226,8 @@
     flex-direction: column;
     width: 100%;
     /* 슬라이딩 높이 제한 및 트랜지션 설정 */
-    height: calc(100% - 40px); 
+    height: calc(100% - 52px); 
+    background: linear-gradient(180deg, #f4faf9 0%, #e6f3f1 100%);
     white-space: nowrap;
     box-sizing: border-box;
     transition: height 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease-in-out;
@@ -347,7 +342,7 @@
 
 .chat-flow .flow-box .flow-content + .btn-area {
     position: fixed;
-    bottom: 40px;
+    bottom: 52px;
     left: 0;
     right: 0;
     padding: 0 20px 20px;
@@ -462,7 +457,6 @@
     background-color: #f9f9f9;
     border: 1px solid #dbe1e6;
     border-radius: 8px;
-    cursor: pointer;
 }
 .btn-label:not(div),
 .btn-label:not(div):focus {
@@ -511,12 +505,23 @@ input + .btn-label:focus {
     color: #fff;
     background-color: #61707a;
 }
+.ipt[type=checkbox]:disabled + label.btn-label,
+.ipt[type=checkbox]:disabled + label.btn-label .upload-day {
+    background-color: #f1f3f5;
+    color: #999;
+    cursor: not-allowed;
+}
+.ipt[type=checkbox]:disabled + label.btn-label .flag_prd0 {
+    background-color: #aaa;
+}
 
 .btn-label .tit {
     display: flex;
     gap: 4px;
     font-size: 1.8rem;
     font-weight: 700;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 
@@ -586,7 +591,7 @@ a[href^="tel:"] {
     word-break: break-word;
     white-space: pre-line;
     box-sizing: border-box;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* 입체감 부여 */
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 입체감 부여 */
 }
 
 
@@ -595,16 +600,20 @@ a[href^="tel:"] {
     background-color: #ffffff;
     color: #333333;
     align-self: flex-start;
-    border: 1px solid #e9ecef;
+    /* border: 1px solid #e9ecef; */
+    border: 1px solid rgba(0, 133, 126, 0.12);
+    box-shadow: 0 2px 8px rgba(0, 77, 64, 0.06);
     border-radius: 18px 18px 18px 4px;
 }
 
 
 /* 내가 보낸 메시지 */
 .message.sent {
-    background-color: #00857E;
+    /* background-color: #00857E; */
     color: #ffffff;
     align-self: flex-end;
+    background: linear-gradient(135deg, #00a389 0%, #00857E 100%);
+    box-shadow: 0 3px 10px rgba(0, 133, 126, 0.25);
     border-radius: 18px 18px 4px 18px;
 }
 
@@ -718,20 +727,67 @@ a[href^="tel:"] {
     z-index: 10;
 }
 .q-box {
+    position: relative;
     display: block;
     width: 100%;
-    background-color: #f1f3f5;
-    padding: 12px 16px;
-    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 14px 16px 14px 20px;
+    line-height: 1.6;
+    color: #2c3a4a;
+    background: linear-gradient(180deg, #f5f8fc 0%, #eaf0f7 100%);
+    border: 1px solid rgba(62, 83, 112, 0.15);
+    border-radius: 4px 16px 16px 16px;
+    box-shadow: 0 2px 8px rgba(62, 83, 112, 0.07);
+    overflow: hidden;
+    word-break: keep-all;
 }
-
+.q-box .bold,
+.q-box strong {
+    font-weight: 700;
+    color: #00695c !important;
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 133, 126, 0.35);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    font-size: 1.9rem;
+}
 button[class*="flag_"]:disabled:hover,
 button[class*="flag_"]:disabled {
     color: #999 !important;
     background-color: #eee !important;
     border-color: #eee !important;
 }
-
+.chat-guide {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: #EFF8F5;
+    border: 1px dashed #00857E;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: #333;
+}
+.chat-guide p {
+    margin: 0;
+}
+.chat-guide strong {
+    color: #00857E;
+}
+.chat-guide-ico {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #FFD54F;
+    color: #3a2e00;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
 /* ---------------------------------------------------------
    09. 리스트 아코디언 (.list-btn > div.btn-label, 조회용 카드)
    --------------------------------------------------------- */
@@ -818,6 +874,10 @@ button[class*="flag_"]:disabled {
     align-items: center;
     justify-content: center;
     gap: 6px;
+    background-color: #FFD54F;
+    border-color: #F2B705;
+    color: #3a2e00;
+    font-weight: 800;
 }
 .btn-home .ico-home {
     flex: none;
@@ -825,16 +885,7 @@ button[class*="flag_"]:disabled {
     height: 16px;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 11.5 12 4l9 7.5'/%3E%3Cpath d='M5.5 10v10h13V10'/%3E%3C/svg%3E") no-repeat center / contain;
 }
-/* 액션바가 없던 화면: 처음으로 단독 강조 */
-.chat-content .flow-box .btn-area.action-btn.home-only .btn-home,
-.chat-content .flow-box .btn-area.action-btn.home-only .btn-home:focus {
-    flex: 1 1 100%;
-    background-color: #FFD54F;
-    border-color: #F2B705;
-    color: #3a2e00;
-    font-weight: 800;
-}
-.chat-content .flow-box .btn-area.action-btn.home-only .btn-home:hover {
+.chat-content .flow-box .btn-area.action-btn .btn-home:hover {
     background-color: #FFCA28;
 }
 

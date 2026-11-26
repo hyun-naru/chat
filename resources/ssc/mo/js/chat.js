@@ -166,7 +166,7 @@ function initCheckingList() {
 
         const chips = panel.querySelector('.checking-chips');
         const countEl = panel.querySelector('.checking-count em');
-        const getChecks = function() { return box.querySelectorAll('.list-btn input[type="checkbox"]'); };
+        const getChecks = function() { return box.querySelectorAll('.list-btn input[type="checkbox"]:not(:disabled)'); };
         const chkAll = box.querySelector('#chkAll');
 
         function nameOf(chk) {
@@ -203,7 +203,10 @@ function initCheckingList() {
             panel.hidden = checked.length === 0;
             const total = box.querySelector('.tblInfo .info .val');
             if (total) total.textContent = getChecks().length;
-            if (chkAll) chkAll.checked = checked.length > 0 && checked.length === getChecks().length;
+            if (chkAll) {
+                chkAll.disabled = getChecks().length === 0;
+                chkAll.checked = checked.length > 0 && checked.length === getChecks().length;
+            }
         }
 
         // 개별 체크 / 전체선택 변경
@@ -211,7 +214,7 @@ function initCheckingList() {
             if (e.target === chkAll) {
                 getChecks().forEach(function(c) { c.checked = chkAll.checked; });
             }
-            if (e.target === chkAll || (e.target.matches && e.target.matches('.list-btn input[type="checkbox"]'))) render();
+            if (e.target === chkAll || (e.target.matches && e.target.matches('.list-btn input[type="checkbox"]:not(:disabled)'))) render();
         });
 
         // 칩의 X / 선택 초기화
@@ -259,9 +262,9 @@ window.initChat = function() {
     initHomeButtons();
     initCheckingList();//문서체크
 
-    // 접기/펼치기 토글 (초기 상태: 열림)
+    // 접기/펼치기 토글 (초기 상태: 닫힘)
     if (btnToggleFlow && chatLive) {
-        setChatOpen(true);
+        setChatOpen(false);
         btnToggleFlow.onclick = function() {
             setChatOpen(chatLive.classList.contains('collapsed'));
         };

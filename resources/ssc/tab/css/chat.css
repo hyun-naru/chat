@@ -310,7 +310,8 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    border-left: 1px solid #f1f3f5;
+    border-left: 1px solid rgba(0, 133, 126, 0.12);
+    background: linear-gradient(180deg, #f4faf9 0%, #e6f3f1 100%);
     white-space: nowrap;
     box-sizing: border-box;
     transition: all 0.3s ease-in-out;
@@ -332,6 +333,9 @@
     justify-content: flex-end;
     gap: 8px;
 }
+.df-end + .df-end {
+    margin-top: 8px !important;
+}
 /* flow-box 패딩 영역 잔여 방지 */
 .chat-content .flow-box {
     position: relative;
@@ -343,13 +347,15 @@
     overflow-y: hidden;
 }
 .chat-content .flow-box .flow-content {
-    padding: 8px 20px 20px;   
+    padding: 8px 20px 30px;   
     overflow-y: auto;
 }
 .chat-content .flow-box:has(div.action-btn) .flow-content {
-    height: calc(100% - 80px);
+    height: calc(100% - 60px);
 }
-
+.chat-content .flow-box .flow-content > .q-box:first-child {
+    margin-top: 20px;
+}
 .chat-content .flow-box .formList {
     border-top: none;
 }
@@ -384,7 +390,7 @@
     word-break: break-word;
     white-space: pre-line;
     box-sizing: border-box;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* 입체감 부여 */
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 입체감 부여 */
 }
 
 /* 상대방 메시지 */
@@ -392,23 +398,30 @@
     background-color: #ffffff;
     color: #333333;
     align-self: flex-start;
-    border: 1px solid #e9ecef;
+    /* border: 1px solid #e9ecef; */
+    border: 1px solid rgba(0, 133, 126, 0.12);
+    box-shadow: 0 2px 8px rgba(0, 77, 64, 0.06);
     border-radius: 18px 18px 18px 4px;
 }
 
 /* 내가 보낸 메시지 */
 .message.sent {
-    background-color: #00857E;
+    /* background-color: #00857E; */
     color: #ffffff;
     align-self: flex-end;
+    background: linear-gradient(135deg, #00a389 0%, #00857E 100%);
+    box-shadow: 0 3px 10px rgba(0, 133, 126, 0.25);
     border-radius: 18px 18px 4px 18px;
 }
 
 .chat-input-area {
     display: flex;
     padding: 12px 16px;
-    background-color: #ffffff;
-    border-top: 1px solid #f1f3f5;
+    /* background-color: #ffffff;
+    border-top: 1px solid #f1f3f5; */
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    border-top: 1px solid rgba(0, 133, 126, 0.12);
 }
 
 .chat-input-area input {
@@ -427,7 +440,8 @@
 
 .chat-input-area button,
 .chat-input-area button:focus {
-    background-color: #00857E;
+    background: linear-gradient(135deg, #00a389 0%, #00857E 100%);
+    box-shadow: 0 3px 10px rgba(0, 133, 126, 0.25);
     color: #ffffff;
     border: none;
     border-radius: 20px;
@@ -484,11 +498,28 @@ button.flag.reverse {
     width: 100%;
 }
 .flow-content + .btn-area.action-btn {
-    padding: 20px;
+    position: relative;
+    padding: 0 20px 20px;
     background-color: #fff !important;
 }
 .flow-content + .btn-area.action-btn button {
     flex: 1;
+}
+
+.flow-content + .btn-area::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -32px;              /* 액션바 바로 위에 붙임 */
+    height: 32px;
+    background: linear-gradient(
+        to top,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.85) 35%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    pointer-events: none;      /* 뒤쪽 목록 클릭/스크롤 방해 안 함 */
 }
 .iptWrap {
     display: block;
@@ -571,6 +602,15 @@ input + .btn-label:focus {
     top: 15px;
     left: 24px;
 }
+.ipt[type=checkbox]:disabled + label.btn-label,
+.ipt[type=checkbox]:disabled + label.btn-label .upload-day {
+    background-color: #f1f3f5;
+    color: #999;
+    cursor: not-allowed;
+}
+.ipt[type=checkbox]:disabled + label.btn-label .flag {
+    background-color: #aaa;
+}
 .title-line {
     display: flex;
     align-items: center;
@@ -589,6 +629,8 @@ input + .btn-label:focus {
     gap: 4px;
     font-size: 1.8rem;
     font-weight: 700;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 
@@ -611,11 +653,59 @@ input + .btn-label:focus {
     z-index: 10;
 }
 .q-box {
+    position: relative;
     display: block;
     width: 100%;
-    background-color: #f1f3f5;
+    box-sizing: border-box;
+    padding: 14px 16px 14px 20px;
+    line-height: 1.6;
+    color: #2c3a4a;
+    background: linear-gradient(180deg, #f5f8fc 0%, #eaf0f7 100%);
+    border: 1px solid rgba(62, 83, 112, 0.15);
+    border-radius: 4px 16px 16px 16px;
+    box-shadow: 0 2px 8px rgba(62, 83, 112, 0.07);
+    overflow: hidden;
+}
+.q-box .bold,
+.q-box strong {
+    font-weight: 700;
+    color: #00695c !important;
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 133, 126, 0.35);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    font-size: 1.9rem;
+}
+.chat-guide {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     padding: 12px 16px;
+    background: #EFF8F5;
+    border: 1px dashed #00857E;
     border-radius: 8px;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: #333;
+}
+.chat-guide p {
+    margin: 0;
+}
+.chat-guide strong {
+    color: #00857E;
+}
+.chat-guide-ico {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #FFD54F;
+    color: #3a2e00;
+    font-size: 1.4rem;
+    font-weight: 800;
 }
 .noData {
     padding-top: 88px;
@@ -720,6 +810,10 @@ button.flag.yellow:disabled {
     align-items: center;
     justify-content: center;
     gap: 6px;
+    background-color: #FFD54F;
+    border-color: #F2B705;
+    color: #3a2e00;
+    font-weight: 800;
 }
 .btn-home .ico-home {
     flex: none;
@@ -727,16 +821,7 @@ button.flag.yellow:disabled {
     height: 16px;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 11.5 12 4l9 7.5'/%3E%3Cpath d='M5.5 10v10h13V10'/%3E%3C/svg%3E") no-repeat center / contain;
 }
-/* 액션바가 없던 화면: 처음으로 단독 강조 */
-.chat-content .flow-box .btn-area.action-btn.home-only .btn-home,
-.chat-content .flow-box .btn-area.action-btn.home-only .btn-home:focus {
-    flex: 1 1 100%;
-    background-color: #FFD54F;
-    border-color: #F2B705;
-    color: #3a2e00;
-    font-weight: 800;
-}
-.chat-content .flow-box .btn-area.action-btn.home-only .btn-home:hover {
+.chat-content .flow-box .btn-area.action-btn .btn-home:hover {
     background-color: #FFCA28;
 }
 
